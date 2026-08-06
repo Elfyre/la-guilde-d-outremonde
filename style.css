@@ -1,0 +1,80 @@
+body {
+
+    background-color: #0b0b0f;
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+
+}
+
+
+header {
+
+    padding: 80px 20px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #120b1f,
+        #000000
+    );
+
+}
+
+
+h1 {
+
+    color: #ffae00;
+
+    font-size: 50px;
+
+}
+
+
+h2 {
+
+    color: #d946ef;
+
+}
+
+
+section {
+
+    padding: 40px;
+
+}
+
+
+.cartes {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 30px;
+
+}
+
+
+.cartes div {
+
+    background: #16131f;
+
+    border: 2px solid #ffae00;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    width: 250px;
+
+}
+
+
+.cartes h3 {
+
+    color: #ffae00;
+
+}
