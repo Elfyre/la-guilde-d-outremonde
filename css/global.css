@@ -1,0 +1,110 @@
+:root {
+
+    /* Couleurs principales */
+
+    --or-guilde: #d4af37;
+
+    --or-lumiere:
+    #f5d76e;
+
+
+    --violet-magie:
+    #7c3aed;
+
+    --violet-fond: #24103d;
+
+
+    --rose-portail:
+    #ec4899;
+
+
+    --orange-magie:
+    #ff8c42;
+
+
+    --noir-outremonde:
+    #050505;
+
+
+    --gris-texte:
+    #dddddd;
+
+
+    /* Polices */
+
+    --police-titre: Georgia, serif;
+
+    --police-texte: Arial, sans-serif;
+
+}
+
+
+
+/* Base commune */
+
+* {
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+
+body {
+
+    min-height:100vh;
+
+    background:
+
+    radial-gradient(
+        circle,
+        var(--violet-fond),
+        var(--noir-outremonde)
+    );
+
+
+    color:white;
+
+    font-family:
+    var(--police-texte);
+
+}
+
+
+/* Liens du site */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* Titres communs */
+
+h1,
+h2,
+h3 {
+
+    font-family:
+    var(--police-titre);
+
+}
+
+
+/* Sélection de texte */
+
+::selection {
+
+    background:
+    var(--violet-magie);
+
+    color:white;
+
+}
