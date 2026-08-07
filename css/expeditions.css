@@ -1,0 +1,240 @@
+/* =====================
+   PAGE EXPEDITIONS
+===================== */
+
+
+/* =====================
+   ENTETE EXPEDITIONS
+===================== */
+
+.entete-expeditions {
+
+    width:100%;
+
+    text-align:center;
+
+    margin:0 auto 60px;
+
+}
+
+
+.entete-expeditions .embleme {
+
+    text-align:center;
+
+    margin:0 auto 20px;
+
+}
+
+
+.entete-expeditions h1 {
+
+    text-align:center;
+
+    margin:0 auto 20px;
+
+}
+
+
+.entete-expeditions p {
+
+    text-align:center;
+
+    margin:0 auto;
+
+}
+
+
+
+/* =====================
+   LISTE EXPEDITIONS
+===================== */
+
+.liste-expeditions {
+
+    width:900px;
+
+    max-width:90%;
+
+    margin:0 auto 50px;
+
+    display:grid;
+
+    grid-template-columns:repeat(3, 1fr);
+
+    gap:25px;
+
+}
+
+
+
+/* =====================
+   CARTE AVENTURE
+===================== */
+
+.carte-aventure {
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:25px;
+
+    border:
+    2px solid var(--or-guilde);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(212,175,55,0.15),
+        rgba(0,0,0,0.75)
+    );
+
+    box-shadow:
+    0 0 25px rgba(212,175,55,0.25);
+
+    transition:0.3s;
+
+}
+
+
+.carte-aventure:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 35px rgba(255,140,66,0.5);
+
+}
+
+
+
+/* =====================
+   IMAGE / ICONE JEU
+===================== */
+
+.carte-aventure img {
+
+    width:100%;
+
+    height:130px;
+
+    object-fit:contain;
+
+    border-radius:15px;
+
+    border:
+    2px solid var(--or-guilde);
+
+    background:
+    rgba(0,0,0,0.4);
+
+}
+
+
+.icone-aventure {
+
+    font-size:55px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* =====================
+   TITRE
+===================== */
+
+.carte-aventure h2 {
+
+    color:
+    var(--or-lumiere);
+
+    font-size:24px;
+
+    margin:15px 0;
+
+}
+
+
+
+/* =====================
+   TITRE + BADGE LMC
+===================== */
+
+.titre-aventure {
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.titre-aventure h2 {
+
+    margin:15px 0;
+
+}
+
+
+.badge-lmc {
+
+    padding:5px 10px;
+
+    border-radius:20px;
+
+    border:
+    1px solid var(--violet-magie);
+
+    background:
+    rgba(124,58,237,0.2);
+
+    color:
+    var(--or-lumiere);
+
+    font-size:12px;
+
+}
+
+
+
+/* =====================
+   BOUTON
+===================== */
+
+.carte-aventure .bouton {
+
+    display:inline-block;
+
+    margin-top:10px;
+
+}
+
+
+
+/* =====================
+   RETOUR HALL
+===================== */
+
+.retour-expeditions {
+
+    width:100%;
+
+    text-align:center;
+
+    margin:60px auto 40px;
+
+}
+
+
+.retour-expeditions .bouton {
+
+    display:inline-block;
+
+}
