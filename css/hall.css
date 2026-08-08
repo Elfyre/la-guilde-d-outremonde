@@ -400,15 +400,17 @@
 
     max-width:900px;
 
-    margin:auto;
+    max-width:90%;
 
+    margin:0 auto 50px;
+
+    grid-template-columns:repeat(7, 1fr);
 
     display:grid;
 
     gap:25px;
 
 }
-
 
 
 .mission {
