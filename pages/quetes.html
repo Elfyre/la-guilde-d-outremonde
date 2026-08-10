@@ -2,121 +2,380 @@
 <html lang="fr">
 
 
+<!-- =====================
+     EN-TÊTE DE LA PAGE
+===================== -->
+
 <head>
 
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Salle des Quêtes - La Guilde d'Outremonde</title>
+    <link rel="icon" href="../favicon.png?v=2">
 
+    <title>Salle des Quêtes - La Guilde d'Outremonde</title>
 
     <link rel="stylesheet" href="../css/main.css">
 
 </head>
 
-
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../js/supabase.js"></script>
 
 <body>
 
 
+<!-- =====================
+     SALLE DES QUÊTES
+===================== -->
+
 <main class="salle-page">
 
 
-<header class="entete-salle">
+    <!-- =====================
+         EN-TÊTE DE LA SALLE
+    ===================== -->
+
+    <header class="entete-salle">
 
 
-    <div class="embleme">
+        <!-- Emblème -->
+        <div class="embleme">
 
-        🗳️
+            🗳️
 
-    </div>
-
-
-    <h1>
-        Salle des Quêtes
-    </h1>
+        </div>
 
 
-    <p>
-        Les aventuriers peuvent proposer les prochaines expéditions.
-    </p>
+        <!-- Titre -->
+        <h1>
+            Salle des Quêtes
+        </h1>
 
 
-</header>
-
-
-
-<section class="quetes">
-
-
-    <div class="quete">
-
-
-        <h2>
-            🔮 Proposer une aventure
-        </h2>
-
-
+        <!-- Description -->
         <p>
-            Un jeu mérite peut-être de rejoindre
-            les prochaines aventures de la Guilde.
+            Les aventuriers peuvent proposer les prochaines expéditions.
         </p>
 
 
-        <a href="#" class="bouton">
-
-            Proposer un jeu
-
-        </a>
-
-
-    </div>
+    </header>
 
 
 
+    <!-- =====================
+         QUÊTES
+    ===================== -->
+
+    <section class="quetes">
 
 
-    <div class="quete">
+        <!-- =====================
+             PROPOSER UNE AVENTURE
+        ===================== -->
+
+        <div class="quete">
 
 
-        <h2>
+            <!-- Titre -->
+            <h2>
+                🔮 Proposer une aventure
+            </h2>
+
+
+            <!-- Description -->
+            <p>
+                Un jeu mérite peut-être de rejoindre
+                les prochaines aventures de la Guilde.
+            </p>
+
+
+            <!-- Accès aux propositions -->
+            <a href="proposer.html" class="bouton">
+
+                Proposer un jeu
+
+            </a>
+
+
+        </div>
+
+
+
+
+
+        <!-- =====================
+            VOTER POUR UNE QUÊTE
+        ===================== -->
+
+        <div class="quete">
+
+
+            <!-- Titre -->
+
+            <h2>
             ⚔️ Voter pour une quête
-        </h2>
+            </h2>
 
 
-        <p>
-            Les membres de la Guilde choisissent
-            les prochaines aventures.
-        </p>
+            <!-- Description -->
+
+            <p>
+                Les membres de la Guilde choisissent
+                les prochaines aventures.
+            </p>
 
 
-        <a href="#" class="bouton">
+            <!-- Liste des jeux -->
 
-            Voir les votes
+            <div id="liste-jeux">
 
-        </a>
+            <!-- Les jeux seront chargés automatiquement ici -->
 
+                <p>
+                    🔮 Chargement des aventures...
+                </p>
 
-    </div>
-
-
-
-</section>
-
+</div>
 
 
-<a href="guilde.html" class="bouton">
+</div>
 
-    Retour au Hall
 
-</a>
+
+    </section>
+
+
+
+    <!-- =====================
+         RETOUR AU HALL
+    ===================== -->
+
+    <a href="hall.html" class="bouton">
+
+        Retour au Hall
+
+    </a>
 
 
 
 </main>
 
+<script>
+
+    // =====================
+    // AFFICHER LES JEUX
+    // =====================
+
+    async function afficherJeux() {
+
+        const listeJeux = document.getElementById('liste-jeux');
+
+
+        // Récupération des jeux avec leurs votes
+
+        const jeux = await obtenirJeuxAvecVotes();
+
+
+        // Gestion d'une erreur
+
+        if (!jeux) {
+
+            console.error(
+                '❌ Impossible de récupérer les jeux.'
+            );
+
+            listeJeux.innerHTML = `
+                <p>
+                    ❌ Impossible de charger les aventures.
+                </p>
+            `;
+
+            return;
+        }
+
+
+        // Aucun jeu
+
+        if (jeux.length === 0) {
+
+            listeJeux.innerHTML = `
+                <p>
+                    🔮 Aucune aventure proposée pour le moment.
+                </p>
+            `;
+
+            return;
+        }
+
+
+        // Création de la liste
+
+        listeJeux.innerHTML = '';
+
+
+        jeux.forEach(jeu => {
+
+            const carte = document.createElement('div');
+
+            carte.classList.add('jeu-vote');
+
+
+            // =====================
+            // ÉTAT DU VOTE
+            // =====================
+
+            const texteBouton = jeu.dejaVote
+                ? '✅ Déjà voté'
+                : '⚔️ Voter';
+
+
+            const boutonDesactive = jeu.dejaVote
+                ? 'disabled'
+                : '';
+
+
+            carte.innerHTML = `
+
+                <h3>
+                    🎮 ${jeu.nom}
+                </h3>
+
+
+                <p class="nombre-votes">
+                    ⚔️ ${jeu.nombreVotes} vote${jeu.nombreVotes > 1 ? 's' : ''}
+                </p>
+
+
+                <button
+                    type="button"
+                    class="bouton bouton-vote"
+                    data-jeu-id="${jeu.id}"
+                    ${boutonDesactive}
+                >
+                    ${texteBouton}
+                </button>
+
+            `;
+
+
+            // =====================
+            // BOUTON DE VOTE
+            // =====================
+
+            const bouton = carte.querySelector('.bouton-vote');
+
+
+            bouton.addEventListener('click', async () => {
+
+                // Récupération de la session
+
+                const {
+                    data: { session },
+                    error: sessionError
+                } = await supabaseClient.auth.getSession();
+
+
+                if (sessionError || !session?.user) {
+
+                    console.error(
+                        '❌ Utilisateur anonyme introuvable :',
+                        sessionError
+                    );
+
+                    alert(
+                        'Impossible de récupérer votre session.'
+                    );
+
+                    return;
+                }
+
+
+                // Envoi du vote
+
+                const { error } = await supabaseClient
+                    .from('votes')
+                    .insert({
+                        jeu_id: jeu.id,
+                        user_id: session.user.id
+                    });
+
+
+                // Gestion de l'erreur
+
+                if (error) {
+
+                    console.error(
+                        '❌ Erreur lors du vote :',
+                        error
+                    );
+
+
+                    // Vote déjà effectué
+
+                    if (error.code === '23505') {
+
+                        bouton.textContent = '✅ Déjà voté';
+
+                        bouton.disabled = true;
+
+                        return;
+                    }
+
+
+                    alert(
+                        'Impossible d’enregistrer votre vote.'
+                    );
+
+                    return;
+                }
+
+
+                // =====================
+                // VOTE ENREGISTRÉ
+                // =====================
+
+                jeu.dejaVote = true;
+
+                jeu.nombreVotes++;
+
+
+                bouton.textContent = '✅ Déjà voté';
+
+                bouton.disabled = true;
+
+
+                // Mise à jour du compteur
+
+                const compteur =
+                    carte.querySelector('.nombre-votes');
+
+
+                compteur.textContent =
+                    `⚔️ ${jeu.nombreVotes} vote${jeu.nombreVotes > 1 ? 's' : ''}`;
+
+            });
+
+
+            listeJeux.appendChild(carte);
+
+        });
+
+    }
+
+
+    // =====================
+    // LANCEMENT
+    // =====================
+
+    afficherJeux();
+
+</script>
+
+
 
 </body>
+
 
 </html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<!-- =====================
+     EN-TÊTE DE LA PAGE
+===================== -->
+
+<head>
+
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" href="../favicon.png?v=2">
+
+<title>
+    Proposer une aventure - La Guilde d'Outremonde
+</title>
+
+<link rel="stylesheet" href="../css/main.css">
+
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<body>
+
+<!-- =====================
+     PROPOSITION D'AVENTURE
+===================== -->
+
+<main class="salle-page">
+
+<!-- =====================
+     EN-TÊTE DE LA SALLE
+===================== -->
+
+<header class="entete-salle">
+
+
+    <!-- Emblème -->
+
+    <div class="embleme">
+
+        🔮
+
+    </div>
+
+
+    <!-- Titre -->
+
+    <h1>
+        Proposer une aventure
+    </h1>
+
+
+    <!-- Description -->
+
+    <p>
+        Une idée de jeu à soumettre à la Guilde ?
+    </p>
+
+
+</header>
+
+
+
+<!-- =====================
+     FORMULAIRE
+===================== -->
+
+<section class="quetes">
+
+
+    <div class="quete">
+
+
+        <!-- =====================
+             TITRE DU FORMULAIRE
+        ===================== -->
+
+        <h2>
+            📜 Nouvelle proposition
+        </h2>
+
+
+        <p>
+            Proposez un jeu que vous aimeriez
+            voir rejoindre les prochaines expéditions.
+        </p>
+
+
+        <p class="indication-obligatoire">
+
+            <strong>*</strong>
+            Champ obligatoire
+
+        </p>
+
+
+
+        <!-- =====================
+             MESSAGE
+        ===================== -->
+
+        <div
+            id="message-proposition"
+            class="message-proposition"
+        ></div>
+
+
+
+        <!-- =====================
+             FORMULAIRE
+        ===================== -->
+
+        <form id="form-proposition">
+
+
+            <!-- =====================
+                 JEU
+            ===================== -->
+
+            <div class="champ-formulaire">
+
+
+                <label for="jeu">
+
+                    🎮 Jeu <strong>*</strong>
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="jeu"
+                    name="jeu"
+                    placeholder="Nom du jeu"
+                    required
+                >
+
+
+            </div>
+
+
+
+            <!-- =====================
+                 PSEUDO
+            ===================== -->
+
+            <div class="champ-formulaire">
+
+
+                <label for="pseudo">
+
+                    👤 Pseudo
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="pseudo"
+                    name="pseudo"
+                    placeholder="Votre pseudo"
+                >
+
+
+            </div>
+
+
+
+            <!-- =====================
+                 RAISON
+            ===================== -->
+
+            <div class="champ-formulaire">
+
+
+                <label for="raison">
+
+                    📜 Pourquoi ce jeu ?
+
+                </label>
+
+
+                <textarea
+                    id="raison"
+                    name="raison"
+                    rows="5"
+                    placeholder="Pourquoi aimeriez-vous voir ce jeu dans la Guilde ?"
+                ></textarea>
+
+
+            </div>
+
+
+
+            <!-- =====================
+                 MODE
+            ===================== -->
+
+            <fieldset class="champ-formulaire">
+
+
+                <legend>
+
+                    🎮 Mode <strong>*</strong>
+
+                </legend>
+
+
+                <div class="choix-mode">
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="mode"
+                            value="Solo"
+                            required
+                        >
+
+                        Solo
+
+                    </label>
+
+
+                    <label>
+
+                        <input
+                            type="radio"
+                            name="mode"
+                            value="Multijoueur"
+                        >
+
+                        Multijoueur
+
+                    </label>
+
+
+                </div>
+
+
+            </fieldset>
+
+
+
+            <!-- =====================
+                 CATÉGORIE
+            ===================== -->
+
+            <div class="champ-formulaire">
+
+
+                <label for="categorie">
+
+                    🧭 Catégorie <strong>*</strong>
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="categorie"
+                    name="categorie"
+                    placeholder="Ex. Survie, aventure, horreur..."
+                    required
+                >
+
+
+            </div>
+
+
+
+            <!-- =====================
+                 ENVOI
+            ===================== -->
+
+            <button
+                type="submit"
+                class="bouton"
+                id="bouton-proposition"
+            >
+
+                🔮 Envoyer la proposition
+
+            </button>
+
+
+        </form>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================
+     RETOUR
+===================== -->
+
+<a href="quetes.html" class="bouton">
+
+    Retour aux Quêtes
+
+</a>
+
+</main>
+
+<script>
+
+
+    // =====================
+    // FORMULAIRE
+    // =====================
+
+    const formulaire =
+        document.getElementById('form-proposition');
+
+
+    const message =
+        document.getElementById('message-proposition');
+
+
+    const bouton =
+        document.getElementById('bouton-proposition');
+
+
+
+    // =====================
+    // ENVOI DE LA PROPOSITION
+    // =====================
+
+    formulaire.addEventListener('submit', async (event) => {
+
+        event.preventDefault();
+
+
+        // =====================
+        // RÉCUPÉRATION DES VALEURS
+        // =====================
+
+        const jeu =
+            document.getElementById('jeu').value.trim();
+
+
+        const pseudo =
+            document.getElementById('pseudo').value.trim();
+
+
+        const raison =
+            document.getElementById('raison').value.trim();
+
+
+        const mode =
+            document.querySelector(
+                'input[name="mode"]:checked'
+            )?.value;
+
+
+        const categorie =
+            document.getElementById('categorie').value.trim();
+
+
+
+        // =====================
+        // VÉRIFICATION
+        // =====================
+
+        if (!jeu || !mode || !categorie) {
+
+            message.textContent =
+                '⚠️ Merci de remplir tous les champs obligatoires.';
+
+            return;
+
+        }
+
+
+
+        // =====================
+        // ÉTAT DU BOUTON
+        // =====================
+
+        bouton.disabled = true;
+
+        bouton.textContent =
+            '🔮 Envoi en cours...';
+
+
+
+        // =====================
+        // RECHERCHE DU JEU
+        // =====================
+
+        const { data: jeuExistant, error: erreurJeu } =
+            await supabaseClient
+                .from('jeux')
+                .select('id, nom')
+                .ilike('nom', jeu)
+                .maybeSingle();
+
+
+
+        // =====================
+        // ERREUR RECHERCHE
+        // =====================
+
+        if (erreurJeu) {
+
+            console.error(
+                '❌ Erreur lors de la recherche du jeu :',
+                erreurJeu
+            );
+
+
+            message.textContent =
+                '❌ Impossible de vérifier ce jeu pour le moment.';
+
+
+            bouton.disabled = false;
+
+            bouton.textContent =
+                '🔮 Envoyer la proposition';
+
+            return;
+
+        }
+
+
+
+        // =====================
+        // JEU INCONNU
+        // =====================
+
+        if (!jeuExistant) {
+
+            message.textContent =
+                '🔮 Ce jeu n’existe pas encore dans la Guilde.';
+
+
+            bouton.disabled = false;
+
+            bouton.textContent =
+                '🔮 Envoyer la proposition';
+
+            return;
+
+        }
+
+
+
+        // =====================
+        // ENREGISTREMENT
+        // =====================
+
+        const { error: erreurProposition } =
+            await supabaseClient
+                .from('propositions')
+                .insert({
+
+                    jeu: jeu,
+
+                    pseudo: pseudo || null,
+
+                    raison: raison || null,
+
+                    mode: mode,
+
+                    categorie: categorie,
+
+                    jeu_id: jeuExistant.id
+
+                });
+
+
+
+        // =====================
+        // ERREUR ENREGISTREMENT
+        // =====================
+
+        if (erreurProposition) {
+
+            console.error(
+                '❌ Erreur lors de l’enregistrement :',
+                erreurProposition
+            );
+
+
+            // Proposition déjà existante
+
+            if (
+                erreurProposition.code === '23505'
+            ) {
+
+                message.textContent =
+                    '⚠️ Ce jeu a déjà été proposé à la Guilde.';
+
+            } else {
+
+                message.textContent =
+                    '❌ Impossible d’enregistrer la proposition.';
+
+            }
+
+
+            bouton.disabled = false;
+
+            bouton.textContent =
+                '🔮 Envoyer la proposition';
+
+            return;
+
+        }
+
+
+
+        // =====================
+        // SUCCÈS
+        // =====================
+
+        message.textContent =
+            '✅ Votre proposition a bien été enregistrée !';
+
+
+        formulaire.reset();
+
+
+        bouton.disabled = false;
+
+        bouton.textContent =
+            '🔮 Envoyer la proposition';
+
+
+    });
+
+
+</script>
+
+</body>
+
+</html>
