@@ -340,7 +340,9 @@
     // ENVOI DE LA PROPOSITION
     // =====================
 
-    formulaire.addEventListener('submit', async (event) => {
+    formulaire.addEventListener(
+        'submit',
+        async (event) => {
 
         event.preventDefault();
 
@@ -391,10 +393,12 @@
         // ÉTAT DU BOUTON
         // =====================
 
-        bouton.disabled = true;
+        bouton.disabled =
+            true;
+
 
         bouton.textContent =
-            '🔮 Envoi en cours...';
+            '🔮 Vérification en cours...';
 
 
 
@@ -402,10 +406,13 @@
         // RECHERCHE DU JEU
         // =====================
 
-        const { data: jeuExistant, error: erreurJeu } =
+        const {
+            data: jeuExistant,
+            error: erreurJeu
+        } =
             await supabaseClient
                 .from('jeux')
-                .select('id, nom')
+                .select('id, nom, statut')
                 .ilike('nom', jeu)
                 .maybeSingle();
 
@@ -427,10 +434,13 @@
                 '❌ Impossible de vérifier ce jeu pour le moment.';
 
 
-            bouton.disabled = false;
+            bouton.disabled =
+                false;
+
 
             bouton.textContent =
                 '🔮 Envoyer la proposition';
+
 
             return;
 
@@ -439,29 +449,164 @@
 
 
         // =====================
-        // JEU INCONNU
+        // JEU EXISTANT
         // =====================
 
-        if (!jeuExistant) {
-
-            message.textContent =
-                '🔮 Ce jeu n’existe pas encore dans la Guilde.';
+        if (jeuExistant) {
 
 
-            bouton.disabled = false;
+            // =====================
+            // JEU VALIDE
+            // =====================
 
-            bouton.textContent =
-                '🔮 Envoyer la proposition';
+            if (
+                jeuExistant.statut === 'valide'
+            ) {
 
-            return;
+                message.textContent =
+                    '⚠️ Ce jeu a déjà été proposé à la Guilde et est actuellement disponible au vote.';
+
+
+                bouton.disabled =
+                    false;
+
+
+                bouton.textContent =
+                    '🔮 Envoyer la proposition';
+
+
+                return;
+
+            }
+
+
+
+            // =====================
+            // JEU REFUSÉ
+            // =====================
+
+            if (
+                jeuExistant.statut === 'refuse'
+            ) {
+
+                message.textContent =
+                    '🚫 Ce jeu a déjà été proposé à la Guilde, mais n’a pas été retenu par l’équipe.';
+
+
+                bouton.disabled =
+                    false;
+
+
+                bouton.textContent =
+                    '🔮 Envoyer la proposition';
+
+
+                return;
+
+            }
 
         }
 
 
 
         // =====================
-        // ENREGISTREMENT
+        // DÉTERMINATION DU JEU
         // =====================
+
+        let jeuId;
+
+
+
+        // =====================
+        // JEU EXISTANT
+        // =====================
+
+        if (jeuExistant) {
+
+            jeuId =
+                jeuExistant.id;
+
+        }
+
+
+
+        // =====================
+        // NOUVEAU JEU
+        // =====================
+
+        else {
+
+            bouton.textContent =
+                '🔮 Création du jeu...';
+
+
+            const {
+                data: nouveauJeu,
+                error: erreurCreationJeu
+            } =
+                await supabaseClient
+                    .from('jeux')
+                    .insert({
+
+                        nom: jeu,
+
+                        statut: 'valide'
+
+                    })
+                    .select('id')
+                    .single();
+
+
+
+            // =====================
+            // ERREUR CRÉATION JEU
+            // =====================
+
+            if (erreurCreationJeu) {
+
+                console.error(
+                    '❌ Erreur lors de la création du jeu :',
+                    erreurCreationJeu
+                );
+
+
+                message.textContent =
+                    '❌ Impossible d’enregistrer ce jeu pour le moment.';
+
+
+                bouton.disabled =
+                    false;
+
+
+                bouton.textContent =
+                    '🔮 Envoyer la proposition';
+
+
+                return;
+
+            }
+
+
+            jeuId =
+                nouveauJeu.id;
+
+
+            console.log(
+                '✅ Nouveau jeu créé :',
+                nouveauJeu
+            );
+
+        }
+
+
+
+        // =====================
+        // ENREGISTREMENT PROPOSITION
+        // =====================
+
+        bouton.textContent =
+            '🔮 Enregistrement de la proposition...';
+
 
         const { error: erreurProposition } =
             await supabaseClient
@@ -478,7 +623,7 @@
 
                     categorie: categorie,
 
-                    jeu_id: jeuExistant.id
+                    jeu_id: jeuId
 
                 });
 
@@ -513,10 +658,13 @@
             }
 
 
-            bouton.disabled = false;
+            bouton.disabled =
+                false;
+
 
             bouton.textContent =
                 '🔮 Envoyer la proposition';
+
 
             return;
 
@@ -535,7 +683,9 @@
         formulaire.reset();
 
 
-        bouton.disabled = false;
+        bouton.disabled =
+            false;
+
 
         bouton.textContent =
             '🔮 Envoyer la proposition';

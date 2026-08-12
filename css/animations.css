@@ -1,81 +1,151 @@
-/* =====================
-   ANIMATIONS MAGIQUES
-===================== */
+/* =========================================================
+   ANIMATIONS
+   Animations et transitions communes
+   ========================================================= */
 
 
+/* =========================================================
+   APPARITION LÉGÈRE
+   ========================================================= */
 
-@keyframes magie {
+@keyframes apparition {
 
     from {
 
-        transform:scale(0.9);
+        opacity: 0;
 
-        opacity:0.7;
+        transform:
+            translateY(10px);
 
     }
 
-
     to {
 
-        transform:scale(1.1);
+        opacity: 1;
 
-        opacity:1;
+        transform:
+            translateY(0);
 
     }
 
 }
 
 
+/* =========================================================
+   LUEUR DOUCE
+   ========================================================= */
 
+@keyframes lueur {
+
+    0%,
+    100% {
+
+        opacity: 0.65;
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* =========================================================
+   PULSATION
+   ========================================================= */
+
+@keyframes pulsation {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.05);
+
+    }
+
+}
+
+
+/* =========================================================
+   ROTATION
+   ========================================================= */
 
 @keyframes rotation {
 
     from {
 
-        transform:rotate(0deg);
+        transform:
+            rotate(0deg);
 
     }
 
-
     to {
 
-        transform:rotate(360deg);
+        transform:
+            rotate(360deg);
 
     }
 
 }
 
 
+/* =========================================================
+   GLISSEMENT DE LUMIÈRE
+   ========================================================= */
 
-
-@keyframes pulse {
+@keyframes balayage {
 
     from {
 
-        opacity:0.5;
-
-
         transform:
-
-        translate(-50%, -50%)
-
-        scale(0.8);
+            translateX(-100%);
 
     }
-
-
 
     to {
 
-        opacity:1;
-
-
         transform:
-
-        translate(-50%, -50%)
-
-        scale(1.2);
+            translateX(100%);
 
     }
+
+}
+
+
+/* =========================================================
+   TRANSITION COMMUNE
+   ========================================================= */
+
+/*
+   Cette classe permet d'ajouter simplement une transition
+   douce à un élément sans lui imposer d'animation.
+*/
+
+.transition-douce {
+
+    transition:
+
+        transform 0.3s ease,
+
+        opacity 0.3s ease,
+
+        color 0.3s ease,
+
+        background 0.3s ease,
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
 
 }

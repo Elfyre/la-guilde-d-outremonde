@@ -1,0 +1,353 @@
+/* =========================================================
+   QUÊTES
+   PROPOSITIONS & VOTES
+   ========================================================= */
+
+
+/* =========================================================
+   LISTE DES QUÊTES
+   ========================================================= */
+
+.quetes {
+
+    width: min(1000px, 90%);
+
+    margin: 0 auto 60px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+/* =========================================================
+   CARTE DE QUÊTE
+   ========================================================= */
+
+.quete {
+
+    position: relative;
+
+    padding: 35px 30px;
+
+    text-align: center;
+
+    border: 1px solid var(--parchemin-sombre);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(143, 113, 156, 0.12),
+            rgba(0, 0, 0, 0.50)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.30);
+
+    transition:
+
+        transform 0.3s ease,
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
+
+}
+
+
+.quete:hover {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        var(--parchemin);
+
+    box-shadow:
+
+        0 12px 30px rgba(0, 0, 0, 0.40),
+
+        0 0 20px rgba(143, 113, 156, 0.20);
+
+}
+
+
+.quete h2 {
+
+    margin-bottom: 18px;
+
+    color:
+        var(--parchemin-clair);
+
+}
+
+
+.quete p {
+
+    color:
+        var(--texte-secondaire);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   NOMBRE DE VOTES
+   ========================================================= */
+
+.nombre-votes {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color:
+        var(--parchemin);
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* =========================================================
+   BOUTON DE VOTE
+   ========================================================= */
+
+.bouton-vote {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 10px 22px;
+
+    border: 1px solid var(--accent-sombre);
+
+    background:
+        rgba(143, 113, 156, 0.12);
+
+    color:
+        var(--parchemin);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition:
+
+        background 0.3s ease,
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease,
+
+        transform 0.3s ease;
+
+}
+
+
+.bouton-vote:hover {
+
+    border-color:
+        var(--parchemin-sombre);
+
+    background:
+        rgba(143, 113, 156, 0.25);
+
+    box-shadow:
+        0 0 15px rgba(143, 113, 156, 0.20);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+/* =========================================================
+   MESSAGE DE PROPOSITION
+   ========================================================= */
+
+.message-proposition {
+
+    width: min(700px, 90%);
+
+    margin: 0 auto 35px;
+
+    padding: 20px 25px;
+
+    border-left:
+        2px solid var(--accent);
+
+    background:
+        rgba(143, 113, 156, 0.06);
+
+    color:
+        var(--texte-secondaire);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   INDICATION OBLIGATOIRE
+   ========================================================= */
+
+.indication-obligatoire {
+
+    color:
+        var(--accent-clair);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   CHAMPS DE FORMULAIRE
+   ========================================================= */
+
+.champ-formulaire {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid var(--accent-sombre);
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    color:
+        var(--texte);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 15px;
+
+    transition:
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
+
+}
+
+
+.champ-formulaire::placeholder {
+
+    color:
+        var(--texte-secondaire);
+
+    opacity: 0.7;
+
+}
+
+
+.champ-formulaire:focus {
+
+    border-color:
+        var(--accent-clair);
+
+    box-shadow:
+        0 0 12px rgba(143, 113, 156, 0.20);
+
+    outline: none;
+
+}
+
+
+/* =========================================================
+   CHOIX DU MODE
+   ========================================================= */
+
+.choix-mode {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+
+    margin: 10px 0 25px;
+
+    color:
+        var(--texte);
+
+}
+
+
+.choix-mode label {
+
+    cursor: pointer;
+
+}
+
+
+.choix-mode input {
+
+    margin-right: 6px;
+
+    accent-color:
+        var(--accent-clair);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .quetes {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .quete {
+
+        padding: 28px 20px;
+
+    }
+
+
+    .choix-mode {
+
+        flex-direction: column;
+
+        gap: 12px;
+
+    }
+
+}

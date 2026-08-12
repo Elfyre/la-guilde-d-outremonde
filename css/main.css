@@ -2,19 +2,24 @@
    CSS PRINCIPAL
 ===================== */
 
-
 @import url("global.css");
 
-@import url("animations.css");
-
 @import url("composants.css");
+
+@import url("animations.css");
 
 @import url("portail.css");
 
 @import url("hall.css");
 
+@import url("quetes.css");
+
+@import url("planning.css");
+
+@import url("archives.css");
+
 @import url("expeditions.css");
 
-@import url("aventures.css");
+@import url("aventuriers.css");
 
-@import url("responsive.css");
+@import url("aventures.css");

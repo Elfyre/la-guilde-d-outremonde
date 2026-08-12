@@ -1,59 +1,217 @@
-.bouton {
-
-    display:inline-block;
-
-    margin-top:40px;
-
-    padding:18px 45px;
-
-    border-radius:50px;
-
-    border:2px solid var(--or-guilde);
+ /* =========================================================
+    COMPOSANTS
+    ÉLÉMENTS COMMUNS DU SITE
+    ========================================================= */
 
 
-    background:
+/* =========================================================
+   EN-TÊTES DE PAGES
+   ========================================================= */
 
-    linear-gradient(
-        45deg,
-        var(--violet-magie),
-        var(--rose-portail)
-    );
+.entete-salle {
 
+    width: min(900px, 90%);
 
-    color:white;
+    margin: 0 auto 60px;
 
-    font-size:20px;
-
-    font-weight:bold;
-
-    letter-spacing:1px;
-
-
-    cursor:pointer;
-
-
-    box-shadow:
-
-    0 0 10px var(--or-guilde),
-    0 0 25px var(--violet-magie);
-
-
-    transition:
-    all 0.4s ease;
+    text-align: center;
 
 }
 
 
+.entete-salle h1 {
+
+    margin-top: 20px;
+
+    color:
+        var(--parchemin-clair);
+
+    font-size:
+        clamp(34px, 5vw, 52px);
+
+    letter-spacing: 3px;
+
+}
+
+
+.entete-salle p {
+
+    max-width: 650px;
+
+    margin: 20px auto 0;
+
+    color:
+        var(--texte-secondaire);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   EMBLÈMES
+   ========================================================= */
+
+.embleme {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+    font-size: 70px;
+
+    line-height: 1;
+
+    filter:
+        drop-shadow(
+            0 0 15px rgba(184, 154, 196, 0.30)
+        );
+
+}
+
+
+/* =========================================================
+   BOUTONS
+   ========================================================= */
+
+.bouton {
+
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 32px;
+
+    border: 1px solid var(--parchemin-sombre);
+
+    border-radius: 2px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(143, 113, 156, 0.30),
+            rgba(77, 58, 85, 0.20)
+        );
+
+    color: var(--parchemin-clair);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 15px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.35);
+
+    transition:
+
+        background 0.3s ease,
+
+        border-color 0.3s ease,
+
+        color 0.3s ease,
+
+        box-shadow 0.3s ease,
+
+        transform 0.3s ease;
+
+}
+
 
 .bouton:hover {
 
-    transform:scale(1.1);
+    border-color:
+        var(--parchemin);
 
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(184, 154, 196, 0.35),
+            rgba(143, 113, 156, 0.25)
+        );
+
+    color:
+        var(--parchemin-clair);
 
     box-shadow:
+        0 0 20px rgba(143, 113, 156, 0.25);
 
-    0 0 20px var(--orange-magie),
-    0 0 40px var(--rose-portail),
-    0 0 70px var(--violet-magie);
+    transform:
+        translateY(-2px);
+
+}
+
+
+.bouton:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   FORMULAIRES — BASE COMMUNE
+   ========================================================= */
+
+input,
+textarea,
+select {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color:
+        var(--texte);
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    border:
+        1px solid var(--accent-sombre);
+
+}
+
+
+input:focus,
+textarea:focus,
+select:focus {
+
+    outline: none;
+
+    border-color:
+        var(--accent-clair);
+
+    box-shadow:
+        0 0 10px rgba(143, 113, 156, 0.20);
+
+}
+
+
+/* =========================================================
+   IMAGES
+   ========================================================= */
+
+img {
+
+    max-width: 100%;
+
+    display: block;
 
 }

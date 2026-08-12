@@ -1,81 +1,207 @@
+/* =========================================================
+   GLOBAL
+   BASE DU SITE
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
 :root {
 
-    /* Couleurs principales */
+    /* =====================================================
+       FONDS
+       ===================================================== */
 
-    --or-guilde: #d4af37;
+    --fond-principal: #100d12;
 
-    --or-lumiere:
-    #f5d76e;
+    --fond-secondaire: #17121a;
 
+    --fond-violet: #241533;
 
-    --violet-magie:
-    #7c3aed;
-
-    --violet-fond: #24103d;
-
-
-    --rose-portail:
-    #ec4899;
+    --fond-violet-sombre: #1a1026;
 
 
-    --orange-magie:
-    #ff8c42;
+    /* =====================================================
+       VIOLET
+       ===================================================== */
+
+    --violet: #7c3aed;
+
+    --violet-clair: #a78bfa;
+
+    --violet-sombre: #4c1d95;
+
+    /* Version RGB pour les transparences */
+
+    --violet-rgb: 124, 58, 237;
 
 
-    --noir-outremonde:
-    #050505;
+    /* =====================================================
+       ROSE
+       ===================================================== */
+
+    --rose: #ec4899;
+
+    --rose-clair: #f472b6;
+
+    --rose-sombre: #9d174d;
+
+    /* Version RGB pour les transparences */
+
+    --rose-rgb: 236, 72, 153;
 
 
-    --gris-texte:
-    #dddddd;
+    /* =====================================================
+       PARCHEMIN / OR
+       ===================================================== */
+
+    --parchemin: #d8c29a;
+
+    --parchemin-clair: #ead8b2;
+
+    --parchemin-sombre: #8f7855;
+
+    /* Version RGB pour les transparences */
+
+    --parchemin-rgb: 216, 194, 154;
 
 
-    /* Polices */
+    /* =====================================================
+       TEXTE
+       ===================================================== */
 
-    --police-titre: Georgia, serif;
+    --texte: #e5d6b7;
 
-    --police-texte: Arial, sans-serif;
+    --texte-principal: #eee7f3;
+
+    --texte-secondaire: #a99a82;
+
+    --texte-sombre: #76677d;
+
+
+    /* =====================================================
+       ACCENT GÉNÉRAL
+       ===================================================== */
+
+    --accent: #8f719c;
+
+    --accent-clair: #b89ac4;
+
+    --accent-sombre: #4d3a55;
+
+    /* Version RGB pour les transparences */
+
+    --accent-rgb: 143, 113, 156;
+
+
+    /* =====================================================
+       EFFETS
+       ===================================================== */
+
+    --ombre: rgba(0, 0, 0, 0.65);
+
+        /* =====================================================
+       SURFACES ET EFFETS
+       ===================================================== */
+
+    --surface-legere:
+        rgba(216, 194, 154, 0.035);
+
+    --surface-violette:
+        rgba(143, 113, 156, 0.12);
+
+    --surface-violette-legere:
+        rgba(143, 113, 156, 0.10);
+
+    --surface-noire:
+        rgba(0, 0, 0, 0.45);
+
+
+    /* =====================================================
+       LUEURS
+       ===================================================== */
+
+    --lueur-accent:
+        rgba(143, 113, 156, 0.25);
+
+    --lueur-accent-legere:
+        rgba(143, 113, 156, 0.20);
+
+    --ombre-forte:
+        rgba(0, 0, 0, 0.45);
+
+    --ombre-moyenne:
+        rgba(0, 0, 0, 0.30);
+
+    --ombre-legere:
+        rgba(0, 0, 0, 0.25);
+
 
 }
 
 
-
-/* Base commune */
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
 
-    margin:0;
+    margin: 0;
 
-    padding:0;
+    padding: 0;
 
-    box-sizing:border-box;
+    box-sizing: border-box;
 
 }
 
+
+html,
+body {
+
+    width: 100%;
+
+    min-height: 100%;
+
+}
 
 
 body {
 
-    min-height:100vh;
+    min-height: 100vh;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     background:
 
-    radial-gradient(
-        circle,
-        var(--violet-fond),
-        var(--noir-outremonde)
-    );
+        /* Lueur violette */
 
+        radial-gradient(
+            circle at top,
+            rgba(var(--violet-rgb), 0.18),
+            transparent 45%
+        ),
 
-    color:white;
+        /* Fond principal */
 
-    font-family:
-    var(--police-texte);
+        radial-gradient(
+            circle at center,
+            var(--fond-violet) 0%,
+            var(--fond-principal) 70%
+        );
+
+    color: var(--texte);
 
 }
 
 
-/* Liens du site */
+/* =========================================================
+   LIENS
+   ========================================================= */
 
 a {
 
@@ -86,32 +212,71 @@ a {
 }
 
 
-/* Titres communs */
+/* =========================================================
+   TITRES
+   ========================================================= */
 
 h1,
 h2,
 h3 {
 
     font-family:
-    var(--police-titre);
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-weight: normal;
 
 }
 
 
-/* Sélection de texte */
+h1 {
+
+    color: var(--parchemin-clair);
+
+    text-shadow:
+
+        0 3px 8px
+        var(--ombre);
+
+}
+
+
+h2 {
+
+    color: var(--texte);
+
+}
+
+
+h3 {
+
+    color: var(--parchemin);
+
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+p {
+
+    color: var(--texte-secondaire);
+
+    line-height: 1.7;
+
+}
+
+
+/* =========================================================
+   SÉLECTION DE TEXTE
+   ========================================================= */
 
 ::selection {
 
-    background:
-    var(--violet-magie);
+    background: var(--violet);
 
-    color:white;
+    color: var(--parchemin-clair);
 
-}
-
-.message-proposition {
-    margin: 20px 0;
-    padding: 15px;
-    text-align: center;
-    font-weight: bold;
 }

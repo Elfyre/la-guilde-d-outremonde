@@ -1,0 +1,196 @@
+/* =========================================================
+   AVENTURIERS
+   FICHES DES MEMBRES DE LA GUILDE
+   ========================================================= */
+
+
+/* =========================================================
+   ENTÊTE DE L'AVENTURIER
+   ========================================================= */
+
+.entete-aventurier {
+
+    width: min(1000px, 92%);
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+
+}
+
+
+.entete-aventurier .embleme {
+
+    margin-bottom: 20px;
+
+}
+
+
+.entete-aventurier h1 {
+
+    margin-bottom: 15px;
+
+}
+
+
+/* =========================================================
+   FICHE AVENTURIER
+   ========================================================= */
+
+.fiche-aventurier {
+
+    width: min(900px, 92%);
+
+    margin: 0 auto 50px;
+
+    display: grid;
+
+    gap: 25px;
+
+}
+
+
+/* =========================================================
+   BLOCS D'INFORMATIONS
+   ========================================================= */
+
+.apropos-aventurier,
+.role-aventurier,
+.expeditions-aventurier {
+
+    padding: 30px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--parchemin-sombre);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(143, 113, 156, 0.10),
+            rgba(0, 0, 0, 0.55)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.30);
+
+}
+
+
+/* =========================================================
+   TITRES DES BLOCS
+   ========================================================= */
+
+.fiche-aventurier h2 {
+
+    margin-bottom: 18px;
+
+    color:
+        var(--parchemin-clair);
+
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+.fiche-aventurier p {
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   RÔLE
+   ========================================================= */
+
+.role-aventurier strong {
+
+    color:
+        var(--parchemin);
+
+}
+
+
+/* =========================================================
+   EXPÉDITIONS
+   ========================================================= */
+
+.expeditions-aventurier ul {
+
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.expeditions-aventurier li {
+
+    padding: 10px 0;
+
+    color:
+        var(--texte-secondaire);
+
+    border-bottom:
+        1px solid rgba(143, 120, 85, 0.18);
+
+}
+
+
+.expeditions-aventurier li:last-child {
+
+    border-bottom: none;
+
+}
+
+
+/* =========================================================
+   RETOUR
+   ========================================================= */
+
+.retour-aventurier {
+
+    width: 100%;
+
+    margin: 45px auto 40px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .fiche-aventurier {
+
+        width: 92%;
+
+    }
+
+
+    .apropos-aventurier,
+    .role-aventurier,
+    .expeditions-aventurier {
+
+        padding: 25px 20px;
+
+    }
+
+}

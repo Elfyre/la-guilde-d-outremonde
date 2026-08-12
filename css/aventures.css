@@ -1,373 +1,438 @@
-/* =====================
-   ENTETE AVENTURE
-===================== */
+/* =========================================================
+   AVENTURES
+   BIBLIOTHÈQUE ET FICHES DES JEUX
+   ========================================================= */
 
+
+/* =========================================================
+   BIBLIOTHÈQUE DES AVENTURES
+   ========================================================= */
+
+.aventures {
+
+    width: min(1000px, 92%);
+
+    margin: 0 auto 50px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+/* =========================================================
+   CARTE D'AVENTURE
+   ========================================================= */
+
+.aventure {
+
+    padding: 30px;
+
+    text-align: center;
+
+    border:
+        1px solid var(--parchemin-sombre);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(143, 113, 156, 0.12),
+            rgba(0, 0, 0, 0.60)
+        );
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.30);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.aventure:hover {
+
+    transform:
+        translateY(-6px);
+
+    box-shadow:
+        0 12px 30px rgba(143, 113, 156, 0.25);
+
+}
+
+
+/* =========================================================
+   ICÔNE
+   ========================================================= */
+
+.aventure span {
+
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 55px;
+
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.aventure h2 {
+
+    margin-bottom: 15px;
+
+    color:
+        var(--parchemin-clair);
+
+}
+
+
+/* =========================================================
+   BOUTON DES AVENTURES
+   ========================================================= */
+
+.aventure .bouton {
+
+    margin-top: 20px;
+
+}
+
+
+/* =========================================================
+   ENTÊTE D'UNE FICHE AVENTURE
+   ========================================================= */
 
 .entete-aventure {
 
-    text-align:center;
+    width: min(1000px, 92%);
 
-    margin-bottom:40px;
+    margin: 0 auto 45px;
+
+    text-align: center;
 
 }
 
 
 .entete-aventure .embleme {
 
-    text-align:center;
+    margin-bottom: 20px;
 
 }
 
 
+/* =========================================================
+   IMAGE DE L'AVENTURE
+   ========================================================= */
 
-/* =====================
-   FICHE AVENTURE
-===================== */
+.image-aventure {
 
+    display: block;
+
+    width: 250px;
+    height: 250px;
+
+    margin: 0 auto 30px;
+
+    object-fit: contain;
+
+    border:
+        1px solid var(--parchemin-sombre);
+
+    background:
+        rgba(0, 0, 0, 0.40);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* =========================================================
+   FICHE DÉTAILLÉE
+   ========================================================= */
 
 .fiche-aventure {
 
-    max-width:1000px;
+    width: min(1000px, 92%);
 
-    margin:auto;
+    margin: 0 auto 50px;
 
-    display:grid;
+    display: grid;
 
-    gap:30px;
+    gap: 25px;
 
 }
 
 
-
-
+/* =========================================================
+   BLOCS DE LA FICHE
+   ========================================================= */
 
 .info-aventure,
 .histoire-aventure,
 .objectifs-aventure,
 .details-aventure {
 
+    padding: 30px;
 
-    padding:35px;
-
-
-    text-align:center;
-
-
-    border-radius:25px;
-
+    text-align: center;
 
     border:
-
-    2px solid var(--or-guilde);
-
-
+        1px solid var(--parchemin-sombre);
 
     background:
 
-    linear-gradient(
-
-        145deg,
-
-        rgba(212,175,55,0.15),
-
-        rgba(0,0,0,0.75)
-
-    );
-
-
+        linear-gradient(
+            145deg,
+            rgba(143, 113, 156, 0.10),
+            rgba(0, 0, 0, 0.55)
+        );
 
     box-shadow:
-
-    0 0 30px rgba(212,175,55,0.25);
+        0 8px 25px rgba(0, 0, 0, 0.30);
 
 }
 
 
-
-
+/* =========================================================
+   TITRES DES BLOCS
+   ========================================================= */
 
 .fiche-aventure h2 {
 
+    margin-bottom: 18px;
+
     color:
-
-    var(--or-lumiere);
-
-
-
-    margin-bottom:20px;
-
-
-    font-size:30px;
+        var(--parchemin-clair);
 
 }
 
 
-
-
+/* =========================================================
+   TEXTE
+   ========================================================= */
 
 .fiche-aventure p {
 
-    color:
+    max-width: 750px;
 
-    var(--gris-texte);
+    margin: 0 auto;
 
-
-
-    font-size:18px;
-
-
-    line-height:1.7;
+    line-height: 1.8;
 
 }
 
 
-
-
+/* =========================================================
+   OBJECTIFS
+   ========================================================= */
 
 .objectifs-aventure ul {
 
-    list-style:none;
+    max-width: 700px;
 
+    margin: 0 auto;
 
-    padding:0;
+    padding: 0;
+
+    list-style: none;
 
 }
-
-
-
 
 
 .objectifs-aventure li {
 
-    margin:15px 0;
+    padding: 10px 0;
 
+    color:
+        var(--texte-secondaire);
 
-    padding-left:25px;
-
-
-    color:white;
-
-}
-
-
-
-
-
-.objectifs-aventure li::before {
-
-    content:"⚔️";
-
-
-    margin-right:10px;
+    border-bottom:
+        1px solid rgba(143, 120, 85, 0.18);
 
 }
 
 
+.objectifs-aventure li:last-child {
+
+    border-bottom: none;
+
+}
 
 
+/* =========================================================
+   INFORMATIONS IMPORTANTES
+   ========================================================= */
 
 .details-aventure strong,
 .info-aventure strong {
 
     color:
-
-    var(--or-lumiere);
-
-}
-
-
-
-
-
-/* =====================
-   IMAGE AVENTURE
-===================== */
-
-
-.image-aventure {
-
-    width:250px;
-
-    height:250px;
-
-    object-fit:contain;
-
-
-
-    border-radius:20px;
-
-
-
-    border:
-
-    3px solid var(--or-guilde);
-
-
-
-    box-shadow:
-
-    0 0 25px var(--orange-magie),
-
-    0 0 50px var(--violet-magie);
-
-
-
-    margin-bottom:30px;
-
-
-    background:
-
-    rgba(0,0,0,0.4);
+        var(--parchemin);
 
 }
 
 
-
-
-
-/* =====================
-   SOUVENIRS AVENTURE
-===================== */
-
+/* =========================================================
+   SOUVENIRS
+   ========================================================= */
 
 .souvenirs-aventure {
 
+    padding: 30px;
 
-    padding:35px;
-
-
-    text-align:center;
-
-
-    border-radius:25px;
-
-
+    text-align: center;
 
     border:
-
-    2px solid var(--violet-magie);
-
-
+        1px solid var(--accent-sombre);
 
     background:
 
-    linear-gradient(
-
-        145deg,
-
-        rgba(124,58,237,0.15),
-
-        rgba(0,0,0,0.75)
-
-    );
-
-
+        linear-gradient(
+            145deg,
+            rgba(143, 113, 156, 0.12),
+            rgba(0, 0, 0, 0.60)
+        );
 
     box-shadow:
-
-    0 0 30px rgba(124,58,237,0.25);
+        0 8px 25px rgba(0, 0, 0, 0.30);
 
 }
-
-
-
 
 
 .souvenirs-aventure h2 {
 
-    color:
+    margin-bottom: 18px;
 
-    var(--or-lumiere);
+    color:
+        var(--parchemin-clair);
 
 }
 
 
-
-
+/* =========================================================
+   LIENS DES SOUVENIRS
+   ========================================================= */
 
 .liens-souvenirs {
 
+    display: flex;
 
-    display:flex;
+    justify-content: center;
 
+    align-items: center;
 
-    justify-content:center;
+    flex-wrap: wrap;
 
+    gap: 15px;
 
-    align-items:center;
-
-
-    gap:20px;
-
-
-    flex-wrap:wrap;
-
-
-    margin-top:25px;
+    margin-top: 25px;
 
 }
-
-
-
 
 
 .liens-souvenirs a {
 
-
-    padding:15px 25px;
-
-
-
-    border-radius:30px;
-
-
+    padding: 12px 22px;
 
     border:
-
-    2px solid var(--or-guilde);
-
-
+        1px solid var(--parchemin-sombre);
 
     background:
+        rgba(0, 0, 0, 0.40);
 
-    rgba(0,0,0,0.5);
-
-
-
-    transition:0.3s;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 
 }
-
-
-
 
 
 .liens-souvenirs a:hover {
 
-
-    transform:scale(1.05);
-
-
+    transform:
+        translateY(-3px);
 
     box-shadow:
-
-    0 0 20px var(--orange-magie);
+        0 0 18px rgba(143, 113, 156, 0.35);
 
 }
 
 
-
-
-
-/* =====================
-   RETOUR HALL
-===================== */
-
+/* =========================================================
+   RETOUR
+   ========================================================= */
 
 .retour-aventure {
 
-    text-align:center;
+    width: 100%;
 
-    margin-top:40px;
+    margin: 45px auto 40px;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .aventures {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .aventures {
+
+        width: 92%;
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .fiche-aventure {
+
+        width: 92%;
+
+    }
+
+
+    .info-aventure,
+    .histoire-aventure,
+    .objectifs-aventure,
+    .details-aventure,
+    .souvenirs-aventure {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .image-aventure {
+
+        width: 200px;
+        height: 200px;
+
+    }
 
 }

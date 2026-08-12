@@ -14,7 +14,7 @@ async function testerSupabase() {
 
     const { data, error } = await supabaseClient
         .from('jeux')
-        .select('id, nom');
+        .select('id, nom, statut');
 
     if (error) {
 
@@ -166,6 +166,7 @@ async function obtenirJeuxAvecVotes() {
         jeuxAvecVotes.push({
             id: jeu.id,
             nom: jeu.nom,
+            statut: jeu.statut,
             nombreVotes: nombreVotes,
             dejaVote: dejaVote
         });

@@ -1,0 +1,69 @@
+/* =====================
+   RESPONSIVE
+===================== */
+
+
+/* =====================
+   TABLETTE
+   769px à 1024px
+===================== */
+
+@media (max-width:1024px) {
+
+    /* Global */
+
+    /* Portail */
+
+    /* Hall */
+
+    /* Planning */
+
+    /* Expéditions */
+
+    /* Aventures */
+
+}
+
+
+/* =====================
+   TELEPHONE
+   481px à 768px
+===================== */
+
+@media (max-width:768px) {
+
+    /* Global */
+
+    /* Portail */
+
+    /* Hall */
+
+    /* Planning */
+
+    /* Expéditions */
+
+    /* Aventures */
+
+}
+
+
+/* =====================
+   PETIT TELEPHONE
+   Jusqu'à 480px
+===================== */
+
+@media (max-width:480px) {
+
+    /* Global */
+
+    /* Portail */
+
+    /* Hall */
+
+    /* Planning */
+
+    /* Expéditions */
+
+    /* Aventures */
+
+}

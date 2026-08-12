@@ -1,715 +1,673 @@
-/* =====================
-   HALL DE GUILDE
-===================== */
+/* =========================================================
+   HALL DE LA GUILDE
+   ========================================================= */
 
 
-.hall {
+/* =========================================================
+   RÉSEAUX DE LA GUILDE
+   ========================================================= */
 
-    min-height:100vh;
+.reseaux-guilde {
 
-    padding:50px 20px;
+    margin:
+        20px auto 45px;
 
+    display:flex;
 
-    background:
+    justify-content:center;
 
-    radial-gradient(
-        circle at top,
-        var(--violet-fond),
-        var(--noir-outremonde) 70%
-    );
+    align-items:center;
 
-
-    color:white;
-
-}
-
-.entete-guilde {
-
-    text-align:center;
-
-    margin-bottom:60px;
+    gap:18px;
 
 }
 
 
+/* =========================================================
+   BOUTONS DES RÉSEAUX
+   ========================================================= */
 
-.entete-guilde .embleme {
+.reseau {
 
-    font-size:90px;
+    min-width:auto;
 
-    margin-bottom:20px;
+    padding:5px;
 
+    border:none;
 
-    filter:
+    background:transparent;
 
-    drop-shadow(
-        0 0 20px var(--orange-magie)
-    );
+    display:flex;
 
-}
+    align-items:center;
 
-
-
-.entete-guilde h1 {
-
-    font-size:55px;
-
-    color:var(--or-lumiere);
-
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-
-
-    text-shadow:
-
-    0 3px 8px #000,
-    0 0 25px var(--orange-magie);
-
-}
-
-
-
-.entete-guilde p {
-
-    margin-top:20px;
-
-    font-size:22px;
-
-    color:var(--gris-texte);
-
-}
-
-.salles {
-
-    max-width:1000px;
-
-    margin:auto;
-
-
-    display:grid;
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-    gap:30px;
-
-}
-
-/* =====================
-   PORTES DE LA GUILDE
-===================== */
-
-
-.salle {
-
-    position:relative;
-
-    overflow:hidden;
-
-
-    padding:35px;
-
-
-    text-align:center;
-
-
-    border-radius:25px;
-
-
-    border:2px solid var(--or-guilde);
-
-
-    background:
-
-    linear-gradient(
-        145deg,
-        rgba(124,58,237,0.25),
-        rgba(0,0,0,0.85)
-    );
-
-
-    color:white;
-
+    justify-content:center;
 
     transition:
-
-    transform 0.4s ease,
-
-    box-shadow 0.4s ease;
+        transform 0.3s ease,
+        filter 0.3s ease;
 
 }
 
 
+.reseau img {
 
-/* Lumière magique dans la porte */
+    width:38px;
 
+    height:38px;
 
-.salle::before {
-
-    content:"";
-
-
-    position:absolute;
-
-
-    width:160px;
-
-    height:160px;
-
-
-    top:-60px;
-
-    right:-60px;
-
-
-    background:
-
-    radial-gradient(
-        circle,
-        var(--rose-portail),
-        transparent 70%
-    );
-
-
-    opacity:0.5;
-
-
-    filter:blur(10px);
-
-}
-
-
-
-/* Icône */
-
-
-.salle span {
+    object-fit:contain;
 
     display:block;
 
+    filter:
+        drop-shadow(
+            0 0 5px
+            var(--lueur-accent-legere)
+        );
 
-    font-size:60px;
-
-
-    margin-bottom:20px;
-
-
-    position:relative;
-
-}
-
-
-
-/* Titre */
-
-
-.salle h2 {
-
-    position:relative;
-
-
-    color:var(--or-lumiere);
-
-
-    font-size:32px;
-
-
-    margin-bottom:15px;
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
 
 }
 
 
+.reseau:hover {
 
-/* Description */
+    transform:
+        translateY(-3px);
+
+}
 
 
-.salle p {
+.reseau:hover img {
+
+    transform:
+        scale(1.12);
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            var(--lueur-accent)
+        );
+
+}
+
+
+/* =========================================================
+   CONTENU PRINCIPAL DU HALL
+   ========================================================= */
+
+.hall-principal {
 
     position:relative;
 
+    width:
+        min(1200px, 94%);
 
-    color:var(--gris-texte);
+    margin:
+        0 auto 70px;
 
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+}
+
+
+/* =========================================================
+   AVENTURIERS DE LA GUILDE
+   ========================================================= */
+
+.aventuriers-guilde {
+
+    position:absolute;
+
+    top:15px;
+
+    left:0;
+
+    width:130px;
+
+    margin:0;
+
+}
+
+
+/* =========================================================
+   ENTÊTE DES AVENTURIERS
+   ========================================================= */
+
+.entete-aventuriers {
+
+    margin-bottom:22px;
+
+    text-align:center;
+
+}
+
+
+.entete-aventuriers .embleme {
+
+    display:block;
+
+    margin-bottom:7px;
+
+    font-size:26px;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            var(--lueur-accent-legere)
+        );
+
+}
+
+
+.entete-aventuriers h2 {
+
+    margin:0;
+
+    color:
+        var(--parchemin-clair);
 
     font-size:18px;
 
 }
 
 
+/* =========================================================
+   MASQUER LA DESCRIPTION
+   ========================================================= */
 
-/* Effet ouverture */
+.entete-aventuriers p {
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   LISTE DES AVENTURIERS
+   ========================================================= */
+
+.liste-aventuriers {
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:22px;
+
+}
+
+
+/* =========================================================
+   AVENTURIER
+   ========================================================= */
+
+.aventurier {
+
+    width:100%;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:6px;
+
+    text-align:center;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+
+}
+
+
+/* =========================================================
+   IMAGE — PHOTO DE PROFIL
+   ========================================================= */
+
+.aventurier img {
+
+    width:62px;
+
+    height:62px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    display:block;
+
+    border:
+        2px solid
+        var(--parchemin-sombre);
+
+    padding:2px;
+
+    background:
+        var(--fond-principal);
+
+    box-shadow:
+
+        0 0 8px
+        var(--lueur-accent-legere),
+
+        0 0 15px
+        rgba(216, 194, 154, 0.15);
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            var(--lueur-accent-legere)
+        );
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        filter 0.3s ease;
+
+}
+
+
+/* =========================================================
+   NOM
+   ========================================================= */
+
+.aventurier span {
+
+    color:
+        var(--parchemin);
+
+    font-size:15px;
+
+    transition:
+        color 0.3s ease;
+
+}
+
+
+/* =========================================================
+   MASQUER LES DESCRIPTIONS
+   ========================================================= */
+
+.aventurier p {
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   EFFET AU SURVOL
+   ========================================================= */
+
+.aventurier:hover {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.aventurier:hover img {
+
+    transform:
+        scale(1.08);
+
+    border-color:
+        var(--parchemin);
+
+    box-shadow:
+
+        0 0 10px
+        var(--lueur-accent),
+
+        0 0 20px
+        rgba(216, 194, 154, 0.20);
+
+    filter:
+        drop-shadow(
+            0 0 8px
+            var(--lueur-accent)
+        );
+
+}
+
+
+.aventurier:hover span {
+
+    color:
+        var(--parchemin-clair);
+
+}
+
+
+/* =========================================================
+   PORTES DU HALL
+   ========================================================= */
+
+.salles {
+
+    width:
+        680px;
+
+    margin:
+        0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:24px;
+
+}
+
+
+/* =========================================================
+   CARTE — SALLE
+   ========================================================= */
+
+.salle {
+
+    position:relative;
+
+    width:100%;
+
+    aspect-ratio:1 / 1;
+
+    padding:
+        25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+
+        linear-gradient(
+            145deg,
+
+            var(--surface-violette),
+
+            var(--surface-noire)
+        );
+
+    box-shadow:
+        0 8px 25px
+        var(--ombre-moyenne);
+
+    overflow:hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
 
 
 .salle:hover {
 
-
     transform:
+        translateY(-5px);
 
-    translateY(-10px)
-
-    scale(1.03);
-
+    border-color:
+        var(--parchemin);
 
     box-shadow:
 
-    0 0 25px var(--or-guilde),
+        0 12px 30px
+        var(--ombre-forte),
 
-    0 0 50px var(--violet-magie);
-
-}
-
-
-/* =====================
-   AMELIORATION DES PORTES
-===================== */
-
-
-.salle {
-
-    backdrop-filter: blur(10px);
+        0 0 22px
+        var(--lueur-accent-legere);
 
 }
 
 
-
-.salle::after {
-
-    content:"";
-
-
-    position:absolute;
-
-
-    inset:0;
-
-
-    background:
-
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.15),
-        transparent
-    );
-
-
-    transform:
-    translateX(-100%);
-
-
-    transition:
-    transform 0.6s ease;
-
-}
-
-
-
-.salle:hover::after {
-
-
-    transform:
-    translateX(100%);
-
-}
-
-
-
-.salle:hover span {
-
-
-    transform:
-    scale(1.2);
-
-
-    filter:
-
-    drop-shadow(
-        0 0 20px var(--orange-magie)
-    );
-
-}
-
-
+/* =========================================================
+   EMBLÈME DE LA SALLE
+   ========================================================= */
 
 .salle span {
 
-
-    transition:
-
-    transform 0.4s ease;
-
-}
-
-
-/* =====================
-   PAGES INTERIEURES
-===================== */
-
-
-.salle-page {
-
-    min-height:100vh;
-
-    padding:50px 20px;
-
-    text-align:center;
-
-
-    background:
-
-    radial-gradient(
-        circle at top,
-        var(--violet-fond),
-        var(--noir-outremonde)
-    );
-
-}
-
-
-
-.entete-salle {
-
-    margin-bottom:60px;
-
-}
-
-
-
-.entete-salle .embleme {
-
-    font-size:80px;
-
-}
-
-
-
-.entete-salle h1 {
-
-    margin-top:20px;
-
-}
-
-
-
-.planning {
-
-    max-width:900px;
-
-    max-width:90%;
-
-    margin:0 auto 50px;
-
-    grid-template-columns:repeat(7, 1fr);
-
-    display:grid;
-
-    gap:25px;
-
-}
-
-
-.mission {
-
-    padding:30px;
-
-
-    border-radius:20px;
-
-
-    border:2px solid var(--or-guilde);
-
-
-    background:
-
-    rgba(0,0,0,0.5);
-
-
-    box-shadow:
-
-    0 0 25px rgba(212,175,55,0.3);
-
-}
-
-
-/* =====================
-   SALLE DES QUÊTES
-===================== */
-
-
-.quetes {
-
-    max-width:900px;
-
-    margin:auto;
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-    gap:30px;
-
-}
-
-
-
-.quete {
-
-    padding:35px;
-
-
-    border-radius:25px;
-
-
-    border:
-
-    2px solid var(--violet-magie);
-
-
-    background:
-
-    rgba(0,0,0,0.5);
-
-
-    box-shadow:
-
-    0 0 25px rgba(124,58,237,0.4);
-
-
-    transition:
-
-    transform 0.3s ease;
-
-}
-
-
-
-.quete:hover {
-
-    transform:
-
-    translateY(-8px);
-
-
-    box-shadow:
-
-    0 0 35px var(--rose-portail);
-
-}
-
-
-
-.quete h2 {
-
-    color:
-
-    var(--or-lumiere);
-
-
-    margin-bottom:20px;
-
-}
-
-
-/* =====================
-   SALLE DES ARCHIVES
-===================== */
-
-
-.archives {
-
-    max-width:1000px;
-
-    margin:auto;
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-    gap:30px;
-
-}
-
-
-
-.archive {
-
-    padding:35px;
-
-
-    border-radius:25px;
-
-
-    border:
-
-    2px solid var(--or-guilde);
-
-
-    background:
-
-    linear-gradient(
-        145deg,
-        rgba(212,175,55,0.15),
-        rgba(0,0,0,0.7)
-    );
-
-
-    box-shadow:
-
-    0 0 25px rgba(212,175,55,0.25);
-
-
-    transition:
-
-    transform 0.3s ease;
-
-}
-
-
-
-.archive:hover {
-
-    transform:
-
-    translateY(-10px);
-
-
-    box-shadow:
-
-    0 0 40px var(--orange-magie);
-
-}
-
-
-
-.archive span {
-
     display:block;
 
+    margin-bottom:12px;
 
-    font-size:60px;
-
-
-    margin-bottom:20px;
+    font-size:42px;
 
 }
 
 
+/* =========================================================
+   TITRE DE LA SALLE
+   ========================================================= */
 
-.archive h2 {
+.salle h2 {
+
+    margin-bottom:9px;
 
     color:
+        var(--parchemin-clair);
 
-    var(--or-lumiere);
-
-}
-
-
-/* =====================
-   BIBLIOTHEQUE DES AVENTURES
-===================== */
-
-
-.aventures {
-
-    max-width:1000px;
-
-    margin:auto;
-
-
-    display:grid;
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-    gap:30px;
+    font-size:23px;
 
 }
 
 
+/* =========================================================
+   DESCRIPTION DE LA SALLE
+   ========================================================= */
 
-.aventure {
+.salle p {
 
-    padding:35px;
-
-
-    border-radius:25px;
-
-
-    border:
-
-    2px solid var(--violet-magie);
-
-
-    background:
-
-    linear-gradient(
-        145deg,
-        rgba(124,58,237,0.25),
-        rgba(0,0,0,0.8)
-    );
-
-
-    box-shadow:
-
-    0 0 25px rgba(124,58,237,0.35);
-
-
-    transition:
-
-    transform 0.3s ease;
-
-}
-
-
-
-.aventure:hover {
-
-    transform:
-
-    translateY(-10px);
-
-
-    box-shadow:
-
-    0 0 40px var(--rose-portail);
-
-}
-
-
-
-.aventure span {
-
-    display:block;
-
-
-    font-size:60px;
-
-
-    margin-bottom:20px;
-
-}
-
-
-
-.aventure h2 {
+    max-width:230px;
 
     color:
+        var(--texte-secondaire);
 
-    var(--or-lumiere);
+    line-height:1.6;
+
+    font-size:14px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — ÉCRANS MOYENS
+   ========================================================= */
+
+@media (max-width:1050px) {
+
+    .hall-principal {
+
+        width:
+            min(900px, 92%);
+
+    }
+
+
+    .aventuriers-guilde {
+
+        position:relative;
+
+        top:auto;
+
+        left:auto;
+
+        width:100%;
+
+        margin:
+            0 auto 35px;
+
+        order:1;
+
+    }
+
+
+    .hall-principal {
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+
+    .salles {
+
+        order:2;
+
+    }
+
+
+    .liste-aventuriers {
+
+        flex-direction:row;
+
+        justify-content:center;
+
+        gap:35px;
+
+    }
+
+
+    .aventurier {
+
+        width:auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media (max-width:800px) {
+
+    .salles {
+
+        width:
+            min(600px, 92%);
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .salle {
+
+        aspect-ratio:auto;
+
+        min-height:280px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width:550px) {
+
+    .reseaux-guilde {
+
+        gap:14px;
+
+        margin-bottom:35px;
+
+    }
+
+
+    .reseau img {
+
+        width:32px;
+
+        height:32px;
+
+    }
+
+
+    .liste-aventuriers {
+
+        gap:20px;
+
+    }
+
+
+    .aventurier img {
+
+        width:55px;
+
+        height:55px;
+
+    }
+
+
+    .aventurier span {
+
+        font-size:14px;
+
+    }
+
+
+    .salles {
+
+        width:
+            92%;
+
+    }
+
+
+    .salle {
+
+        min-height:250px;
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .salle span {
+
+        font-size:40px;
+
+    }
+
+
+    .salle h2 {
+
+        font-size:22px;
+
+    }
 
 }

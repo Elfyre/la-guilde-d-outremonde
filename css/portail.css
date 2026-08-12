@@ -1,11 +1,20 @@
-/* =====================
-   PORTAIL D'ENTRÉE
-===================== */
+/* =========================================================
+   PORTAIL
+   PORTAIL DIMENSIONNEL DE L'OUTREMONDE
+   ========================================================= */
 
 
-.portail {
+/* =========================================================
+   PAGE D'ACCUEIL
+   ========================================================= */
 
-    height:100vh;
+.page-portail {
+
+    position:relative;
+
+    width:100%;
+
+    min-height:100vh;
 
     display:flex;
 
@@ -13,53 +22,101 @@
 
     align-items:center;
 
-    position:relative;
+    overflow:hidden;
 
 }
 
 
+/* =========================================================
+   CONTENEUR DU PORTAIL
+   ========================================================= */
 
-/* Portail magique */
+.portail {
 
+    position:relative;
+
+    width:min(760px, 90%);
+
+    min-height:520px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:60px 40px;
+
+    z-index:1;
+
+}
+
+
+/* =========================================================
+   HALO GLOBAL
+   ========================================================= */
 
 .energie-portail {
 
     position:absolute;
 
-    width:450px;
+    top:50%;
+    left:50%;
 
-    height:450px;
+    width:430px;
+    height:430px;
+
+    transform:
+        translate(-50%, -50%);
 
     border-radius:50%;
 
+    background:
+
+        radial-gradient(
+            circle,
+
+            #08070a 0%,
+
+            #100d14 40%,
+
+            #24152f 57%,
+
+            #54266b 69%,
+
+            #8f719c 76%,
+
+            transparent 83%
+        );
 
     box-shadow:
 
-    0 0 50px #7c3aed,
-    0 0 100px #ec4899,
-    0 0 150px #ff8c42;
+        0 0 20px
+        rgba(var(--violet-rgb), 0.45),
 
+        0 0 45px
+        rgba(var(--violet-rgb), 0.40),
 
-    background:
+        0 0 80px
+        rgba(var(--rose-rgb), 0.28),
 
-    radial-gradient(
-        circle,
-        #ffb000,
-        #ec4899,
-        #7c3aed,
-        transparent 70%
-    );
-
-
-    filter:blur(20px);
-
+        0 0 120px
+        rgba(var(--accent-rgb), 0.20);
 
     animation:
-    magie 4s infinite alternate;
+        portail-pulsation 6s
+        infinite ease-in-out;
 
 }
 
 
+/* =========================================================
+   ANNEAU ÉNERGÉTIQUE ROSE / VIOLET
+   ========================================================= */
 
 .energie-portail::before {
 
@@ -67,142 +124,742 @@
 
     position:absolute;
 
-    inset:40px;
+    inset:24px;
 
     border-radius:50%;
 
-
-    border:3px solid var(--or-guilde);
-
+    border:
+        2px solid
+        rgba(var(--rose-rgb), 0.80);
 
     box-shadow:
 
-    0 0 30px var(--or-guilde);
+        0 0 8px
+        rgba(var(--rose-rgb), 0.80),
 
+        0 0 20px
+        rgba(var(--rose-rgb), 0.65),
+
+        0 0 40px
+        rgba(var(--violet-rgb), 0.60),
+
+        inset 0 0 15px
+        rgba(var(--rose-rgb), 0.45),
+
+        inset 0 0 35px
+        rgba(var(--violet-rgb), 0.35);
 
     animation:
-    rotation 8s linear infinite;
+        portail-rotation 16s
+        linear infinite;
 
 }
 
 
+/* =========================================================
+   ANNEAU DU SCEAU ANCIEN
+   ========================================================= */
 
-/* Contenu central */
+.energie-portail::after {
 
+    content:"";
+
+    position:absolute;
+
+    inset:48px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(var(--parchemin-rgb), 0.65);
+
+    box-shadow:
+
+        0 0 12px
+        rgba(var(--parchemin-rgb), 0.30),
+
+        inset 0 0 15px
+        rgba(var(--parchemin-rgb), 0.15);
+
+    animation:
+        portail-sceau 24s
+        linear infinite reverse;
+
+}
+
+
+/* =========================================================
+   CŒUR DU PORTAIL
+   DOUBLE FILAMENT — TRÈS LARGE + CHEVAUCHEMENT
+   ========================================================= */
+
+.portail::before {
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:340px;
+    height:340px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:50%;
+
+    background:
+
+        /* =================================================
+           FILAMENT ROSE
+           ================================================= */
+
+        conic-gradient(
+            from 0deg,
+
+            transparent 0deg,
+
+            rgba(var(--rose-rgb), 0.08) 8deg,
+
+            rgba(var(--rose-rgb), 0.18) 18deg,
+
+            rgba(var(--rose-rgb), 0.35) 32deg,
+
+            rgba(var(--rose-rgb), 0.58) 50deg,
+
+            rgba(var(--rose-rgb), 0.78) 72deg,
+
+            rgba(var(--rose-rgb), 0.90) 92deg,
+
+            rgba(var(--rose-rgb), 0.78) 112deg,
+
+            rgba(var(--rose-rgb), 0.58) 132deg,
+
+            rgba(var(--rose-rgb), 0.48) 148deg,
+
+            rgba(var(--rose-rgb), 0.38) 162deg,
+
+            rgba(var(--rose-rgb), 0.30) 175deg,
+
+            rgba(var(--rose-rgb), 0.24) 188deg,
+
+            rgba(var(--rose-rgb), 0.18) 200deg,
+
+            rgba(var(--rose-rgb), 0.12) 212deg,
+
+            rgba(var(--rose-rgb), 0.08) 225deg,
+
+            rgba(var(--rose-rgb), 0.04) 235deg,
+
+            transparent 245deg,
+
+            transparent 360deg
+        ),
+
+
+        /* =================================================
+           FILAMENT VIOLET
+           ================================================= */
+
+        conic-gradient(
+            from 180deg,
+
+            transparent 0deg,
+
+            rgba(var(--violet-rgb), 0.08) 8deg,
+
+            rgba(var(--violet-rgb), 0.18) 18deg,
+
+            rgba(var(--violet-rgb), 0.35) 32deg,
+
+            rgba(var(--violet-rgb), 0.58) 50deg,
+
+            rgba(var(--violet-rgb), 0.78) 72deg,
+
+            rgba(var(--violet-rgb), 0.90) 92deg,
+
+            rgba(var(--violet-rgb), 0.78) 112deg,
+
+            rgba(var(--violet-rgb), 0.58) 132deg,
+
+            rgba(var(--violet-rgb), 0.48) 148deg,
+
+            rgba(var(--violet-rgb), 0.38) 162deg,
+
+            rgba(var(--violet-rgb), 0.30) 175deg,
+
+            rgba(var(--violet-rgb), 0.24) 188deg,
+
+            rgba(var(--violet-rgb), 0.18) 200deg,
+
+            rgba(var(--violet-rgb), 0.12) 212deg,
+
+            rgba(var(--violet-rgb), 0.08) 225deg,
+
+            rgba(var(--violet-rgb), 0.04) 235deg,
+
+            transparent 245deg,
+
+            transparent 360deg
+        ),
+
+
+        /* =================================================
+           CŒUR NOIR — DOUX ET DIFFUS
+           ================================================= */
+
+        radial-gradient(
+            circle,
+
+            #000000 0%,
+
+            #000000 10%,
+
+            rgba(0,0,0,0.98) 16%,
+
+            rgba(3,2,6,0.90) 23%,
+
+            rgba(7,4,12,0.65) 31%,
+
+            rgba(12,6,18,0.38) 40%,
+
+            rgba(24,9,31,0.18) 50%,
+
+            transparent 62%
+        );
+
+
+    /* =====================================================
+       PROFONDEUR ET LUEUR
+       ===================================================== */
+
+    box-shadow:
+
+        inset 0 0 35px
+        rgba(0,0,0,0.95),
+
+        inset 0 0 70px
+        rgba(0,0,0,0.65),
+
+        inset 0 0 100px
+        rgba(var(--violet-rgb), 0.10),
+
+        0 0 20px
+        rgba(var(--violet-rgb), 0.30),
+
+        0 0 45px
+        rgba(var(--rose-rgb), 0.16);
+
+    filter:
+        blur(0.6px);
+
+    z-index:0;
+
+    animation:
+        double-filament-rotation
+        10s
+        linear
+        infinite;
+
+}
+
+
+/* =========================================================
+   ROTATION ANTI-HORAIRE
+   ========================================================= */
+
+@keyframes double-filament-rotation {
+
+    from {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(-360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   PARTICULES EXTÉRIEURES
+   ========================================================= */
+
+.portail::after {
+
+    content:"";
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:470px;
+    height:470px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle at 8% 35%,
+            rgba(var(--rose-rgb), 0.90) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 17% 72%,
+            rgba(var(--parchemin-rgb), 0.85) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 27% 12%,
+            rgba(var(--violet-rgb), 0.90) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 34% 91%,
+            rgba(var(--rose-rgb), 0.75) 0 1.5px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 48% 5%,
+            rgba(var(--parchemin-rgb), 0.80) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 61% 94%,
+            rgba(var(--violet-rgb), 0.85) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 73% 15%,
+            rgba(var(--rose-rgb), 0.85) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 82% 68%,
+            rgba(var(--parchemin-rgb), 0.75) 0 1.5px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 94% 39%,
+            rgba(var(--violet-rgb), 0.90) 0 2px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 70% 48%,
+            rgba(var(--rose-rgb), 0.60) 0 1px,
+            transparent 3px
+        ),
+
+        radial-gradient(
+            circle at 31% 52%,
+            rgba(var(--parchemin-rgb), 0.65) 0 1px,
+            transparent 3px
+        );
+
+    opacity:0.85;
+
+    filter:
+        drop-shadow(
+            0 0 5px
+            rgba(var(--rose-rgb), 0.60)
+        );
+
+    z-index:1;
+
+    animation:
+        particules-portail 12s
+        linear infinite;
+
+}
+
+
+/* =========================================================
+   AURA DE L'EMBLÈME
+   ========================================================= */
+
+.aura-embleme {
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    width:150px;
+    height:150px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+
+            rgba(var(--parchemin-rgb), 0.30) 0%,
+
+            rgba(184,154,196,0.30) 25%,
+
+            rgba(var(--rose-rgb), 0.18) 45%,
+
+            rgba(var(--violet-rgb), 0.15) 60%,
+
+            transparent 75%
+        );
+
+    filter:
+        blur(18px);
+
+    opacity:0.75;
+
+    z-index:-1;
+
+    animation:
+        portail-aura 4s
+        infinite ease-in-out alternate;
+
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
 
 .accueil {
 
     position:relative;
 
-    text-align:center;
+    z-index:5;
 
-    z-index:2;
+    text-align:center;
 
 }
 
 
+/* =========================================================
+   EMBLÈME
+   ========================================================= */
 
-/* Emblème */
-
-
-.embleme {
+.accueil .embleme {
 
     position:relative;
+
+    z-index:6;
 
     font-size:90px;
 
     margin-bottom:20px;
 
-
     filter:
 
-    drop-shadow(0 0 20px var(--orange-magie));
+        drop-shadow(
+            0 0 10px
+            rgba(var(--parchemin-rgb), 0.80)
+        )
+
+        drop-shadow(
+            0 0 25px
+            rgba(var(--rose-rgb), 0.35)
+        )
+
+        drop-shadow(
+            0 0 40px
+            rgba(var(--violet-rgb), 0.30)
+        );
 
 }
 
 
-
-.aura-embleme {
-
-
-    position:absolute;
-
-    width:120px;
-
-    height:120px;
-
-
-    background:
-
-    radial-gradient(
-        circle,
-        var(--or-guilde),
-        var(--violet-magie),
-        transparent 70%
-    );
-
-
-    border-radius:50%;
-
-
-    top:50%;
-
-    left:50%;
-
-
-    transform:
-
-    translate(-50%, -50%);
-
-
-    z-index:-1;
-
-
-    filter:blur(15px);
-
-
-    animation:
-
-    pulse 3s infinite alternate;
-
-}
-
-
-
-/* Titre */
-
-
-.accueil h1 {
-
-    font-size:60px;
-
-    color:var(--or-lumiere);
-
-    text-transform:uppercase;
-
-    letter-spacing:3px;
-
-
-    text-shadow:
-
-    0 3px 8px #000,
-    0 0 20px #000,
-    0 0 35px var(--orange-magie),
-    0 0 60px var(--violet-magie);
-
-}
-
-
-
-/* Citation */
-
+/* =========================================================
+   CITATION
+   ========================================================= */
 
 .citation {
+
+    position:relative;
+
+    z-index:6;
 
     margin-top:25px;
 
     font-size:22px;
 
-    color:#f5f5f5;
+    color:
+        var(--parchemin-clair);
+
+    text-shadow:
+
+        0 2px 8px
+        rgba(0,0,0,0.95),
+
+        0 0 10px
+        rgba(0,0,0,0.90);
+
+}
+
+
+/* =========================================================
+   ANIMATION — PULSATION
+   ========================================================= */
+
+@keyframes portail-pulsation {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.96);
+
+        opacity:0.70;
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.03);
+
+        opacity:0.90;
+
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.96);
+
+        opacity:0.70;
+
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATION — ANNEAU
+   ========================================================= */
+
+@keyframes portail-rotation {
+
+    from {
+
+        transform:
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATION — SCEAU
+   ========================================================= */
+
+@keyframes portail-sceau {
+
+    from {
+
+        transform:
+            rotate(-25deg);
+
+    }
+
+    to {
+
+        transform:
+            rotate(335deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATION — VORTEX
+   ========================================================= */
+
+@keyframes vortex-rotation {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            scale(1);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(180deg)
+            scale(1.035);
+
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATION — PARTICULES
+   ========================================================= */
+
+@keyframes particules-portail {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            scale(1);
+
+        opacity:0.65;
+
+    }
+
+    50% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(180deg)
+            scale(1.04);
+
+        opacity:1;
+
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg)
+            scale(1);
+
+        opacity:0.65;
+
+    }
+
+}
+
+
+/* =========================================================
+   ANIMATION — AURA
+   ========================================================= */
+
+@keyframes portail-aura {
+
+    0% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.85);
+
+        opacity:0.45;
+
+    }
+
+    100% {
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity:0.85;
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width:600px) {
+
+    .portail {
+
+        min-height:420px;
+
+        padding:
+            40px 20px;
+
+    }
+
+
+    .energie-portail {
+
+        width:320px;
+        height:320px;
+
+    }
+
+
+    .portail::before {
+
+        width:250px;
+        height:250px;
+
+    }
+
+
+    .portail::after {
+
+        width:350px;
+        height:350px;
+
+    }
+
+
+    .accueil .embleme {
+
+        font-size:70px;
+
+    }
 
 }

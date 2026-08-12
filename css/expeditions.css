@@ -1,250 +1,262 @@
-/* =====================
-   PAGE EXPEDITIONS
-===================== */
+/* =========================================================
+   EXPÉDITIONS
+   PROGRAMMÉES • EN COURS • TERMINÉES
+   ========================================================= */
 
 
-/* =====================
-   ENTETE EXPEDITIONS
-===================== */
+/* =========================================================
+   ENTÊTE DES EXPÉDITIONS
+   ========================================================= */
 
 .entete-expeditions {
 
-    width:100%;
+    width: min(1100px, 92%);
 
-    text-align:center;
+    margin: 0 auto 55px;
 
-    margin:0 auto 60px;
+    text-align: center;
 
 }
 
 
 .entete-expeditions .embleme {
 
-    text-align:center;
-
-    margin:0 auto 20px;
+    margin-bottom: 20px;
 
 }
 
 
 .entete-expeditions h1 {
 
-    text-align:center;
-
-    margin:0 auto 20px;
+    margin-bottom: 18px;
 
 }
 
 
 .entete-expeditions p {
 
-    text-align:center;
+    max-width: 650px;
 
-    margin:0 auto;
+    margin: 0 auto;
 
 }
 
 
-
-/* =====================
-   LISTE EXPEDITIONS
-===================== */
+/* =========================================================
+   LISTE DES EXPÉDITIONS
+   ========================================================= */
 
 .liste-expeditions {
 
-    width:900px;
+    width: min(1100px, 92%);
 
-    max-width:90%;
+    margin: 0 auto 60px;
 
-    margin:0 auto 50px;
+    display: grid;
 
-    display:grid;
+    grid-template-columns:
+        repeat(3, 1fr);
 
-    grid-template-columns:repeat(3, 1fr);
-
-    gap:25px;
+    gap: 30px;
 
 }
 
 
-
-/* =====================
-   CARTE AVENTURE
-===================== */
+/* =========================================================
+   CARTE D'EXPÉDITION
+   ========================================================= */
 
 .carte-aventure {
 
-    padding:20px;
+    min-width: 0;
 
-    text-align:center;
+    padding: 30px;
 
-    border-radius:25px;
+    text-align: center;
 
     border:
-    2px solid var(--or-guilde);
+        1px solid var(--parchemin-sombre);
 
     background:
-    linear-gradient(
-        145deg,
-        rgba(212,175,55,0.15),
-        rgba(0,0,0,0.75)
-    );
+
+        linear-gradient(
+            145deg,
+            rgba(143, 113, 156, 0.10),
+            rgba(0, 0, 0, 0.55)
+        );
 
     box-shadow:
-    0 0 25px rgba(212,175,55,0.25);
+        0 8px 25px rgba(0, 0, 0, 0.30);
 
-    transition:0.3s;
+    transition:
+
+        transform 0.3s ease,
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease;
 
 }
 
 
 .carte-aventure:hover {
 
-    transform:translateY(-8px);
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--parchemin);
 
     box-shadow:
-    0 0 35px rgba(255,140,66,0.5);
+
+        0 12px 30px rgba(0, 0, 0, 0.40),
+
+        0 0 20px rgba(143, 113, 156, 0.20);
 
 }
 
 
-
-/* =====================
-   IMAGE / ICONE JEU
-===================== */
+/* =========================================================
+   IMAGE DE L'EXPÉDITION
+   ========================================================= */
 
 .carte-aventure img {
 
-    width:100%;
+    display: block;
 
-    height:130px;
+    width: 100%;
 
-    object-fit:contain;
+    height: 150px;
 
-    border-radius:15px;
+    margin: 0 auto 20px;
 
-    border:
-    2px solid var(--or-guilde);
-
-    background:
-    rgba(0,0,0,0.4);
+    object-fit: contain;
 
 }
 
 
-.icone-aventure {
-
-    font-size:55px;
-
-    margin-bottom:15px;
-
-}
-
-.image-planning img{
-
-    width: 130px;;
-
-    height:130px;
-
-    object-fit:contain;
-
-
-
-}
-
-/* =====================
-   TITRE
-===================== */
-
-.carte-aventure h2 {
-
-    color:
-    var(--or-lumiere);
-
-    font-size:24px;
-
-    margin:15px 0;
-
-}
-
-
-
-/* =====================
-   TITRE + BADGE LMC
-===================== */
+/* =========================================================
+   TITRE + BADGE
+   ========================================================= */
 
 .titre-aventure {
 
-    display:flex;
+    display: flex;
 
-    justify-content:center;
+    justify-content: center;
 
-    align-items:center;
+    align-items: center;
 
-    gap:10px;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
 
 }
 
 
 .titre-aventure h2 {
 
-    margin:15px 0;
+    margin: 0;
+
+    color:
+        var(--parchemin-clair);
 
 }
 
+
+/* =========================================================
+   BADGE LMC
+   ========================================================= */
 
 .badge-lmc {
 
-    padding:5px 10px;
+    display: inline-block;
 
-    border-radius:20px;
+    padding: 5px 10px;
 
     border:
-    1px solid var(--violet-magie);
+        1px solid var(--accent-sombre);
 
     background:
-    rgba(124,58,237,0.2);
+        rgba(143, 113, 156, 0.10);
 
     color:
-    var(--or-lumiere);
+        var(--accent-clair);
 
-    font-size:12px;
+    font-size: 11px;
+
+    letter-spacing: 1px;
 
 }
 
 
-
-/* =====================
-   BOUTON
-===================== */
+/* =========================================================
+   BOUTON DANS UNE CARTE
+   ========================================================= */
 
 .carte-aventure .bouton {
 
-    display:inline-block;
-
-    margin-top:10px;
+    margin-top: 10px;
 
 }
 
 
-
-/* =====================
-   RETOUR HALL
-===================== */
+/* =========================================================
+   RETOUR AUX EXPÉDITIONS
+   ========================================================= */
 
 .retour-expeditions {
 
-    width:100%;
+    width: 100%;
 
-    text-align:center;
+    margin: 50px auto 40px;
 
-    margin:60px auto 40px;
+    text-align: center;
 
 }
 
 
-.retour-expeditions .bouton {
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
-    display:inline-block;
+@media (max-width: 900px) {
+
+    .liste-expeditions {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .liste-expeditions {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 20px;
+
+    }
+
+
+    .carte-aventure {
+
+        padding: 25px 20px;
+
+    }
+
+
+    .carte-aventure img {
+
+        height: 130px;
+
+    }
 
 }
