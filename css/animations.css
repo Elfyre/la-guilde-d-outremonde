@@ -40,13 +40,15 @@
     0%,
     100% {
 
-        opacity: 0.65;
+        opacity:
+            0.65;
 
     }
 
     50% {
 
-        opacity: 1;
+        opacity:
+            1;
 
     }
 
@@ -150,72 +152,94 @@
 
 }
 
+
 /* =========================================================
    TRANSITION DE PAGE — PORTAIL
    ========================================================= */
 
 .transition-portail {
 
-    position: fixed;
+    position:
+        fixed;
 
-    inset: 0;
+    inset:
+        0;
 
-    z-index: 9999;
+    z-index:
+        9999;
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    align-items: center;
+    align-items:
+        center;
 
-    pointer-events: none;
+    pointer-events:
+        none;
 
     background:
-        rgba(16, 13, 18, 0.88);
+        rgba(16, 13, 18, 0.96);
 
-    opacity: 0;
+    opacity:
+        0;
 
 }
 
 
 /* =========================================================
-   PORTAIL
+   PORTAIL LUMINEUX
    ========================================================= */
 
 .transition-portail::before {
 
-    content: "";
+    content:
+        "";
 
-    width: 0;
+    width:
+        20px;
 
-    height: 0;
+    height:
+        20px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     background:
 
         radial-gradient(
             circle,
-            var(--rose-clair) 0%,
-            var(--violet-clair) 25%,
-            var(--violet) 50%,
-            var(--violet-sombre) 68%,
-            transparent 70%
+
+            rgba(216, 194, 154, 0.65) 0%,
+
+            rgba(236, 72, 153, 0.30) 16%,
+
+            rgba(143, 113, 156, 0.35) 32%,
+
+            rgba(124, 58, 237, 0.28) 48%,
+
+            rgba(76, 29, 149, 0.25) 62%,
+
+            rgba(16, 13, 18, 0.90) 72%,
+
+            transparent 74%
         );
 
     box-shadow:
 
+        0 0 10px
+        rgba(216, 194, 154, 0.20),
+
         0 0 25px
-        var(--rose-clair),
+        rgba(236, 72, 153, 0.10),
 
-        0 0 60px
-        var(--violet-clair),
-
-        0 0 120px
-        var(--violet);
+        0 0 45px
+        rgba(124, 58, 237, 0.10);
 
     transform:
-        rotate(0deg);
+        scale(0.1);
 
 }
 
@@ -226,10 +250,11 @@
 
 .transition-portail.sortie {
 
-    opacity: 1;
+    opacity:
+        1;
 
     transition:
-        opacity 0.2s ease;
+        opacity 0.30s ease;
 
 }
 
@@ -237,21 +262,49 @@
 .transition-portail.sortie::before {
 
     width:
-        180vmax;
+        100px;
 
     height:
-        180vmax;
+        100px;
 
     transform:
-        rotate(180deg);
+        scale(1);
 
-    transition:
+    animation:
+        portail-ouverture 0.45s ease forwards;
 
-        width 0.55s ease,
+}
 
-        height 0.55s ease,
 
-        transform 0.55s ease;
+/* =========================================================
+   OUVERTURE DU PORTAIL
+   ========================================================= */
+
+@keyframes portail-ouverture {
+
+    0% {
+
+        transform:
+            scale(0.1)
+            rotate(0deg);
+
+    }
+
+    45% {
+
+        transform:
+            scale(1.5)
+            rotate(90deg);
+
+    }
+
+    100% {
+
+        transform:
+            scale(25)
+            rotate(180deg);
+
+    }
 
 }
 
@@ -262,7 +315,8 @@
 
 .transition-portail.entree {
 
-    opacity: 1;
+    opacity:
+        1;
 
 }
 
@@ -275,11 +329,8 @@
     height:
         180vmax;
 
-    transform:
-        rotate(180deg);
-
     animation:
-        portail-fermeture 0.65s ease forwards;
+        portail-fermeture 0.45s ease-out forwards;
 
 }
 
@@ -290,7 +341,7 @@
 
 @keyframes portail-fermeture {
 
-    from {
+    0% {
 
         width:
             180vmax;
@@ -303,13 +354,13 @@
 
     }
 
-    to {
+    100% {
 
         width:
-            0;
+            20px;
 
         height:
-            0;
+            20px;
 
         transform:
             rotate(0deg);
@@ -325,10 +376,11 @@
 
 .transition-portail.termine {
 
-    opacity: 0;
+    opacity:
+        0;
 
     transition:
-        opacity 0.2s ease;
+        opacity 0.25s ease;
 
 }
 

@@ -1,166 +1,176 @@
 /* =========================================================
    TRANSITION DE PAGE — PORTAIL
-   LA GUILDE D'OUTREMONDE
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
 
-    /* =====================================================
-       CRÉATION DU PORTAIL
-       ===================================================== */
+        /* =================================================
+           CRÉATION DU PORTAIL
+           ================================================= */
 
-    const portail = document.createElement("div");
+        const portail =
+            document.createElement("div");
 
-    portail.className = "transition-portail entree";
+        portail.className =
+            "transition-portail";
 
-    document.body.appendChild(portail);
-
-
-    /* =====================================================
-       FIN DE L'ANIMATION D'ENTRÉE
-       ===================================================== */
-
-    window.setTimeout(() => {
-
-        portail.classList.remove("entree");
-
-        portail.classList.add("termine");
-
-    }, 650);
+        document.body.appendChild(
+            portail
+        );
 
 
-    /* =====================================================
-       LIENS INTERNES
-       ===================================================== */
+        /* =================================================
+           TRANSITION D'ARRIVÉE
+           ================================================= */
 
-    const liens = document.querySelectorAll("a[href]");
+        portail.classList.add(
+            "entree"
+        );
 
 
-    liens.forEach(lien => {
+        setTimeout(
+            () => {
 
-        lien.addEventListener("click", event => {
+                portail.classList.add(
+                    "termine"
+                );
 
-            /* ---------------------------------------------
-               MODIFICATEURS DE CLIC
-               --------------------------------------------- */
+            },
+            450
+        );
 
-            if (
-                event.ctrlKey ||
-                event.metaKey ||
-                event.shiftKey ||
-                event.altKey
-            ) {
 
-                return;
+        /* =================================================
+           LIENS INTERNES
+           ================================================= */
+
+        const liens =
+            document.querySelectorAll(
+                "a[href]"
+            );
+
+
+        liens.forEach(
+            (lien) => {
+
+                lien.addEventListener(
+                    "click",
+                    (event) => {
+
+                        const destination =
+                            lien.href;
+
+
+                        /* =============================
+                           IGNORER LES LIENS SPÉCIAUX
+                           ============================= */
+
+                        if (
+
+                            event.ctrlKey ||
+                            event.shiftKey ||
+                            event.altKey ||
+                            event.metaKey ||
+
+                            lien.target === "_blank" ||
+
+                            lien.hasAttribute("download") ||
+
+                            destination.startsWith(
+                                "javascript:"
+                            )
+
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        /* =============================
+                           IGNORER LES ANCRES
+                           ============================= */
+
+                        const url =
+                            new URL(
+                                destination,
+                                window.location.href
+                            );
+
+
+                        if (
+
+                            url.pathname ===
+                            window.location.pathname &&
+
+                            url.hash
+
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        /* =============================
+                           LIEN EXTERNE
+                           ============================= */
+
+                        if (
+                            url.origin !==
+                            window.location.origin
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        /* =============================
+                           ANNULER LE LIEN
+                           ============================= */
+
+                        event.preventDefault();
+
+
+                        /* =============================
+                           ANIMATION DE SORTIE
+                           ============================= */
+
+                        portail.classList.remove(
+                            "termine"
+                        );
+
+                        portail.classList.remove(
+                            "entree"
+                        );
+
+                        portail.classList.add(
+                            "sortie"
+                        );
+
+
+                        /* =============================
+                           CHANGEMENT DE PAGE
+                           ============================= */
+
+                        setTimeout(
+                            () => {
+
+                                window.location.href =
+                                    destination;
+
+                            },
+                            450
+                        );
+
+                    }
+                );
 
             }
+        );
 
-
-            /* ---------------------------------------------
-               LIENS EXTERNES / NOUVEL ONGLET
-               --------------------------------------------- */
-
-            if (lien.target === "_blank") {
-
-                return;
-
-            }
-
-
-            /* ---------------------------------------------
-               LIENS SPÉCIAUX
-               --------------------------------------------- */
-
-            const href = lien.getAttribute("href");
-
-
-            if (
-                !href ||
-                href.startsWith("#") ||
-                href.startsWith("mailto:") ||
-                href.startsWith("tel:") ||
-                href.startsWith("javascript:")
-            ) {
-
-                return;
-
-            }
-
-
-            /* ---------------------------------------------
-               URL ABSOLUE
-               --------------------------------------------- */
-
-            let destination;
-
-
-            try {
-
-                destination =
-                    new URL(
-                        href,
-                        window.location.href
-                    );
-
-            } catch {
-
-                return;
-
-            }
-
-
-            /* ---------------------------------------------
-               UNIQUEMENT LE MÊME SITE
-               --------------------------------------------- */
-
-            if (
-                destination.origin !==
-                window.location.origin
-            ) {
-
-                return;
-
-            }
-
-
-            /* ---------------------------------------------
-               MÊME PAGE
-               --------------------------------------------- */
-
-            if (
-                destination.href ===
-                window.location.href
-            ) {
-
-                return;
-
-            }
-
-
-            /* ---------------------------------------------
-               TRANSITION
-               --------------------------------------------- */
-
-            event.preventDefault();
-
-            portail.classList.remove("termine");
-
-            portail.classList.add("sortie");
-
-
-            /* ---------------------------------------------
-               CHANGEMENT DE PAGE
-               --------------------------------------------- */
-
-            window.setTimeout(() => {
-
-                window.location.href =
-                    destination.href;
-
-            }, 600);
-
-        });
-
-    });
-
-});
+    }
+);
