@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-
 <head>
 
     <!-- =====================
@@ -10,25 +9,55 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="icon" href="./favicon.png?v=2">
-
-    <!-- Titre -->
+    <link
+        rel="icon"
+        href="./favicon.png?v=2"
+    >
 
     <title>
         La Guilde d'Outremonde
     </title>
 
 
-    <!-- Feuille de style -->
+    <!-- =====================
+         FEUILLE DE STYLE
+    ===================== -->
 
-    <link rel="stylesheet" href="css/main.css">
+    <link
+        rel="stylesheet"
+        href="css/main.css"
+    >
+
+
+    <!-- =====================
+         TRANSITION
+    ===================== -->
+
+    <script src="./js/transition.js"></script>
 
 </head>
 
 
 <body>
+
+
+    <!-- =====================================================
+         PORTAIL DE TRANSITION
+         Invisible au départ.
+         Il devient visible lorsque l'utilisateur entre
+         dans la Guilde.
+    ====================================================== -->
+
+    <div
+        class="transition-portail"
+        aria-hidden="true"
+    ></div>
+
 
 
     <!-- =====================
@@ -45,53 +74,78 @@
         <div class="portail">
 
 
-            <!-- Énergie du portail -->
+            <!-- =====================
+                 ÉNERGIE DU PORTAIL
+            ===================== -->
 
-        <div class="energie-portail"></div>
-        <div class="vortex-secondaire"></div>
+            <div class="energie-portail"></div>
 
-        <!-- =====================
-             CONTENU DU PORTAIL
-        ===================== -->
-
-        <section class="accueil">
+            <div class="vortex-secondaire"></div>
 
 
-            <!-- Emblème -->
 
-            <div class="embleme">
+            <!-- =====================
+                 CONTENU DU PORTAIL
+            ===================== -->
 
-                <div class="aura-embleme"></div>
-
-                🏰
-
-            </div>
+            <section class="accueil">
 
 
-            <!-- Titre -->
+                <!-- =====================
+                     EMBLÈME
+                ===================== -->
 
-            <h1>
-                La Guilde<br>
-                d'Outremonde
-            </h1>
+                <div class="embleme">
 
+                    <div class="aura-embleme"></div>
 
-            <!-- Citation -->
+                    🏰
 
-            <p class="citation">
-                Là où chaque aventure commence<br>
-                par un nouveau portail.
-            </p>
+                </div>
 
 
-            <!-- Accès au Hall -->
 
-            <a href="pages/hall.html" class="bouton">
-                Entrer dans la Guilde
-            </a>
+                <!-- =====================
+                     TITRE
+                ===================== -->
+
+                <h1>
+
+                    La Guilde<br>
+                    d'Outremonde
+
+                </h1>
 
 
-        </section>
+
+                <!-- =====================
+                     CITATION
+                ===================== -->
+
+                <p class="citation">
+
+                    Là où chaque aventure commence<br>
+                    par un nouveau portail.
+
+                </p>
+
+
+
+                <!-- =====================
+                     ACCÈS AU HALL
+                ===================== -->
+
+                <a
+                    href="./pages/hall.html"
+                    class="bouton entrer-guilde"
+                >
+
+                    Entrer dans la Guilde
+
+                </a>
+
+
+            </section>
 
 
         </div>
@@ -99,7 +153,6 @@
 
     </main>
 
-<script src="./js/transition.js"></script>
 
 </body>
 

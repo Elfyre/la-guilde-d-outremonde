@@ -12,7 +12,8 @@
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
             translateY(10px);
@@ -21,7 +22,8 @@
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0);
@@ -129,11 +131,6 @@
    TRANSITION COMMUNE
    ========================================================= */
 
-/*
-   Cette classe permet d'ajouter simplement une transition
-   douce à un élément sans lui imposer d'animation.
-*/
-
 .transition-douce {
 
     transition:
@@ -154,8 +151,22 @@
 
 
 /* =========================================================
-   TRANSITION DE PAGE — PORTAIL
+   TRANSITION DE PAGE
+   PORTAIL DIMENSIONNEL
    ========================================================= */
+
+
+/* =========================================================
+   CONTENEUR DU PORTAIL
+   ========================================================= */
+
+/*
+   Le conteneur est totalement transparent.
+
+   IMPORTANT :
+   Il ne doit JAMAIS servir de fond à la transition.
+   Seuls ::before et ::after dessinent le portail.
+*/
 
 .transition-portail {
 
@@ -166,7 +177,7 @@
         0;
 
     z-index:
-        9999;
+        99999;
 
     display:
         flex;
@@ -177,20 +188,48 @@
     align-items:
         center;
 
+    overflow:
+        hidden;
+
     pointer-events:
         none;
 
     background:
-        rgba(16, 13, 18, 0.96);
+        transparent !important;
 
     opacity:
         0;
+
+    visibility:
+        hidden;
+
+    isolation:
+        isolate;
+
+    transform:
+        translateZ(0);
+
+    backface-visibility:
+        hidden;
 
 }
 
 
 /* =========================================================
-   PORTAIL LUMINEUX
+   PORTAIL ACTIF
+   ========================================================= */
+
+.transition-portail.sortie,
+.transition-portail.entree {
+
+    visibility:
+        visible;
+
+}
+
+
+/* =========================================================
+   CŒUR DU PORTAIL
    ========================================================= */
 
 .transition-portail::before {
@@ -198,11 +237,24 @@
     content:
         "";
 
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
     width:
-        20px;
+        34px;
 
     height:
-        20px;
+        34px;
+
+    transform:
+        translate3d(-50%, -50%, 0)
+        scale(0.05);
 
     border-radius:
         50%;
@@ -212,40 +264,163 @@
         radial-gradient(
             circle,
 
-            rgba(216, 194, 154, 0.65) 0%,
+            #000000 0%,
 
-            rgba(236, 72, 153, 0.30) 16%,
+            #000000 18%,
 
-            rgba(143, 113, 156, 0.35) 32%,
+            rgba(2, 1, 5, 0.98) 30%,
 
-            rgba(124, 58, 237, 0.28) 48%,
+            rgba(9, 4, 14, 0.97) 43%,
 
-            rgba(76, 29, 149, 0.25) 62%,
+            rgba(var(--violet-rgb), 0.42) 57%,
 
-            rgba(16, 13, 18, 0.90) 72%,
+            rgba(var(--rose-rgb), 0.30) 67%,
 
-            transparent 74%
+            rgba(20, 8, 28, 0.88) 73%,
+
+            #100d12 78%,
+
+            transparent 79%
         );
 
     box-shadow:
 
-        0 0 10px
-        rgba(216, 194, 154, 0.20),
+        inset 0 0 25px
+        rgba(0, 0, 0, 1),
 
-        0 0 25px
-        rgba(236, 72, 153, 0.10),
+        inset 0 0 55px
+        rgba(var(--violet-rgb), 0.48),
 
-        0 0 45px
-        rgba(124, 58, 237, 0.10);
+        inset 0 0 85px
+        rgba(var(--rose-rgb), 0.20),
 
-    transform:
-        scale(0.1);
+        0 0 18px
+        rgba(var(--violet-rgb), 0.40),
+
+        0 0 40px
+        rgba(var(--rose-rgb), 0.24),
+
+        0 0 75px
+        rgba(var(--accent-rgb), 0.20),
+
+        0 0 120px
+        rgba(var(--violet-rgb), 0.12);
+
+    opacity:
+        0;
+
+    will-change:
+        transform,
+        opacity;
+
+    backface-visibility:
+        hidden;
 
 }
 
 
 /* =========================================================
-   SORTIE DE PAGE
+   ÉNERGIE PRINCIPALE
+   ROSE + VIOLET
+   ========================================================= */
+
+.transition-portail::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        120px;
+
+    height:
+        120px;
+
+    transform:
+        translate3d(-50%, -50%, 0)
+        scale(0.05);
+
+    border-radius:
+        50%;
+
+    background:
+
+        conic-gradient(
+            from 0deg,
+
+            transparent 0deg,
+
+            rgba(var(--rose-rgb), 0.08) 12deg,
+
+            rgba(var(--rose-rgb), 0.32) 25deg,
+
+            rgba(var(--rose-rgb), 0.72) 45deg,
+
+            rgba(var(--rose-rgb), 0.95) 68deg,
+
+            rgba(var(--rose-rgb), 0.55) 92deg,
+
+            rgba(var(--rose-rgb), 0.12) 120deg,
+
+            transparent 145deg,
+
+            transparent 180deg,
+
+            rgba(var(--violet-rgb), 0.08) 192deg,
+
+            rgba(var(--violet-rgb), 0.30) 212deg,
+
+            rgba(var(--violet-rgb), 0.72) 235deg,
+
+            rgba(var(--violet-rgb), 0.95) 255deg,
+
+            rgba(var(--violet-rgb), 0.52) 280deg,
+
+            rgba(var(--violet-rgb), 0.10) 310deg,
+
+            transparent 335deg,
+
+            transparent 360deg
+        );
+
+    filter:
+        blur(0.6px);
+
+    box-shadow:
+
+        0 0 12px
+        rgba(var(--rose-rgb), 0.45),
+
+        0 0 30px
+        rgba(var(--violet-rgb), 0.38),
+
+        0 0 60px
+        rgba(var(--accent-rgb), 0.18);
+
+    opacity:
+        0;
+
+    will-change:
+        transform,
+        opacity;
+
+    backface-visibility:
+        hidden;
+
+}
+
+
+/* =========================================================
+   SORTIE
+   SITE → HALL
    ========================================================= */
 
 .transition-portail.sortie {
@@ -253,56 +428,110 @@
     opacity:
         1;
 
-    transition:
-        opacity 0.30s ease;
-
 }
 
 
+/* =========================================================
+   OUVERTURE — CŒUR
+   ========================================================= */
+
 .transition-portail.sortie::before {
 
-    width:
-        100px;
-
-    height:
-        100px;
-
-    transform:
-        scale(1);
-
     animation:
-        portail-ouverture 0.45s ease forwards;
+
+        portail-ouverture-coeur
+        1.55s
+        cubic-bezier(0.22, 0.72, 0.18, 1)
+        forwards;
 
 }
 
 
 /* =========================================================
-   OUVERTURE DU PORTAIL
+   OUVERTURE — ÉNERGIE
    ========================================================= */
 
-@keyframes portail-ouverture {
+.transition-portail.sortie::after {
+
+    animation:
+
+        portail-ouverture-energie
+        1.55s
+        cubic-bezier(0.22, 0.72, 0.18, 1)
+        forwards;
+
+}
+
+
+/* =========================================================
+   CŒUR — OUVERTURE
+   ========================================================= */
+
+@keyframes portail-ouverture-coeur {
 
     0% {
 
         transform:
-            scale(0.1)
-            rotate(0deg);
+            translate3d(-50%, -50%, 0)
+            scale(0.05);
+
+        opacity:
+            0.20;
 
     }
 
-    45% {
+    18% {
 
         transform:
-            scale(1.5)
-            rotate(90deg);
+            translate3d(-50%, -50%, 0)
+            scale(0.45);
+
+        opacity:
+            0.72;
+
+    }
+
+    38% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(1.8);
+
+        opacity:
+            0.92;
+
+    }
+
+    58% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(5);
+
+        opacity:
+            0.98;
+
+    }
+
+    78% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(15);
+
+        opacity:
+            1;
 
     }
 
     100% {
 
         transform:
-            scale(25)
-            rotate(180deg);
+            translate3d(-50%, -50%, 0)
+            scale(100);
+
+        opacity:
+            1;
 
     }
 
@@ -310,7 +539,89 @@
 
 
 /* =========================================================
-   ARRIVÉE SUR UNE PAGE
+   ÉNERGIE — OUVERTURE
+   ========================================================= */
+
+@keyframes portail-ouverture-energie {
+
+    0% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(0.05)
+            rotate(0deg);
+
+        opacity:
+            0;
+
+    }
+
+    18% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(0.70)
+            rotate(45deg);
+
+        opacity:
+            0.68;
+
+    }
+
+    38% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(2)
+            rotate(120deg);
+
+        opacity:
+            0.92;
+
+    }
+
+    60% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(6)
+            rotate(210deg);
+
+        opacity:
+            0.88;
+
+    }
+
+    80% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(18)
+            rotate(300deg);
+
+        opacity:
+            0.58;
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(100)
+            rotate(420deg);
+
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ARRIVÉE
+   HALL
    ========================================================= */
 
 .transition-portail.entree {
@@ -321,6 +632,10 @@
 }
 
 
+/* =========================================================
+   CŒUR — FERMETURE
+   ========================================================= */
+
 .transition-portail.entree::before {
 
     width:
@@ -330,40 +645,199 @@
         180vmax;
 
     animation:
-        portail-fermeture 0.45s ease-out forwards;
+
+        portail-fermeture-coeur
+        1.55s
+        cubic-bezier(0.65, 0, 0.78, 0.25)
+        forwards;
 
 }
 
 
 /* =========================================================
-   FERMETURE DU PORTAIL
+   ÉNERGIE — FERMETURE
    ========================================================= */
 
-@keyframes portail-fermeture {
+.transition-portail.entree::after {
+
+    width:
+        180vmax;
+
+    height:
+        180vmax;
+
+    animation:
+
+        portail-fermeture-energie
+        1.55s
+        cubic-bezier(0.65, 0, 0.78, 0.25)
+        forwards;
+
+}
+
+
+/* =========================================================
+   CŒUR — FERMETURE
+   ========================================================= */
+
+@keyframes portail-fermeture-coeur {
 
     0% {
 
-        width:
-            180vmax;
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(100);
 
-        height:
-            180vmax;
+        opacity:
+            1;
+
+    }
+
+    20% {
 
         transform:
-            rotate(180deg);
+            translate3d(-50%, -50%, 0)
+            scale(25);
+
+        opacity:
+            1;
+
+    }
+
+    45% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(7);
+
+        opacity:
+            0.98;
+
+    }
+
+    68% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(2);
+
+        opacity:
+            0.88;
+
+    }
+
+    85% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(0.55);
+
+        opacity:
+            0.70;
 
     }
 
     100% {
 
-        width:
-            20px;
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(0.05);
 
-        height:
-            20px;
+        opacity:
+            0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ÉNERGIE — FERMETURE
+   ========================================================= */
+
+@keyframes portail-fermeture-energie {
+
+    0% {
 
         transform:
+            translate3d(-50%, -50%, 0)
+            scale(100)
+            rotate(420deg);
+
+        opacity:
+            0;
+
+    }
+
+    18% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(60)
+            rotate(360deg);
+
+        opacity:
+            0.18;
+
+    }
+
+    35% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(30)
+            rotate(330deg);
+
+        opacity:
+            0.42;
+
+    }
+
+    50% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(18)
+            rotate(300deg);
+
+        opacity:
+            0.68;
+
+    }
+
+    65% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(6)
+            rotate(210deg);
+
+        opacity:
+            0.88;
+
+    }
+
+    82% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(1.8)
+            rotate(90deg);
+
+        opacity:
+            0.72;
+
+    }
+
+    100% {
+
+        transform:
+            translate3d(-50%, -50%, 0)
+            scale(0.05)
             rotate(0deg);
+
+        opacity:
+            0;
 
     }
 
@@ -374,13 +848,79 @@
    FIN DE TRANSITION
    ========================================================= */
 
+/*
+   IMPORTANT :
+
+   Une fois l'animation terminée :
+
+   - le conteneur devient invisible ;
+   - les deux pseudo-éléments deviennent explicitement
+     invisibles ;
+   - le conteneur ne peut donc plus provoquer de flash
+     visuel ou de calque résiduel.
+*/
+
 .transition-portail.termine {
 
     opacity:
         0;
 
-    transition:
-        opacity 0.25s ease;
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+}
+
+
+.transition-portail.termine::before,
+.transition-portail.termine::after {
+
+    opacity:
+        0 !important;
+
+    visibility:
+        hidden;
+
+}
+
+
+/* =========================================================
+   SÉCURITÉ — ÉTAT INACTIF
+   ========================================================= */
+
+/*
+   Tant que le portail n'est pas utilisé, ses éléments
+   graphiques restent totalement invisibles.
+
+   Cela évite notamment qu'un état intermédiaire de
+   l'animation soit affiché pendant le chargement.
+*/
+
+.transition-portail:not(.sortie):not(.entree)::before,
+.transition-portail:not(.sortie):not(.entree)::after {
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+}
+
+
+/* =========================================================
+   OPTIMISATION GPU
+   ========================================================= */
+
+.transition-portail,
+.transition-portail::before,
+.transition-portail::after {
+
+    contain:
+        layout
+        paint;
 
 }
 
@@ -392,13 +932,24 @@
 @media (prefers-reduced-motion: reduce) {
 
     .transition-portail,
-    .transition-portail::before {
+    .transition-portail::before,
+    .transition-portail::after {
 
         animation:
             none !important;
 
         transition:
             none !important;
+
+    }
+
+    .transition-portail {
+
+        visibility:
+            hidden;
+
+        opacity:
+            0;
 
     }
 
