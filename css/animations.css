@@ -149,3 +149,205 @@
         box-shadow 0.3s ease;
 
 }
+
+/* =========================================================
+   TRANSITION DE PAGE — PORTAIL
+   ========================================================= */
+
+.transition-portail {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    pointer-events: none;
+
+    background:
+        rgba(16, 13, 18, 0.88);
+
+    opacity: 0;
+
+}
+
+
+/* =========================================================
+   PORTAIL
+   ========================================================= */
+
+.transition-portail::before {
+
+    content: "";
+
+    width: 0;
+
+    height: 0;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            var(--rose-clair) 0%,
+            var(--violet-clair) 25%,
+            var(--violet) 50%,
+            var(--violet-sombre) 68%,
+            transparent 70%
+        );
+
+    box-shadow:
+
+        0 0 25px
+        var(--rose-clair),
+
+        0 0 60px
+        var(--violet-clair),
+
+        0 0 120px
+        var(--violet);
+
+    transform:
+        rotate(0deg);
+
+}
+
+
+/* =========================================================
+   SORTIE DE PAGE
+   ========================================================= */
+
+.transition-portail.sortie {
+
+    opacity: 1;
+
+    transition:
+        opacity 0.2s ease;
+
+}
+
+
+.transition-portail.sortie::before {
+
+    width:
+        180vmax;
+
+    height:
+        180vmax;
+
+    transform:
+        rotate(180deg);
+
+    transition:
+
+        width 0.55s ease,
+
+        height 0.55s ease,
+
+        transform 0.55s ease;
+
+}
+
+
+/* =========================================================
+   ARRIVÉE SUR UNE PAGE
+   ========================================================= */
+
+.transition-portail.entree {
+
+    opacity: 1;
+
+}
+
+
+.transition-portail.entree::before {
+
+    width:
+        180vmax;
+
+    height:
+        180vmax;
+
+    transform:
+        rotate(180deg);
+
+    animation:
+        portail-fermeture 0.65s ease forwards;
+
+}
+
+
+/* =========================================================
+   FERMETURE DU PORTAIL
+   ========================================================= */
+
+@keyframes portail-fermeture {
+
+    from {
+
+        width:
+            180vmax;
+
+        height:
+            180vmax;
+
+        transform:
+            rotate(180deg);
+
+    }
+
+    to {
+
+        width:
+            0;
+
+        height:
+            0;
+
+        transform:
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   FIN DE TRANSITION
+   ========================================================= */
+
+.transition-portail.termine {
+
+    opacity: 0;
+
+    transition:
+        opacity 0.2s ease;
+
+}
+
+
+/* =========================================================
+   RÉDUCTION DES ANIMATIONS
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .transition-portail,
+    .transition-portail::before {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+}

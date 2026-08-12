@@ -10,6 +10,10 @@ const supabaseClient = window.supabase.createClient(
 console.log("✅ Connexion Supabase initialisée :", supabaseClient);
 
 
+/* =====================================================
+   TEST CONNEXION SUPABASE
+===================================================== */
+
 async function testerSupabase() {
 
     const { data, error } = await supabaseClient
@@ -18,16 +22,26 @@ async function testerSupabase() {
 
     if (error) {
 
-        console.error('❌ Erreur Supabase :', error);
+        console.error(
+            '❌ Erreur Supabase :',
+            error
+        );
 
         return;
     }
 
-    console.log('✅ Jeux récupérés depuis Supabase :', data);
+    console.log(
+        '✅ Jeux récupérés depuis Supabase :',
+        data
+    );
 
     return data;
 }
 
+
+/* =====================================================
+   UTILISATEUR ANONYME
+===================================================== */
 
 async function obtenirUtilisateurAnonyme() {
 
@@ -76,9 +90,14 @@ async function obtenirUtilisateurAnonyme() {
 }
 
 
+/* =====================================================
+   MES VOTES
+===================================================== */
+
 async function obtenirMesVotes() {
 
-    const utilisateur = await obtenirUtilisateurAnonyme();
+    const utilisateur =
+        await obtenirUtilisateurAnonyme();
 
     if (!utilisateur) {
 
@@ -89,9 +108,10 @@ async function obtenirMesVotes() {
         return [];
     }
 
-    const { data, error } = await supabaseClient
-        .from('votes')
-        .select('jeu_id');
+    const { data, error } =
+        await supabaseClient
+            .from('votes')
+            .select('jeu_id');
 
     if (error) {
 
@@ -112,12 +132,65 @@ async function obtenirMesVotes() {
 }
 
 
+/* =====================================================
+   RETIRER MON VOTE
+===================================================== */
+
+async function retirerVote(jeuId) {
+
+    const utilisateur =
+        await obtenirUtilisateurAnonyme();
+
+    if (!utilisateur) {
+
+        console.error(
+            '❌ Impossible de récupérer l’utilisateur.'
+        );
+
+        return false;
+    }
+
+
+    const { data, error } =
+        await supabaseClient
+            .from('votes')
+            .delete()
+            .eq('jeu_id', jeuId)
+            .eq('user_id', utilisateur.id)
+            .select();
+
+
+    if (error) {
+
+        console.error(
+            '❌ Erreur lors de la suppression du vote :',
+            error
+        );
+
+        return false;
+    }
+
+
+    console.log(
+        '✅ Vote supprimé :',
+        data
+    );
+
+    return true;
+}
+
+
+/* =====================================================
+   NOMBRE DE VOTES
+===================================================== */
+
 async function obtenirNombreVotes(jeuId) {
 
-    const { data, error } = await supabaseClient
-        .rpc('compter_votes', {
-            jeu_id_input: jeuId
-        });
+    const { data, error } =
+        await supabaseClient
+            .rpc('compter_votes', {
+                jeu_id_input: jeuId
+            });
 
     if (error) {
 
@@ -138,6 +211,10 @@ async function obtenirNombreVotes(jeuId) {
 }
 
 
+/* =====================================================
+   JEUX AVEC LEURS VOTES
+===================================================== */
+
 async function obtenirJeuxAvecVotes() {
 
     const jeux = await testerSupabase();
@@ -151,26 +228,38 @@ async function obtenirJeuxAvecVotes() {
         return [];
     }
 
-    const mesVotes = await obtenirMesVotes();
+    const mesVotes =
+        await obtenirMesVotes();
 
     const jeuxAvecVotes = [];
 
+
     for (const jeu of jeux) {
 
-        const nombreVotes = await obtenirNombreVotes(jeu.id);
+        const nombreVotes =
+            await obtenirNombreVotes(jeu.id);
 
-        const dejaVote = mesVotes.some(
-            vote => vote.jeu_id === jeu.id
-        );
+        const dejaVote =
+            mesVotes.some(
+                vote => vote.jeu_id === jeu.id
+            );
+
 
         jeuxAvecVotes.push({
+
             id: jeu.id,
+
             nom: jeu.nom,
+
             statut: jeu.statut,
+
             nombreVotes: nombreVotes,
+
             dejaVote: dejaVote
+
         });
     }
+
 
     console.log(
         '✅ Jeux avec leurs votes :',
@@ -180,5 +269,9 @@ async function obtenirJeuxAvecVotes() {
     return jeuxAvecVotes;
 }
 
+
+/* =====================================================
+   INITIALISATION
+===================================================== */
 
 obtenirJeuxAvecVotes();

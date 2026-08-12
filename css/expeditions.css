@@ -10,34 +10,52 @@
 
 .entete-expeditions {
 
-    width: min(1100px, 92%);
+    width:
+        min(1100px, 92%);
 
-    margin: 0 auto 55px;
+    margin:
+        40px auto 55px;
 
-    text-align: center;
+    text-align:center;
 
 }
 
+
+/* =========================================================
+   EMBLÈME
+   ========================================================= */
 
 .entete-expeditions .embleme {
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 
 }
 
+
+/* =========================================================
+   TITRE
+   ========================================================= */
 
 .entete-expeditions h1 {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
 }
 
 
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
 .entete-expeditions p {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
 }
 
@@ -48,16 +66,19 @@
 
 .liste-expeditions {
 
-    width: min(1100px, 92%);
+    width:
+        min(1100px, 92%);
 
-    margin: 0 auto 60px;
+    margin:
+        0 auto 60px;
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 30px;
+    gap:
+        30px;
 
 }
 
@@ -68,25 +89,36 @@
 
 .carte-aventure {
 
-    min-width: 0;
+    min-width:0;
 
-    padding: 30px;
+    padding:
+        30px;
 
-    text-align: center;
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
 
     border:
-        1px solid var(--parchemin-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(143, 113, 156, 0.10),
-            rgba(0, 0, 0, 0.55)
+
+            var(--surface-violette-legere),
+
+            var(--surface-noire)
         );
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.30);
+        0 8px 25px
+        var(--ombre-moyenne);
 
     transition:
 
@@ -99,6 +131,10 @@
 }
 
 
+/* =========================================================
+   SURVOL DE LA CARTE
+   ========================================================= */
+
 .carte-aventure:hover {
 
     transform:
@@ -109,9 +145,11 @@
 
     box-shadow:
 
-        0 12px 30px rgba(0, 0, 0, 0.40),
+        0 12px 30px
+        var(--ombre-forte),
 
-        0 0 20px rgba(143, 113, 156, 0.20);
+        0 0 20px
+        var(--lueur-accent-legere);
 
 }
 
@@ -122,15 +160,49 @@
 
 .carte-aventure img {
 
-    display: block;
+    display:block;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 150px;
+    height:
+        150px;
 
-    margin: 0 auto 20px;
+    margin:
+        0 auto 20px;
 
-    object-fit: contain;
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            var(--lueur-accent-legere)
+        );
+
+    transition:
+
+        transform 0.3s ease,
+
+        filter 0.3s ease;
+
+}
+
+
+/* =========================================================
+   SURVOL DE L'IMAGE
+   ========================================================= */
+
+.carte-aventure:hover img {
+
+    transform:
+        scale(1.04);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            var(--lueur-accent)
+        );
 
 }
 
@@ -141,27 +213,36 @@
 
 .titre-aventure {
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 
-    gap: 10px;
+    gap:
+        10px;
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
 }
 
 
+/* =========================================================
+   TITRE
+   ========================================================= */
+
 .titre-aventure h2 {
 
-    margin: 0;
+    margin:0;
 
     color:
         var(--parchemin-clair);
+
+    font-size:
+        22px;
 
 }
 
@@ -172,22 +253,26 @@
 
 .badge-lmc {
 
-    display: inline-block;
+    display:inline-block;
 
-    padding: 5px 10px;
+    padding:
+        5px 10px;
 
     border:
-        1px solid var(--accent-sombre);
+        1px solid
+        var(--accent-sombre);
 
     background:
-        rgba(143, 113, 156, 0.10);
+        var(--surface-violette-legere);
 
     color:
         var(--accent-clair);
 
-    font-size: 11px;
+    font-size:
+        11px;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
 }
 
@@ -198,31 +283,34 @@
 
 .carte-aventure .bouton {
 
-    margin-top: 10px;
+    margin-top:
+        10px;
 
 }
 
 
 /* =========================================================
-   RETOUR AUX EXPÉDITIONS
+   RETOUR AUX AVENTURES
    ========================================================= */
 
 .retour-expeditions {
 
-    width: 100%;
+    width:
+        100%;
 
-    margin: 50px auto 40px;
+    margin:
+        50px auto 40px;
 
-    text-align: center;
+    text-align:center;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE — ÉCRANS MOYENS
    ========================================================= */
 
-@media (max-width: 900px) {
+@media (max-width:900px) {
 
     .liste-expeditions {
 
@@ -234,28 +322,43 @@
 }
 
 
-@media (max-width: 600px) {
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width:600px) {
 
     .liste-expeditions {
 
         grid-template-columns:
             1fr;
 
-        gap: 20px;
+        gap:
+            20px;
 
     }
 
 
     .carte-aventure {
 
-        padding: 25px 20px;
+        padding:
+            25px 20px;
 
     }
 
 
     .carte-aventure img {
 
-        height: 130px;
+        height:
+            130px;
+
+    }
+
+
+    .titre-aventure h2 {
+
+        font-size:
+            20px;
 
     }
 

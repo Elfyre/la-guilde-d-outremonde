@@ -10,16 +10,31 @@
 
 .archives {
 
-    width: min(1100px, 92%);
+    width:
+        min(1100px, 92%);
 
-    margin: 0 auto 60px;
+    margin:
+        0 auto 60px;
 
-    display: grid;
+    display:
+        grid;
+
+    /*
+       2 colonnes pour les archives classiques
+
+       Exemple :
+       ┌──────────────┬──────────────┐
+       │      1       │      2       │
+       ├──────────────┼──────────────┤
+       │      3       │      4       │
+       └──────────────┴──────────────┘
+    */
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(2, 1fr);
 
-    gap: 30px;
+    gap:
+        30px;
 
 }
 
@@ -30,12 +45,18 @@
 
 .archive {
 
-    padding: 30px;
+    min-width:
+        0;
 
-    text-align: center;
+    padding:
+        30px;
+
+    text-align:
+        center;
 
     border:
-        1px solid var(--parchemin-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
 
@@ -46,7 +67,8 @@
         );
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.30);
+        0 8px 25px
+        rgba(0, 0, 0, 0.30);
 
     transition:
 
@@ -69,9 +91,11 @@
 
     box-shadow:
 
-        0 12px 30px rgba(0, 0, 0, 0.40),
+        0 12px 30px
+        rgba(0, 0, 0, 0.40),
 
-        0 0 20px rgba(143, 113, 156, 0.20);
+        0 0 20px
+        rgba(143, 113, 156, 0.20);
 
 }
 
@@ -82,15 +106,20 @@
 
 .archive img {
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 180px;
+    height:
+        180px;
 
-    margin: 0 auto 20px;
+    margin:
+        0 auto 20px;
 
-    object-fit: contain;
+    object-fit:
+        contain;
 
 }
 
@@ -101,11 +130,14 @@
 
 .archive > span:not(.statut-playlist) {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 
-    font-size: 55px;
+    font-size:
+        55px;
 
 }
 
@@ -116,7 +148,8 @@
 
 .archive h2 {
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
     color:
         var(--parchemin-clair);
@@ -130,12 +163,14 @@
 
 .archive p {
 
-    margin-bottom: 10px;
+    margin-bottom:
+        10px;
 
     color:
         var(--texte-secondaire);
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
 }
 
@@ -146,16 +181,21 @@
 
 .archive-principale {
 
-    width: min(700px, 90%);
+    width:
+        min(600px, 85%);
 
-    margin: 0 auto 60px;
+    margin:
+        0 auto 20px;
 
-    padding: 40px;
+    padding:
+        15px 25px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border:
-        1px solid var(--parchemin);
+        1px solid
+        var(--parchemin);
 
     background:
 
@@ -167,9 +207,11 @@
 
     box-shadow:
 
-        0 10px 35px rgba(0, 0, 0, 0.40),
+        0 10px 35px
+        rgba(0, 0, 0, 0.40),
 
-        0 0 25px rgba(143, 113, 156, 0.12);
+        0 0 25px
+        rgba(143, 113, 156, 0.12);
 
 }
 
@@ -180,17 +222,23 @@
 
 .archive-principale img {
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
+    width:
+        100%;
 
-    max-width: 500px;
+    max-width:
+        400px;
 
-    height: 250px;
+    height:
+        100px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 8px;
 
-    object-fit: contain;
+    object-fit:
+        contain;
 
 }
 
@@ -201,7 +249,8 @@
 
 .archive-principale h2 {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        10px;
 
     color:
         var(--parchemin-clair);
@@ -210,17 +259,19 @@
 
 
 /* =========================================================
-   DESCRIPTION
+   DESCRIPTION DE L'ARCHIVE PRINCIPALE
    ========================================================= */
 
 .archive-principale p {
 
-    margin-bottom: 10px;
+    margin-bottom:
+        5px;
 
     color:
         var(--texte-secondaire);
 
-    line-height: 1.7;
+    line-height:
+        1.5;
 
 }
 
@@ -231,14 +282,18 @@
 
 .statut-playlist {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    margin: 15px 0;
+    margin:
+        8px 0;
 
-    padding: 7px 14px;
+    padding:
+        6px 12px;
 
     border:
-        1px solid var(--accent-sombre);
+        1px solid
+        var(--accent-sombre);
 
     background:
         rgba(143, 113, 156, 0.08);
@@ -246,9 +301,11 @@
     color:
         var(--parchemin);
 
-    font-size: 13px;
+    font-size:
+        12px;
 
-    letter-spacing: 0.5px;
+    letter-spacing:
+        0.5px;
 
 }
 
@@ -262,16 +319,19 @@
     grid-column:
         1 / -1;
 
-    margin-bottom: 5px;
+    margin-bottom:
+        0;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
 .entete-section h2 {
 
-    margin-bottom: 12px;
+    margin-bottom:
+        8px;
 
     color:
         var(--parchemin-clair);
@@ -288,25 +348,147 @@
 
 
 /* =========================================================
-   RETOUR AUX ARCHIVES
+   LMC
+   PLAYLISTS SECONDAIRES
    ========================================================= */
 
-.retour-archives {
+/*
+   IMPORTANT :
 
-    width: 100%;
+   Les archives classiques utilisent 2 colonnes.
 
-    margin: 50px auto 40px;
+   Le LMC utilise volontairement 3 colonnes.
+*/
 
-    text-align: center;
+.archives-lmc {
+
+    width:
+        min(1000px, 92%);
+
+    margin:
+        0 auto 40px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        15px;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   CARTES LMC
+   ========================================================= */
+
+.archives-lmc .archive {
+
+    padding:
+        10px;
+
+}
+
+
+/* =========================================================
+   IMAGES DES PLAYLISTS LMC
+   ========================================================= */
+
+.archives-lmc .archive img {
+
+    width:
+        100%;
+
+    height:
+        70px;
+
+    margin:
+        0 auto 10px;
+
+}
+
+
+/* =========================================================
+   TITRES DES PLAYLISTS LMC
+   ========================================================= */
+
+.archives-lmc .archive h2 {
+
+    margin-bottom:
+        6px;
+
+    font-size:
+        18px;
+
+}
+
+
+/* =========================================================
+   STATUTS DES PLAYLISTS LMC
+   ========================================================= */
+
+.archives-lmc .statut-playlist {
+
+    margin:
+        6px 0;
+
+    padding:
+        4px 8px;
+
+    font-size:
+        11px;
+
+}
+
+
+/* =========================================================
+   BOUTONS DES PLAYLISTS LMC
+   ========================================================= */
+
+.archives-lmc .archive .bouton {
+
+    margin-top:
+        5px;
+
+    padding:
+        9px 14px;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================================================
+   RETOUR AUX ARCHIVES
+   ========================================================= */
+
+.retour-archives {
+
+    width:
+        100%;
+
+    margin:
+        40px auto 35px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETTE
    ========================================================= */
 
 @media (max-width: 900px) {
+
+    /*
+       Les archives classiques restent en 2 colonnes
+       sur tablette.
+    */
 
     .archives {
 
@@ -315,45 +497,96 @@
 
     }
 
+
+    /*
+       Le LMC reste également en 3 colonnes
+       tant que l'écran le permet.
+    */
+
+    .archives-lmc {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
 }
 
 
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
 @media (max-width: 600px) {
+
+    /*
+       Archives classiques :
+       1 colonne sur mobile.
+    */
 
     .archives {
 
         grid-template-columns:
             1fr;
 
-        gap: 20px;
+        gap:
+            20px;
+
+    }
+
+
+    /*
+       LMC :
+       1 colonne sur mobile.
+    */
+
+    .archives-lmc {
+
+        grid-template-columns:
+            1fr;
 
     }
 
 
     .archive {
 
-        padding: 25px 20px;
+        padding:
+            25px 20px;
 
     }
 
 
     .archive-principale {
 
-        padding: 30px 20px;
+        width:
+            90%;
+
+        padding:
+            25px 20px;
 
     }
 
 
     .archive img {
 
-        height: 150px;
+        height:
+            150px;
 
     }
 
 
     .archive-principale img {
 
-        height: 200px;
+        height:
+            150px;
+
+    }
+
+
+    .archives-lmc .archive img {
+
+        height:
+            130px;
 
     }
 

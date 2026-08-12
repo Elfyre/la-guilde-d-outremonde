@@ -10,46 +10,68 @@
 
 .aventures {
 
-    width: min(1000px, 92%);
+    width:
+        min(1000px, 92%);
 
-    margin: 0 auto 50px;
+    margin:
+        0 auto 50px;
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
         repeat(3, 1fr);
 
-    gap: 25px;
+    gap:
+        24px;
 
 }
 
 
 /* =========================================================
-   CARTE D'AVENTURE
+   CARTE — CATÉGORIE D'AVENTURE
    ========================================================= */
 
 .aventure {
 
-    padding: 30px;
+    min-width:0;
 
-    text-align: center;
+    padding:
+        30px 25px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
 
     border:
-        1px solid var(--parchemin-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(143, 113, 156, 0.12),
-            rgba(0, 0, 0, 0.60)
+
+            var(--surface-violette),
+
+            var(--surface-noire)
         );
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.30);
+        0 8px 25px
+        var(--ombre-moyenne);
 
     transition:
+
         transform 0.3s ease,
+
+        border-color 0.3s ease,
+
         box-shadow 0.3s ease;
 
 }
@@ -60,8 +82,16 @@
     transform:
         translateY(-6px);
 
+    border-color:
+        var(--parchemin);
+
     box-shadow:
-        0 12px 30px rgba(143, 113, 156, 0.25);
+
+        0 12px 30px
+        var(--ombre-forte),
+
+        0 0 22px
+        var(--lueur-accent-legere);
 
 }
 
@@ -70,13 +100,21 @@
    ICÔNE
    ========================================================= */
 
-.aventure span {
+.aventure > span {
 
-    display: block;
+    display:block;
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
-    font-size: 55px;
+    font-size:
+        50px;
+
+    filter:
+        drop-shadow(
+            0 0 7px
+            var(--lueur-accent-legere)
+        );
 
 }
 
@@ -87,10 +125,38 @@
 
 .aventure h2 {
 
-    margin-bottom: 15px;
+    margin-bottom:
+        12px;
 
     color:
         var(--parchemin-clair);
+
+    font-size:
+        23px;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.aventure p {
+
+    max-width:
+        260px;
+
+    margin:
+        0 auto;
+
+    color:
+        var(--texte-secondaire);
+
+    line-height:
+        1.6;
+
+    font-size:
+        14px;
 
 }
 
@@ -101,7 +167,8 @@
 
 .aventure .bouton {
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 
 }
 
@@ -112,18 +179,22 @@
 
 .entete-aventure {
 
-    width: min(1000px, 92%);
+    width:
+        min(1000px, 92%);
 
-    margin: 0 auto 45px;
+    margin:
+        0 auto 45px;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
 .entete-aventure .embleme {
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 
 }
 
@@ -134,23 +205,30 @@
 
 .image-aventure {
 
-    display: block;
+    display:block;
 
-    width: 250px;
-    height: 250px;
+    width:
+        250px;
 
-    margin: 0 auto 30px;
+    height:
+        250px;
 
-    object-fit: contain;
+    margin:
+        0 auto 30px;
+
+    object-fit:
+        contain;
 
     border:
-        1px solid var(--parchemin-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
-        rgba(0, 0, 0, 0.40);
+        var(--surface-noire);
 
     box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.45);
+        0 8px 30px
+        var(--ombre-forte);
 
 }
 
@@ -161,13 +239,16 @@
 
 .fiche-aventure {
 
-    width: min(1000px, 92%);
+    width:
+        min(1000px, 92%);
 
-    margin: 0 auto 50px;
+    margin:
+        0 auto 50px;
 
-    display: grid;
+    display:grid;
 
-    gap: 25px;
+    gap:
+        25px;
 
 }
 
@@ -178,26 +259,31 @@
 
 .info-aventure,
 .histoire-aventure,
-.objectifs-aventure,
-.details-aventure {
+.objectifs-aventure {
 
-    padding: 30px;
+    padding:
+        30px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border:
-        1px solid var(--parchemin-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(143, 113, 156, 0.10),
-            rgba(0, 0, 0, 0.55)
+
+            var(--surface-violette-legere),
+
+            var(--surface-noire)
         );
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.30);
+        0 8px 25px
+        var(--ombre-moyenne);
 
 }
 
@@ -208,7 +294,8 @@
 
 .fiche-aventure h2 {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
     color:
         var(--parchemin-clair);
@@ -222,11 +309,14 @@
 
 .fiche-aventure p {
 
-    max-width: 750px;
+    max-width:
+        750px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 
 }
 
@@ -237,33 +327,40 @@
 
 .objectifs-aventure ul {
 
-    max-width: 700px;
+    max-width:
+        700px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    padding: 0;
+    padding:
+        0;
 
-    list-style: none;
+    list-style:
+        none;
 
 }
 
 
 .objectifs-aventure li {
 
-    padding: 10px 0;
+    padding:
+        10px 0;
 
     color:
         var(--texte-secondaire);
 
     border-bottom:
-        1px solid rgba(143, 120, 85, 0.18);
+        1px solid
+        rgba(143, 120, 85, 0.18);
 
 }
 
 
 .objectifs-aventure li:last-child {
 
-    border-bottom: none;
+    border-bottom:
+        none;
 
 }
 
@@ -272,7 +369,6 @@
    INFORMATIONS IMPORTANTES
    ========================================================= */
 
-.details-aventure strong,
 .info-aventure strong {
 
     color:
@@ -287,30 +383,37 @@
 
 .souvenirs-aventure {
 
-    padding: 30px;
+    padding:
+        30px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border:
-        1px solid var(--accent-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(143, 113, 156, 0.12),
-            rgba(0, 0, 0, 0.60)
+
+            var(--surface-violette-legere),
+
+            var(--surface-noire)
         );
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.30);
+        0 8px 25px
+        var(--ombre-moyenne);
 
 }
 
 
 .souvenirs-aventure h2 {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
     color:
         var(--parchemin-clair);
@@ -324,33 +427,41 @@
 
 .liens-souvenirs {
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
-    flex-wrap: wrap;
+    flex-wrap:wrap;
 
-    gap: 15px;
+    gap:
+        15px;
 
-    margin-top: 25px;
+    margin-top:
+        25px;
 
 }
 
 
 .liens-souvenirs a {
 
-    padding: 12px 22px;
+    padding:
+        12px 22px;
 
     border:
-        1px solid var(--parchemin-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
-        rgba(0, 0, 0, 0.40);
+        var(--surface-noire);
 
     transition:
+
         transform 0.3s ease,
+
+        border-color 0.3s ease,
+
         box-shadow 0.3s ease;
 
 }
@@ -361,8 +472,12 @@
     transform:
         translateY(-3px);
 
+    border-color:
+        var(--parchemin);
+
     box-shadow:
-        0 0 18px rgba(143, 113, 156, 0.35);
+        0 0 18px
+        var(--lueur-accent-legere);
 
 }
 
@@ -373,20 +488,23 @@
 
 .retour-aventure {
 
-    width: 100%;
+    width:
+        100%;
 
-    margin: 45px auto 40px;
+    margin:
+        45px auto 40px;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   RESPONSIVE — TABLETTE
    ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width:800px) {
 
     .aventures {
 
@@ -398,11 +516,16 @@
 }
 
 
-@media (max-width: 600px) {
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width:600px) {
 
     .aventures {
 
-        width: 92%;
+        width:
+            92%;
 
         grid-template-columns:
             1fr;
@@ -410,9 +533,18 @@
     }
 
 
+    .aventure {
+
+        padding:
+            30px 20px;
+
+    }
+
+
     .fiche-aventure {
 
-        width: 92%;
+        width:
+            92%;
 
     }
 
@@ -420,18 +552,21 @@
     .info-aventure,
     .histoire-aventure,
     .objectifs-aventure,
-    .details-aventure,
     .souvenirs-aventure {
 
-        padding: 25px 20px;
+        padding:
+            25px 20px;
 
     }
 
 
     .image-aventure {
 
-        width: 200px;
-        height: 200px;
+        width:
+            200px;
+
+        height:
+            200px;
 
     }
 

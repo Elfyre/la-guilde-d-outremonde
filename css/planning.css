@@ -1,5 +1,6 @@
 /* =========================================================
    PLANNING
+   SALLE DES MISSIONS
    ========================================================= */
 
 
@@ -9,16 +10,19 @@
 
 .planning {
 
-    width: min(1100px, 92%);
+    width:
+        min(1100px, 92%);
 
-    margin: 0 auto 60px;
+    margin:
+        0 auto 35px;
 
-    display: grid;
+    display:grid;
 
     grid-template-columns:
         repeat(7, 1fr);
 
-    gap: 20px;
+    gap:
+        16px;
 
 }
 
@@ -29,24 +33,30 @@
 
 .mission {
 
-    min-width: 0;
+    min-width:0;
 
-    padding: 25px 15px;
+    padding:
+        18px 10px;
 
-    text-align: center;
+    text-align:center;
 
-    border: 1px solid var(--parchemin-sombre);
+    border:
+        1px solid
+        var(--parchemin-sombre);
 
     background:
 
         linear-gradient(
             145deg,
-            rgba(143, 113, 156, 0.10),
-            rgba(0, 0, 0, 0.50)
+
+            var(--surface-violette-legere),
+
+            var(--surface-noire)
         );
 
     box-shadow:
-        0 6px 20px rgba(0, 0, 0, 0.30);
+        0 6px 20px
+        var(--ombre-moyenne);
 
     transition:
 
@@ -59,6 +69,10 @@
 }
 
 
+/* =========================================================
+   SURVOL DE LA CARTE
+   ========================================================= */
+
 .mission:hover {
 
     transform:
@@ -69,9 +83,79 @@
 
     box-shadow:
 
-        0 10px 25px rgba(0, 0, 0, 0.40),
+        0 10px 25px
+        var(--ombre-forte),
 
-        0 0 18px rgba(143, 113, 156, 0.18);
+        0 0 18px
+        var(--lueur-accent-legere);
+
+}
+
+
+/* =========================================================
+   TITRE DU JOUR
+   ========================================================= */
+
+.mission h2 {
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--parchemin-clair);
+
+    font-size:
+        18px;
+
+}
+
+
+/* =========================================================
+   CRÉNEAU
+   ========================================================= */
+
+.creneau {
+
+    margin:
+        0 0 8px;
+
+}
+
+
+.creneau p {
+
+    margin:
+        0 0 3px;
+
+    color:
+        var(--texte-secondaire);
+
+    line-height:
+        1.2;
+
+    font-size:
+        13px;
+
+}
+
+
+/* =========================================================
+   TEXTE LIBRE
+   ========================================================= */
+
+.mission > p {
+
+    margin:
+        3px 0;
+
+    color:
+        var(--texte-secondaire);
+
+    line-height:
+        1.3;
+
+    font-size:
+        13px;
 
 }
 
@@ -82,39 +166,148 @@
 
 .image-planning {
 
-    width: 100%;
+    width:
+        100%;
 
-    height: 130px;
+    height:
+        100px;
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
-    margin-bottom: 15px;
-
-}
-
-
-.image-planning img {
-
-    width: 130px;
-
-    height: 130px;
-
-    max-width: 100%;
-
-    object-fit: contain;
+    margin:
+        0;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   IMAGE
    ========================================================= */
 
-@media (max-width: 1000px) {
+.image-planning img {
+
+    width:
+        100px;
+
+    height:
+        100px;
+
+    max-width:
+        100%;
+
+    object-fit:
+        contain;
+
+    display:block;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            var(--lueur-accent-legere)
+        );
+
+    transition:
+
+        transform 0.3s ease,
+
+        filter 0.3s ease;
+
+}
+
+
+/* =========================================================
+   SURVOL DE L'IMAGE
+   ========================================================= */
+
+.image-planning:hover img {
+
+    transform:
+        scale(1.06);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            var(--lueur-accent)
+        );
+
+}
+
+
+/* =========================================================
+   BOUTON RETOUR
+   ========================================================= */
+
+.bouton {
+
+    display:
+        block;
+
+    width:
+        fit-content;
+
+    margin:
+        0 auto 30px;
+
+    padding:
+        9px 20px;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        var(--surface-legere);
+
+    color:
+        var(--parchemin);
+
+    text-align:center;
+
+    transition:
+
+        transform 0.3s ease,
+
+        border-color 0.3s ease,
+
+        background 0.3s ease,
+
+        color 0.3s ease,
+
+        box-shadow 0.3s ease;
+
+}
+
+
+.bouton:hover {
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        var(--parchemin);
+
+    background:
+        var(--surface-violette-legere);
+
+    color:
+        var(--parchemin-clair);
+
+    box-shadow:
+        0 0 18px
+        var(--lueur-accent-legere);
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — ÉCRANS MOYENS
+   ========================================================= */
+
+@media (max-width:1000px) {
 
     .planning {
 
@@ -126,26 +319,89 @@
 }
 
 
-@media (max-width: 700px) {
+/* =========================================================
+   RESPONSIVE — TABLETTE
+   ========================================================= */
+
+@media (max-width:700px) {
 
     .planning {
 
         grid-template-columns:
             repeat(2, 1fr);
 
-        gap: 15px;
+        gap:
+            15px;
+
+    }
+
+
+    .mission {
+
+        padding:
+            20px 12px;
+
+    }
+
+
+    .image-planning {
+
+        height:
+            105px;
+
+    }
+
+
+    .image-planning img {
+
+        width:
+            105px;
+
+        height:
+            105px;
 
     }
 
 }
 
 
-@media (max-width: 450px) {
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width:450px) {
 
     .planning {
 
         grid-template-columns:
             1fr;
+
+    }
+
+
+    .mission {
+
+        padding:
+            22px 20px;
+
+    }
+
+
+    .image-planning {
+
+        height:
+            120px;
+
+    }
+
+
+    .image-planning img {
+
+        width:
+            120px;
+
+        height:
+            120px;
 
     }
 

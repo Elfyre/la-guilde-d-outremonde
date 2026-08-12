@@ -1,7 +1,7 @@
- /* =========================================================
-    COMPOSANTS
-    ÉLÉMENTS COMMUNS DU SITE
-    ========================================================= */
+/* =========================================================
+   COMPOSANTS
+   ÉLÉMENTS COMMUNS DU SITE
+   ========================================================= */
 
 
 /* =========================================================
@@ -10,18 +10,26 @@
 
 .entete-salle {
 
-    width: min(900px, 90%);
+    width:
+        min(900px, 90%);
 
-    margin: 0 auto 60px;
+    margin:
+        35px auto 60px;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
+/* =========================================================
+   TITRE DES PAGES
+   ========================================================= */
+
 .entete-salle h1 {
 
-    margin-top: 20px;
+    margin-top:
+        0;
 
     color:
         var(--parchemin-clair);
@@ -29,23 +37,32 @@
     font-size:
         clamp(34px, 5vw, 52px);
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
 }
 
 
+/* =========================================================
+   DESCRIPTION DES PAGES
+   ========================================================= */
+
 .entete-salle p {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
-    margin: 20px auto 0;
+    margin:
+        20px auto 0;
 
     color:
         var(--texte-secondaire);
 
-    font-size: 17px;
+    font-size:
+        17px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
 }
 
@@ -56,21 +73,28 @@
 
 .embleme {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    align-items: center;
+    align-items:
+        center;
 
-    margin-bottom: 25px;
+    margin-bottom:
+        10px;
 
-    font-size: 70px;
+    font-size:
+        70px;
 
-    line-height: 1;
+    line-height:
+        1;
 
     filter:
         drop-shadow(
-            0 0 15px rgba(184, 154, 196, 0.30)
+            0 0 15px
+            rgba(184, 154, 196, 0.30)
         );
 
 }
@@ -82,15 +106,21 @@
 
 .bouton {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    margin-top: 30px;
+    margin-top:
+        30px;
 
-    padding: 14px 32px;
+    padding:
+        14px 32px;
 
-    border: 1px solid var(--parchemin-sombre);
+    border:
+        1px solid
+        var(--parchemin-sombre);
 
-    border-radius: 2px;
+    border-radius:
+        2px;
 
     background:
 
@@ -100,21 +130,26 @@
             rgba(77, 58, 85, 0.20)
         );
 
-    color: var(--parchemin-clair);
+    color:
+        var(--parchemin-clair);
 
     font-family:
         Georgia,
         "Times New Roman",
         serif;
 
-    font-size: 15px;
+    font-size:
+        15px;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     box-shadow:
-        0 4px 15px rgba(0, 0, 0, 0.35);
+        0 4px 15px
+        rgba(0, 0, 0, 0.35);
 
     transition:
 
@@ -148,7 +183,8 @@
         var(--parchemin-clair);
 
     box-shadow:
-        0 0 20px rgba(143, 113, 156, 0.25);
+        0 0 20px
+        rgba(143, 113, 156, 0.25);
 
     transform:
         translateY(-2px);
@@ -184,7 +220,8 @@ select {
         rgba(0, 0, 0, 0.35);
 
     border:
-        1px solid var(--accent-sombre);
+        1px solid
+        var(--accent-sombre);
 
 }
 
@@ -193,13 +230,15 @@ input:focus,
 textarea:focus,
 select:focus {
 
-    outline: none;
+    outline:
+        none;
 
     border-color:
         var(--accent-clair);
 
     box-shadow:
-        0 0 10px rgba(143, 113, 156, 0.20);
+        0 0 10px
+        rgba(143, 113, 156, 0.20);
 
 }
 
@@ -210,8 +249,10 @@ select:focus {
 
 img {
 
-    max-width: 100%;
+    max-width:
+        100%;
 
-    display: block;
+    display:
+        block;
 
 }

@@ -10,18 +10,32 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="icon" href="../favicon.png?v=2">
+    <link
+        rel="icon"
+        href="../favicon.png?v=2"
+    >
 
-    <title>Salle des Quêtes - La Guilde d'Outremonde</title>
+    <title>
+        Salle des Quêtes - La Guilde d'Outremonde
+    </title>
 
-    <link rel="stylesheet" href="../css/main.css">
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
 
 </head>
 
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script src="../js/supabase.js"></script>
+
 
 <body>
 
@@ -98,7 +112,10 @@
 
             <!-- Accès aux propositions -->
 
-            <a href="proposer.html" class="bouton">
+            <a
+                href="proposer.html"
+                class="bouton"
+            >
 
                 Proposer un jeu
 
@@ -106,8 +123,6 @@
 
 
         </div>
-
-
 
 
 
@@ -194,7 +209,10 @@
          RETOUR AU HALL
     ===================== -->
 
-    <a href="hall.html" class="bouton">
+    <a
+        href="hall.html"
+        class="bouton"
+    >
 
         Retour au Hall
 
@@ -204,7 +222,97 @@
 
 </main>
 
+
+
 <script>
+
+
+    // =====================
+    // DÉTERMINER LE RANG
+    // =====================
+
+    function obtenirRang(
+        index,
+        jeux
+    ) {
+
+
+        // =====================
+        // NOMBRE DE VOTES
+        // =====================
+
+        const nombreVotes =
+            jeux[index].nombreVotes;
+
+
+
+        // =====================
+        // CALCUL DU RANG
+        // =====================
+
+        let rang = 1;
+
+
+        for (
+            let i = 0;
+            i < index;
+            i++
+        ) {
+
+            if (
+                jeux[i].nombreVotes >
+                nombreVotes
+            ) {
+
+                rang++;
+
+            }
+
+        }
+
+
+
+        // =====================
+        // ICÔNES DU CLASSEMENT
+        // =====================
+
+        const emojisRang = {
+
+            1: '🥇',
+
+            2: '🥈',
+
+            3: '🥉',
+
+            4: '4️⃣',
+
+            5: '5️⃣',
+
+            6: '6️⃣',
+
+            7: '7️⃣',
+
+            8: '8️⃣',
+
+            9: '9️⃣',
+
+            10: '🔟'
+
+        };
+
+
+
+        // =====================
+        // RETOUR DU RANG
+        // =====================
+
+        return (
+            emojisRang[rang] ||
+            `${rang}.`
+        );
+
+    }
+
 
 
     // =====================
@@ -213,14 +321,24 @@
 
     async function afficherJeux() {
 
+
         const listeJeux =
-            document.getElementById('liste-jeux');
+            document.getElementById(
+                'liste-jeux'
+            );
+
 
         const sectionJeuxRefuses =
-            document.getElementById('section-jeux-refuses');
+            document.getElementById(
+                'section-jeux-refuses'
+            );
+
 
         const listeJeuxRefuses =
-            document.getElementById('liste-jeux-refuses');
+            document.getElementById(
+                'liste-jeux-refuses'
+            );
+
 
 
         // =====================
@@ -229,6 +347,7 @@
 
         const jeux =
             await obtenirJeuxAvecVotes();
+
 
 
         // =====================
@@ -241,14 +360,18 @@
                 '❌ Impossible de récupérer les jeux.'
             );
 
+
             listeJeux.innerHTML = `
                 <p>
                     ❌ Impossible de charger les aventures.
                 </p>
             `;
 
+
             return;
+
         }
+
 
 
         // =====================
@@ -257,21 +380,38 @@
 
         const jeuxValides =
             jeux.filter(
-                jeu => jeu.statut === 'valide'
+                jeu =>
+                    jeu.statut === 'valide'
             );
 
 
         const jeuxRefuses =
             jeux.filter(
-                jeu => jeu.statut === 'refuse'
+                jeu =>
+                    jeu.statut === 'refuse'
             );
+
+
+
+        // =====================
+        // CLASSEMENT
+        // =====================
+
+        jeuxValides.sort(
+            (a, b) =>
+                b.nombreVotes -
+                a.nombreVotes
+        );
+
 
 
         // =====================
         // JEUX VALIDES
         // =====================
 
-        if (jeuxValides.length === 0) {
+        if (
+            jeuxValides.length === 0
+        ) {
 
             listeJeux.innerHTML = `
                 <p>
@@ -281,246 +421,422 @@
 
         } else {
 
-            listeJeux.innerHTML = '';
+
+            listeJeux.innerHTML =
+                '';
 
 
-            jeuxValides.forEach(jeu => {
 
-                const carte =
-                    document.createElement('div');
-
-
-                carte.classList.add('jeu-vote');
+            jeuxValides.forEach(
+                (jeu, index) => {
 
 
-                // =====================
-                // ÉTAT DU VOTE
-                // =====================
-
-                const texteBouton =
-                    jeu.dejaVote
-                        ? '✅ Déjà voté'
-                        : '⚔️ Voter';
+                    const carte =
+                        document.createElement(
+                            'div'
+                        );
 
 
-                const boutonDesactive =
-                    jeu.dejaVote
-                        ? 'disabled'
-                        : '';
+                    carte.classList.add(
+                        'jeu-vote'
+                    );
 
 
-                carte.innerHTML = `
 
-                    <h3>
-                        🎮 ${jeu.nom}
-                    </h3>
+                    // =====================
+                    // RANG
+                    // =====================
 
-
-                    <p class="nombre-votes">
-                        ⚔️ ${jeu.nombreVotes}
-                        vote${jeu.nombreVotes > 1 ? 's' : ''}
-                    </p>
-
-
-                    <button
-                        type="button"
-                        class="bouton bouton-vote"
-                        data-jeu-id="${jeu.id}"
-                        ${boutonDesactive}
-                    >
-                        ${texteBouton}
-                    </button>
-
-                `;
+                    const rang =
+                        obtenirRang(
+                            index,
+                            jeuxValides
+                        );
 
 
-                // =====================
-                // BOUTON DE VOTE
-                // =====================
 
-                const bouton =
-                    carte.querySelector('.bouton-vote');
+                    // =====================
+                    // ÉTAT DU VOTE
+                    // =====================
 
-
-                bouton.addEventListener(
-                    'click',
-                    async () => {
+                    const texteBouton =
+                        jeu.dejaVote
+                            ? '↩️ Retirer mon vote'
+                            : '⚔️ Voter';
 
 
-                        // =====================
-                        // SESSION
-                        // =====================
 
-                        const {
-                            data: { session },
-                            error: sessionError
-                        } =
-                            await supabaseClient.auth.getSession();
+                    carte.innerHTML = `
+
+                        <h3>
+                            ${rang} 🎮 ${jeu.nom}
+                        </h3>
 
 
-                        if (
-                            sessionError ||
-                            !session?.user
-                        ) {
-
-                            console.error(
-                                '❌ Utilisateur anonyme introuvable :',
-                                sessionError
-                            );
+                        <p class="nombre-votes">
+                            ⚔️ ${jeu.nombreVotes}
+                            vote${jeu.nombreVotes > 1 ? 's' : ''}
+                        </p>
 
 
-                            alert(
-                                'Impossible de récupérer votre session.'
-                            );
+                        <button
+                            type="button"
+                            class="bouton bouton-vote"
+                            data-jeu-id="${jeu.id}"
+                        >
+
+                            ${texteBouton}
+
+                        </button>
+
+                    `;
 
 
-                            return;
 
-                        }
+                    // =====================
+                    // BOUTON
+                    // =====================
 
-
-                        // =====================
-                        // ENVOI DU VOTE
-                        // =====================
-
-                        const { error } =
-                            await supabaseClient
-                                .from('votes')
-                                .insert({
-
-                                    jeu_id: jeu.id,
-
-                                    user_id: session.user.id
-
-                                });
+                    const bouton =
+                        carte.querySelector(
+                            '.bouton-vote'
+                        );
 
 
-                        // =====================
-                        // GESTION DE L'ERREUR
-                        // =====================
 
-                        if (error) {
-
-                            console.error(
-                                '❌ Erreur lors du vote :',
-                                error
-                            );
+                    bouton.addEventListener(
+                        'click',
+                        async () => {
 
 
-                            // Vote déjà effectué
+                            // =====================
+                            // ÉVITER LES CLICS MULTIPLES
+                            // =====================
 
                             if (
-                                error.code === '23505'
+                                bouton.disabled
                             ) {
-
-                                bouton.textContent =
-                                    '✅ Déjà voté';
-
-                                bouton.disabled =
-                                    true;
 
                                 return;
 
                             }
 
 
-                            alert(
-                                'Impossible d’enregistrer votre vote.'
-                            );
+                            bouton.disabled =
+                                true;
 
 
-                            return;
+
+                            // =====================
+                            // RETIRER LE VOTE
+                            // =====================
+
+                            if (
+                                jeu.dejaVote
+                            ) {
+
+
+                                bouton.textContent =
+                                    '↩️ Suppression...';
+
+
+
+                                const suppressionReussie =
+                                    await retirerVote(
+                                        jeu.id
+                                    );
+
+
+
+                                // =====================
+                                // ERREUR SUPPRESSION
+                                // =====================
+
+                                if (
+                                    !suppressionReussie
+                                ) {
+
+                                    bouton.textContent =
+                                        '↩️ Retirer mon vote';
+
+
+                                    bouton.disabled =
+                                        false;
+
+
+                                    alert(
+                                        'Impossible de retirer votre vote.'
+                                    );
+
+
+                                    return;
+
+                                }
+
+
+
+                                // =====================
+                                // VOTE SUPPRIMÉ
+                                // =====================
+
+                                jeu.dejaVote =
+                                    false;
+
+
+                                jeu.nombreVotes =
+                                    Math.max(
+                                        0,
+                                        jeu.nombreVotes - 1
+                                    );
+
+
+
+                                // =====================
+                                // RECHARGER LE CLASSEMENT
+                                // =====================
+
+                                await afficherJeux();
+
+
+                                return;
+
+                            }
+
+
+
+                            // =====================
+                            // AJOUTER UN VOTE
+                            // =====================
+
+                            bouton.textContent =
+                                '⚔️ Vote en cours...';
+
+
+
+                            // =====================
+                            // SESSION
+                            // =====================
+
+                            const {
+                                data: {
+                                    session
+                                },
+                                error: sessionError
+                            } =
+                                await supabaseClient
+                                    .auth
+                                    .getSession();
+
+
+
+                            if (
+                                sessionError ||
+                                !session?.user
+                            ) {
+
+                                console.error(
+                                    '❌ Utilisateur anonyme introuvable :',
+                                    sessionError
+                                );
+
+
+                                bouton.textContent =
+                                    '⚔️ Voter';
+
+
+                                bouton.disabled =
+                                    false;
+
+
+                                alert(
+                                    'Impossible de récupérer votre session.'
+                                );
+
+
+                                return;
+
+                            }
+
+
+
+                            // =====================
+                            // ENVOI DU VOTE
+                            // =====================
+
+                            const { error } =
+                                await supabaseClient
+                                    .from('votes')
+                                    .insert({
+
+                                        jeu_id:
+                                            jeu.id,
+
+                                        user_id:
+                                            session.user.id
+
+                                    });
+
+
+
+                            // =====================
+                            // GESTION DE L'ERREUR
+                            // =====================
+
+                            if (error) {
+
+
+                                console.error(
+                                    '❌ Erreur lors du vote :',
+                                    error
+                                );
+
+
+
+                                // =====================
+                                // VOTE DÉJÀ EFFECTUÉ
+                                // =====================
+
+                                if (
+                                    error.code ===
+                                    '23505'
+                                ) {
+
+
+                                    jeu.dejaVote =
+                                        true;
+
+
+                                    bouton.textContent =
+                                        '↩️ Retirer mon vote';
+
+
+                                    bouton.disabled =
+                                        false;
+
+
+                                    return;
+
+                                }
+
+
+
+                                bouton.textContent =
+                                    '⚔️ Voter';
+
+
+                                bouton.disabled =
+                                    false;
+
+
+                                alert(
+                                    'Impossible d’enregistrer votre vote.'
+                                );
+
+
+                                return;
+
+                            }
+
+
+
+                            // =====================
+                            // VOTE ENREGISTRÉ
+                            // =====================
+
+                            jeu.dejaVote =
+                                true;
+
+
+                            jeu.nombreVotes++;
+
+
+
+                            // =====================
+                            // RECHARGER LE CLASSEMENT
+                            // =====================
+
+                            await afficherJeux();
 
                         }
+                    );
 
 
-                        // =====================
-                        // VOTE ENREGISTRÉ
-                        // =====================
 
-                        jeu.dejaVote =
-                            true;
+                    // =====================
+                    // AJOUT DE LA CARTE
+                    // =====================
 
+                    listeJeux.appendChild(
+                        carte
+                    );
 
-                        jeu.nombreVotes++;
-
-
-                        bouton.textContent =
-                            '✅ Déjà voté';
-
-
-                        bouton.disabled =
-                            true;
-
-
-                        // =====================
-                        // MISE À JOUR DU COMPTEUR
-                        // =====================
-
-                        const compteur =
-                            carte.querySelector(
-                                '.nombre-votes'
-                            );
-
-
-                        compteur.textContent =
-                            `⚔️ ${jeu.nombreVotes} vote${jeu.nombreVotes > 1 ? 's' : ''}`;
-
-                    }
-                );
-
-
-                listeJeux.appendChild(carte);
-
-            });
+                }
+            );
 
         }
+
 
 
         // =====================
         // JEUX REFUSÉS
         // =====================
 
-        if (jeuxRefuses.length > 0) {
+        if (
+            jeuxRefuses.length > 0
+        ) {
+
 
             sectionJeuxRefuses.style.display =
                 'block';
+
 
 
             listeJeuxRefuses.innerHTML =
                 '';
 
 
-            jeuxRefuses.forEach(jeu => {
 
-                const carte =
-                    document.createElement('div');
-
-
-                carte.classList.add('jeu-vote');
+            jeuxRefuses.forEach(
+                jeu => {
 
 
-                carte.innerHTML = `
-
-                    <h3>
-                        🎮 ${jeu.nom}
-                    </h3>
-
-
-                    <p>
-                        🚫 Non retenu
-                    </p>
-
-                `;
+                    const carte =
+                        document.createElement(
+                            'div'
+                        );
 
 
-                listeJeuxRefuses.appendChild(
-                    carte
-                );
+                    carte.classList.add(
+                        'jeu-vote'
+                    );
 
-            });
+
+
+                    carte.innerHTML = `
+
+                        <h3>
+                            🎮 ${jeu.nom}
+                        </h3>
+
+
+                        <p>
+                            🚫 Non retenu
+                        </p>
+
+                    `;
+
+
+
+                    listeJeuxRefuses.appendChild(
+                        carte
+                    );
+
+                }
+            );
+
 
         } else {
+
 
             sectionJeuxRefuses.style.display =
                 'none';
@@ -528,6 +844,7 @@
         }
 
     }
+
 
 
     // =====================
@@ -539,9 +856,8 @@
 
 </script>
 
-
+<script src="../js/transition.js"></script>
 
 </body>
-
 
 </html>
