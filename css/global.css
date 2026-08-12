@@ -280,3 +280,29 @@ p {
     color: var(--parchemin-clair);
 
 }
+
+/* =========================================================
+   TABLEAUX
+   ========================================================= */
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    width: 50%;
+    padding: 8px 5px;
+    text-align: center;
+}
+
+th {
+    padding-bottom: 12px;
+}
+
+td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}

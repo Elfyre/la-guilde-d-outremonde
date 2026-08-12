@@ -33,13 +33,6 @@
         href="css/main.css"
     >
 
-
-    <!-- =====================
-         TRANSITION
-    ===================== -->
-
-    <script src="./js/transition.js"></script>
-
 </head>
 
 
@@ -47,31 +40,42 @@
 
 
     <!-- =====================================================
-         PORTAIL DE TRANSITION
-         Invisible au départ.
-         Il devient visible lorsque l'utilisateur entre
-         dans la Guilde.
-    ====================================================== -->
-
-    <div
-        class="transition-portail"
-        aria-hidden="true"
-    ></div>
-
-
-
-    <!-- =====================
          PORTAIL D'ENTRÉE
-    ===================== -->
+         ===================================================== -->
 
     <main class="page-portail">
 
 
-        <!-- =====================
+        <!-- =================================================
              PORTAIL DIMENSIONNEL
-        ===================== -->
+             ================================================= -->
 
-        <div class="portail">
+        <div
+            class="portail"
+            aria-hidden="true"
+        >
+
+
+            <!-- =====================
+                 BRUME EXTÉRIEURE
+            ===================== -->
+
+            <div class="brume brume-1"></div>
+
+            <div class="brume brume-2"></div>
+
+            <div class="brume brume-3"></div>
+
+
+            <!-- =====================
+                 HALOS
+            ===================== -->
+
+            <div class="halo halo-1"></div>
+
+            <div class="halo halo-2"></div>
+
+            <div class="halo halo-3"></div>
 
 
             <!-- =====================
@@ -80,8 +84,45 @@
 
             <div class="energie-portail"></div>
 
-            <div class="vortex-secondaire"></div>
+            <div class="energie-portail energie-2"></div>
 
+            <div class="energie-portail energie-3"></div>
+
+
+            <!-- =====================
+                 ANNEAUX ÉNERGÉTIQUES
+            ===================== -->
+
+            <div class="anneau-portail anneau-1"></div>
+
+            <div class="anneau-portail anneau-2"></div>
+
+            <div class="anneau-portail anneau-3"></div>
+
+
+            <!-- =====================
+                 VORTEX
+            ===================== -->
+
+            <div class="vortex-portail">
+
+                <div class="vortex-interieur"></div>
+
+            </div>
+
+
+            <!-- =====================
+                 PARTICULES
+            ===================== -->
+
+            <div class="particules-portail"></div>
+
+
+            <!-- =====================
+                 CENTRE
+            ===================== -->
+
+            <div class="centre-portail"></div>
 
 
             <!-- =====================
@@ -104,7 +145,6 @@
                 </div>
 
 
-
                 <!-- =====================
                      TITRE
                 ===================== -->
@@ -117,7 +157,6 @@
                 </h1>
 
 
-
                 <!-- =====================
                      CITATION
                 ===================== -->
@@ -128,7 +167,6 @@
                     par un nouveau portail.
 
                 </p>
-
 
 
                 <!-- =====================
@@ -152,6 +190,13 @@
 
 
     </main>
+
+
+    <!-- =====================================================
+         TRANSITION
+         ===================================================== -->
+
+    <script src="./js/transition.js"></script>
 
 
 </body>
