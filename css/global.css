@@ -1,4 +1,5 @@
 /* =========================================================
+   LA GUILDE D'OUTREMONDE
    GLOBAL
    BASE DU SITE
    ========================================================= */
@@ -14,96 +15,106 @@
        FONDS
        ===================================================== */
 
-    --fond-principal: #100d12;
+    --fond-principal:
+        #100d12;
 
-    --fond-secondaire: #17121a;
+    --fond-secondaire:
+        #17121a;
 
-    --fond-violet: #241533;
+    --fond-violet:
+        #241533;
 
-    --fond-violet-sombre: #1a1026;
+    --fond-violet-sombre:
+        #1a1026;
 
 
     /* =====================================================
        VIOLET
        ===================================================== */
 
-    --violet: #7c3aed;
+    --violet:
+        #7c3aed;
 
-    --violet-clair: #a78bfa;
+    --violet-clair:
+        #a78bfa;
 
-    --violet-sombre: #4c1d95;
+    --violet-sombre:
+        #4c1d95;
 
-    /* Version RGB pour les transparences */
-
-    --violet-rgb: 124, 58, 237;
+    --violet-rgb:
+        124, 58, 237;
 
 
     /* =====================================================
        ROSE
        ===================================================== */
 
-    --rose: #ec4899;
+    --rose:
+        #ec4899;
 
-    --rose-clair: #f472b6;
+    --rose-clair:
+        #f472b6;
 
-    --rose-sombre: #9d174d;
+    --rose-sombre:
+        #9d174d;
 
-    /* Version RGB pour les transparences */
-
-    --rose-rgb: 236, 72, 153;
+    --rose-rgb:
+        236, 72, 153;
 
 
     /* =====================================================
        PARCHEMIN / OR
        ===================================================== */
 
-    --parchemin: #d8c29a;
+    --parchemin:
+        #d8c29a;
 
-    --parchemin-clair: #ead8b2;
+    --parchemin-clair:
+        #ead8b2;
 
-    --parchemin-sombre: #8f7855;
+    --parchemin-sombre:
+        #8f7855;
 
-    /* Version RGB pour les transparences */
-
-    --parchemin-rgb: 216, 194, 154;
+    --parchemin-rgb:
+        216, 194, 154;
 
 
     /* =====================================================
        TEXTE
        ===================================================== */
 
-    --texte: #e5d6b7;
+    --texte:
+        #e5d6b7;
 
-    --texte-principal: #eee7f3;
+    --texte-principal:
+        #eee7f3;
 
-    --texte-secondaire: #a99a82;
+    --texte-secondaire:
+        #a99a82;
 
-    --texte-sombre: #76677d;
+    --texte-sombre:
+        #76677d;
 
 
     /* =====================================================
        ACCENT GÉNÉRAL
        ===================================================== */
 
-    --accent: #8f719c;
+    --accent:
+        #8f719c;
 
-    --accent-clair: #b89ac4;
+    --accent-clair:
+        #b89ac4;
 
-    --accent-sombre: #4d3a55;
+    --accent-sombre:
+        #4d3a55;
 
-    /* Version RGB pour les transparences */
-
-    --accent-rgb: 143, 113, 156;
+    --accent-rgb:
+        143, 113, 156;
 
 
     /* =====================================================
-       EFFETS
-       ===================================================== */
-
-    --ombre: rgba(0, 0, 0, 0.65);
-
-        /* =====================================================
-       SURFACES ET EFFETS
+       SURFACES
        ===================================================== */
 
     --surface-legere:
@@ -120,14 +131,11 @@
 
 
     /* =====================================================
-       LUEURS
+       OMBRES
        ===================================================== */
 
-    --lueur-accent:
-        rgba(143, 113, 156, 0.25);
-
-    --lueur-accent-legere:
-        rgba(143, 113, 156, 0.20);
+    --ombre:
+        rgba(0, 0, 0, 0.65);
 
     --ombre-forte:
         rgba(0, 0, 0, 0.45);
@@ -139,6 +147,79 @@
         rgba(0, 0, 0, 0.25);
 
 
+    /* =====================================================
+       LUEURS
+       ===================================================== */
+
+    --lueur-accent:
+        rgba(143, 113, 156, 0.25);
+
+    --lueur-accent-legere:
+        rgba(143, 113, 156, 0.20);
+
+
+    /* =====================================================
+       TYPOGRAPHIE
+       ===================================================== */
+
+    --police-principale:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    --epaisseur-texte:
+        normal;
+
+
+    /* =====================================================
+       LARGEURS GLOBALES
+       ===================================================== */
+
+    --largeur-contenu:
+        1100px;
+
+    --largeur-contenu-large:
+        1200px;
+
+    --largeur-contenu-etroit:
+        900px;
+
+
+    /* =====================================================
+       ESPACEMENTS GLOBAUX
+       ===================================================== */
+
+    --espace-petit:
+        10px;
+
+    --espace-moyen:
+        20px;
+
+    --espace-grand:
+        40px;
+
+    --espace-tres-grand:
+        60px;
+
+
+    /* =====================================================
+       RAYONS
+       ===================================================== */
+
+    --rayon:
+        0px;
+
+
+    /* =====================================================
+       TRANSITIONS
+       ===================================================== */
+
+    --transition-rapide:
+        0.2s ease;
+
+    --transition-standard:
+        0.3s ease;
+
 }
 
 
@@ -148,53 +229,72 @@
 
 * {
 
-    margin: 0;
+    margin:
+        0;
 
-    padding: 0;
+    padding:
+        0;
 
-    box-sizing: border-box;
+    box-sizing:
+        border-box;
 
 }
 
+
+/* =========================================================
+   DOCUMENT
+   ========================================================= */
 
 html,
 body {
 
-    width: 100%;
+    width:
+        100%;
 
-    min-height: 100%;
+    min-height:
+        100%;
 
 }
 
 
+/* =========================================================
+   CORPS DU SITE
+   ========================================================= */
+
 body {
 
-    min-height: 100vh;
+    min-height:
+        100vh;
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--police-principale);
+
+    font-weight:
+        var(--epaisseur-texte);
 
     background:
 
-        /* Lueur violette */
-
         radial-gradient(
             circle at top,
-            rgba(var(--violet-rgb), 0.18),
+
+            rgba(
+                var(--violet-rgb),
+                0.18
+            ),
+
             transparent 45%
         ),
 
-        /* Fond principal */
-
         radial-gradient(
             circle at center,
+
             var(--fond-violet) 0%,
+
             var(--fond-principal) 70%
         );
 
-    color: var(--texte);
+    color:
+        var(--texte);
 
 }
 
@@ -205,9 +305,11 @@ body {
 
 a {
 
-    color: inherit;
+    color:
+        inherit;
 
-    text-decoration: none;
+    text-decoration:
+        none;
 
 }
 
@@ -221,18 +323,18 @@ h2,
 h3 {
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--police-principale);
 
-    font-weight: normal;
+    font-weight:
+        normal;
 
 }
 
 
 h1 {
 
-    color: var(--parchemin-clair);
+    color:
+        var(--parchemin-clair);
 
     text-shadow:
 
@@ -244,14 +346,16 @@ h1 {
 
 h2 {
 
-    color: var(--texte);
+    color:
+        var(--texte);
 
 }
 
 
 h3 {
 
-    color: var(--parchemin);
+    color:
+        var(--parchemin);
 
 }
 
@@ -262,9 +366,11 @@ h3 {
 
 p {
 
-    color: var(--texte-secondaire);
+    color:
+        var(--texte-secondaire);
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
 }
 
@@ -275,105 +381,194 @@ p {
 
 ::selection {
 
-    background: var(--violet);
+    background:
+        var(--violet);
 
-    color: var(--parchemin-clair);
+    color:
+        var(--parchemin-clair);
 
 }
+
 
 /* =========================================================
    TABLEAUX
    ========================================================= */
 
 table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
+
+    width:
+        100%;
+
+    table-layout:
+        fixed;
+
+    border-collapse:
+        collapse;
+
 }
+
 
 th,
 td {
-    width: 50%;
-    padding: 8px 5px;
-    text-align: center;
+
+    width:
+        50%;
+
+    padding:
+        8px 5px;
+
+    text-align:
+        center;
+
 }
+
 
 th {
-    padding-bottom: 12px;
+
+    padding-bottom:
+        12px;
+
 }
 
+
 td {
-    padding-top: 8px;
-    padding-bottom: 8px;
+
+    padding-top:
+        8px;
+
+    padding-bottom:
+        8px;
+
 }
+
 
 /* =========================================================
    DÉCORATIONS AUX COINS
    ========================================================= */
 
 .ornement {
-    position: absolute;
 
-    width: 110px;
-    height: 110px;
+    position:
+        absolute;
 
-    opacity: 0.28;
+    width:
+        110px;
+
+    height:
+        110px;
+
+    opacity:
+        0.28;
+
 }
+
 
 .ornement::before,
 .ornement::after {
-    content: "";
 
-    position: absolute;
+    content:
+        "";
 
-    width: 100%;
-    height: 1px;
+    position:
+        absolute;
 
-    background: var(--parchemin-sombre);
+    width:
+        100%;
+
+    height:
+        1px;
+
+    background:
+        var(--parchemin-sombre);
+
 }
+
 
 .ornement::after {
-    transform: rotate(90deg);
+
+    transform:
+        rotate(90deg);
+
 }
 
 
-/* Haut gauche */
+/* =========================================================
+   ORNEMENT — HAUT GAUCHE
+   ========================================================= */
 
 .ornement-haut-gauche {
-    top: 35px;
-    left: 35px;
+
+    top:
+        35px;
+
+    left:
+        35px;
+
 }
+
 
 .ornement-haut-gauche::before {
-    top: 0;
-    left: 0;
+
+    top:
+        0;
+
+    left:
+        0;
+
 }
 
 
-/* Haut droit */
+/* =========================================================
+   ORNEMENT — HAUT DROIT
+   ========================================================= */
 
 .ornement-haut-droit {
-    top: 35px;
-    right: 35px;
+
+    top:
+        35px;
+
+    right:
+        35px;
+
 }
+
 
 .ornement-haut-droit::before {
-    top: 0;
-    right: 0;
+
+    top:
+        0;
+
+    right:
+        0;
+
 }
 
 
-/* Bas gauche */
+/* =========================================================
+   ORNEMENT — BAS GAUCHE
+   ========================================================= */
 
 .ornement-bas-gauche {
-    bottom: 35px;
-    left: 35px;
+
+    bottom:
+        35px;
+
+    left:
+        35px;
+
 }
 
 
-/* Bas droit */
+/* =========================================================
+   ORNEMENT — BAS DROIT
+   ========================================================= */
 
 .ornement-bas-droit {
-    bottom: 35px;
-    right: 35px;
+
+    bottom:
+        35px;
+
+    right:
+        35px;
+
 }
