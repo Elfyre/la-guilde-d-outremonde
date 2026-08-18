@@ -194,3 +194,415 @@
     }
 
 }
+
+
+
+
+
+
+
+
+/* =========================================================
+   PROFIL KITANA — MISE EN PAGE ARTEFACT
+========================================================= */
+
+
+/* =========================================================
+   PROFIL
+========================================================= */
+
+.profil-artefact {
+
+    width: 100%;
+
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.artefact-introduction {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 25px;
+
+    line-height: 1.7;
+
+}
+
+
+.artefact-introduction p {
+
+    margin-bottom: 15px;
+
+}
+
+
+.artefact-introduction p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   GRILLE PRINCIPALE
+========================================================= */
+
+.grille-artefact {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 1fr)
+        minmax(380px, 1.25fr)
+        minmax(280px, 1fr);
+
+    grid-template-areas:
+
+        "entite centre eventails"
+
+        "multivers centre conclusion";
+
+    gap: 22px;
+
+    align-items: start;
+
+}
+
+
+/* =========================================================
+   POSITION DES BLOCS
+========================================================= */
+
+.entite-divine {
+
+    grid-area: entite;
+
+}
+
+
+.eventails-code {
+
+    grid-area: eventails;
+
+}
+
+
+.multivers-serveurs {
+
+    grid-area: multivers;
+
+}
+
+
+.conclusion-lore {
+
+    grid-area: conclusion;
+
+}
+
+
+/* =========================================================
+   CENTRE
+========================================================= */
+
+.centre-artefact {
+
+    grid-area: centre;
+
+    position: sticky;
+
+    top: 25px;
+
+    align-self: start;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.image-artefact {
+
+    width: 100%;
+
+}
+
+
+.image-artefact img {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: inherit;
+
+}
+
+
+/* =========================================================
+   TITRE DE L'ARTEFACT
+========================================================= */
+
+.titre-artefact {
+
+    margin-top: 15px;
+
+}
+
+
+.titre-artefact span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 0.82rem;
+
+    letter-spacing: 0.16em;
+
+}
+
+
+.titre-artefact h2 {
+
+    margin: 0;
+
+    font-size: 1.3rem;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   LISIBILITÉ DES CADRES
+========================================================= */
+
+.bloc-artefact {
+
+    line-height: 1.7;
+
+}
+
+
+.bloc-artefact h2 {
+
+    line-height: 1.4;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================================================
+   SOUS-TITRES DU LORE
+========================================================= */
+
+.bloc-artefact h3 {
+
+    margin-top: 24px;
+
+    margin-bottom: 9px;
+
+    line-height: 1.4;
+
+    font-size: 1rem;
+
+}
+
+
+.bloc-artefact h3:first-of-type {
+
+    margin-top: 0;
+
+}
+
+
+/* =========================================================
+   PARAGRAPHES
+========================================================= */
+
+.bloc-artefact p {
+
+    margin-top: 0;
+
+    margin-bottom: 17px;
+
+}
+
+
+.bloc-artefact p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   JEUX LIÉS
+========================================================= */
+
+.jeux-lies {
+
+    margin-top: -8px !important;
+
+    margin-bottom: 22px !important;
+
+    font-size: 0.88rem;
+
+    font-style: italic;
+
+    letter-spacing: 0.03em;
+
+    opacity: 0.8;
+
+}
+
+
+/* =========================================================
+   PROCHAINS DÉFIS
+========================================================= */
+
+.prochains-defis {
+
+    margin-top: 25px !important;
+
+    text-align: center;
+
+}
+
+
+.separateur-defis {
+
+    display: inline-block;
+
+    margin: 0 12px;
+
+}
+
+
+/* =========================================================
+   TABLETTE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .grille-artefact {
+
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+
+            "centre centre"
+
+            "entite eventails"
+
+            "multivers conclusion";
+
+    }
+
+
+    .centre-artefact {
+
+        position: relative;
+
+        top: auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .grille-artefact {
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+
+            "centre"
+
+            "entite"
+
+            "eventails"
+
+            "multivers"
+
+            "conclusion";
+
+        gap: 18px;
+
+    }
+
+
+    .centre-artefact {
+
+        position: relative;
+
+        top: auto;
+
+    }
+
+
+    .bloc-artefact {
+
+        line-height: 1.65;
+
+    }
+
+
+    .bloc-artefact h3 {
+
+        margin-top: 21px;
+
+    }
+
+
+    .bloc-artefact p {
+
+        margin-bottom: 16px;
+
+    }
+
+
+    .titre-artefact span {
+
+        font-size: 0.72rem;
+
+        letter-spacing: 0.1em;
+
+    }
+
+
+    .titre-artefact h2 {
+
+        font-size: 1.15rem;
+
+    }
+
+
+    .separateur-defis {
+
+        margin: 0 8px;
+
+    }
+
+}
