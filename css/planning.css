@@ -1,4 +1,4 @@
-/* =========================================================
+ /* =========================================================
    PLANNING
    SALLE DES MISSIONS
    ========================================================= */
@@ -16,7 +16,8 @@
     margin:
         0 auto 35px;
 
-    display:grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(7, 1fr);
@@ -33,12 +34,14 @@
 
 .mission {
 
-    min-width:0;
+    min-width:
+        0;
 
     padding:
         18px 10px;
 
-    text-align:center;
+    text-align:
+        center;
 
     border:
         1px solid
@@ -59,12 +62,9 @@
         var(--ombre-moyenne);
 
     transition:
-
-        transform 0.3s ease,
-
-        border-color 0.3s ease,
-
-        box-shadow 0.3s ease;
+        transform var(--transition-standard),
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard);
 
 }
 
@@ -172,11 +172,14 @@
     height:
         100px;
 
-    display:flex;
+    display:
+        flex;
 
-    justify-content:center;
+    justify-content:
+        center;
 
-    align-items:center;
+    align-items:
+        center;
 
     margin:
         0;
@@ -202,7 +205,8 @@
     object-fit:
         contain;
 
-    display:block;
+    display:
+        block;
 
     filter:
         drop-shadow(
@@ -211,10 +215,8 @@
         );
 
     transition:
-
-        transform 0.3s ease,
-
-        filter 0.3s ease;
+        transform var(--transition-standard),
+        filter var(--transition-standard);
 
 }
 
@@ -233,176 +235,5 @@
             0 0 10px
             var(--lueur-accent)
         );
-
-}
-
-
-/* =========================================================
-   BOUTON RETOUR
-   ========================================================= */
-
-.bouton {
-
-    display:
-        block;
-
-    width:
-        fit-content;
-
-    margin:
-        0 auto 30px;
-
-    padding:
-        9px 20px;
-
-    border:
-        1px solid
-        var(--parchemin-sombre);
-
-    background:
-        var(--surface-legere);
-
-    color:
-        var(--parchemin);
-
-    text-align:center;
-
-    transition:
-
-        transform 0.3s ease,
-
-        border-color 0.3s ease,
-
-        background 0.3s ease,
-
-        color 0.3s ease,
-
-        box-shadow 0.3s ease;
-
-}
-
-
-.bouton:hover {
-
-    transform:
-        translateY(-3px);
-
-    border-color:
-        var(--parchemin);
-
-    background:
-        var(--surface-violette-legere);
-
-    color:
-        var(--parchemin-clair);
-
-    box-shadow:
-        0 0 18px
-        var(--lueur-accent-legere);
-
-}
-
-
-/* =========================================================
-   RESPONSIVE — ÉCRANS MOYENS
-   ========================================================= */
-
-@media (max-width:1000px) {
-
-    .planning {
-
-        grid-template-columns:
-            repeat(4, 1fr);
-
-    }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE — TABLETTE
-   ========================================================= */
-
-@media (max-width:700px) {
-
-    .planning {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-        gap:
-            15px;
-
-    }
-
-
-    .mission {
-
-        padding:
-            20px 12px;
-
-    }
-
-
-    .image-planning {
-
-        height:
-            105px;
-
-    }
-
-
-    .image-planning img {
-
-        width:
-            105px;
-
-        height:
-            105px;
-
-    }
-
-}
-
-
-/* =========================================================
-   RESPONSIVE — MOBILE
-   ========================================================= */
-
-@media (max-width:450px) {
-
-    .planning {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .mission {
-
-        padding:
-            22px 20px;
-
-    }
-
-
-    .image-planning {
-
-        height:
-            120px;
-
-    }
-
-
-    .image-planning img {
-
-        width:
-            120px;
-
-        height:
-            120px;
-
-    }
 
 }

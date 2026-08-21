@@ -7,7 +7,10 @@ const supabaseClient = window.supabase.createClient(
     SUPABASE_PUBLISHABLE_KEY
 );
 
-console.log("✅ Connexion Supabase initialisée :", supabaseClient);
+console.log(
+    "✅ Connexion Supabase initialisée :",
+    supabaseClient
+);
 
 
 /* =====================================================
@@ -16,9 +19,10 @@ console.log("✅ Connexion Supabase initialisée :", supabaseClient);
 
 async function testerSupabase() {
 
-    const { data, error } = await supabaseClient
-        .from('jeux')
-        .select('id, nom, statut');
+    const { data, error } =
+        await supabaseClient
+            .from('jeux')
+            .select('id, nom, statut');
 
     if (error) {
 
@@ -27,7 +31,7 @@ async function testerSupabase() {
             error
         );
 
-        return;
+        return null;
     }
 
     console.log(
@@ -45,7 +49,10 @@ async function testerSupabase() {
 
 async function obtenirUtilisateurAnonyme() {
 
-    const { data: { session }, error } =
+    const {
+        data: { session },
+        error
+    } =
         await supabaseClient.auth.getSession();
 
     if (error) {
@@ -68,7 +75,10 @@ async function obtenirUtilisateurAnonyme() {
         return session.user;
     }
 
-    const { data, error: signInError } =
+    const {
+        data,
+        error: signInError
+    } =
         await supabaseClient.auth.signInAnonymously();
 
     if (signInError) {
@@ -108,10 +118,14 @@ async function obtenirMesVotes() {
         return [];
     }
 
-    const { data, error } =
+    const {
+        data,
+        error
+    } =
         await supabaseClient
             .from('votes')
-            .select('jeu_id');
+            .select('jeu_id')
+            .eq('user_id', utilisateur.id);
 
     if (error) {
 
@@ -150,15 +164,16 @@ async function retirerVote(jeuId) {
         return false;
     }
 
-
-    const { data, error } =
+    const {
+        data,
+        error
+    } =
         await supabaseClient
             .from('votes')
             .delete()
             .eq('jeu_id', jeuId)
             .eq('user_id', utilisateur.id)
             .select();
-
 
     if (error) {
 
@@ -169,7 +184,6 @@ async function retirerVote(jeuId) {
 
         return false;
     }
-
 
     console.log(
         '✅ Vote supprimé :',
@@ -186,7 +200,10 @@ async function retirerVote(jeuId) {
 
 async function obtenirNombreVotes(jeuId) {
 
-    const { data, error } =
+    const {
+        data,
+        error
+    } =
         await supabaseClient
             .rpc('compter_votes', {
                 jeu_id_input: jeuId
@@ -217,7 +234,8 @@ async function obtenirNombreVotes(jeuId) {
 
 async function obtenirJeuxAvecVotes() {
 
-    const jeux = await testerSupabase();
+    const jeux =
+        await testerSupabase();
 
     if (!jeux) {
 
@@ -237,11 +255,14 @@ async function obtenirJeuxAvecVotes() {
     for (const jeu of jeux) {
 
         const nombreVotes =
-            await obtenirNombreVotes(jeu.id);
+            await obtenirNombreVotes(
+                jeu.id
+            );
 
         const dejaVote =
             mesVotes.some(
-                vote => vote.jeu_id === jeu.id
+                vote =>
+                    vote.jeu_id === jeu.id
             );
 
 
@@ -258,6 +279,7 @@ async function obtenirJeuxAvecVotes() {
             dejaVote: dejaVote
 
         });
+
     }
 
 
@@ -268,10 +290,3 @@ async function obtenirJeuxAvecVotes() {
 
     return jeuxAvecVotes;
 }
-
-
-/* =====================================================
-   INITIALISATION
-===================================================== */
-
-obtenirJeuxAvecVotes();

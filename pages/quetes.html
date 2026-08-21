@@ -8,6 +8,15 @@
 
 <head>
 
+    <!-- =========================================================
+     EASTER EGG — LICORNE
+     ========================================================= -->
+
+<script
+    src="../js/licorne.js"
+    defer
+></script>
+
     <meta charset="UTF-8">
 
     <meta
@@ -32,11 +41,6 @@
 </head>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="../js/supabase.js"></script>
-
-
 <body>
 
 
@@ -44,7 +48,8 @@
      SALLE DES QUÊTES
 ===================== -->
 
-<main class="salle-page">
+<main>
+
 
     <!-- =========================
          DÉCORATIONS
@@ -57,6 +62,7 @@
     <div class="ornement ornement-bas-gauche"></div>
 
     <div class="ornement ornement-bas-droit"></div>
+
 
     <!-- =====================
          EN-TÊTE DE LA SALLE
@@ -77,14 +83,18 @@
         <!-- Titre -->
 
         <h1>
+
             Salle des Quêtes
+
         </h1>
 
 
         <!-- Description -->
 
         <p>
+
             Les aventuriers peuvent proposer les prochaines expéditions.
+
         </p>
 
 
@@ -103,21 +113,25 @@
              PROPOSER UNE AVENTURE
         ===================== -->
 
-        <div class="quete">
+        <div class="quete transition-douce">
 
 
             <!-- Titre -->
 
             <h2>
+
                 🔮 Proposer une aventure
+
             </h2>
 
 
             <!-- Description -->
 
             <p>
+
                 Un jeu mérite peut-être de rejoindre
                 les prochaines aventures de la Guilde.
+
             </p>
 
 
@@ -125,7 +139,7 @@
 
             <a
                 href="proposer.html"
-                class="bouton"
+                class="bouton transition-douce"
             >
 
                 Proposer un jeu
@@ -141,21 +155,25 @@
              VOTER POUR UNE QUÊTE
         ===================== -->
 
-        <div class="quete">
+        <div class="quete transition-douce">
 
 
             <!-- Titre -->
 
             <h2>
+
                 ⚔️ Voter pour une quête
+
             </h2>
 
 
             <!-- Description -->
 
             <p>
+
                 Les membres de la Guilde choisissent
                 les prochaines aventures.
+
             </p>
 
 
@@ -166,7 +184,9 @@
             <div id="liste-jeux">
 
                 <p>
+
                     🔮 Chargement des aventures...
+
                 </p>
 
             </div>
@@ -181,7 +201,7 @@
         ===================== -->
 
         <div
-            class="quete"
+            class="quete transition-douce"
             id="section-jeux-refuses"
             style="display: none;"
         >
@@ -190,15 +210,19 @@
             <!-- Titre -->
 
             <h2>
+
                 🚫 Jeux proposés mais non retenus
+
             </h2>
 
 
             <!-- Description -->
 
             <p>
+
                 Ces jeux ont été proposés à la Guilde
                 mais n'ont pas été retenus par l'équipe.
+
             </p>
 
 
@@ -222,7 +246,7 @@
 
     <a
         href="hall.html"
-        class="bouton"
+        class="bouton transition-douce"
     >
 
         Retour au Hall
@@ -230,9 +254,17 @@
     </a>
 
 
-
 </main>
 
+
+
+<!-- =====================
+     SCRIPTS
+===================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
 
 
 <script>
@@ -437,7 +469,6 @@
                 '';
 
 
-
             jeuxValides.forEach(
                 (jeu, index) => {
 
@@ -492,7 +523,7 @@
 
                         <button
                             type="button"
-                            class="bouton bouton-vote"
+                            class="bouton bouton-vote transition-douce"
                             data-jeu-id="${jeu.id}"
                         >
 
@@ -801,10 +832,8 @@
                 'block';
 
 
-
             listeJeuxRefuses.innerHTML =
                 '';
-
 
 
             jeuxRefuses.forEach(
@@ -822,7 +851,6 @@
                     );
 
 
-
                     carte.innerHTML = `
 
                         <h3>
@@ -835,7 +863,6 @@
                         </p>
 
                     `;
-
 
 
                     listeJeuxRefuses.appendChild(
@@ -866,6 +893,7 @@
 
 
 </script>
+
 
 </body>
 

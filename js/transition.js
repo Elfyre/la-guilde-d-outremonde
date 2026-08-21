@@ -93,7 +93,7 @@ document.addEventListener(
 
         const bouton =
             document.querySelector(
-                ".entrer-guilde"
+                ".bouton"
             );
 
 

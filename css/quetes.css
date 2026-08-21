@@ -10,16 +10,20 @@
 
 .quetes {
 
-    width: min(1000px, 90%);
+    width:
+        min(1000px, 90%);
 
-    margin: 0 auto 60px;
+    margin:
+        0 auto 60px;
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap: 30px;
+    gap:
+        var(--espace-cartes);
 
 }
 
@@ -30,56 +34,59 @@
 
 .quete {
 
-    position: relative;
+    position:
+        relative;
 
-    padding: 35px 30px;
+    min-width:
+        0;
 
-    text-align: center;
+    padding:
+        35px 30px;
 
-    border: 1px solid var(--parchemin-sombre);
+    text-align:
+        center;
+
+    border:
+        var(--bordure-standard);
 
     background:
-
-        linear-gradient(
-            145deg,
-            rgba(143, 113, 156, 0.12),
-            rgba(0, 0, 0, 0.50)
-        );
+        var(--fond-carte);
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.30);
+        var(--ombre-carte);
 
     transition:
-
-        transform 0.3s ease,
-
-        border-color 0.3s ease,
-
-        box-shadow 0.3s ease;
+        var(--transition-carte);
 
 }
 
 
+/* =========================================================
+   SURVOL DE LA CARTE
+   ========================================================= */
+
 .quete:hover {
 
     transform:
-        translateY(-5px);
+        var(--hover-carte);
 
     border-color:
         var(--parchemin);
 
     box-shadow:
-
-        0 12px 30px rgba(0, 0, 0, 0.40),
-
-        0 0 20px rgba(143, 113, 156, 0.20);
+        var(--ombre-carte-hover);
 
 }
 
 
+/* =========================================================
+   TITRE
+   ========================================================= */
+
 .quete h2 {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
     color:
         var(--parchemin-clair);
@@ -87,12 +94,17 @@
 }
 
 
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
 .quete p {
 
     color:
         var(--texte-secondaire);
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
 }
 
@@ -103,16 +115,20 @@
 
 .nombre-votes {
 
-    display: block;
+    display:
+        block;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 
     color:
         var(--parchemin);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
 }
 
@@ -123,41 +139,46 @@
 
 .bouton-vote {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
 
-    padding: 10px 22px;
+    padding:
+        10px 22px;
 
-    border: 1px solid var(--accent-sombre);
+    border:
+        1px solid
+        var(--accent-sombre);
 
     background:
-        rgba(143, 113, 156, 0.12);
+        var(--surface-violette-legere);
 
     color:
         var(--parchemin);
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--police-principale);
 
-    font-size: 14px;
+    font-size:
+        14px;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
     transition:
-
-        background 0.3s ease,
-
-        border-color 0.3s ease,
-
-        box-shadow 0.3s ease,
-
-        transform 0.3s ease;
+        background var(--transition-standard),
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard),
+        transform var(--transition-standard);
 
 }
 
+
+/* =========================================================
+   SURVOL DU BOUTON DE VOTE
+   ========================================================= */
 
 .bouton-vote:hover {
 
@@ -165,10 +186,11 @@
         var(--parchemin-sombre);
 
     background:
-        rgba(143, 113, 156, 0.25);
+        rgba(var(--accent-rgb), 0.25);
 
     box-shadow:
-        0 0 15px rgba(143, 113, 156, 0.20);
+        0 0 15px
+        var(--lueur-accent-legere);
 
     transform:
         translateY(-2px);
@@ -182,22 +204,27 @@
 
 .message-proposition {
 
-    width: min(700px, 90%);
+    width:
+        min(700px, 90%);
 
-    margin: 0 auto 35px;
+    margin:
+        0 auto 35px;
 
-    padding: 20px 25px;
+    padding:
+        20px 25px;
 
     border-left:
-        2px solid var(--accent);
+        2px solid
+        var(--accent);
 
     background:
-        rgba(143, 113, 156, 0.06);
+        rgba(var(--accent-rgb), 0.06);
 
     color:
         var(--texte-secondaire);
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
 }
 
@@ -211,7 +238,8 @@
     color:
         var(--accent-clair);
 
-    font-size: 13px;
+    font-size:
+        13px;
 
 }
 
@@ -222,14 +250,18 @@
 
 .champ-formulaire {
 
-    width: 100%;
+    width:
+        100%;
 
-    padding: 13px 15px;
+    padding:
+        13px 15px;
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
     border:
-        1px solid var(--accent-sombre);
+        1px solid
+        var(--accent-sombre);
 
     background:
         rgba(0, 0, 0, 0.35);
@@ -238,30 +270,36 @@
         var(--texte);
 
     font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+        var(--police-principale);
 
-    font-size: 15px;
+    font-size:
+        15px;
 
     transition:
-
-        border-color 0.3s ease,
-
-        box-shadow 0.3s ease;
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard);
 
 }
 
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
 
 .champ-formulaire::placeholder {
 
     color:
         var(--texte-secondaire);
 
-    opacity: 0.7;
+    opacity:
+        0.7;
 
 }
 
+
+/* =========================================================
+   FOCUS
+   ========================================================= */
 
 .champ-formulaire:focus {
 
@@ -269,9 +307,11 @@
         var(--accent-clair);
 
     box-shadow:
-        0 0 12px rgba(143, 113, 156, 0.20);
+        0 0 12px
+        var(--lueur-accent-legere);
 
-    outline: none;
+    outline:
+        none;
 
 }
 
@@ -282,17 +322,23 @@
 
 .choix-mode {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 25px;
+    gap:
+        25px;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    margin: 10px 0 25px;
+    margin:
+        10px 0 25px;
 
     color:
         var(--texte);
@@ -300,54 +346,28 @@
 }
 
 
+/* =========================================================
+   LABELS DU MODE
+   ========================================================= */
+
 .choix-mode label {
 
-    cursor: pointer;
-
-}
-
-
-.choix-mode input {
-
-    margin-right: 6px;
-
-    accent-color:
-        var(--accent-clair);
+    cursor:
+        pointer;
 
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   CASES DU MODE
    ========================================================= */
 
-@media (max-width: 750px) {
+.choix-mode input {
 
-    .quetes {
+    margin-right:
+        6px;
 
-        grid-template-columns:
-            1fr;
-
-    }
-
-}
-
-
-@media (max-width: 550px) {
-
-    .quete {
-
-        padding: 28px 20px;
-
-    }
-
-
-    .choix-mode {
-
-        flex-direction: column;
-
-        gap: 12px;
-
-    }
+    accent-color:
+        var(--accent-clair);
 
 }

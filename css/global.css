@@ -131,6 +131,17 @@
 
 
     /* =====================================================
+       BORDURES
+       ===================================================== */
+
+    --bordure-standard:
+        1px solid var(--parchemin-sombre);
+
+    --bordure-accent:
+        1px solid var(--parchemin);
+
+
+    /* =====================================================
        OMBRES
        ===================================================== */
 
@@ -263,6 +274,9 @@ body {
 
 body {
 
+    position:
+        relative;
+        
     min-height:
         100vh;
 
@@ -276,20 +290,16 @@ body {
 
         radial-gradient(
             circle at top,
-
             rgba(
                 var(--violet-rgb),
                 0.18
             ),
-
             transparent 45%
         ),
 
         radial-gradient(
             circle at center,
-
             var(--fond-violet) 0%,
-
             var(--fond-principal) 70%
         );
 
@@ -337,7 +347,6 @@ h1 {
         var(--parchemin-clair);
 
     text-shadow:
-
         0 3px 8px
         var(--ombre);
 
@@ -459,7 +468,9 @@ td {
 
     opacity:
         0.28;
-
+        
+    transform-origin:
+        center;
 }
 
 
@@ -504,6 +515,9 @@ td {
     left:
         35px;
 
+    transform:
+        rotate(0deg);
+
 }
 
 
@@ -529,6 +543,9 @@ td {
 
     right:
         35px;
+
+    transform:
+        rotate(0deg);
 
 }
 
@@ -556,6 +573,9 @@ td {
     left:
         35px;
 
+    transform:
+        rotate(180deg);
+
 }
 
 
@@ -570,5 +590,8 @@ td {
 
     right:
         35px;
+
+    transform:
+        rotate(180deg);
 
 }

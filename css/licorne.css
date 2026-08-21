@@ -1,0 +1,1075 @@
+/* =========================================================
+   EASTER EGG — LICORNE
+   ========================================================= */
+
+.licorne-easter-egg {
+
+    position:
+        fixed;
+
+    z-index:
+        99998;
+
+    pointer-events:
+        none;
+
+    width:
+        100px;
+
+    height:
+        100px;
+
+    object-fit:
+        contain;
+
+    opacity:
+        0;
+
+    --direction-x:
+        1;
+
+    --direction-y:
+        0;
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 1
+   DÉPLACEMENT ONDULÉ
+   ========================================================= */
+
+.licorne-animation-1 {
+
+    animation:
+        licorne-animation-1
+        2.8s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-1 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            scale(0.7);
+
+    }
+
+    12% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    35% {
+
+        transform:
+            translate(
+                calc(50px * var(--direction-x)),
+                calc(-35px * var(--direction-y))
+            )
+            scale(1.02);
+
+    }
+
+    60% {
+
+        transform:
+            translate(
+                calc(110px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            scale(1);
+
+    }
+
+    82% {
+
+        transform:
+            translate(
+                calc(150px * var(--direction-x)),
+                calc(25px * var(--direction-y))
+            )
+            scale(0.98);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(190px * var(--direction-x)),
+                calc(0px * var(--direction-y))
+            )
+            scale(0.95);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 2
+   PETIT TOURBILLON
+   ========================================================= */
+
+.licorne-animation-2 {
+
+    animation:
+        licorne-animation-2
+        2.8s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-2 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            rotate(0deg)
+            scale(0.4);
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(20px * var(--direction-x)),
+                calc(20px * var(--direction-y))
+            )
+            rotate(90deg)
+            scale(1);
+
+    }
+
+    35% {
+
+        transform:
+            translate(
+                calc(50px * var(--direction-x)),
+                calc(-25px * var(--direction-y))
+            )
+            rotate(180deg)
+            scale(1.05);
+
+    }
+
+    55% {
+
+        transform:
+            translate(
+                calc(80px * var(--direction-x)),
+                calc(15px * var(--direction-y))
+            )
+            rotate(270deg)
+            scale(1);
+
+    }
+
+    75% {
+
+        transform:
+            translate(
+                calc(115px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            rotate(360deg)
+            scale(0.98);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(160px * var(--direction-x)),
+                calc(0px * var(--direction-y))
+            )
+            rotate(450deg)
+            scale(0.7);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 3
+   ZIGZAG
+   ========================================================= */
+
+.licorne-animation-3 {
+
+    animation:
+        licorne-animation-3
+        2.8s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-3 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            scale(0.7);
+
+    }
+
+    10% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    25% {
+
+        transform:
+            translate(
+                calc(45px * var(--direction-x)),
+                calc(-50px * var(--direction-y))
+            )
+            scale(1.02);
+
+    }
+
+    45% {
+
+        transform:
+            translate(
+                calc(90px * var(--direction-x)),
+                calc(35px * var(--direction-y))
+            )
+            scale(1);
+
+    }
+
+    65% {
+
+        transform:
+            translate(
+                calc(135px * var(--direction-x)),
+                calc(-45px * var(--direction-y))
+            )
+            scale(1.02);
+
+    }
+
+    82% {
+
+        transform:
+            translate(
+                calc(175px * var(--direction-x)),
+                calc(20px * var(--direction-y))
+            )
+            scale(0.98);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(210px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            scale(0.9);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 4
+   PASSAGE ÉCLAIR
+   ========================================================= */
+
+.licorne-animation-4 {
+
+    animation:
+        licorne-animation-4
+        2.2s
+        cubic-bezier(0.2, 0.8, 0.2, 1)
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-4 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(-20px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            scale(0.5);
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    25% {
+
+        transform:
+            translate(
+                calc(50px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            scale(1.02);
+
+    }
+
+    45% {
+
+        transform:
+            translate(
+                calc(150px * var(--direction-x)),
+                calc(15px * var(--direction-y))
+            )
+            scale(1);
+
+    }
+
+    70% {
+
+        transform:
+            translate(
+                calc(300px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            scale(0.98);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(500px * var(--direction-x)),
+                calc(10px * var(--direction-y))
+            )
+            scale(0.8);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 5
+   TÉLÉPORTATION
+   ========================================================= */
+
+.licorne-animation-5 {
+
+    animation:
+        licorne-animation-5
+        3s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-5 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            scale(0.3);
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    35% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(20px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            scale(1.05);
+
+    }
+
+    45% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(20px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            scale(0.1)
+            rotate(180deg);
+
+    }
+
+    55% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(100px * var(--direction-x)),
+                calc(50px * var(--direction-y))
+            )
+            scale(0.1)
+            rotate(360deg);
+
+    }
+
+    65% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(100px * var(--direction-x)),
+                calc(50px * var(--direction-y))
+            )
+            scale(1)
+            rotate(0deg);
+
+    }
+
+    82% {
+
+        transform:
+            translate(
+                calc(145px * var(--direction-x)),
+                calc(20px * var(--direction-y))
+            )
+            scale(1);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(190px * var(--direction-x)),
+                calc(0px * var(--direction-y))
+            )
+            scale(0.7);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 6
+   APPARITION FANTÔME
+   ========================================================= */
+
+.licorne-animation-6 {
+
+    animation:
+        licorne-animation-6
+        3.2s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-6 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                0,
+                calc(30px * var(--direction-y))
+            )
+            scale(0.7);
+
+    }
+
+    20% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(20px * var(--direction-x)),
+                0
+            )
+            scale(1);
+
+    }
+
+    40% {
+
+        opacity:
+            0.75;
+
+        transform:
+            translate(
+                calc(45px * var(--direction-x)),
+                calc(-15px * var(--direction-y))
+            )
+            scale(1.03);
+
+    }
+
+    60% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(70px * var(--direction-x)),
+                calc(5px * var(--direction-y))
+            )
+            scale(1);
+
+    }
+
+    80% {
+
+        opacity:
+            0.55;
+
+        transform:
+            translate(
+                calc(100px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            scale(0.98);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(135px * var(--direction-x)),
+                calc(-35px * var(--direction-y))
+            )
+            scale(0.85);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 7
+   SPIRALE
+   ========================================================= */
+
+.licorne-animation-7 {
+
+    animation:
+        licorne-animation-7
+        3s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-7 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            rotate(0deg)
+            scale(0.5);
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(20px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            rotate(90deg)
+            scale(1);
+
+    }
+
+    30% {
+
+        transform:
+            translate(
+                0,
+                calc(-55px * var(--direction-y))
+            )
+            rotate(180deg)
+            scale(1.02);
+
+    }
+
+    45% {
+
+        transform:
+            translate(
+                calc(50px * var(--direction-x)),
+                calc(-80px * var(--direction-y))
+            )
+            rotate(270deg)
+            scale(1);
+
+    }
+
+    60% {
+
+        transform:
+            translate(
+                calc(90px * var(--direction-x)),
+                calc(-45px * var(--direction-y))
+            )
+            rotate(360deg)
+            scale(0.98);
+
+    }
+
+    78% {
+
+        transform:
+            translate(
+                calc(120px * var(--direction-x)),
+                calc(-90px * var(--direction-y))
+            )
+            rotate(450deg)
+            scale(0.95);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(170px * var(--direction-x)),
+                calc(-110px * var(--direction-y))
+            )
+            rotate(540deg)
+            scale(0.7);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 8
+   DEMI-TOUR
+   ========================================================= */
+
+.licorne-animation-8 {
+
+    animation:
+        licorne-animation-8
+        3s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-8 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            scale(0.7);
+
+    }
+
+    12% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(0, 0)
+            scale(1);
+
+    }
+
+    30% {
+
+        transform:
+            translate(
+                calc(80px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            scale(1);
+
+    }
+
+    45% {
+
+        transform:
+            translate(
+                calc(120px * var(--direction-x)),
+                calc(10px * var(--direction-y))
+            )
+            rotate(180deg)
+            scale(1.02);
+
+    }
+
+    60% {
+
+        transform:
+            translate(
+                calc(80px * var(--direction-x)),
+                calc(35px * var(--direction-y))
+            )
+            rotate(180deg)
+            scale(1);
+
+    }
+
+    78% {
+
+        transform:
+            translate(
+                calc(30px * var(--direction-x)),
+                0
+            )
+            rotate(180deg)
+            scale(0.98);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(-40px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            rotate(180deg)
+            scale(0.8);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 9
+   ROTATION MAGIQUE
+   ========================================================= */
+
+.licorne-animation-9 {
+
+    animation:
+        licorne-animation-9
+        3s
+        ease-in-out
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-9 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            rotate(-180deg)
+            scale(0.3);
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(20px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            rotate(-90deg)
+            scale(1);
+
+    }
+
+    35% {
+
+        transform:
+            translate(
+                calc(60px * var(--direction-x)),
+                calc(15px * var(--direction-y))
+            )
+            rotate(0deg)
+            scale(1.05);
+
+    }
+
+    55% {
+
+        transform:
+            translate(
+                calc(100px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            rotate(90deg)
+            scale(1);
+
+    }
+
+    75% {
+
+        transform:
+            translate(
+                calc(145px * var(--direction-x)),
+                calc(10px * var(--direction-y))
+            )
+            rotate(180deg)
+            scale(0.98);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(190px * var(--direction-x)),
+                calc(-15px * var(--direction-y))
+            )
+            rotate(360deg)
+            scale(0.7);
+
+    }
+
+}
+
+
+/* =========================================================
+   LICORNE — ANIMATION 10
+   APPARITION MAGIQUE
+   ========================================================= */
+
+.licorne-animation-10 {
+
+    animation:
+        licorne-animation-10
+        3.2s
+        cubic-bezier(0.18, 0.7, 0.2, 1)
+        forwards;
+
+}
+
+
+@keyframes licorne-animation-10 {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(0, 0)
+            rotate(-20deg)
+            scale(0);
+
+    }
+
+    15% {
+
+        opacity:
+            1;
+
+        transform:
+            translate(
+                calc(10px * var(--direction-x)),
+                calc(-10px * var(--direction-y))
+            )
+            rotate(10deg)
+            scale(1.15);
+
+    }
+
+    30% {
+
+        transform:
+            translate(
+                calc(-10px * var(--direction-x)),
+                calc(10px * var(--direction-y))
+            )
+            rotate(-8deg)
+            scale(1);
+
+    }
+
+    45% {
+
+        transform:
+            translate(
+                calc(35px * var(--direction-x)),
+                calc(-25px * var(--direction-y))
+            )
+            rotate(8deg)
+            scale(1.05);
+
+    }
+
+    65% {
+
+        transform:
+            translate(
+                calc(80px * var(--direction-x)),
+                calc(10px * var(--direction-y))
+            )
+            rotate(-5deg)
+            scale(1);
+
+    }
+
+    82% {
+
+        transform:
+            translate(
+                calc(130px * var(--direction-x)),
+                calc(-20px * var(--direction-y))
+            )
+            rotate(5deg)
+            scale(0.95);
+
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            translate(
+                calc(190px * var(--direction-x)),
+                calc(-5px * var(--direction-y))
+            )
+            rotate(0deg)
+            scale(0.7);
+
+    }
+
+}

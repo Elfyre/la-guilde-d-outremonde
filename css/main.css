@@ -1,6 +1,8 @@
-/* =====================
+/* =========================================================
    CSS PRINCIPAL
-===================== */
+   POINT D'ENTRÉE DES STYLES DU SITE
+   ========================================================= */
+
 
 @import url("global.css");
 
@@ -23,3 +25,7 @@
 @import url("aventuriers.css");
 
 @import url("aventures.css");
+
+@import url("responsives.css");
+
+@import url("licorne.css");

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr">
 
 <!-- =====================
@@ -7,34 +6,49 @@
 ===================== -->
 
 <head>
+    
+    <!-- =========================================================
+     EASTER EGG — LICORNE
+     ========================================================= -->
 
+<script
+    src="../js/licorne.js"
+    defer
+></script>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<link rel="icon" href="../favicon.png?v=2">
+    <link
+        rel="icon"
+        href="../favicon.png?v=2"
+    >
 
-<title>
-    Proposer une aventure - La Guilde d'Outremonde
-</title>
+    <title>
+        Proposer une aventure - La Guilde d'Outremonde
+    </title>
 
-<link rel="stylesheet" href="../css/main.css">
-
+    <link
+        rel="stylesheet"
+        href="../css/main.css"
+    >
 
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-<script src="../js/supabase.js"></script>
 
 <body>
+
 
 <!-- =====================
      PROPOSITION D'AVENTURE
 ===================== -->
 
-<main class="salle-page">
+<main>
+
 
     <!-- =========================
          DÉCORATIONS
@@ -49,289 +63,235 @@
     <div class="ornement ornement-bas-droit"></div>
 
 
+    <!-- =====================
+         EN-TÊTE DE LA SALLE
+    ===================== -->
 
-<!-- =====================
-     EN-TÊTE DE LA SALLE
-===================== -->
+    <header class="entete-salle">
 
-<header class="entete-salle">
+        <div class="embleme">
+            🔮
+        </div>
 
-
-    <!-- Emblème -->
-
-    <div class="embleme">
-
-        🔮
-
-    </div>
-
-
-    <!-- Titre -->
-
-    <h1>
-        Proposer une aventure
-    </h1>
-
-
-    <!-- Description -->
-
-    <p>
-        Une idée de jeu à soumettre à la Guilde ?
-    </p>
-
-
-</header>
-
-
-
-<!-- =====================
-     FORMULAIRE
-===================== -->
-
-<section class="quetes">
-
-
-    <div class="quete">
-
-
-        <!-- =====================
-             TITRE DU FORMULAIRE
-        ===================== -->
-
-        <h2>
-            📜 Nouvelle proposition
-        </h2>
-
+        <h1>
+            Proposer une aventure
+        </h1>
 
         <p>
-            Proposez un jeu que vous aimeriez
-            voir rejoindre les prochaines expéditions.
+            Une idée de jeu à soumettre à la Guilde ?
         </p>
 
-
-        <p class="indication-obligatoire">
-
-            <strong>*</strong>
-            Champ obligatoire
-
-        </p>
+    </header>
 
 
 
-        <!-- =====================
-             MESSAGE
-        ===================== -->
+    <!-- =====================
+         FORMULAIRE
+    ===================== -->
 
-        <div
-            id="message-proposition"
-            class="message-proposition"
-        ></div>
+    <section class="quetes">
 
+        <div class="quete transition-douce">
 
+            <!-- =====================
+                 TITRE DU FORMULAIRE
+            ===================== -->
 
-        <!-- =====================
-             FORMULAIRE
-        ===================== -->
+            <h2>
+                📜 Nouvelle proposition
+            </h2>
 
-        <form id="form-proposition">
+            <p>
+                Proposez un jeu que vous aimeriez
+                voir rejoindre les prochaines expéditions.
+            </p>
+
+            <p class="indication-obligatoire">
+                <strong>*</strong>
+                Champ obligatoire
+            </p>
 
 
             <!-- =====================
-                 JEU
+                 MESSAGE
             ===================== -->
 
-            <div class="champ-formulaire">
-
-
-                <label for="jeu">
-
-                    🎮 Jeu <strong>*</strong>
-
-                </label>
-
-
-                <input
-                    type="text"
-                    id="jeu"
-                    name="jeu"
-                    placeholder="Nom du jeu"
-                    required
-                >
-
-
-            </div>
-
+            <div
+                id="message-proposition"
+                class="message-proposition"
+            ></div>
 
 
             <!-- =====================
-                 PSEUDO
+                 FORMULAIRE
             ===================== -->
 
-            <div class="champ-formulaire">
+            <form id="form-proposition">
 
+                <!-- =====================
+                     JEU
+                ===================== -->
 
-                <label for="pseudo">
+                <div class="champ-formulaire">
 
-                    👤 Pseudo
-
-                </label>
-
-
-                <input
-                    type="text"
-                    id="pseudo"
-                    name="pseudo"
-                    placeholder="Votre pseudo"
-                >
-
-
-            </div>
-
-
-
-            <!-- =====================
-                 RAISON
-            ===================== -->
-
-            <div class="champ-formulaire">
-
-
-                <label for="raison">
-
-                    📜 Pourquoi ce jeu ?
-
-                </label>
-
-
-                <textarea
-                    id="raison"
-                    name="raison"
-                    rows="5"
-                    placeholder="Pourquoi aimeriez-vous voir ce jeu dans la Guilde ?"
-                ></textarea>
-
-
-            </div>
-
-
-
-            <!-- =====================
-                 MODE
-            ===================== -->
-
-            <fieldset class="champ-formulaire">
-
-
-                <legend>
-
-                    🎮 Mode <strong>*</strong>
-
-                </legend>
-
-
-                <div class="choix-mode">
-
-
-                    <label>
-
-                        <input
-                            type="radio"
-                            name="mode"
-                            value="Solo"
-                            required
-                        >
-
-                        Solo
-
+                    <label for="jeu">
+                        🎮 Jeu <strong>*</strong>
                     </label>
 
-
-                    <label>
-
-                        <input
-                            type="radio"
-                            name="mode"
-                            value="Multijoueur"
-                        >
-
-                        Multijoueur
-
-                    </label>
-
+                    <input
+                        type="text"
+                        id="jeu"
+                        name="jeu"
+                        placeholder="Nom du jeu"
+                        required
+                    >
 
                 </div>
 
 
-            </fieldset>
+                <!-- =====================
+                     PSEUDO
+                ===================== -->
+
+                <div class="champ-formulaire">
+
+                    <label for="pseudo">
+                        👤 Pseudo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="pseudo"
+                        name="pseudo"
+                        placeholder="Votre pseudo"
+                    >
+
+                </div>
 
 
+                <!-- =====================
+                     RAISON
+                ===================== -->
 
-            <!-- =====================
-                 CATÉGORIE
-            ===================== -->
+                <div class="champ-formulaire">
 
-            <div class="champ-formulaire">
+                    <label for="raison">
+                        📜 Pourquoi ce jeu ?
+                    </label>
+
+                    <textarea
+                        id="raison"
+                        name="raison"
+                        rows="5"
+                        placeholder="Pourquoi aimeriez-vous voir ce jeu dans la Guilde ?"
+                    ></textarea>
+
+                </div>
 
 
-                <label for="categorie">
+                <!-- =====================
+                     MODE
+                ===================== -->
 
-                    🧭 Catégorie <strong>*</strong>
+                <fieldset class="champ-formulaire">
 
-                </label>
+                    <legend>
+                        🎮 Mode <strong>*</strong>
+                    </legend>
+
+                    <div class="choix-mode">
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="Solo"
+                                required
+                            >
+                            Solo
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="Multijoueur"
+                            >
+                            Multijoueur
+                        </label>
+
+                    </div>
+
+                </fieldset>
 
 
-                <input
-                    type="text"
-                    id="categorie"
-                    name="categorie"
-                    placeholder="Ex. Survie, aventure, horreur..."
-                    required
+                <!-- =====================
+                     CATÉGORIE
+                ===================== -->
+
+                <div class="champ-formulaire">
+
+                    <label for="categorie">
+                        🧭 Catégorie <strong>*</strong>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="categorie"
+                        name="categorie"
+                        placeholder="Ex. Survie, aventure, horreur..."
+                        required
+                    >
+
+                </div>
+
+
+                <!-- =====================
+                     ENVOI
+                ===================== -->
+
+                <button
+                    type="submit"
+                    class="bouton transition-douce"
+                    id="bouton-proposition"
                 >
+                    🔮 Envoyer la proposition
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
 
 
-            </div>
+
+    <!-- =====================
+         RETOUR
+    ===================== -->
+
+    <a
+        href="quetes.html"
+        class="bouton transition-douce"
+    >
+        Retour aux Quêtes
+    </a>
 
 
-
-            <!-- =====================
-                 ENVOI
-            ===================== -->
-
-            <button
-                type="submit"
-                class="bouton"
-                id="bouton-proposition"
-            >
-
-                🔮 Envoyer la proposition
-
-            </button>
-
-
-        </form>
-
-
-    </div>
-
-
-</section>
+</main>
 
 
 
 <!-- =====================
-     RETOUR
+     SCRIPTS
 ===================== -->
 
-<a href="quetes.html" class="bouton">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    Retour aux Quêtes
+<script src="../js/supabase.js"></script>
 
-</a>
-
-</main>
 
 <script>
-
 
     // =====================
     // FORMULAIRE
@@ -340,14 +300,11 @@
     const formulaire =
         document.getElementById('form-proposition');
 
-
     const message =
         document.getElementById('message-proposition');
 
-
     const bouton =
         document.getElementById('bouton-proposition');
-
 
 
     // =====================
@@ -368,24 +325,19 @@
         const jeu =
             document.getElementById('jeu').value.trim();
 
-
         const pseudo =
             document.getElementById('pseudo').value.trim();
 
-
         const raison =
             document.getElementById('raison').value.trim();
-
 
         const mode =
             document.querySelector(
                 'input[name="mode"]:checked'
             )?.value;
 
-
         const categorie =
             document.getElementById('categorie').value.trim();
-
 
 
         // =====================
@@ -402,7 +354,6 @@
         }
 
 
-
         // =====================
         // ÉTAT DU BOUTON
         // =====================
@@ -410,10 +361,8 @@
         bouton.disabled =
             true;
 
-
         bouton.textContent =
             '🔮 Vérification en cours...';
-
 
 
         // =====================
@@ -431,7 +380,6 @@
                 .maybeSingle();
 
 
-
         // =====================
         // ERREUR RECHERCHE
         // =====================
@@ -443,23 +391,18 @@
                 erreurJeu
             );
 
-
             message.textContent =
                 '❌ Impossible de vérifier ce jeu pour le moment.';
-
 
             bouton.disabled =
                 false;
 
-
             bouton.textContent =
                 '🔮 Envoyer la proposition';
-
 
             return;
 
         }
-
 
 
         // =====================
@@ -467,7 +410,6 @@
         // =====================
 
         if (jeuExistant) {
-
 
             // =====================
             // JEU VALIDE
@@ -480,19 +422,15 @@
                 message.textContent =
                     '⚠️ Ce jeu a déjà été proposé à la Guilde et est actuellement disponible au vote.';
 
-
                 bouton.disabled =
                     false;
-
 
                 bouton.textContent =
                     '🔮 Envoyer la proposition';
 
-
                 return;
 
             }
-
 
 
             // =====================
@@ -506,14 +444,11 @@
                 message.textContent =
                     '🚫 Ce jeu a déjà été proposé à la Guilde, mais n’a pas été retenu par l’équipe.';
 
-
                 bouton.disabled =
                     false;
 
-
                 bouton.textContent =
                     '🔮 Envoyer la proposition';
-
 
                 return;
 
@@ -522,13 +457,11 @@
         }
 
 
-
         // =====================
         // DÉTERMINATION DU JEU
         // =====================
 
         let jeuId;
-
 
 
         // =====================
@@ -543,7 +476,6 @@
         }
 
 
-
         // =====================
         // NOUVEAU JEU
         // =====================
@@ -553,7 +485,6 @@
             bouton.textContent =
                 '🔮 Création du jeu...';
 
-
             const {
                 data: nouveauJeu,
                 error: erreurCreationJeu
@@ -561,15 +492,11 @@
                 await supabaseClient
                     .from('jeux')
                     .insert({
-
                         nom: jeu,
-
                         statut: 'valide'
-
                     })
                     .select('id')
                     .single();
-
 
 
             // =====================
@@ -583,27 +510,21 @@
                     erreurCreationJeu
                 );
 
-
                 message.textContent =
                     '❌ Impossible d’enregistrer ce jeu pour le moment.';
-
 
                 bouton.disabled =
                     false;
 
-
                 bouton.textContent =
                     '🔮 Envoyer la proposition';
-
 
                 return;
 
             }
 
-
             jeuId =
                 nouveauJeu.id;
-
 
             console.log(
                 '✅ Nouveau jeu créé :',
@@ -613,7 +534,6 @@
         }
 
 
-
         // =====================
         // ENREGISTREMENT PROPOSITION
         // =====================
@@ -621,26 +541,17 @@
         bouton.textContent =
             '🔮 Enregistrement de la proposition...';
 
-
         const { error: erreurProposition } =
             await supabaseClient
                 .from('propositions')
                 .insert({
-
                     jeu: jeu,
-
                     pseudo: pseudo || null,
-
                     raison: raison || null,
-
                     mode: mode,
-
                     categorie: categorie,
-
                     jeu_id: jeuId
-
                 });
-
 
 
         // =====================
@@ -671,19 +582,15 @@
 
             }
 
-
             bouton.disabled =
                 false;
-
 
             bouton.textContent =
                 '🔮 Envoyer la proposition';
 
-
             return;
 
         }
-
 
 
         // =====================
@@ -693,20 +600,15 @@
         message.textContent =
             '✅ Votre proposition a bien été enregistrée !';
 
-
         formulaire.reset();
-
 
         bouton.disabled =
             false;
 
-
         bouton.textContent =
             '🔮 Envoyer la proposition';
 
-
     });
-
 
 </script>
 

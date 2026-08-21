@@ -10,25 +10,30 @@
 
 .entete-aventurier {
 
-    width: min(1000px, 92%);
+    width:
+        min(1000px, 92%);
 
-    margin: 0 auto 50px;
+    margin:
+        0 auto 50px;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
 .entete-aventurier .embleme {
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 
 }
 
 
 .entete-aventurier h1 {
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
 }
 
@@ -39,13 +44,17 @@
 
 .fiche-aventurier {
 
-    width: min(900px, 92%);
+    width:
+        min(900px, 92%);
 
-    margin: 0 auto 50px;
+    margin:
+        0 auto 50px;
 
-    display: grid;
+    display:
+        grid;
 
-    gap: 25px;
+    gap:
+        25px;
 
 }
 
@@ -58,23 +67,28 @@
 .role-aventurier,
 .expeditions-aventurier {
 
-    padding: 30px;
+    padding:
+        30px;
 
-    text-align: center;
+    text-align:
+        center;
 
     border:
-        1px solid var(--parchemin-sombre);
+        1px solid
+        var(--parchemin-sombre);
 
     background:
-
         linear-gradient(
             145deg,
-            rgba(143, 113, 156, 0.10),
-            rgba(0, 0, 0, 0.55)
+
+            var(--surface-violette-legere),
+
+            var(--surface-noire)
         );
 
     box-shadow:
-        0 8px 25px rgba(0, 0, 0, 0.30);
+        0 8px 25px
+        var(--ombre-moyenne);
 
 }
 
@@ -85,7 +99,8 @@
 
 .fiche-aventurier h2 {
 
-    margin-bottom: 18px;
+    margin-bottom:
+        18px;
 
     color:
         var(--parchemin-clair);
@@ -99,11 +114,14 @@
 
 .fiche-aventurier p {
 
-    max-width: 700px;
+    max-width:
+        700px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    line-height: 1.8;
+    line-height:
+        1.8;
 
 }
 
@@ -126,33 +144,40 @@
 
 .expeditions-aventurier ul {
 
-    max-width: 650px;
+    max-width:
+        650px;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    padding: 0;
+    padding:
+        0;
 
-    list-style: none;
+    list-style:
+        none;
 
 }
 
 
 .expeditions-aventurier li {
 
-    padding: 10px 0;
+    padding:
+        10px 0;
 
     color:
         var(--texte-secondaire);
 
     border-bottom:
-        1px solid rgba(143, 120, 85, 0.18);
+        1px solid
+        rgba(var(--parchemin-rgb), 0.18);
 
 }
 
 
 .expeditions-aventurier li:last-child {
 
-    border-bottom: none;
+    border-bottom:
+        none;
 
 }
 
@@ -163,99 +188,81 @@
 
 .retour-aventurier {
 
-    width: 100%;
+    width:
+        100%;
 
-    margin: 45px auto 40px;
+    margin:
+        45px auto 40px;
 
-    text-align: center;
-
-}
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-    .fiche-aventurier {
-
-        width: 92%;
-
-    }
-
-
-    .apropos-aventurier,
-    .role-aventurier,
-    .expeditions-aventurier {
-
-        padding: 25px 20px;
-
-    }
+    text-align:
+        center;
 
 }
-
-
-
-
-
 
 
 
 /* =========================================================
    PROFIL KITANA — MISE EN PAGE ARTEFACT
-========================================================= */
+   ========================================================= */
 
 
 /* =========================================================
    PROFIL
-========================================================= */
+   ========================================================= */
 
 .profil-artefact {
 
-    width: 100%;
+    width:
+        100%;
 
 }
 
 
 /* =========================================================
    INTRODUCTION
-========================================================= */
+   ========================================================= */
 
 .artefact-introduction {
 
-    width: 100%;
+    width:
+        100%;
 
-    max-width: 1100px;
+    max-width:
+        1100px;
 
-    margin: 0 auto 25px;
+    margin:
+        0 auto 25px;
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
 }
 
 
 .artefact-introduction p {
 
-    margin-bottom: 15px;
+    margin-bottom:
+        15px;
 
 }
 
 
 .artefact-introduction p:last-child {
 
-    margin-bottom: 0;
+    margin-bottom:
+        0;
 
 }
 
 
 /* =========================================================
    GRILLE PRINCIPALE
-========================================================= */
+   ========================================================= */
 
 .grille-artefact {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         minmax(280px, 1fr)
@@ -268,341 +275,273 @@
 
         "multivers centre conclusion";
 
-    gap: 22px;
+    gap:
+        22px;
 
-    align-items: start;
+    align-items:
+        start;
 
 }
 
 
 /* =========================================================
    POSITION DES BLOCS
-========================================================= */
+   ========================================================= */
 
 .entite-divine {
 
-    grid-area: entite;
+    grid-area:
+        entite;
 
 }
 
 
 .eventails-code {
 
-    grid-area: eventails;
+    grid-area:
+        eventails;
 
 }
 
 
 .multivers-serveurs {
 
-    grid-area: multivers;
+    grid-area:
+        multivers;
 
 }
 
 
 .conclusion-lore {
 
-    grid-area: conclusion;
+    grid-area:
+        conclusion;
 
 }
 
 
 /* =========================================================
    CENTRE
-========================================================= */
+   ========================================================= */
 
 .centre-artefact {
 
-    grid-area: centre;
+    grid-area:
+        centre;
 
-    position: sticky;
+    position:
+        sticky;
 
-    top: 25px;
+    top:
+        25px;
 
-    align-self: start;
+    align-self:
+        start;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
 /* =========================================================
    IMAGE
-========================================================= */
+   ========================================================= */
 
 .image-artefact {
 
-    width: 100%;
+    width:
+        100%;
 
 }
 
 
 .image-artefact img {
 
-    display: block;
+    display:
+        block;
 
-    width: 100%;
+    width:
+        100%;
 
-    height: auto;
+    height:
+        auto;
 
-    margin: 0 auto;
+    margin:
+        0 auto;
 
-    border-radius: inherit;
+    border-radius:
+        inherit;
 
 }
 
 
 /* =========================================================
    TITRE DE L'ARTEFACT
-========================================================= */
+   ========================================================= */
 
 .titre-artefact {
 
-    margin-top: 15px;
+    margin-top:
+        15px;
 
 }
 
 
 .titre-artefact span {
 
-    display: block;
+    display:
+        block;
 
-    margin-bottom: 7px;
+    margin-bottom:
+        7px;
 
-    font-size: 0.82rem;
+    font-size:
+        0.82rem;
 
-    letter-spacing: 0.16em;
+    letter-spacing:
+        0.16em;
 
 }
 
 
 .titre-artefact h2 {
 
-    margin: 0;
+    margin:
+        0;
 
-    font-size: 1.3rem;
+    font-size:
+        1.3rem;
 
-    line-height: 1.4;
+    line-height:
+        1.4;
 
 }
 
 
 /* =========================================================
    LISIBILITÉ DES CADRES
-========================================================= */
+   ========================================================= */
 
 .bloc-artefact {
 
-    line-height: 1.7;
+    line-height:
+        1.7;
 
 }
 
 
 .bloc-artefact h2 {
 
-    line-height: 1.4;
+    line-height:
+        1.4;
 
-    margin-bottom: 20px;
+    margin-bottom:
+        20px;
 
 }
 
 
 /* =========================================================
    SOUS-TITRES DU LORE
-========================================================= */
+   ========================================================= */
 
 .bloc-artefact h3 {
 
-    margin-top: 24px;
+    margin-top:
+        24px;
 
-    margin-bottom: 9px;
+    margin-bottom:
+        9px;
 
-    line-height: 1.4;
+    line-height:
+        1.4;
 
-    font-size: 1rem;
+    font-size:
+        1rem;
 
 }
 
 
 .bloc-artefact h3:first-of-type {
 
-    margin-top: 0;
+    margin-top:
+        0;
 
 }
 
 
 /* =========================================================
    PARAGRAPHES
-========================================================= */
+   ========================================================= */
 
 .bloc-artefact p {
 
-    margin-top: 0;
+    margin-top:
+        0;
 
-    margin-bottom: 17px;
+    margin-bottom:
+        17px;
 
 }
 
 
 .bloc-artefact p:last-child {
 
-    margin-bottom: 0;
+    margin-bottom:
+        0;
 
 }
 
 
 /* =========================================================
    JEUX LIÉS
-========================================================= */
+   ========================================================= */
 
 .jeux-lies {
 
-    margin-top: -8px !important;
+    margin-top:
+        -8px !important;
 
-    margin-bottom: 22px !important;
+    margin-bottom:
+        22px !important;
 
-    font-size: 0.88rem;
+    font-size:
+        0.88rem;
 
-    font-style: italic;
+    font-style:
+        italic;
 
-    letter-spacing: 0.03em;
+    letter-spacing:
+        0.03em;
 
-    opacity: 0.8;
+    opacity:
+        0.8;
 
 }
 
 
 /* =========================================================
    PROCHAINS DÉFIS
-========================================================= */
+   ========================================================= */
 
 .prochains-defis {
 
-    margin-top: 25px !important;
+    margin-top:
+        25px !important;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
 
 .separateur-defis {
 
-    display: inline-block;
+    display:
+        inline-block;
 
-    margin: 0 12px;
-
-}
-
-
-/* =========================================================
-   TABLETTE
-========================================================= */
-
-@media (max-width: 1100px) {
-
-    .grille-artefact {
-
-        grid-template-columns: 1fr 1fr;
-
-        grid-template-areas:
-
-            "centre centre"
-
-            "entite eventails"
-
-            "multivers conclusion";
-
-    }
-
-
-    .centre-artefact {
-
-        position: relative;
-
-        top: auto;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 700px) {
-
-    .grille-artefact {
-
-        grid-template-columns: 1fr;
-
-        grid-template-areas:
-
-            "centre"
-
-            "entite"
-
-            "eventails"
-
-            "multivers"
-
-            "conclusion";
-
-        gap: 18px;
-
-    }
-
-
-    .centre-artefact {
-
-        position: relative;
-
-        top: auto;
-
-    }
-
-
-    .bloc-artefact {
-
-        line-height: 1.65;
-
-    }
-
-
-    .bloc-artefact h3 {
-
-        margin-top: 21px;
-
-    }
-
-
-    .bloc-artefact p {
-
-        margin-bottom: 16px;
-
-    }
-
-
-    .titre-artefact span {
-
-        font-size: 0.72rem;
-
-        letter-spacing: 0.1em;
-
-    }
-
-
-    .titre-artefact h2 {
-
-        font-size: 1.15rem;
-
-    }
-
-
-    .separateur-defis {
-
-        margin: 0 8px;
-
-    }
+    margin:
+        0 12px;
 
 }

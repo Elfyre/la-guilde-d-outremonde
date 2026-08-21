@@ -1,0 +1,1240 @@
+/* =========================================================
+   RESPONSIVE
+   LA GUILDE D'OUTREMONDE
+   ========================================================= */
+
+/*
+   Ce fichier regroupe l'ensemble des adaptations
+   responsives du site.
+
+   IMPORTANT :
+   - Aucun style desktop ne doit être placé ici.
+   - Les règles spécifiques à une page restent identifiées.
+   - Les breakpoints sont harmonisés progressivement.
+
+*/
+
+
+/* =========================================================
+   TABLE DES MATIÈRES
+   =========================================================
+
+   01 — Écrans moyens
+   02 — Hall
+   03 — Planning
+   04 — Tablettes
+   05 — Hall + Aventures
+   06 — Tablettes portrait
+   07 — Planning + Profil Artefact
+   08 — Téléphones
+   09 — Petits téléphones
+   10 — Très petits écrans
+   11 — Ultra petits écrans
+   12 — Accessibilité
+
+   ========================================================= */
+
+
+/* =========================================================
+   01 — ÉCRANS MOYENS — 1100PX
+   ========================================================= */
+
+@media (max-width:1100px) {
+
+    .entete-salle {
+
+        width:
+            min(850px, 90%);
+
+        margin-bottom:
+            45px;
+
+    }
+
+
+    .entete-salle h1 {
+
+        font-size:
+            clamp(28px, 4.5vw, 42px);
+
+    }
+
+
+    .entete-salle p {
+
+        font-size:
+            15px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PROFIL ARTEFACT
+       ----------------------------------------------------- */
+
+    .grille-artefact {
+
+        grid-template-columns:
+            1fr 1fr;
+
+        grid-template-areas:
+
+            "centre centre"
+
+            "entite eventails"
+
+            "multivers conclusion";
+
+    }
+
+
+    .centre-artefact {
+
+        position:
+            relative;
+
+        top:
+            auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   02 — HALL — 1050PX
+   ========================================================= */
+
+@media (max-width:1050px) {
+
+    .hall-principal {
+
+        width:
+            min(900px, 92%);
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+    }
+
+
+    .aventuriers-guilde {
+
+        position:
+            relative;
+
+        top:
+            auto;
+
+        left:
+            auto;
+
+        width:
+            100%;
+
+        margin:
+            0 auto 35px;
+
+        order:
+            1;
+
+    }
+
+
+    .salles {
+
+        order:
+            2;
+
+    }
+
+
+    .liste-aventuriers {
+
+        flex-direction:
+            row;
+
+        justify-content:
+            center;
+
+        gap:
+            35px;
+
+    }
+
+
+    .aventurier {
+
+        width:
+            auto;
+
+    }
+
+}
+
+
+/* =========================================================
+   03 — PLANNING — 1000PX
+   ========================================================= */
+
+@media (max-width:1000px) {
+
+    .planning {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   04 — TABLETTES — 900PX
+   ========================================================= */
+
+@media (max-width:900px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTES
+       ----------------------------------------------------- */
+
+    .entete-salle {
+
+        width:
+            92%;
+
+        margin:
+            30px auto 40px;
+
+    }
+
+
+    .entete-salle h1 {
+
+        font-size:
+            clamp(27px, 5vw, 38px);
+
+        letter-spacing:
+            1.5px;
+
+    }
+
+
+    .entete-salle p {
+
+        max-width:
+            600px;
+
+        font-size:
+            15px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       EMBLÈMES
+       ----------------------------------------------------- */
+
+    .embleme {
+
+        font-size:
+            58px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       BOUTONS
+       ----------------------------------------------------- */
+
+    .bouton {
+
+        padding:
+            10px 21px;
+
+        font-size:
+            14px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGES
+       ----------------------------------------------------- */
+
+    img {
+
+        max-width:
+            100%;
+
+    }
+
+
+    /* -----------------------------------------------------
+       EXPÉDITIONS
+       ----------------------------------------------------- */
+
+    .liste-expeditions {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    /* -----------------------------------------------------
+       ARCHIVES
+       ----------------------------------------------------- */
+
+    .archives {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .archives-lmc {
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   05 — HALL + AVENTURES — 800PX
+   ========================================================= */
+
+@media (max-width:800px) {
+
+    /* -----------------------------------------------------
+       HALL
+       ----------------------------------------------------- */
+
+    .salles {
+
+        width:
+            min(600px, 92%);
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .salle {
+
+        aspect-ratio:
+            auto;
+
+        min-height:
+            280px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       AVENTURES
+       ----------------------------------------------------- */
+
+    .aventures {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   06 — TABLETTES PORTRAIT — 750PX
+   ========================================================= */
+
+@media (max-width:750px) {
+
+    .entete-salle {
+
+        margin:
+            25px auto 35px;
+
+    }
+
+
+    .entete-salle h1 {
+
+        font-size:
+            clamp(25px, 6vw, 34px);
+
+        line-height:
+            1.2;
+
+    }
+
+
+    .entete-salle p {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    .embleme {
+
+        margin-bottom:
+            12px;
+
+        font-size:
+            52px;
+
+    }
+
+
+    .bouton {
+
+        padding:
+            10px 19px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    input,
+    textarea,
+    select {
+
+        font-size:
+            14px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       QUÊTES
+       ----------------------------------------------------- */
+
+    .quetes {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* =========================================================
+   07 — PLANNING + PROFIL ARTEFACT — 700PX
+   ========================================================= */
+
+@media (max-width:700px) {
+
+    /* -----------------------------------------------------
+       PLANNING
+       ----------------------------------------------------- */
+
+    .planning {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            15px;
+
+    }
+
+
+    .mission {
+
+        padding:
+            20px 12px;
+
+    }
+
+
+    .image-planning {
+
+        height:
+            105px;
+
+    }
+
+
+    .image-planning img {
+
+        width:
+            105px;
+
+        height:
+            105px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PROFIL ARTEFACT
+       ----------------------------------------------------- */
+
+    .grille-artefact {
+
+        grid-template-columns:
+            1fr;
+
+        grid-template-areas:
+
+            "centre"
+
+            "entite"
+
+            "eventails"
+
+            "multivers"
+
+            "conclusion";
+
+        gap:
+            18px;
+
+    }
+
+
+    .centre-artefact {
+
+        position:
+            relative;
+
+        top:
+            auto;
+
+    }
+
+
+    .bloc-artefact {
+
+        line-height:
+            1.65;
+
+    }
+
+
+    .bloc-artefact h3 {
+
+        margin-top:
+            21px;
+
+    }
+
+
+    .bloc-artefact p {
+
+        margin-bottom:
+            16px;
+
+    }
+
+
+    .titre-artefact span {
+
+        font-size:
+            0.72em;
+
+        letter-spacing:
+            0.1em;
+
+    }
+
+
+    .titre-artefact h2 {
+
+        font-size:
+            1.15rem;
+
+    }
+
+
+    .separateur-defis {
+
+        margin:
+            0 8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   08 — TÉLÉPHONES — 600PX
+   ========================================================= */
+
+@media (max-width:600px) {
+
+    /* -----------------------------------------------------
+       EN-TÊTES
+       ----------------------------------------------------- */
+
+    .entete-salle {
+
+        width:
+            92%;
+
+        margin:
+            20px auto 30px;
+
+    }
+
+
+    .entete-salle h1 {
+
+        font-size:
+            clamp(23px, 8vw, 31px);
+
+        letter-spacing:
+            1px;
+
+    }
+
+
+    .entete-salle p {
+
+        margin-top:
+            12px;
+
+        font-size:
+            14px;
+
+        line-height:
+            1.6;
+
+    }
+
+
+    /* -----------------------------------------------------
+       EMBLÈMES
+       ----------------------------------------------------- */
+
+    .embleme {
+
+        font-size:
+            46px;
+
+        margin-bottom:
+            10px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       BOUTONS
+       ----------------------------------------------------- */
+
+    .bouton {
+
+        margin-top:
+            20px;
+
+        padding:
+            9px 17px;
+
+        font-size:
+            13px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       FORMULAIRES
+       ----------------------------------------------------- */
+
+    input,
+    textarea,
+    select {
+
+        padding:
+            10px 12px;
+
+        font-size:
+            14px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       IMAGES
+       ----------------------------------------------------- */
+
+    img {
+
+        max-width:
+            100%;
+
+        height:
+            auto;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PORTAIL
+       ----------------------------------------------------- */
+
+    .portail {
+
+        min-height:
+            420px;
+
+        padding:
+            40px 20px;
+
+    }
+
+
+    .energie-portail {
+
+        width:
+            320px;
+
+        height:
+            320px;
+
+    }
+
+
+    .portail::before {
+
+        width:
+            250px;
+
+        height:
+            250px;
+
+    }
+
+
+    .portail::after {
+
+        width:
+            350px;
+
+        height:
+            350px;
+
+    }
+
+
+    .accueil .embleme {
+
+        font-size:
+            70px;
+
+    }
+
+
+    .transition-portail {
+
+        transform:
+            scale(1.05);
+
+    }
+
+
+    /* -----------------------------------------------------
+       AVENTURES
+       ----------------------------------------------------- */
+
+    .aventures {
+
+        width:
+            92%;
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .aventure {
+
+        padding:
+            30px 20px;
+
+    }
+
+
+    .fiche-aventure {
+
+        width:
+            92%;
+
+    }
+
+
+    .info-aventure,
+    .histoire-aventure,
+    .objectifs-aventure,
+    .souvenirs-aventure {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .image-aventure {
+
+        width:
+            200px;
+
+        height:
+            200px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       EXPÉDITIONS
+       ----------------------------------------------------- */
+
+    .liste-expeditions {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+
+    }
+
+
+    .carte-aventure {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .carte-aventure img {
+
+        height:
+            130px;
+
+    }
+
+
+    .titre-aventure h2 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       QUÊTES
+       ----------------------------------------------------- */
+
+    .quetes {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .quete {
+
+        padding:
+            28px 20px;
+
+    }
+
+
+    .choix-mode {
+
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       ARCHIVES
+       ----------------------------------------------------- */
+
+    .archives {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            20px;
+
+    }
+
+
+    .archives-lmc {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .archive {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .archive-principale {
+
+        width:
+            90%;
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .archive img {
+
+        height:
+            150px;
+
+    }
+
+
+    .archive-principale img {
+
+        height:
+            150px;
+
+    }
+
+
+    .archives-lmc .archive img {
+
+        height:
+            130px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       AVENTURIERS
+       ----------------------------------------------------- */
+
+    .fiche-aventurier {
+
+        width:
+            92%;
+
+    }
+
+
+    .apropos-aventurier,
+    .role-aventurier,
+    .expeditions-aventurier {
+
+        padding:
+            25px 20px;
+
+    }
+
+}
+
+
+/* =========================================================
+   09 — PETITS TÉLÉPHONES — 550PX
+   ========================================================= */
+
+@media (max-width:550px) {
+
+    /* -----------------------------------------------------
+       HALL
+       ----------------------------------------------------- */
+
+    .reseaux-guilde {
+
+        gap:
+            14px;
+
+        margin-bottom:
+            35px;
+
+    }
+
+
+    .reseau img {
+
+        width:
+            32px;
+
+        height:
+            32px;
+
+    }
+
+
+    .liste-aventuriers {
+
+        gap:
+            20px;
+
+    }
+
+
+    .aventurier img {
+
+        width:
+            55px;
+
+        height:
+            55px;
+
+    }
+
+
+    .aventurier span {
+
+        font-size:
+            14px;
+
+    }
+
+
+    .salles {
+
+        width:
+            92%;
+
+    }
+
+
+    .salle {
+
+        min-height:
+            250px;
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .salle span {
+
+        font-size:
+            40px;
+
+    }
+
+
+    .salle h2 {
+
+        font-size:
+            22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   10 — TRÈS PETITS ÉCRANS — 450PX
+   ========================================================= */
+
+@media (max-width:450px) {
+
+    .entete-salle {
+
+        margin:
+            18px auto 25px;
+
+    }
+
+
+    .entete-salle h1 {
+
+        font-size:
+            24px;
+
+        line-height:
+            1.2;
+
+    }
+
+
+    .entete-salle p {
+
+        font-size:
+            13px;
+
+        line-height:
+            1.55;
+
+    }
+
+
+    .embleme {
+
+        font-size:
+            42px;
+
+    }
+
+
+    .bouton {
+
+        padding:
+            9px 15px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    /* -----------------------------------------------------
+       PLANNING
+       ----------------------------------------------------- */
+
+    .planning {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .mission {
+
+        padding:
+            22px 20px;
+
+    }
+
+
+    .image-planning {
+
+        height:
+            120px;
+
+    }
+
+
+    .image-planning img {
+
+        width:
+            120px;
+
+        height:
+            120px;
+
+    }
+
+}
+
+
+/* =========================================================
+   11 — ULTRA PETITS ÉCRANS — 360PX
+   ========================================================= */
+
+@media (max-width:360px) {
+
+    .entete-salle h1 {
+
+        font-size:
+            22px;
+
+    }
+
+
+    .entete-salle p {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .embleme {
+
+        font-size:
+            38px;
+
+    }
+
+
+    .bouton {
+
+        padding:
+            8px 13px;
+
+        font-size:
+            12px;
+
+    }
+
+}
+
+
+/* =========================================================
+   12 — ACCESSIBILITÉ
+   ========================================================= */
+
+
+/* =========================================================
+   RÉDUCTION DES ANIMATIONS
+   ========================================================= */
+
+@media (prefers-reduced-motion:reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+
+    .transition-portail,
+    .transition-portail::before,
+    .transition-portail::after {
+
+        animation:
+            none !important;
+
+    }
+
+}

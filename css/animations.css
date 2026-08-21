@@ -1,8 +1,6 @@
-/* =================================================================================================================================================================== */
-
 /* =========================================================
    ANIMATIONS
-   La Guilde d'Outremonde
+   LA GUILDE D'OUTREMONDE
    ========================================================= */
 
 
@@ -14,7 +12,8 @@
 
     from {
 
-        opacity: 0;
+        opacity:
+            0;
 
         transform:
             translateY(10px);
@@ -23,12 +22,31 @@
 
     to {
 
-        opacity: 1;
+        opacity:
+            1;
 
         transform:
             translateY(0);
 
     }
+
+}
+
+
+/* ---------------------------------------------------------
+   UTILISATION — APPARITION
+   --------------------------------------------------------- */
+.entete-salle,
+.entete-aventure,
+.entete-aventurier,
+.entete-expeditions,
+.entete-section {
+
+    animation:
+        apparition
+        0.7s
+        ease-out
+        both;
 
 }
 
@@ -57,6 +75,25 @@
 }
 
 
+/* ---------------------------------------------------------
+   UTILISATION — LUEUR
+   --------------------------------------------------------- */
+
+.accueil .embleme,
+.entete-aventure .embleme,
+.entete-aventurier .embleme,
+.entete-expeditions .embleme,
+.ornement  {
+
+    animation:
+        lueur
+        3s
+        ease-in-out
+        infinite;
+
+}
+
+
 /* =========================================================
    PULSATION
    ========================================================= */
@@ -77,6 +114,22 @@
             scale(1.04);
 
     }
+
+}
+
+
+/* ---------------------------------------------------------
+   UTILISATION — PULSATION
+   --------------------------------------------------------- */
+
+.portail .bouton,
+.quetes .bouton-vote {
+
+    animation:
+        pulsation
+        3s
+        ease-in-out
+        infinite;
 
 }
 
@@ -104,6 +157,28 @@
 }
 
 
+/* ---------------------------------------------------------
+   UTILISATION — ROTATION
+   --------------------------------------------------------- */
+
+.reseau img {
+
+    transition:
+        transform
+        var(--transition-standard);
+
+}
+
+.reseau img:hover {
+
+    animation:
+        rotation
+        0.8s
+        ease-in-out;
+
+}
+
+
 /* =========================================================
    TRANSITION DOUCE
    ========================================================= */
@@ -112,17 +187,23 @@
 
     transition:
 
-        transform 0.3s ease,
+        transform
+        var(--transition-standard),
 
-        opacity 0.3s ease,
+        opacity
+        var(--transition-standard),
 
-        color 0.3s ease,
+        color
+        var(--transition-standard),
 
-        background 0.3s ease,
+        background
+        var(--transition-standard),
 
-        border-color 0.3s ease,
+        border-color
+        var(--transition-standard),
 
-        box-shadow 0.3s ease;
+        box-shadow
+        var(--transition-standard);
 
 }
 
@@ -200,6 +281,7 @@
     background:
 
         radial-gradient(
+
             circle,
 
             #05020a 0%,
@@ -215,6 +297,7 @@
             rgba(var(--violet-rgb), 0.15) 74%,
 
             transparent 78%
+
         );
 
     box-shadow:
@@ -300,6 +383,7 @@
             transparent 350deg,
 
             transparent 360deg
+
         );
 
     filter:
@@ -534,23 +618,5 @@
 
     opacity:
         0;
-
-}
-
-
-/* =========================================================
-   RÉDUCTION DES ANIMATIONS
-   ========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .transition-portail,
-    .transition-portail::before,
-    .transition-portail::after {
-
-        animation:
-            none !important;
-
-    }
 
 }

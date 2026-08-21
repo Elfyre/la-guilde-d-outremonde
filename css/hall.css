@@ -12,13 +12,17 @@
     margin:
         20px auto 45px;
 
-    display:flex;
+    display:
+        flex;
 
-    justify-content:center;
+    justify-content:
+        center;
 
-    align-items:center;
+    align-items:
+        center;
 
-    gap:18px;
+    gap:
+        18px;
 
 }
 
@@ -29,36 +33,47 @@
 
 .reseau {
 
-    min-width:auto;
+    min-width:
+        auto;
 
-    padding:5px;
+    padding:
+        5px;
 
-    border:none;
+    border:
+        none;
 
-    background:transparent;
+    background:
+        transparent;
 
-    display:flex;
+    display:
+        flex;
 
-    align-items:center;
+    align-items:
+        center;
 
-    justify-content:center;
+    justify-content:
+        center;
 
     transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
+        transform var(--transition-standard),
+        filter var(--transition-standard);
 
 }
 
 
 .reseau img {
 
-    width:38px;
+    width:
+        38px;
 
-    height:38px;
+    height:
+        38px;
 
-    object-fit:contain;
+    object-fit:
+        contain;
 
-    display:block;
+    display:
+        block;
 
     filter:
         drop-shadow(
@@ -67,8 +82,8 @@
         );
 
     transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
+        transform var(--transition-standard),
+        filter var(--transition-standard);
 
 }
 
@@ -101,7 +116,8 @@
 
 .hall-principal {
 
-    position:relative;
+    position:
+        relative;
 
     width:
         min(1200px, 94%);
@@ -109,11 +125,14 @@
     margin:
         0 auto 70px;
 
-    display:flex;
+    display:
+        flex;
 
-    justify-content:center;
+    justify-content:
+        center;
 
-    align-items:flex-start;
+    align-items:
+        flex-start;
 
 }
 
@@ -124,15 +143,20 @@
 
 .aventuriers-guilde {
 
-    position:absolute;
+    position:
+        absolute;
 
-    top:15px;
+    top:
+        15px;
 
-    left:0;
+    left:
+        0;
 
-    width:130px;
+    width:
+        130px;
 
-    margin:0;
+    margin:
+        0;
 
 }
 
@@ -143,20 +167,25 @@
 
 .entete-aventuriers {
 
-    margin-bottom:22px;
+    margin-bottom:
+        22px;
 
-    text-align:center;
+    text-align:
+        center;
 
 }
 
 
 .entete-aventuriers .embleme {
 
-    display:block;
+    display:
+        block;
 
-    margin-bottom:7px;
+    margin-bottom:
+        7px;
 
-    font-size:26px;
+    font-size:
+        26px;
 
     filter:
         drop-shadow(
@@ -169,12 +198,14 @@
 
 .entete-aventuriers h2 {
 
-    margin:0;
+    margin:
+        0;
 
     color:
         var(--parchemin-clair);
 
-    font-size:18px;
+    font-size:
+        18px;
 
 }
 
@@ -185,7 +216,8 @@
 
 .entete-aventuriers p {
 
-    display:none;
+    display:
+        none;
 
 }
 
@@ -196,13 +228,17 @@
 
 .liste-aventuriers {
 
-    display:flex;
+    display:
+        flex;
 
-    flex-direction:column;
+    flex-direction:
+        column;
 
-    align-items:center;
+    align-items:
+        center;
 
-    gap:22px;
+    gap:
+        22px;
 
 }
 
@@ -213,21 +249,27 @@
 
 .aventurier {
 
-    width:100%;
+    width:
+        100%;
 
-    display:flex;
+    display:
+        flex;
 
-    flex-direction:column;
+    flex-direction:
+        column;
 
-    align-items:center;
+    align-items:
+        center;
 
-    gap:6px;
+    gap:
+        6px;
 
-    text-align:center;
+    text-align:
+        center;
 
     transition:
-        transform 0.3s ease,
-        filter 0.3s ease;
+        transform var(--transition-standard),
+        filter var(--transition-standard);
 
 }
 
@@ -238,21 +280,27 @@
 
 .aventurier img {
 
-    width:62px;
+    width:
+        62px;
 
-    height:62px;
+    height:
+        62px;
 
-    object-fit:cover;
+    object-fit:
+        cover;
 
-    border-radius:50%;
+    border-radius:
+        50%;
 
-    display:block;
+    display:
+        block;
 
     border:
         2px solid
         var(--parchemin-sombre);
 
-    padding:2px;
+    padding:
+        2px;
 
     background:
         var(--fond-principal);
@@ -263,7 +311,7 @@
         var(--lueur-accent-legere),
 
         0 0 15px
-        rgba(216, 194, 154, 0.15);
+        rgba(var(--parchemin-rgb), 0.15);
 
     filter:
         drop-shadow(
@@ -272,10 +320,10 @@
         );
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        filter 0.3s ease;
+        transform var(--transition-standard),
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard),
+        filter var(--transition-standard);
 
 }
 
@@ -289,10 +337,11 @@
     color:
         var(--parchemin);
 
-    font-size:15px;
+    font-size:
+        15px;
 
     transition:
-        color 0.3s ease;
+        color var(--transition-standard);
 
 }
 
@@ -303,7 +352,8 @@
 
 .aventurier p {
 
-    display:none;
+    display:
+        none;
 
 }
 
@@ -334,7 +384,7 @@
         var(--lueur-accent),
 
         0 0 20px
-        rgba(216, 194, 154, 0.20);
+        rgba(var(--parchemin-rgb), 0.20);
 
     filter:
         drop-shadow(
@@ -365,12 +415,14 @@
     margin:
         0 auto;
 
-    display:grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2, 1fr);
 
-    gap:24px;
+    gap:
+        24px;
 
 }
 
@@ -381,24 +433,32 @@
 
 .salle {
 
-    position:relative;
+    position:
+        relative;
 
-    width:100%;
+    width:
+        100%;
 
-    aspect-ratio:1 / 1;
+    aspect-ratio:
+        1 / 1;
 
     padding:
         25px;
 
-    display:flex;
+    display:
+        flex;
 
-    flex-direction:column;
+    flex-direction:
+        column;
 
-    justify-content:center;
+    justify-content:
+        center;
 
-    align-items:center;
+    align-items:
+        center;
 
-    text-align:center;
+    text-align:
+        center;
 
     border:
         1px solid
@@ -418,12 +478,13 @@
         0 8px 25px
         var(--ombre-moyenne);
 
-    overflow:hidden;
+    overflow:
+        hidden;
 
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+        transform var(--transition-standard),
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard);
 
 }
 
@@ -453,11 +514,14 @@
 
 .salle span {
 
-    display:block;
+    display:
+        block;
 
-    margin-bottom:12px;
+    margin-bottom:
+        12px;
 
-    font-size:42px;
+    font-size:
+        42px;
 
 }
 
@@ -468,12 +532,14 @@
 
 .salle h2 {
 
-    margin-bottom:9px;
+    margin-bottom:
+        9px;
 
     color:
         var(--parchemin-clair);
 
-    font-size:23px;
+    font-size:
+        23px;
 
 }
 
@@ -484,190 +550,16 @@
 
 .salle p {
 
-    max-width:230px;
+    max-width:
+        230px;
 
     color:
         var(--texte-secondaire);
 
-    line-height:1.6;
-
-    font-size:14px;
-
-}
-
-
-/* =========================================================
-   RESPONSIVE — ÉCRANS MOYENS
-   ========================================================= */
-
-@media (max-width:1050px) {
-
-    .hall-principal {
-
-        width:
-            min(900px, 92%);
-
-    }
-
-
-    .aventuriers-guilde {
-
-        position:relative;
-
-        top:auto;
-
-        left:auto;
-
-        width:100%;
-
-        margin:
-            0 auto 35px;
-
-        order:1;
-
-    }
-
-
-    .hall-principal {
-
-        flex-direction:column;
-
-        align-items:center;
-
-    }
-
-
-    .salles {
-
-        order:2;
-
-    }
-
-
-    .liste-aventuriers {
-
-        flex-direction:row;
-
-        justify-content:center;
-
-        gap:35px;
-
-    }
-
-
-    .aventurier {
-
-        width:auto;
-
-    }
-
-}
-
-
-/* =========================================================
-   TABLETTE
-   ========================================================= */
-
-@media (max-width:800px) {
-
-    .salles {
-
-        width:
-            min(600px, 92%);
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .salle {
-
-        aspect-ratio:auto;
-
-        min-height:280px;
-
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width:550px) {
-
-    .reseaux-guilde {
-
-        gap:14px;
-
-        margin-bottom:35px;
-
-    }
-
-
-    .reseau img {
-
-        width:32px;
-
-        height:32px;
-
-    }
-
-
-    .liste-aventuriers {
-
-        gap:20px;
-
-    }
-
-
-    .aventurier img {
-
-        width:55px;
-
-        height:55px;
-
-    }
-
-
-    .aventurier span {
-
-        font-size:14px;
-
-    }
-
-
-    .salles {
-
-        width:
-            92%;
-
-    }
-
-
-    .salle {
-
-        min-height:250px;
-
-        padding:
-            25px 20px;
-
-    }
-
-
-    .salle span {
-
-        font-size:40px;
-
-    }
-
-
-    .salle h2 {
-
-        font-size:22px;
-
-    }
+    line-height:
+        1.6;
+
+    font-size:
+        14px;
 
 }
