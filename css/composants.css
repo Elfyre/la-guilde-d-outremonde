@@ -50,18 +50,37 @@
 }
 
 /* =========================================================
-   BOUTONS RETOUR PAGES
+   TITRE + BOUTON RETOUR
    ========================================================= */
 
-.entete-salle {
+.titre-conteneur {
 
     position:
         relative;
 
+    display:
+        inline-block;
+
 }
 
 
-.entete-salle > .bouton {
+.titre-conteneur h1 {
+
+    margin:
+        0;
+
+}
+
+
+.entete-salle {
+
+    text-align:
+        center;
+
+}
+
+
+.titre-conteneur .bouton-retour {
 
     position:
         absolute;
@@ -69,19 +88,22 @@
     top:
         50%;
 
-    right:
-        0;
+    left:
+        100%;
 
     margin:
-        0;
+        0 0 0 20px;
 
     transform:
         translateY(-50%);
 
+    white-space:
+        nowrap;
+
 }
 
 
-.entete-salle > .bouton:hover {
+.titre-conteneur .bouton-retour:hover {
 
     transform:
         translateY(
@@ -91,7 +113,7 @@
 }
 
 
-.entete-salle > .bouton:active {
+.titre-conteneur .bouton-retour:active {
 
     transform:
         translateY(-50%);

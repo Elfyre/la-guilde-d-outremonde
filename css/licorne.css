@@ -14,10 +14,10 @@
         none;
 
     width:
-        100px;
+        120px;
 
     height:
-        100px;
+        120px;
 
     object-fit:
         contain;
@@ -43,7 +43,7 @@
 
     animation:
         licorne-animation-1
-        2.8s
+        6s
         ease-in-out
         forwards;
 
@@ -133,7 +133,7 @@
 
     animation:
         licorne-animation-2
-        2.8s
+        6s
         ease-in-out
         forwards;
 
@@ -232,7 +232,7 @@
 
     animation:
         licorne-animation-3
-        2.8s
+        6s
         ease-in-out
         forwards;
 
@@ -333,7 +333,7 @@
 
     animation:
         licorne-animation-4
-        2.2s
+        6s
         cubic-bezier(0.2, 0.8, 0.2, 1)
         forwards;
 
@@ -426,7 +426,7 @@
 
     animation:
         licorne-animation-5
-        3s
+        6s
         ease-in-out
         forwards;
 
@@ -553,7 +553,7 @@
 
     animation:
         licorne-animation-6
-        3.2s
+        6s
         ease-in-out
         forwards;
 
@@ -658,7 +658,7 @@
 
     animation:
         licorne-animation-7
-        3s
+        6s
         ease-in-out
         forwards;
 
@@ -769,7 +769,7 @@
 
     animation:
         licorne-animation-8
-        3s
+        6s
         ease-in-out
         forwards;
 
@@ -874,7 +874,7 @@
 
     animation:
         licorne-animation-9
-        3s
+        6s
         ease-in-out
         forwards;
 
@@ -973,7 +973,7 @@
 
     animation:
         licorne-animation-10
-        3.2s
+        6s
         cubic-bezier(0.18, 0.7, 0.2, 1)
         forwards;
 

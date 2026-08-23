@@ -39,6 +39,75 @@
 
 
 /* =========================================================
+   TITRE + BOUTON RETOUR
+   ========================================================= */
+
+.entete-aventurier .titre-conteneur {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+}
+
+
+.entete-aventurier .titre-conteneur h1 {
+
+    margin:
+        0;
+
+}
+
+
+.entete-aventurier .titre-conteneur .bouton-retour {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        100%;
+
+    margin:
+        0 0 0 20px;
+
+    padding:
+        8px 16px;
+
+    font-size:
+        13px;
+
+    transform:
+        translateY(-50%);
+
+    white-space:
+        nowrap;
+
+}
+
+
+.entete-aventurier .titre-conteneur .bouton-retour:hover {
+
+    transform:
+        translateY(
+            calc(-50% - 2px)
+        );
+
+}
+
+
+.entete-aventurier .titre-conteneur .bouton-retour:active {
+
+    transform:
+        translateY(-50%);
+
+}
+
+/* =========================================================
    FICHE AVENTURIER
    ========================================================= */
 

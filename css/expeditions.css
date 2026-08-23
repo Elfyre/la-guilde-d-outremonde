@@ -21,6 +21,74 @@
 
 }
 
+/* =========================================================
+   TITRE + BOUTON RETOUR
+   ========================================================= */
+
+.entete-expeditions .titre-conteneur {
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+}
+
+
+.entete-expeditions .titre-conteneur h1 {
+
+    margin:
+        0;
+
+}
+
+
+.entete-expeditions .titre-conteneur .bouton-retour {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        100%;
+
+    margin:
+        0 0 0 20px;
+
+    transform:
+        translateY(-50%);
+
+    white-space:
+        nowrap;
+    
+    padding:
+    8px 16px;
+
+    font-size:
+        13px;
+
+}
+
+
+.entete-expeditions .titre-conteneur .bouton-retour:hover {
+
+    transform:
+        translateY(
+            calc(-50% - 2px)
+        );
+
+}
+
+
+.entete-expeditions .titre-conteneur .bouton-retour:active {
+
+    transform:
+        translateY(-50%);
+
+}
 
 /* =========================================================
    EMBLÈME
