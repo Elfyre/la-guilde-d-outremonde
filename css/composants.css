@@ -425,3 +425,72 @@ select:focus-visible {
         3px;
 
 }
+
+
+/* =========================================================
+   PIED DE PAGE
+   ========================================================= */
+
+.pied-page {
+
+    width:
+        min(1200px, 94%);
+
+    margin:
+        0 auto;
+
+    padding:
+        25px 0 35px;
+
+    text-align:
+        center;
+
+    border-top:
+        1px solid
+        var(--parchemin-sombre);
+
+}
+
+
+.pied-page p {
+
+    margin:
+        0;
+
+    color:
+        var(--texte-secondaire);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+
+}
+
+
+.pied-page a {
+
+    color:
+        var(--parchemin);
+
+    text-decoration:
+        none;
+
+    transition:
+        color var(--transition-standard),
+        text-shadow var(--transition-standard);
+
+}
+
+
+.pied-page a:hover {
+
+    color:
+        var(--parchemin-clair);
+
+    text-shadow:
+        0 0 7px
+        var(--lueur-accent);
+
+}
