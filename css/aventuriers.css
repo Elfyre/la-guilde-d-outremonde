@@ -18,7 +18,6 @@
 
     text-align:
         center;
-
 }
 
 
@@ -26,7 +25,6 @@
 
     margin-bottom:
         20px;
-
 }
 
 
@@ -34,7 +32,6 @@
 
     margin-bottom:
         15px;
-
 }
 
 
@@ -49,7 +46,6 @@
 
     display:
         inline-block;
-
 }
 
 
@@ -57,7 +53,6 @@
 
     margin:
         0;
-
 }
 
 
@@ -86,7 +81,6 @@
 
     white-space:
         nowrap;
-
 }
 
 
@@ -96,7 +90,6 @@
         translateY(
             calc(-50% - 2px)
         );
-
 }
 
 
@@ -104,8 +97,8 @@
 
     transform:
         translateY(-50%);
-
 }
+
 
 /* =========================================================
    FICHE AVENTURIER
@@ -124,7 +117,6 @@
 
     gap:
         25px;
-
 }
 
 
@@ -149,16 +141,13 @@
     background:
         linear-gradient(
             145deg,
-
             var(--surface-violette-legere),
-
             var(--surface-noire)
         );
 
     box-shadow:
         0 8px 25px
         var(--ombre-moyenne);
-
 }
 
 
@@ -173,7 +162,6 @@
 
     color:
         var(--parchemin-clair);
-
 }
 
 
@@ -191,7 +179,6 @@
 
     line-height:
         1.8;
-
 }
 
 
@@ -203,7 +190,6 @@
 
     color:
         var(--parchemin);
-
 }
 
 
@@ -224,7 +210,6 @@
 
     list-style:
         none;
-
 }
 
 
@@ -239,7 +224,6 @@
     border-bottom:
         1px solid
         rgba(var(--parchemin-rgb), 0.18);
-
 }
 
 
@@ -247,7 +231,6 @@
 
     border-bottom:
         none;
-
 }
 
 
@@ -265,9 +248,7 @@
 
     text-align:
         center;
-
 }
-
 
 
 /* =========================================================
@@ -283,7 +264,6 @@
 
     width:
         100%;
-
 }
 
 
@@ -304,7 +284,6 @@
 
     line-height:
         1.7;
-
 }
 
 
@@ -312,7 +291,6 @@
 
     margin-bottom:
         15px;
-
 }
 
 
@@ -320,7 +298,6 @@
 
     margin-bottom:
         0;
-
 }
 
 
@@ -339,9 +316,7 @@
         minmax(280px, 1fr);
 
     grid-template-areas:
-
         "entite centre eventails"
-
         "multivers centre conclusion";
 
     gap:
@@ -349,7 +324,6 @@
 
     align-items:
         start;
-
 }
 
 
@@ -361,7 +335,6 @@
 
     grid-area:
         entite;
-
 }
 
 
@@ -369,7 +342,6 @@
 
     grid-area:
         eventails;
-
 }
 
 
@@ -377,7 +349,6 @@
 
     grid-area:
         multivers;
-
 }
 
 
@@ -385,7 +356,6 @@
 
     grid-area:
         conclusion;
-
 }
 
 
@@ -409,7 +379,6 @@
 
     text-align:
         center;
-
 }
 
 
@@ -421,7 +390,6 @@
 
     width:
         100%;
-
 }
 
 
@@ -441,7 +409,6 @@
 
     border-radius:
         inherit;
-
 }
 
 
@@ -453,7 +420,6 @@
 
     margin-top:
         15px;
-
 }
 
 
@@ -470,7 +436,6 @@
 
     letter-spacing:
         0.16em;
-
 }
 
 
@@ -484,7 +449,6 @@
 
     line-height:
         1.4;
-
 }
 
 
@@ -496,7 +460,6 @@
 
     line-height:
         1.7;
-
 }
 
 
@@ -507,7 +470,6 @@
 
     margin-bottom:
         20px;
-
 }
 
 
@@ -528,7 +490,6 @@
 
     font-size:
         1rem;
-
 }
 
 
@@ -536,7 +497,6 @@
 
     margin-top:
         0;
-
 }
 
 
@@ -551,7 +511,6 @@
 
     margin-bottom:
         17px;
-
 }
 
 
@@ -559,7 +518,6 @@
 
     margin-bottom:
         0;
-
 }
 
 
@@ -586,7 +544,6 @@
 
     opacity:
         0.8;
-
 }
 
 
@@ -601,7 +558,6 @@
 
     text-align:
         center;
-
 }
 
 
@@ -612,5 +568,1225 @@
 
     margin:
         0 12px;
+}
 
+
+/* =========================================================
+   LIVRE — PROFIL AVENTURIER
+   STYLES ISOLÉS AU PROFIL
+   ========================================================= */
+
+
+/* =========================================================
+   CONTENEUR DU PROFIL
+   ========================================================= */
+
+.profil-aventurier {
+
+    width:
+        100%;
+}
+
+
+/* =========================================================
+   CONTENEUR SPÉCIFIQUE AU PROFIL AVEC LIVRE
+   ========================================================= */
+
+.livre-profil-aventurier {
+
+    width:
+        100%;
+}
+
+
+/* =========================================================
+   ZONE DES ALIAS
+   ========================================================= */
+
+.alias-livre-aventurier {
+
+    width:
+        min(680px, 92%);
+
+    margin:
+        0 auto 14px;
+
+    text-align:
+        center;
+}
+
+
+/* =========================================================
+   TITRE DES ALIAS
+   ========================================================= */
+
+.alias-livre-aventurier .alias-livre-entete {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        8px;
+
+    margin:
+        0 0 8px;
+}
+
+
+.alias-livre-aventurier .alias-livre-embleme {
+
+    margin:
+        0;
+
+    font-size:
+        18px;
+}
+
+
+.alias-livre-aventurier .alias-livre-entete h2 {
+
+    margin:
+        0;
+
+    color:
+        var(--parchemin-clair);
+
+    font-size:
+        15px;
+
+    font-weight:
+        normal;
+}
+
+
+/* =========================================================
+   LISTE DES ALIAS
+   ========================================================= */
+
+.alias-livre-aventurier .alias-livre-liste {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        24px;
+}
+
+
+/* =========================================================
+   ALIAS
+   ========================================================= */
+
+.alias-livre-aventurier .alias-livre-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        var(--texte);
+
+    text-decoration:
+        none;
+}
+
+
+/* =========================================================
+   IMAGE DES ALIAS
+   ========================================================= */
+
+.alias-livre-aventurier .alias-livre-item img {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    object-fit:
+        cover;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    box-shadow:
+        0 0 8px
+        var(--ombre-moyenne);
+}
+
+
+/* =========================================================
+   NOM DES ALIAS
+   ========================================================= */
+
+.alias-livre-aventurier .alias-livre-item span {
+
+    color:
+        var(--parchemin-clair);
+
+    font-size:
+        13px;
+}
+
+
+/* =========================================================
+   LIVRE
+   ========================================================= */
+
+.livre-profil-aventurier .livre-aventurier {
+
+    width:
+        min(850px, 92%);
+
+    margin:
+        0 auto 60px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        18px;
+}
+
+
+/* =========================================================
+   STRUCTURE DU LIVRE
+   HAUTEUR IDENTIQUE POUR TOUTES LES PAGES
+   ========================================================= */
+
+.livre-profil-aventurier .livre {
+
+    position:
+        relative;
+
+    width:
+        min(680px, 100%);
+
+    height:
+        510px;
+
+    perspective:
+        1800px;
+
+    isolation:
+        isolate;
+}
+
+
+/* =========================================================
+   COUVERTURE
+   ========================================================= */
+
+.livre-profil-aventurier .livre::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        -2;
+
+    inset:
+        8px -8px -8px 8px;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--surface-noire),
+            var(--surface-violette-legere)
+        );
+
+    box-shadow:
+        0 15px 35px
+        var(--ombre-forte);
+}
+
+
+/* =========================================================
+   ÉPAISSEUR DES PAGES
+   ========================================================= */
+
+.livre-profil-aventurier .livre::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    z-index:
+        -1;
+
+    top:
+        8px;
+
+    right:
+        -3px;
+
+    bottom:
+        -4px;
+
+    width:
+        12px;
+
+    border-right:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(var(--parchemin-rgb), 0.15) 0,
+            rgba(var(--parchemin-rgb), 0.15) 2px,
+            transparent 2px,
+            transparent 5px
+        );
+
+    opacity:
+        0.65;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.livre-profil-aventurier .page-livre {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    padding:
+        45px 60px 65px;
+
+    overflow:
+        hidden;
+
+    box-sizing:
+        border-box;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(77, 58, 85, 0.98),
+            rgba(36, 27, 42, 0.99)
+        );
+
+    color:
+        var(--texte);
+
+    box-shadow:
+        0 10px 28px
+        var(--ombre-moyenne),
+        inset 0 0 35px
+        rgba(0, 0, 0, 0.22),
+        inset 8px 0 20px
+        rgba(0, 0, 0, 0.12),
+        inset -8px 0 20px
+        rgba(0, 0, 0, 0.12);
+
+    transform-origin:
+        center center;
+
+    backface-visibility:
+        hidden;
+
+    transform-style:
+        preserve-3d;
+
+    opacity:
+        0;
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   BORDURE INTÉRIEURE
+   ========================================================= */
+
+.livre-profil-aventurier .page-livre::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        12px;
+
+    border:
+        1px solid
+        rgba(var(--parchemin-rgb), 0.18);
+
+    pointer-events:
+        none;
+}
+
+
+/* =========================================================
+   ORNEMENT
+   ========================================================= */
+
+.livre-profil-aventurier .page-livre::after {
+
+    content:
+        "✦";
+
+    position:
+        absolute;
+
+    top:
+        18px;
+
+    right:
+        23px;
+
+    color:
+        var(--accent-clair);
+
+    font-size:
+        14px;
+
+    opacity:
+        0.55;
+}
+
+
+/* =========================================================
+   PAGE ACTIVE
+   ========================================================= */
+
+.livre-profil-aventurier .page-livre.page-active {
+
+    opacity:
+        1;
+
+    pointer-events:
+        auto;
+
+    z-index:
+        2;
+}
+
+
+/* =========================================================
+   ANIMATION — PAGE GAUCHE
+   ========================================================= */
+
+.livre-profil-aventurier .page-livre.page-tourne-gauche {
+
+    z-index:
+        5;
+
+    animation:
+        profil-tourner-page-gauche
+        0.7s
+        cubic-bezier(0.45, 0, 0.2, 1)
+        forwards;
+}
+
+
+@keyframes profil-tourner-page-gauche {
+
+    0% {
+
+        opacity:
+            1;
+
+        transform:
+            rotateY(0deg);
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            rotateY(-110deg);
+    }
+}
+
+
+/* =========================================================
+   ANIMATION — PAGE DROITE
+   ========================================================= */
+
+.livre-profil-aventurier .page-livre.page-tourne-droite {
+
+    z-index:
+        5;
+
+    animation:
+        profil-tourner-page-droite
+        0.7s
+        cubic-bezier(0.45, 0, 0.2, 1)
+        forwards;
+}
+
+
+@keyframes profil-tourner-page-droite {
+
+    0% {
+
+        opacity:
+            1;
+
+        transform:
+            rotateY(0deg);
+    }
+
+    100% {
+
+        opacity:
+            0;
+
+        transform:
+            rotateY(110deg);
+    }
+}
+
+
+/* =========================================================
+   CONTENU DES PAGES
+   IMPORTANT :
+   le conteneur ne sert plus de référence au numéro de page.
+   Le numéro se positionne directement par rapport à la page.
+   ========================================================= */
+
+.livre-profil-aventurier .page-contenu {
+
+    position:
+        static;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        flex-start;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    box-sizing:
+        border-box;
+
+    overflow:
+        hidden;
+}
+
+
+/* =========================================================
+   ORNEMENT DE PAGE
+   ========================================================= */
+
+.livre-profil-aventurier .page-ornement {
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--accent-clair);
+
+    font-size:
+        20px;
+
+    opacity:
+        0.75;
+
+    flex-shrink:
+        0;
+}
+
+
+/* =========================================================
+   TITRES
+   ========================================================= */
+
+.livre-profil-aventurier .page-contenu h2 {
+
+    margin:
+        0;
+
+    color:
+        var(--parchemin-clair);
+
+    font-size:
+        clamp(24px, 3vw, 32px);
+
+    font-weight:
+        normal;
+
+    letter-spacing:
+        1px;
+
+    line-height:
+        1.25;
+
+    flex-shrink:
+        0;
+}
+
+
+/* =========================================================
+   SÉPARATEUR
+   ========================================================= */
+
+.livre-profil-aventurier .page-separateur {
+
+    width:
+        100px;
+
+    height:
+        1px;
+
+    margin:
+        18px auto 28px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--accent-clair),
+            transparent
+        );
+
+    flex-shrink:
+        0;
+}
+
+
+/* =========================================================
+   PARAGRAPHES
+   ========================================================= */
+
+.livre-profil-aventurier .page-contenu p {
+
+    width:
+        min(540px, 100%);
+
+    margin:
+        0 0 18px;
+
+    color:
+        var(--texte);
+
+    line-height:
+        1.8;
+
+    flex-shrink:
+        0;
+}
+
+
+.livre-profil-aventurier .page-contenu p:last-of-type {
+
+    margin-bottom:
+        0;
+}
+
+
+/* =========================================================
+   ZONE DU NUMÉRO DE PAGE
+   POSITIONNÉE PAR RAPPORT À LA PAGE
+   ET NON AU CONTENU
+   ========================================================= */
+
+.livre-profil-aventurier .numero-page {
+
+    position:
+        absolute;
+
+    bottom:
+        16px;
+
+    left:
+        50%;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        auto !important;
+
+    min-width:
+        42px;
+
+    margin:
+        0 !important;
+
+    padding:
+        5px 12px;
+
+    box-sizing:
+        border-box;
+
+    color:
+        var(--texte-secondaire);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+
+    line-height:
+        1;
+
+    text-align:
+        center;
+
+    white-space:
+        nowrap;
+
+    background:
+        rgba(var(--accent-rgb), 0.08);
+
+    border:
+        1px solid
+        rgba(var(--parchemin-rgb), 0.18);
+
+    box-shadow:
+        0 3px 10px
+        rgba(0, 0, 0, 0.15);
+
+    opacity:
+        0.75;
+
+    z-index:
+        20;
+}
+
+
+/* =========================================================
+   TABLEAU — CONTENEUR
+   ========================================================= */
+
+.livre-profil-aventurier .tableau-caracteristiques {
+
+    width:
+        min(540px, 100%);
+
+    max-width:
+        100%;
+
+    margin:
+        0 auto;
+
+    box-sizing:
+        border-box;
+
+    flex-shrink:
+        0;
+}
+
+
+/* =========================================================
+   TABLEAU DES CARACTÉRISTIQUES
+   ========================================================= */
+
+.livre-profil-aventurier .caracteristiques-livre {
+
+    width:
+        100%;
+
+    border-collapse:
+        collapse;
+
+    table-layout:
+        fixed;
+
+    font-size:
+        14px;
+}
+
+
+/* =========================================================
+   EN-TÊTES DU TABLEAU
+   ========================================================= */
+
+.livre-profil-aventurier .caracteristiques-livre th {
+
+    padding:
+        7px 12px;
+
+    color:
+        var(--accent-clair);
+
+    font-weight:
+        normal;
+
+    letter-spacing:
+        1px;
+
+    border-bottom:
+        1px solid
+        rgba(var(--parchemin-rgb), 0.25);
+
+    line-height:
+        1.25;
+
+    vertical-align:
+        middle;
+
+    overflow-wrap:
+        break-word;
+}
+
+
+/* =========================================================
+   CELLULES DU TABLEAU
+   ========================================================= */
+
+.livre-profil-aventurier .caracteristiques-livre td {
+
+    padding:
+        5px 12px;
+
+    color:
+        var(--texte-secondaire);
+
+    border-bottom:
+        1px solid
+        rgba(var(--parchemin-rgb), 0.12);
+
+    line-height:
+        1.25;
+
+    vertical-align:
+        middle;
+
+    overflow-wrap:
+        break-word;
+
+    word-break:
+        normal;
+}
+
+
+.livre-profil-aventurier .caracteristiques-livre tr:last-child td {
+
+    border-bottom:
+        none;
+}
+
+
+.livre-profil-aventurier .caracteristiques-livre td:last-child {
+
+    color:
+        var(--parchemin-clair);
+
+    text-align:
+        right;
+}
+
+
+/* =========================================================
+   NAVIGATION DU LIVRE
+   ========================================================= */
+
+.livre-profil-aventurier .livre-navigation {
+
+    width:
+        42px;
+
+    height:
+        70px;
+
+    flex:
+        0 0 42px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        0;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        rgba(var(--accent-rgb), 0.12);
+
+    color:
+        var(--parchemin-clair);
+
+    font-family:
+        var(--police-principale);
+
+    font-size:
+        36px;
+
+    line-height:
+        1;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 4px 15px
+        var(--ombre-moyenne);
+
+    transition:
+        background var(--transition-standard),
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard),
+        transform var(--transition-standard);
+}
+
+
+.livre-profil-aventurier .livre-navigation:hover {
+
+    border-color:
+        var(--parchemin);
+
+    background:
+        rgba(var(--accent-rgb), 0.25);
+
+    box-shadow:
+        0 0 18px
+        var(--lueur-accent-legere);
+}
+
+
+.livre-profil-aventurier .livre-precedent:hover {
+
+    transform:
+        translateX(-3px);
+}
+
+
+.livre-profil-aventurier .livre-suivant:hover {
+
+    transform:
+        translateX(3px);
+}
+
+
+.livre-profil-aventurier .livre-navigation:disabled {
+
+    opacity:
+        0.25;
+
+    cursor:
+        default;
+
+    box-shadow:
+        none;
+
+    transform:
+        none;
+}
+
+
+/* =========================================================
+   RESPONSIVE — PROFIL AVEC LIVRE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .alias-livre-aventurier {
+
+        width:
+            min(680px, 94%);
+    }
+
+
+    .livre-profil-aventurier .livre-aventurier {
+
+        width:
+            94%;
+
+        gap:
+            10px;
+    }
+
+
+    /*
+       Même hauteur pour toutes les pages
+       à cette résolution.
+    */
+
+    .livre-profil-aventurier .livre {
+
+        height:
+            540px;
+    }
+
+
+    .livre-profil-aventurier .page-livre {
+
+        padding:
+            40px 38px 65px;
+    }
+
+
+    .livre-profil-aventurier .livre-navigation {
+
+        width:
+            36px;
+
+        height:
+            60px;
+
+        flex-basis:
+            36px;
+
+        font-size:
+            30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .alias-livre-aventurier {
+
+        width:
+            96%;
+
+        margin-bottom:
+            10px;
+    }
+
+
+    .alias-livre-aventurier .alias-livre-liste {
+
+        gap:
+            16px;
+    }
+
+
+    .alias-livre-aventurier .alias-livre-item img {
+
+        width:
+            30px;
+
+        height:
+            30px;
+    }
+
+
+    .alias-livre-aventurier .alias-livre-item span {
+
+        font-size:
+            12px;
+    }
+
+
+    .livre-profil-aventurier .livre-aventurier {
+
+        width:
+            96%;
+
+        gap:
+            5px;
+    }
+
+
+    /*
+       Même hauteur pour toutes les pages
+       sur mobile également.
+    */
+
+    .livre-profil-aventurier .livre {
+
+        height:
+            620px;
+    }
+
+
+    .livre-profil-aventurier .page-livre {
+
+        padding:
+            35px 24px 65px;
+    }
+
+
+    .livre-profil-aventurier .page-livre::before {
+
+        inset:
+            9px;
+    }
+
+
+    .livre-profil-aventurier .page-contenu h2 {
+
+        font-size:
+            23px;
+    }
+
+
+    .livre-profil-aventurier .page-contenu p {
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+    }
+
+
+    .livre-profil-aventurier .tableau-caracteristiques {
+
+        width:
+            100%;
+    }
+
+
+    .livre-profil-aventurier .caracteristiques-livre {
+
+        width:
+            100%;
+
+        font-size:
+            11px;
+
+        table-layout:
+            fixed;
+    }
+
+
+    .livre-profil-aventurier .caracteristiques-livre th,
+    .livre-profil-aventurier .caracteristiques-livre td {
+
+        padding:
+            5px 5px;
+
+        line-height:
+            1.25;
+    }
+
+
+    .livre-profil-aventurier .caracteristiques-livre td:last-child {
+
+        white-space:
+            normal;
+    }
+
+
+    .livre-profil-aventurier .numero-page {
+
+        bottom:
+            14px;
+
+        padding:
+            4px 10px;
+
+        min-width:
+            38px;
+
+        font-size:
+            11px;
+    }
+
+
+    .livre-profil-aventurier .livre-navigation {
+
+        width:
+            30px;
+
+        height:
+            55px;
+
+        flex-basis:
+            30px;
+
+        font-size:
+            27px;
+    }
+}
+
+
+/* =========================================================
+   RÉDUCTION DES ANIMATIONS
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .livre-profil-aventurier .page-livre {
+
+        transition:
+            none;
+    }
+
+
+    .livre-profil-aventurier .page-livre.page-tourne-gauche,
+    .livre-profil-aventurier .page-livre.page-tourne-droite {
+
+        animation:
+            none;
+    }
 }

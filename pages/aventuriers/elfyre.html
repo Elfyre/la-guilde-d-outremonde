@@ -5,23 +5,40 @@
 <head>
 
     <!-- =========================================================
-     EASTER EGG — LICORNE
-     ========================================================= -->
+         EASTER EGG — LICORNE
+         ========================================================= -->
 
-<script
-    src="../../js/licorne.js"
-    defer
-></script>
+    <script
+        src="../../js/licorne.js"
+        defer
+    ></script>
+
+
+    <!-- =========================================================
+         SCRIPT — LIVRE AVENTURIER
+         ========================================================= -->
+
+    <script
+        src="../../js/livre-aventurier.js"
+        defer
+    ></script>
+
 
     <!-- =====================
          INFORMATIONS DE LA PAGE
-    ===================== -->
+         ===================== -->
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="icon" href="../../favicon.png?v=2">
+    <link
+        rel="icon"
+        href="../../favicon.png?v=2"
+    >
 
     <title>
         Aventurier - La Guilde d'Outremonde
@@ -30,27 +47,29 @@
 
     <!-- =====================
          FEUILLE DE STYLE
-    ===================== -->
+         ===================== -->
 
-    <link rel="stylesheet" href="../../css/main.css">
+    <link
+        rel="stylesheet"
+        href="../../css/main.css"
+    >
 
 </head>
-
 
 
 <body>
 
 
-    <!-- =====================
+    <!-- =========================================================
          PAGE AVENTURIER
-    ===================== -->
+         ========================================================= -->
 
-    <main>
+    <main class="profil-aventurier">
 
 
         <!-- =========================
              DÉCORATIONS
-        ========================= -->
+             ========================= -->
 
         <div class="ornement ornement-haut-gauche"></div>
 
@@ -61,14 +80,12 @@
         <div class="ornement ornement-bas-droit"></div>
 
 
-        <!-- =====================
+        <!-- =========================
              ENTÊTE DE L'AVENTURIER
-        ===================== -->
+             ========================= -->
 
         <header class="entete-aventurier">
 
-
-            <!-- Emblème -->
 
             <div class="embleme">
 
@@ -76,15 +93,13 @@
 
             </div>
 
+
             <div class="titre-conteneur">
 
                 <h1>
                     Elfyre AKA la Princesse
                 </h1>
 
-                <!-- =========================
-                RETOUR AU HALL
-                ========================= -->
 
                 <a
                     href="../hall.html"
@@ -95,323 +110,412 @@
 
             </div>
 
-            <!-- Description -->
 
             <p>
-                Princesse d’Outremonde, gardienne de la Guilde et aventurière multi-tâche… parce qu’apparemment, un seul rôle ne suffisait pas.
+
+                Princesse d’Outremonde, gardienne de la Guilde
+                et aventurière multi-tâche… parce qu’apparemment,
+                un seul rôle ne suffisait pas.
+
             </p>
 
 
         </header>
 
 
+        <!-- =====================================================
+             LIVRE DU PROFIL
+             ===================================================== -->
 
-        <!-- =====================
-             ALIAS DE L'AVENTURIER
-        ===================== -->
-
-        <aside class="aventuriers-guilde">
-
-
-            <!-- =====================
-                 TITRE
-            ===================== -->
-
-            <header class="entete-aventuriers">
+        <section
+            class="livre-profil-aventurier"
+            aria-label="Fiche d'aventurière d'Elfyre"
+        >
 
 
-                <div class="embleme">
+            <!-- =================================================
+                 ALIAS
+                 ================================================= -->
 
-                    🪪
+            <div class="alias-livre-aventurier">
+
+
+                <div class="alias-livre-entete">
+
+                    <span class="alias-livre-embleme">
+                        🪪
+                    </span>
+
+                    <h2>
+                        Alias connus
+                    </h2>
 
                 </div>
 
 
-                <h2>
-
-                    Alias connus
-
-                </h2>
+                <div class="alias-livre-liste">
 
 
-            </header>
+                    <!-- =====================
+                         ELO
+                         ===================== -->
 
-
-
-            <!-- =====================
-                 LISTE DES NOMS
-            ===================== -->
-
-            <div class="liste-aventuriers">
-
-
-                <!-- =====================
-                     Elo
-                ===================== -->
-
-                <a
-                    class="aventurier transition-douce"
-                >
-
-                    <img
-                        src="../../images/elo.jpg"
-                        alt="Elo"
+                    <a
+                        class="alias-livre-item transition-douce"
                     >
 
-                    <span>
+                        <img
+                            src="../../images/elo.jpg"
+                            alt="Elo"
+                        >
 
-                        Elo
+                        <span>
+                            Elo
+                        </span>
 
-                    </span>
-
-                </a>
+                    </a>
 
 
+                    <!-- =====================
+                         PRINCESSE
+                         ===================== -->
 
-                <!-- =====================
-                     Princesse
-                ===================== -->
-
-                <a
-                    class="aventurier transition-douce"
-                >
-
-                    <img
-                        src="../../images/princesse.jpg"
-                        alt="Princesse"
+                    <a
+                        class="alias-livre-item transition-douce"
                     >
 
-                    <span>
+                        <img
+                            src="../../images/princesse.jpg"
+                            alt="Princesse"
+                        >
 
-                        Princesse
+                        <span>
+                            Princesse
+                        </span>
 
-                    </span>
+                    </a>
 
-                </a>
+
+                </div>
 
 
             </div>
 
 
-        </aside>
+            <!-- =================================================
+                 CONTENEUR DU LIVRE
+                 ================================================= -->
 
+            <div class="livre-aventurier">
 
 
-        <!-- =====================
-             PRÉSENTATION
-        ===================== -->
+                <!-- =====================
+                     PAGE PRÉCÉDENTE
+                     ===================== -->
 
-        <div class="fiche-aventurier">
+                <button
+                    type="button"
+                    class="livre-navigation livre-precedent"
+                    id="livre-precedent"
+                    aria-label="Page précédente"
+                >
+                    ‹
+                </button>
 
 
-            <!-- =====================
-                 À PROPOS
-            ===================== -->
+                <!-- =====================
+                     LIVRE
+                     ===================== -->
 
-            <section class="apropos-aventurier">
+                <div
+                    class="livre"
+                    id="livre-aventurier"
+                >
 
 
-                <h2>
-                    📜 À propos
-                </h2>
+                    <!-- =================================================
+                         PAGE 1 — À PROPOS
+                         ================================================= -->
 
+                    <article
+                        class="page-livre page-active"
+                        data-page="0"
+                    >
 
-                <p>
-                    Aventurière curieuse et touche-à-tout, Elfyre explore l’Outremonde à travers les jeux, les vidéos, les streams et une quantité probablement excessive de projets. <br><br>
-                    Elle aime découvrir de nouveaux univers, partager de bons moments et surtout rire des catastrophes qui surviennent inévitablement en chemin.<br><br>
-                    Son plus grand talent reste cependant sa capacité à commencer plusieurs quêtes secondaires avant même d'avoir terminé la quête principale.
-                </p>
+                        <div class="page-contenu">
 
 
-            </section>
+                            <div class="page-ornement">
+                                ✦
+                            </div>
 
 
+                            <h2>
+                                📜 À propos
+                            </h2>
 
-            <!-- =====================
-                 RÔLE DANS LA GUILDE
-            ===================== -->
 
-            <section class="role-aventurier">
+                            <div class="page-separateur"></div>
 
 
-                <h2>
-                    ⚔️ Rôle dans la Guilde
-                </h2>
+                            <p>
 
+                                Aventurière curieuse et touche-à-tout,
+                                Elfyre explore l’Outremonde à travers
+                                les jeux, les vidéos, les streams et
+                                une quantité probablement excessive
+                                de projets.
 
-                <p>
-                    Princesse, gardienne, exploratrice, organisatrice et responsable autoproclamée des idées douteuses.<br><br>
+                            </p>
 
-                    Elfyre veille sur la Guilde, prépare les expéditions, explore de nouveaux mondes et rassemble les aventuriers autour de jeux, de vidéos et de streams. <br><br>
 
-                    Bref : elle fait un peu de tout. Et quand personne ne sait qui est censé s'en occuper… c'est probablement elle.
-                </p>
+                            <p>
 
+                                Elle aime découvrir de nouveaux univers,
+                                partager de bons moments et surtout rire
+                                des catastrophes qui surviennent
+                                inévitablement en chemin.
 
-            </section>
+                            </p>
 
 
+                            <p>
 
-            <!-- =====================
-                 CARACTÉRISTIQUES
-            ===================== -->
+                                Son plus grand talent reste cependant
+                                sa capacité à commencer plusieurs quêtes
+                                secondaires avant même d'avoir terminé
+                                la quête principale.
 
-            <section class="expeditions-aventurier">
+                            </p>
 
 
-                <h2>
-                    🎲 Caractéristiques
-                </h2>
+                            <div class="numero-page">
+                                — 01 —
+                            </div>
 
 
-                <table>
+                        </div>
 
-                    <thead>
+                    </article>
 
-                        <tr>
 
-                            <th>
-                                Statistique
-                            </th>
+                    <!-- =================================================
+                         PAGE 2 — RÔLE
+                         ================================================= -->
 
-                            <th>
-                                Niveau
-                            </th>
+                    <article
+                        class="page-livre"
+                        data-page="1"
+                    >
 
-                        </tr>
+                        <div class="page-contenu">
 
-                    </thead>
 
+                            <div class="page-ornement">
+                                ⚔️
+                            </div>
 
-                    <tbody>
 
-                        <tr>
+                            <h2>
+                                ⚔️ Rôle dans la Guilde
+                            </h2>
 
-                            <td>
-                                🎮 Gaming
-                            </td>
 
-                            <td>
-                                ★★★★★
-                            </td>
+                            <div class="page-separateur"></div>
 
-                        </tr>
 
+                            <p>
 
-                        <tr>
+                                Princesse, gardienne, exploratrice,
+                                organisatrice et responsable autoproclamée
+                                des idées douteuses.
 
-                            <td>
-                                🛠️ Touche-à-tout
-                            </td>
+                            </p>
 
-                            <td>
-                                ★★★★★
-                            </td>
 
-                        </tr>
+                            <p>
 
+                                Elfyre veille sur la Guilde, prépare les
+                                expéditions, explore de nouveaux mondes
+                                et rassemble les aventuriers autour de jeux,
+                                de vidéos et de streams.
 
-                        <tr>
+                            </p>
 
-                            <td>
-                                💡 Idées de projets
-                            </td>
 
-                            <td>
-                                ★★★★★
-                            </td>
+                            <p>
 
-                        </tr>
+                                Bref : elle fait un peu de tout.
+                                Et quand personne ne sait qui est censé
+                                s'en occuper… c'est probablement elle.
 
+                            </p>
 
-                        <tr>
 
-                            <td>
-                                📋 Organisation
-                            </td>
+                            <div class="numero-page">
+                                — 02 —
+                            </div>
 
-                            <td>
-                                ★★★★☆
-                            </td>
 
-                        </tr>
+                        </div>
 
+                    </article>
 
-                        <tr>
 
-                            <td>
-                                🧭 Sens de l'orientation
-                            </td>
+                    <!-- =================================================
+                         PAGE 3 — CARACTÉRISTIQUES
+                         ================================================= -->
 
-                            <td>
-                                ★★★★☆
-                            </td>
+                    <article
+                        class="page-livre page-caracteristiques"
+                        data-page="2"
+                    >
 
-                        </tr>
+                        <div class="page-contenu">
 
 
-                        <tr>
+                            <div class="page-ornement">
+                                🎲
+                            </div>
 
-                            <td>
-                                💀 Instinct de survie
-                            </td>
 
-                            <td>
-                                ☆☆☆☆☆
-                            </td>
+                            <h2>
+                                🎲 Caractéristiques
+                            </h2>
 
-                        </tr>
 
+                            <div class="page-separateur"></div>
 
-                        <tr>
 
-                            <td>
-                                🗣️ Capacité à partir sur une nouvelle idée
-                            </td>
+                            <div class="tableau-caracteristiques">
 
-                            <td>
-                                ★★★★★★★★★★
-                            </td>
+                                <table class="caracteristiques-livre">
 
-                        </tr>
 
+                                    <thead>
 
-                        <tr>
+                                        <tr>
 
-                            <td>
-                                👑 Autorité princière
-                            </td>
+                                            <th>
+                                                Statistique
+                                            </th>
 
-                            <td>
-                                100 %
-                            </td>
+                                            <th>
+                                                Niveau
+                                            </th>
 
-                        </tr>
+                                        </tr>
 
+                                    </thead>
 
-                        <tr>
 
-                            <td>
-                                🌀 Gestion du chaos
-                            </td>
+                                    <tbody>
 
-                            <td>
-                                Compétence passive
-                            </td>
 
-                        </tr>
+                                        <tr>
+                                            <td>🎮 Gaming</td>
+                                            <td>★★★★★</td>
+                                        </tr>
 
-                    </tbody>
 
-                </table>
+                                        <tr>
+                                            <td>🛠️ Touche-à-tout</td>
+                                            <td>★★★★★</td>
+                                        </tr>
 
 
-            </section>
+                                        <tr>
+                                            <td>💡 Idées de projets</td>
+                                            <td>★★★★★</td>
+                                        </tr>
 
 
-        </div>
+                                        <tr>
+                                            <td>📋 Organisation</td>
+                                            <td>★★★★☆</td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>🧭 Sens de l'orientation</td>
+                                            <td>★★★★☆</td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>💀 Instinct de survie</td>
+                                            <td>☆☆☆☆☆</td>
+                                        </tr>
+
+
+                                        <tr>
+
+                                            <td>
+                                                🗣️ Capacité à partir sur une nouvelle idée
+                                            </td>
+
+                                            <td>
+                                                ★★★★★★★★★★
+                                            </td>
+
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>👑 Autorité princière</td>
+                                            <td>100 %</td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td>🌀 Gestion du chaos</td>
+                                            <td>Compétence passive</td>
+                                        </tr>
+
+
+                                    </tbody>
+
+
+                                </table>
+
+                            </div>
+
+
+                            <div class="numero-page">
+                                — 03 —
+                            </div>
+
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- =====================
+                     PAGE SUIVANTE
+                     ===================== -->
+
+                <button
+                    type="button"
+                    class="livre-navigation livre-suivant"
+                    id="livre-suivant"
+                    aria-label="Page suivante"
+                >
+                    ›
+                </button>
+
+
+            </div>
+
+
+        </section>
+
 
     </main>
+
 
 </body>
 
