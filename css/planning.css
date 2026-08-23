@@ -3,6 +3,90 @@
    SALLE DES MISSIONS
    ========================================================= */
 
+/* =========================================================
+   INTRODUCTION DU PLANNING
+   ========================================================= */
+
+.planning-introduction {
+
+    margin:
+        0 0 8px;
+
+    color:
+        var(--texte-secondaire);
+
+    line-height:
+        1.5;
+
+    font-size:
+        15px;
+
+}
+
+
+/* =========================================================
+   SEMAINE DU PLANNING
+   ========================================================= */
+
+.planning-semaine {
+
+    margin:
+        25px 0 45px;
+
+    color:
+        var(--parchemin-clair);
+
+    font-size:
+        90px;
+
+    font-weight:
+        900;
+
+    line-height:
+        1.1;
+
+    letter-spacing:
+        1px;
+
+    text-decoration:
+        underline;
+
+    text-decoration-thickness:
+        4px;
+
+    text-underline-offset:
+        10px;
+
+    text-shadow:
+        4px 4px 6px
+        var(--ombre-forte);
+
+}
+
+
+/* =========================================================
+   MESSAGE STREAM
+   ========================================================= */
+
+.planning-stream {
+
+    margin:
+        0 0 25px;
+
+    color:
+        var(--texte-secondaire);
+
+    font-size:
+        14px;
+
+    font-style:
+        italic;
+
+    line-height:
+        1.5;
+
+}
+
 
 /* =========================================================
    GRILLE DU PLANNING
