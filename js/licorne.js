@@ -39,7 +39,7 @@ const licornes = [
 
     {
         image:
-            "licorne-2.jpg",
+            "licorne-2.png",
 
         rarete:
             19
@@ -47,7 +47,7 @@ const licornes = [
 
     {
         image:
-            "licorne-3.jpg",
+            "licorne-3.png",
 
         rarete:
             12
@@ -55,7 +55,7 @@ const licornes = [
 
     {
         image:
-            "licorne-4.jpg",
+            "licorne-4.png",
 
         rarete:
             10
@@ -124,7 +124,7 @@ document.addEventListener(
            ================================================= */
 
         const chanceApparition =
-            0.10;
+            1;
 
 
         /* =================================================
