@@ -34,7 +34,7 @@ const licornes = [
             "licorne-1.png",
 
         rarete:
-            40
+            35
     },
 
     {
@@ -42,7 +42,7 @@ const licornes = [
             "licorne-2.jpg",
 
         rarete:
-            25
+            19
     },
 
     {
@@ -50,7 +50,7 @@ const licornes = [
             "licorne-3.jpg",
 
         rarete:
-            20
+            12
     },
 
     {
@@ -66,9 +66,48 @@ const licornes = [
             "licorne-5.jpg",
 
         rarete:
-            5
-    }
+            7
+    },
 
+    {
+        image:
+            "licorne-6.jpg",
+
+        rarete:
+            6
+    },
+
+    {
+        image:
+            "licorne-7.jpg",
+
+        rarete:
+            4
+    },
+
+    {
+        image:
+            "licorne-8.jpg",
+
+        rarete:
+            3
+    },
+
+    {
+        image:
+            "licorne-9.jpg",
+
+        rarete:
+            3
+    },
+
+    {
+        image:
+            "licorne-10.jpg",
+
+        rarete:
+            1
+    }            
 ];
 
 
@@ -82,11 +121,10 @@ document.addEventListener(
 
         /* =================================================
            CHANCE D'APPARITION
-           TEST : 100 %
            ================================================= */
 
         const chanceApparition =
-            1;
+            0.10;
 
 
         /* =================================================
