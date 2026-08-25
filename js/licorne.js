@@ -24,6 +24,43 @@ const cheminImages =
 
 
 /* =========================================================
+   MODE TEST
+   true  = affiche les informations dans la console
+   false = aucun affichage
+   ========================================================= */
+
+const modeTest =
+    false;
+
+
+/* =========================================================
+   CHANCES DES RARETÉS
+   ========================================================= */
+
+const chancesRarete = {
+
+    commune:
+        55,
+
+    peuCommune:
+        25,
+
+    rare:
+        11,
+
+    tresRare:
+        5,
+
+    epique:
+        3,
+
+    legendaire:
+        1
+
+};
+
+
+/* =========================================================
    IMAGES DES LICORNES
    ========================================================= */
 
@@ -34,7 +71,7 @@ const licornes = [
             "licorne-1.png",
 
         rarete:
-            35
+            "commune"
     },
 
     {
@@ -42,7 +79,7 @@ const licornes = [
             "licorne-2.png",
 
         rarete:
-            19
+            "commune"
     },
 
     {
@@ -50,7 +87,7 @@ const licornes = [
             "licorne-3.png",
 
         rarete:
-            12
+            "peuCommune"
     },
 
     {
@@ -58,57 +95,168 @@ const licornes = [
             "licorne-4.png",
 
         rarete:
-            10
+            "peuCommune"
     },
 
     {
         image:
-            "licorne-5.jpg",
+            "licorne-5.png",
 
         rarete:
-            7
+            "rare"
     },
 
     {
         image:
-            "licorne-6.jpg",
+            "licorne-6.png",
 
         rarete:
-            6
+            "rare"
     },
 
     {
         image:
-            "licorne-7.jpg",
+            "licorne-7.png",
 
         rarete:
-            4
+            "tresRare"
     },
 
     {
         image:
-            "licorne-8.jpg",
+            "licorne-8.png",
 
         rarete:
-            3
+            "tresRare"
     },
 
     {
         image:
-            "licorne-9.jpg",
+            "licorne-9.png",
 
         rarete:
-            3
+            "epique"
     },
 
     {
         image:
-            "licorne-10.jpg",
+            "licorne-10.png",
 
         rarete:
-            1
-    }            
+            "legendaire"
+    }
+
 ];
+
+
+/* =========================================================
+   VÉRIFICATION DES PROBABILITÉS
+   UNIQUEMENT EN MODE TEST
+   ========================================================= */
+
+if (modeTest) {
+
+    /* =====================================================
+       TOTAL DES CHANCES
+       ===================================================== */
+
+    const totalChances =
+        Object.values(chancesRarete)
+            .reduce(
+                (
+                    total,
+                    chance
+                ) =>
+                    total + chance,
+                0
+            );
+
+
+    console.log(
+        "========================================"
+    );
+
+    console.log(
+        "🦄 TEST DES PROBABILITÉS"
+    );
+
+    console.log(
+        "========================================"
+    );
+
+
+    console.log(
+        "Total des chances :",
+        totalChances + "%"
+    );
+
+
+    if (
+        totalChances === 100
+    ) {
+
+        console.log(
+            "✅ Les chances font bien 100 %."
+        );
+
+    } else {
+
+        console.error(
+            "❌ ERREUR : les chances ne font pas 100 %."
+        );
+
+    }
+
+
+    /* =====================================================
+       CHANCE DE CHAQUE LICORNE
+       ===================================================== */
+
+    console.table(
+
+        licornes.map(
+            (
+                licorne,
+                index
+            ) => {
+
+                const nombreDansRarete =
+                    licornes.filter(
+                        autre =>
+                            autre.rarete ===
+                            licorne.rarete
+                    ).length;
+
+
+                const chance =
+                    chancesRarete[
+                        licorne.rarete
+                    ] /
+                    nombreDansRarete;
+
+
+                return {
+
+                    Licorne:
+                        index + 1,
+
+                    Image:
+                        licorne.image,
+
+                    Rareté:
+                        licorne.rarete,
+
+                    "Chance (%)":
+                        chance
+
+                };
+
+            }
+        )
+
+    );
+
+}
 
 
 /* =========================================================
@@ -124,7 +272,7 @@ document.addEventListener(
            ================================================= */
 
         const chanceApparition =
-            1;
+            0.20;
 
 
         /* =================================================
@@ -195,43 +343,79 @@ document.addEventListener(
 
 
                 /* =========================================
-                   TIRAGE DE LA LICORNE
+                   TIRAGE DE LA RARETÉ
                    ========================================= */
 
-                const tirage =
+                const tirageRarete =
                     Math.random() * 100;
 
                 let cumul =
                     0;
 
-                let licorneChoisie =
-                    licornes[
-                        licornes.length - 1
-                    ];
+                let rareteChoisie =
+                    "legendaire";
 
 
                 for (
-                    const licorneDisponible
-                    of licornes
+                    const [rarete, chance]
+                    of Object.entries(chancesRarete)
                 ) {
 
                     cumul +=
-                        licorneDisponible.rarete;
+                        chance;
 
 
                     if (
-                        tirage <=
+                        tirageRarete <=
                         cumul
                     ) {
 
-                        licorneChoisie =
-                            licorneDisponible;
+                        rareteChoisie =
+                            rarete;
 
                         break;
 
                     }
 
                 }
+
+
+                /* =========================================
+                   LICORNES DE LA RARETÉ CHOISIE
+                   ========================================= */
+
+                const licornesDisponibles =
+                    licornes.filter(
+                        licorneDisponible =>
+                            licorneDisponible.rarete ===
+                            rareteChoisie
+                    );
+
+
+                /* =========================================
+                   VÉRIFICATION
+                   ========================================= */
+
+                if (
+                    licornesDisponibles.length === 0
+                ) {
+
+                    return;
+
+                }
+
+
+                /* =========================================
+                   TIRAGE DE LA LICORNE
+                   ========================================= */
+
+                const licorneChoisie =
+                    licornesDisponibles[
+                        Math.floor(
+                            Math.random() *
+                            licornesDisponibles.length
+                        )
+                    ];
 
 
                 /* =========================================
