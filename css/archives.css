@@ -38,6 +38,35 @@
 
 }
 
+/* =========================================================
+   GRILLE DES ARCHIVES — VERSION X3
+   ========================================================= */
+
+/*
+   Même mise en page que les archives classiques,
+   mais avec 3 colonnes au lieu de 2.
+
+   La classe .archives reste en X2.
+*/
+
+.archives-x3 {
+
+    width:
+        min(1100px, 92%);
+
+    margin:
+        0 auto 60px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        30px;
+
+}
 
 /* =========================================================
    CARTE D'ARCHIVE
@@ -165,6 +194,9 @@
 
     color:
         var(--texte-secondaire);
+    
+    font-size:
+        0.75rem;    
 
     line-height:
         1.7;

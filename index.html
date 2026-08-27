@@ -1,215 +1,512 @@
 <!DOCTYPE html>
-
 <html lang="fr">
-
-
-<!-- =========================
-     EN-TÊTE DE LA PAGE
-========================= -->
 
 <head>
 
+    <!-- =========================================================
+         EASTER EGG — LICORNE
+         ========================================================= -->
+
+    <script
+        src="js/licorne.js"
+        defer
+    ></script>
+
+
+    <!-- =========================================================
+         INFORMATIONS DE LA PAGE
+         ========================================================= -->
+
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
+    <link
+        rel="icon"
+        href="./favicon.png?v=2"
+    >
 
     <title>
-        Portail d'Outremonde — Bientôt disponible
+        La Guilde d'Outremonde
     </title>
 
 
-    <link rel="icon" href="./favicon.png?v=2">
+    <!-- =========================================================
+         FEUILLE DE STYLE PRINCIPALE
+         ========================================================= -->
 
-
-    <meta
-        name="description"
-        content="Le Portail d'Outremonde est actuellement en construction. Le portail ouvrira bientôt ses portes."
+    <link
+        rel="stylesheet"
+        href="css/main.css"
     >
 
-
-    <link rel="stylesheet" href="construction.css">
-
 </head>
-
-
 
 
 <body>
 
 
-<!-- =========================
-     PAGE EN CONSTRUCTION
-========================= -->
+    <!-- =========================================================
+         PORTAIL D'ENTRÉE
+         ========================================================= -->
 
-<main class="page-construction">
-
-
-    <!-- =========================
-         DÉCORATIONS
-    ========================= -->
-
-    <div class="ornement ornement-haut-gauche"></div>
-
-    <div class="ornement ornement-haut-droit"></div>
-
-    <div class="ornement ornement-bas-gauche"></div>
-
-    <div class="ornement ornement-bas-droit"></div>
+    <main class="page-portail">
 
 
+        <!-- =====================================================
+             DÉCORATIONS
+             ===================================================== -->
+
+        <div class="ornement ornement-haut-gauche"></div>
+
+        <div class="ornement ornement-haut-droit"></div>
+
+        <div class="ornement ornement-bas-gauche"></div>
+
+        <div class="ornement ornement-bas-droit"></div>
 
 
-    <!-- =========================
-         PORTAIL
-    ========================= -->
+        <!-- =====================================================
+             PORTAIL DIMENSIONNEL
+             ===================================================== -->
 
-    <section class="portail">
-
-
-        <!-- Petit label -->
-        <div class="sur-titre">
-
-            <span></span>
-
-            LA GUILDE D'OUTREMONDE
-
-            <span></span>
-
-        </div>
+        <div
+            class="portail"
+            aria-hidden="true"
+        >
 
 
+            <!-- =================================================
+                 ÉNERGIE DU PORTAIL
+                 ================================================= -->
+
+            <div class="energie-portail"></div>
 
 
-        <!-- Emblème -->
-        <div class="embleme">
+            <!-- =================================================
+                 FUMÉE MAGIQUE
+                 ================================================= -->
 
-            <div class="cercle-embleme">
+            <div
+                class="portail-fumee"
+                aria-hidden="true"
+            >
 
-                <div class="rune">
-                    ✦
-                </div>
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 0deg;
+                        --fumee-delai: -1s;
+                    "
+                ></span>
+
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 45deg;
+                        --fumee-delai: -3s;
+                    "
+                ></span>
+
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 90deg;
+                        --fumee-delai: -5s;
+                    "
+                ></span>
+
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 135deg;
+                        --fumee-delai: -7s;
+                    "
+                ></span>
+
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 180deg;
+                        --fumee-delai: -9s;
+                    "
+                ></span>
+
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 225deg;
+                        --fumee-delai: -11s;
+                    "
+                ></span>
+
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 270deg;
+                        --fumee-delai: -13s;
+                    "
+                ></span>
+
+                <span
+                    class="fumee-nuage"
+                    style="
+                        --fumee-angle: 315deg;
+                        --fumee-delai: -15s;
+                    "
+                ></span>
 
             </div>
 
+
+            <!-- =================================================
+                 CRISTAUX MAGIQUES
+                 ================================================= -->
+
+            <div
+                class="portail-cristaux"
+                aria-hidden="true"
+            >
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 0deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 1;
+                        --cristal-delai: -0.5s;
+                    "
+                ></span>
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 45deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 0.75;
+                        --cristal-delai: -1.2s;
+                    "
+                ></span>
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 90deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 1.15;
+                        --cristal-delai: -2s;
+                    "
+                ></span>
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 135deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 0.8;
+                        --cristal-delai: -2.7s;
+                    "
+                ></span>
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 180deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 1;
+                        --cristal-delai: -3.5s;
+                    "
+                ></span>
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 225deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 0.7;
+                        --cristal-delai: -4.2s;
+                    "
+                ></span>
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 270deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 1.2;
+                        --cristal-delai: -5s;
+                    "
+                ></span>
+
+                <span
+                    class="cristal"
+                    style="
+                        --cristal-angle: 315deg;
+                        --cristal-distance: 245px;
+                        --cristal-taille: 0.85;
+                        --cristal-delai: -6s;
+                    "
+                ></span>
+
+            </div>
+
+
+            <!-- =================================================
+                 ÉTINCELLES
+                 ================================================= -->
+
+            <div
+                class="portail-etincelles"
+                aria-hidden="true"
+            >
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 15deg;
+                        --etincelle-distance: 220px;
+                        --etincelle-duree: 2.4s;
+                        --etincelle-delai: -0.2s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 52deg;
+                        --etincelle-distance: 200px;
+                        --etincelle-duree: 3s;
+                        --etincelle-delai: -1.4s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 87deg;
+                        --etincelle-distance: 230px;
+                        --etincelle-duree: 2.7s;
+                        --etincelle-delai: -2.2s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 128deg;
+                        --etincelle-distance: 210px;
+                        --etincelle-duree: 3.2s;
+                        --etincelle-delai: -0.8s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 172deg;
+                        --etincelle-distance: 240px;
+                        --etincelle-duree: 2.5s;
+                        --etincelle-delai: -1.8s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 218deg;
+                        --etincelle-distance: 205px;
+                        --etincelle-duree: 3.1s;
+                        --etincelle-delai: -2.6s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 264deg;
+                        --etincelle-distance: 235px;
+                        --etincelle-duree: 2.8s;
+                        --etincelle-delai: -0.9s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 308deg;
+                        --etincelle-distance: 215px;
+                        --etincelle-duree: 3.3s;
+                        --etincelle-delai: -2.1s;
+                    "
+                ></span>
+
+                <span
+                    class="etincelle"
+                    style="
+                        --etincelle-angle: 342deg;
+                        --etincelle-distance: 245px;
+                        --etincelle-duree: 2.6s;
+                        --etincelle-delai: -3.1s;
+                    "
+                ></span>
+
+            </div>
+
+
+            <!-- =================================================
+                 ÉCLAIRS D'ÉNERGIE
+                 ================================================= -->
+
+            <div
+                class="portail-eclairs"
+                aria-hidden="true"
+            >
+
+                <span
+                    class="eclair"
+                    style="
+                        --eclair-angle: 20deg;
+                        --eclair-delai: -0.4s;
+                    "
+                ></span>
+
+                <span
+                    class="eclair"
+                    style="
+                        --eclair-angle: 92deg;
+                        --eclair-delai: -1.8s;
+                    "
+                ></span>
+
+                <span
+                    class="eclair"
+                    style="
+                        --eclair-angle: 165deg;
+                        --eclair-delai: -2.7s;
+                    "
+                ></span>
+
+                <span
+                    class="eclair"
+                    style="
+                        --eclair-angle: 238deg;
+                        --eclair-delai: -1.1s;
+                    "
+                ></span>
+
+                <span
+                    class="eclair"
+                    style="
+                        --eclair-angle: 310deg;
+                        --eclair-delai: -2.2s;
+                    "
+                ></span>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTENU
+                 ================================================= -->
+
+            <section class="accueil">
+
+
+                <!-- =================================================
+                     EMBLÈME
+                     ================================================= -->
+
+                <div class="embleme">
+
+                    <div class="aura-embleme"></div>
+
+                    🏰
+
+                </div>
+
+
+                <!-- =================================================
+                     TITRE
+                     ================================================= -->
+
+                <h1>
+
+                    La Guilde<br>
+                    d'Outremonde
+
+                </h1>
+
+
+                <!-- =================================================
+                     CITATION
+                     ================================================= -->
+
+                <p class="citation">
+
+                    Là où chaque aventure commence<br>
+                    par un nouveau portail.
+
+                </p>
+
+
+                <!-- =================================================
+                     ACCÈS AU HALL
+                     ================================================= -->
+
+                <a
+                    href="./pages/hall.html"
+                    class="bouton transition-douce"
+                >
+
+                    Entrer dans la Guilde
+
+                </a>
+
+
+            </section>
+
+
         </div>
 
 
+    </main>
 
 
-        <!-- Titre -->
-        <h1>
+    <!-- =========================================================
+         TRANSITION SITE → HALL
+         ========================================================= -->
 
-            PORTAIL
-
-            <span>
-                D'OUTREMONDE
-            </span>
-
-        </h1>
+    <script
+        src="./js/transition.js"
+    ></script>
 
 
+    <!-- =========================================================
+         PIED DE PAGE
+         ========================================================= -->
 
+    <footer class="pied-page">
 
-        <!-- =========================
-             MESSAGE DE CONSTRUCTION
-        ========================= -->
+        <p>
 
-        <!-- Séparateur -->
-        <div class="separateur">
+            © 2026 La Guilde d'Outremonde
 
-            <span>
-                ◆
-            </span>
+            ·
 
-        </div>
-
-
-        <!-- Message -->
-        <h2>
-            Le portail s'ouvre bientôt...
-        </h2>
-
-
-        <!-- Description -->
-        <p class="description">
-
-            Les cartes se dessinent, les guildes se préparent
-            et de nouveaux mondes attendent d'être explorés.
+            <a
+                href="https://elfyre.github.io/la-guilde-d-outremonde/mentions-legales.html"
+            >
+                Mentions légales
+            </a>
 
         </p>
-
-
-
-
-        <!-- Accès au site -->
-        <a
-            href="https://elfyre.github.io/la-guilde-d-outremonde/Site.html"
-            class="construction"
-        >
-
-            <span>
-                ⚒
-            </span>
-
-            PORTAIL EN CONSTRUCTION
-
-            <span>
-                ⚒
-            </span>
-
-        </a>
-
-
-
-
-        <!-- Petite animation de chargement -->
-        <div class="runes">
-
-            <span>
-                ◆
-            </span>
-
-            <span>
-                ◇
-            </span>
-
-            <span>
-                ◆
-            </span>
-
-        </div>
-
-
-    </section>
-
-
-
-
-    <!-- =========================
-         PIED DE PAGE
-    ========================= -->
-
-    <footer>
-
-        <span>
-            © Portail d'Outremonde
-        </span>
-
-        <span class="point">
-            •
-        </span>
-
-        <span>
-            Une nouvelle aventure se prépare...
-        </span>
 
     </footer>
 
 
-</main>
-
 </body>
-
 
 </html>
