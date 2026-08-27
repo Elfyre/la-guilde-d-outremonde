@@ -342,6 +342,25 @@ h2 {
     color: var(--texte-secondaire);
 }
 
+/* =========================================================
+   INVITATION
+   ========================================================= */
+
+.invitation {
+    margin-top: 22px;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    letter-spacing: 1px;
+
+    color: var(--parchemin-sombre);
+
+    font-style: italic;
+
+    opacity: 0.9;
+}
 
 /* =========================================================
    STATUT
@@ -352,7 +371,7 @@ h2 {
     align-items: center;
     gap: 14px;
 
-    margin-top: 32px;
+    margin-top: 18px;
     padding: 11px 22px;
 
     border: 1px solid rgba(216, 194, 154, 0.25);
@@ -570,4 +589,13 @@ footer .point {
         opacity: 0.15;
     }
 
+    .invitation {
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    padding: 0 15px;
+    }
 }
