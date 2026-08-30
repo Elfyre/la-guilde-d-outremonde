@@ -1,0 +1,88 @@
+name: Publication du site
+
+on:
+  schedule:
+    # Heure d'été : dimanche 22h UTC = lundi 00h en France
+    - cron: "0 22 * * 0"
+
+    # Heure d'hiver : dimanche 23h UTC = lundi 00h en France
+    - cron: "0 23 * * 0"
+
+  # Permet une publication manuelle depuis l'onglet Actions
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "publication"
+  cancel-in-progress: false
+
+jobs:
+  publication:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Vérifier l'heure de publication
+        id: verification
+        shell: bash
+        run: |
+          # Une publication manuelle est toujours autorisée
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+            echo "Publication manuelle autorisée."
+            exit 0
+          fi
+
+          JOUR=$(TZ=Europe/Paris date +%u)
+          HEURE=$(TZ=Europe/Paris date +%H)
+
+          echo "Heure française : $(TZ=Europe/Paris date)"
+
+          # 1 = lundi
+          # 00 = entre 00h00 et 00h59
+          if [ "$JOUR" = "1" ] && [ "$HEURE" = "00" ]; then
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+            echo "Publication automatique autorisée."
+          else
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+            echo "Ce déclenchement est ignoré."
+          fi
+
+      - name: Récupérer la branche develop
+        if: steps.verification.outputs.publish == 'true'
+        uses: actions/checkout@v6
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Publier develop sur main
+        if: steps.verification.outputs.publish == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git checkout main
+          git merge origin/develop --no-edit
+          git push origin main
+
+      - name: Configurer GitHub Pages
+        if: steps.verification.outputs.publish == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Envoyer le site à GitHub Pages
+        if: steps.verification.outputs.publish == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+
+      - name: Déployer sur GitHub Pages
+        if: steps.verification.outputs.publish == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4
