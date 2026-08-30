@@ -276,9 +276,15 @@ body {
 
     position:
         relative;
-        
+
     min-height:
         100vh;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
 
     font-family:
         var(--police-principale);
@@ -305,6 +311,156 @@ body {
 
     color:
         var(--texte);
+
+}
+
+
+/* =========================================================
+   CONTENU PRINCIPAL
+   ========================================================= */
+
+main {
+
+    position:
+        relative;
+
+    flex:
+        1;
+
+}
+
+
+/* =========================================================
+   PIED DE PAGE
+   ========================================================= */
+
+/*
+   IMPORTANT :
+
+   Le footer est directement enfant de <body>.
+   Il n'a donc PAS besoin de :
+   - width: 100vw
+   - left: 50%
+   - transform: translateX(-50%)
+
+   width: 100% suffit et évite le décalage horizontal.
+*/
+
+.pied-page {
+
+    position:
+        relative;
+
+    width:
+        100% !important;
+
+    max-width:
+        none !important;
+
+    left:
+        auto !important;
+
+    right:
+        auto !important;
+
+    transform:
+        none !important;
+
+    margin:
+        0 !important;
+
+    flex-shrink:
+        0;
+
+    padding:
+        25px 3% 35px;
+
+    text-align:
+        center;
+
+    border:
+        none !important;
+
+    /*
+       UNE SEULE ligne décorative en haut du footer.
+    */
+
+    background:
+
+        linear-gradient(
+            to right,
+            transparent calc(50% - 500px),
+            var(--parchemin-sombre) calc(50% - 250px),
+            var(--parchemin-sombre) calc(50% + 250px),
+            transparent calc(50% + 500px)
+        )
+        top center / 100% 1px
+        no-repeat;
+
+}
+
+
+/* =========================================================
+   PSEUDO-ÉLÉMENTS DU FOOTER
+   ========================================================= */
+
+.pied-page::before,
+.pied-page::after {
+
+    content:
+        none !important;
+
+}
+
+
+/* =========================================================
+   TEXTE DU PIED DE PAGE
+   ========================================================= */
+
+.pied-page p {
+
+    margin:
+        0;
+
+    color:
+        var(--texte-secondaire);
+
+    font-size:
+        13px;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =========================================================
+   LIENS DU PIED DE PAGE
+   ========================================================= */
+
+.pied-page a {
+
+    color:
+        var(--parchemin);
+
+    text-decoration:
+        none;
+
+    transition:
+        color var(--transition-standard),
+        text-shadow var(--transition-standard);
+
+}
+
+
+.pied-page a:hover {
+
+    color:
+        var(--parchemin-clair);
+
+    text-shadow:
+        0 0 7px
+        var(--lueur-accent);
 
 }
 
@@ -468,11 +624,16 @@ td {
 
     opacity:
         0.28;
-        
+
     transform-origin:
         center;
+
 }
 
+
+/* =========================================================
+   LIGNES INTERNES DES ORNEMENTS
+   ========================================================= */
 
 .ornement::before,
 .ornement::after {
@@ -483,6 +644,12 @@ td {
     position:
         absolute;
 
+    top:
+        50%;
+
+    left:
+        0;
+
     width:
         100%;
 
@@ -492,12 +659,24 @@ td {
     background:
         var(--parchemin-sombre);
 
+    transform-origin:
+        center;
+
+}
+
+
+.ornement::before {
+
+    transform:
+        translateY(-50%);
+
 }
 
 
 .ornement::after {
 
     transform:
+        translateY(-50%)
         rotate(90deg);
 
 }
@@ -521,17 +700,6 @@ td {
 }
 
 
-.ornement-haut-gauche::before {
-
-    top:
-        0;
-
-    left:
-        0;
-
-}
-
-
 /* =========================================================
    ORNEMENT — HAUT DROIT
    ========================================================= */
@@ -550,22 +718,17 @@ td {
 }
 
 
-.ornement-haut-droit::before {
-
-    top:
-        0;
-
-    right:
-        0;
-
-}
-
-
 /* =========================================================
    ORNEMENT — BAS GAUCHE
    ========================================================= */
 
-.ornement-bas-gauche {
+.pied-page .ornement-bas-gauche {
+
+    position:
+        absolute;
+
+    top:
+        auto;
 
     bottom:
         35px;
@@ -583,7 +746,13 @@ td {
    ORNEMENT — BAS DROIT
    ========================================================= */
 
-.ornement-bas-droit {
+.pied-page .ornement-bas-droit {
+
+    position:
+        absolute;
+
+    top:
+        auto;
 
     bottom:
         35px;

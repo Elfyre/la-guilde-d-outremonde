@@ -1,7 +1,8 @@
- /* =========================================================
+/* =========================================================
    PLANNING
    SALLE DES MISSIONS
    ========================================================= */
+
 
 /* =========================================================
    INTRODUCTION DU PLANNING
@@ -10,13 +11,13 @@
 .planning-introduction {
 
     margin:
-        0 0 8px;
+        0 0 3px;
 
     color:
         var(--texte-secondaire);
 
     line-height:
-        1.5;
+        1.2;
 
     font-size:
         15px;
@@ -31,19 +32,19 @@
 .planning-semaine {
 
     margin:
-        25px 0 45px;
+        6px 0 6px;
 
     color:
         var(--parchemin-clair);
 
     font-size:
-        90px;
+        clamp(38px, 4.5vw, 64px);
 
     font-weight:
         900;
 
     line-height:
-        1.1;
+        1;
 
     letter-spacing:
         1px;
@@ -52,10 +53,10 @@
         underline;
 
     text-decoration-thickness:
-        4px;
+        3px;
 
     text-underline-offset:
-        10px;
+        6px;
 
     text-shadow:
         4px 4px 6px
@@ -65,13 +66,16 @@
 
 
 /* =========================================================
-   MESSAGE STREAM
+   MESSAGE DU MAÎTRE DE GUILDE
    ========================================================= */
 
 .planning-stream {
 
     margin:
-        0 0 25px;
+        0;
+
+    padding:
+        0;
 
     color:
         var(--texte-secondaire);
@@ -83,37 +87,43 @@
         italic;
 
     line-height:
-        1.5;
+        1.1;
 
 }
 
 
 /* =========================================================
-   GRILLE DU PLANNING
+   GRILLE PRINCIPALE
    ========================================================= */
 
 .planning {
 
     width:
-        min(1100px, 92%);
+        min(1500px, 94%);
 
     margin:
-        0 auto 35px;
+        4px auto 10px;
+
+    padding:
+        0;
 
     display:
         grid;
 
     grid-template-columns:
-        repeat(7, 1fr);
+        repeat(7, minmax(0, 1fr));
 
     gap:
-        16px;
+        8px;
+
+    align-items:
+        start;
 
 }
 
 
 /* =========================================================
-   CARTE DE MISSION
+   CARTE D'UN JOUR
    ========================================================= */
 
 .mission {
@@ -121,8 +131,24 @@
     min-width:
         0;
 
+    box-sizing:
+        border-box;
+
     padding:
-        18px 10px;
+        5px;
+
+    display:
+        grid;
+
+    grid-template-rows:
+        24px
+        92px
+        92px
+        92px
+        92px;
+
+    align-content:
+        start;
 
     text-align:
         center;
@@ -135,9 +161,7 @@
 
         linear-gradient(
             145deg,
-
             var(--surface-violette-legere),
-
             var(--surface-noire)
         );
 
@@ -182,79 +206,14 @@
 
 .mission h2 {
 
-    margin-bottom:
-        10px;
-
-    color:
-        var(--parchemin-clair);
-
-    font-size:
-        18px;
-
-}
-
-
-/* =========================================================
-   CRÉNEAU
-   ========================================================= */
-
-.creneau {
+    grid-row:
+        1;
 
     margin:
-        0 0 8px;
+        0;
 
-}
-
-
-.creneau p {
-
-    margin:
-        0 0 3px;
-
-    color:
-        var(--texte-secondaire);
-
-    line-height:
-        1.2;
-
-    font-size:
-        13px;
-
-}
-
-
-/* =========================================================
-   TEXTE LIBRE
-   ========================================================= */
-
-.mission > p {
-
-    margin:
-        3px 0;
-
-    color:
-        var(--texte-secondaire);
-
-    line-height:
-        1.3;
-
-    font-size:
-        13px;
-
-}
-
-
-/* =========================================================
-   IMAGE DU JEU
-   ========================================================= */
-
-.image-planning {
-
-    width:
-        100%;
-
-    height:
-        100px;
+    padding:
+        0;
 
     display:
         flex;
@@ -265,8 +224,178 @@
     align-items:
         center;
 
+    color:
+        var(--parchemin-clair);
+
+    font-size:
+        19px;
+
+    font-weight:
+        800;
+
+    line-height:
+        1;
+
+    text-shadow:
+        2px 2px 4px
+        var(--ombre-forte);
+
+}
+
+
+/* =========================================================
+   CRÉNEAU
+   ========================================================= */
+
+.creneau {
+
+    min-width:
+        0;
+
+    min-height:
+        0;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
     margin:
         0;
+
+    padding:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        flex-start;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =========================================================
+   POSITIONNEMENT DES CRÉNEAUX
+   ========================================================= */
+
+.creneau-8 {
+
+    grid-row:
+        2;
+
+}
+
+
+.creneau-12 {
+
+    grid-row:
+        3;
+
+}
+
+
+.creneau-18 {
+
+    grid-row:
+        4;
+
+}
+
+
+.creneau-21 {
+
+    grid-row:
+        5;
+
+}
+
+
+/* =========================================================
+   TEXTE DU CRÉNEAU
+   ========================================================= */
+
+.creneau p {
+
+    width:
+        100%;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    color:
+        var(--texte-secondaire);
+
+    font-size:
+        14px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+    text-shadow:
+        1px 1px 2px
+        var(--ombre-forte);
+
+    flex:
+        0 0 auto;
+
+}
+
+
+/* =========================================================
+   LIEN IMAGE
+   ========================================================= */
+
+.image-planning {
+
+    width:
+        100%;
+
+    min-height:
+        0;
+
+    height:
+        auto;
+
+    margin:
+        1px 0 0;
+
+    padding:
+        0;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        flex-start;
+
+    line-height:
+        0;
+
+    flex:
+        1 1 auto;
+
+    overflow:
+        hidden;
 
 }
 
@@ -277,20 +406,29 @@
 
 .image-planning img {
 
+    display:
+        block;
+
     width:
-        100px;
+        auto;
 
     height:
-        100px;
+        auto;
 
     max-width:
         100%;
 
+    max-height:
+        calc(100% - 2px);
+
+    margin:
+        0;
+
+    padding:
+        0;
+
     object-fit:
         contain;
-
-    display:
-        block;
 
     filter:
         drop-shadow(
@@ -306,7 +444,7 @@
 
 
 /* =========================================================
-   SURVOL DE L'IMAGE
+   SURVOL IMAGE
    ========================================================= */
 
 .image-planning:hover img {
@@ -319,5 +457,409 @@
             0 0 10px
             var(--lueur-accent)
         );
+
+}
+
+
+/* =========================================================
+   REPOS DES BRAVES
+   ========================================================= */
+
+.creneau-repos {
+
+    grid-row:
+        2 / 6;
+
+    min-height:
+        0;
+
+    display:
+        grid;
+
+    grid-template-rows:
+        auto
+        minmax(0, 1fr);
+
+    align-items:
+        start;
+
+    justify-items:
+        center;
+
+    gap:
+        2px;
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =========================================================
+   TEXTE DU REPOS
+   ========================================================= */
+
+.creneau-repos p {
+
+    width:
+        100%;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    font-size:
+        14px;
+
+    font-weight:
+        400;
+
+    line-height:
+        1;
+
+    text-align:
+        center;
+
+    text-shadow:
+        1px 1px 2px
+        var(--ombre-forte);
+
+}
+
+
+/* =========================================================
+   IMAGE DU REPOS
+   ========================================================= */
+
+.creneau-repos > img {
+
+    display:
+        block;
+
+    width:
+        auto;
+
+    height:
+        auto;
+
+    max-width:
+        100%;
+
+    max-height:
+        100%;
+
+    margin:
+        auto;
+
+    padding:
+        0;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center center;
+
+    filter:
+        drop-shadow(
+            0 0 6px
+            var(--lueur-accent-legere)
+        );
+
+}
+
+
+/* =========================================================
+   PC
+   ========================================================= */
+
+@media (min-width:1001px) {
+
+    .entete-salle {
+
+        margin:
+            20px auto 15px;
+
+    }
+
+
+    .embleme {
+
+        margin-bottom:
+            8px;
+
+        font-size:
+            54px;
+
+    }
+
+
+    .planning-introduction {
+
+        margin:
+            0 0 2px;
+
+    }
+
+
+    .planning-semaine {
+
+        margin:
+            4px 0 4px;
+
+    }
+
+
+    .planning-stream {
+
+        margin:
+            0;
+
+    }
+
+
+    .planning {
+
+        margin:
+            2px auto 8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   GRAND ÉCRAN
+   ========================================================= */
+
+@media (min-width:1600px) {
+
+    .planning {
+
+        width:
+            min(1700px, 94%);
+
+        gap:
+            10px;
+
+    }
+
+
+    .mission {
+
+        grid-template-rows:
+            26px
+            102px
+            102px
+            102px
+            102px;
+
+    }
+
+
+    .mission h2 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .creneau p {
+
+        font-size:
+            14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TRÈS GRAND ÉCRAN
+   ========================================================= */
+
+@media (min-width:1800px) and (min-height:900px) {
+
+    .planning {
+
+        width:
+            min(1800px, 94%);
+
+        gap:
+            12px;
+
+    }
+
+
+    .mission {
+
+        grid-template-rows:
+            28px
+            108px
+            108px
+            108px
+            108px;
+
+    }
+
+
+    .mission h2 {
+
+        font-size:
+            21px;
+
+    }
+
+
+    .creneau p {
+
+        font-size:
+            14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTES
+   ========================================================= */
+
+@media (max-width:1000px) {
+
+    .planning {
+
+        grid-template-columns:
+            repeat(4, 1fr);
+
+    }
+
+
+    .mission {
+
+        grid-template-rows:
+            24px
+            92px
+            92px
+            92px
+            92px;
+
+    }
+
+
+    .mission h2 {
+
+        font-size:
+            18px;
+
+    }
+
+
+    .creneau p {
+
+        font-size:
+            14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLETTE / PETIT ÉCRAN
+   ========================================================= */
+
+@media (max-width:700px) {
+
+    .planning {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap:
+            15px;
+
+    }
+
+
+    .mission {
+
+        padding:
+            20px 12px;
+
+        grid-template-rows:
+            24px
+            100px
+            100px
+            100px
+            100px;
+
+    }
+
+
+    .mission h2 {
+
+        font-size:
+            19px;
+
+    }
+
+
+    .creneau p {
+
+        font-size:
+            14px;
+
+    }
+
+}
+
+
+/* =========================================================
+   PETIT TÉLÉPHONE
+   ========================================================= */
+
+@media (max-width:450px) {
+
+    .planning {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .mission {
+
+        padding:
+            22px 20px;
+
+        grid-template-rows:
+            24px
+            105px
+            105px
+            105px
+            105px;
+
+    }
+
+
+    .mission h2 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .creneau p {
+
+        font-size:
+            14px;
+
+    }
 
 }
