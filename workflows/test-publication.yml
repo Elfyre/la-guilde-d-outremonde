@@ -1,0 +1,21 @@
+name: Test publication automatique
+
+on:
+  schedule:
+    # Test : lundi à 14h05, heure française
+    - cron: "45 13 * * 1"
+      timezone: "Europe/Paris"
+
+  # Permet également de tester manuellement
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Vérifier le déclenchement automatique
+        run: |
+          echo "🎉 Le déclencheur automatique fonctionne !"
+          echo "Date et heure UTC : $(date -u)"
+          echo "Date et heure France : $(TZ=Europe/Paris date)"
