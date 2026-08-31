@@ -2,8 +2,8 @@ name: Publication du site
 
 on:
   schedule:
-    # Tous les lundis à 00h10, heure française
-    - cron: "35 18 * * 1"
+    # TEST : une seule exécution à 21h00, heure française
+    - cron: "45 20 * * 1"
       timezone: "Europe/Paris"
 
   workflow_dispatch:
