@@ -2,9 +2,8 @@ name: Test publication automatique
 
 on:
   schedule:
-    # Test : lundi à 14h05, heure française
-    - cron: "45 13 * * 1"
-      timezone: "Europe/Paris"
+    # Test : 14h00 en France = 12h00 UTC
+    - cron: "0 14 * * 1"
 
   # Permet également de tester manuellement
   workflow_dispatch:
