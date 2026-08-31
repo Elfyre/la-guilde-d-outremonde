@@ -3,7 +3,7 @@ name: Publication du site
 on:
   schedule:
     # TEST : une seule exécution à 21h00, heure française
-    - cron: "40 20 * * 1"
+    - cron: "45 20 * * 1"
       timezone: "Europe/Paris"
 
   workflow_dispatch:
