@@ -3,7 +3,7 @@ name: Publication du site
 on:
   schedule:
     # TEST : lundi 20h10 en France = 18h10 UTC
-    - cron: "30 18 * * 1"
+    - cron: "30 19 * * 1"
 
   workflow_dispatch:
 
