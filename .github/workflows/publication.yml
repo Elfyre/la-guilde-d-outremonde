@@ -2,10 +2,9 @@ name: Publication du site
 
 on:
   schedule:
-    # Heure d'été : dimanche 22h UTC = lundi 00h en France
-    - cron: "20 16 * * 1"
+    # TEST : lundi 20h10 en France = 18h10 UTC
+    - cron: "30 18 * * 1"
 
-  # Permet une publication manuelle depuis l'onglet Actions
   workflow_dispatch:
 
 permissions:
@@ -26,47 +25,12 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Vérifier le déclenchement
-        id: verification
-        shell: bash
-        run: |
-          # Une publication manuelle est toujours autorisée
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "publish=true" >> "$GITHUB_OUTPUT"
-            echo "Publication manuelle autorisée."
-            exit 0
-          fi
-
-          OFFSET=$(TZ=Europe/Paris date +%z)
-          SCHEDULE="${{ github.event.schedule }}"
-
-          echo "Déclencheur : $SCHEDULE"
-          echo "Fuseau actuel Europe/Paris : $OFFSET"
-          echo "Heure française : $(TZ=Europe/Paris date)"
-
-          # Heure d'été : UTC+2 → déclenchement de 22h UTC
-          if [ "$OFFSET" = "+0200" ] && [ "$SCHEDULE" = "0 22 * * 0" ]; then
-            echo "publish=true" >> "$GITHUB_OUTPUT"
-            echo "Publication d'été autorisée."
-
-          # Heure d'hiver : UTC+1 → déclenchement de 23h UTC
-          elif [ "$OFFSET" = "+0100" ] && [ "$SCHEDULE" = "0 23 * * 0" ]; then
-            echo "publish=true" >> "$GITHUB_OUTPUT"
-            echo "Publication d'hiver autorisée."
-
-          else
-            echo "publish=false" >> "$GITHUB_OUTPUT"
-            echo "Déclenchement ignoré."
-          fi
-
       - name: Récupérer le dépôt
-        if: steps.verification.outputs.publish == 'true'
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Mettre à jour main avec develop
-        if: steps.verification.outputs.publish == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -81,23 +45,19 @@ jobs:
           git push origin main
 
       - name: Récupérer main après publication
-        if: steps.verification.outputs.publish == 'true'
         uses: actions/checkout@v6
         with:
           ref: main
           fetch-depth: 1
 
       - name: Configurer GitHub Pages
-        if: steps.verification.outputs.publish == 'true'
         uses: actions/configure-pages@v5
 
       - name: Envoyer le site à GitHub Pages
-        if: steps.verification.outputs.publish == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: .
 
       - name: Déployer sur GitHub Pages
-        if: steps.verification.outputs.publish == 'true'
         id: deployment
         uses: actions/deploy-pages@v4
