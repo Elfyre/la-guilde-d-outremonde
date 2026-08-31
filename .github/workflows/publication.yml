@@ -3,7 +3,7 @@ name: Publication du site
 on:
   schedule:
     # Tous les lundis à 00h05, heure française
-    - cron: "5 0 * * 1"
+    - cron: "10 00 * * 1"
       timezone: "Europe/Paris"
 
   # Permet une publication manuelle depuis l'onglet Actions
