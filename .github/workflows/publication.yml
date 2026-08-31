@@ -2,11 +2,10 @@ name: Publication du site
 
 on:
   schedule:
-    # Tous les lundis à 00h05, heure française
-    - cron: "10 00 * * 1"
+    # Tous les lundis à 00h10, heure française
+    - cron: "10 0 * * 1"
       timezone: "Europe/Paris"
 
-  # Permet une publication manuelle depuis l'onglet Actions
   workflow_dispatch:
 
 permissions:
@@ -27,20 +26,30 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Récupérer la branche develop
+      - name: Récupérer le dépôt
         uses: actions/checkout@v6
         with:
-          ref: develop
           fetch-depth: 0
 
-      - name: Publier develop sur main
+      - name: Mettre à jour main avec develop
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          git fetch origin
+
           git checkout main
+          git reset --hard origin/main
+
           git merge origin/develop --no-edit
+
           git push origin main
+
+      - name: Récupérer main après publication
+        uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 1
 
       - name: Configurer GitHub Pages
         uses: actions/configure-pages@v5
