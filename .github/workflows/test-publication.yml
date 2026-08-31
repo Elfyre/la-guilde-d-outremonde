@@ -3,7 +3,6 @@ name: Test publication automatique
 on:
   schedule:
     - cron: "*/5 * * * *"
-
   workflow_dispatch:
 
 jobs:
@@ -14,4 +13,5 @@ jobs:
       - name: Test du déclenchement automatique
         run: |
           echo "Le schedule fonctionne !"
-          date
+          echo "UTC : $(date -u)"
+          echo "France : $(TZ=Europe/Paris date)"
