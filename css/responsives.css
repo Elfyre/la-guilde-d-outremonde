@@ -1238,3 +1238,99 @@
     }
 
 }
+
+/* =========================================================
+   PIED DE PAGE
+   ADAPTATION RESPONSIVE
+   ========================================================= */
+
+@media (max-width:600px) {
+
+    .pied-page {
+
+        padding:
+            25px 20px 35px;
+
+    }
+
+
+    .pied-page::before {
+
+        width:
+            min(500px, 80%);
+
+    }
+
+
+    .ornement-bas-gauche {
+
+        left:
+            20px;
+
+    }
+
+
+    .ornement-bas-droit {
+
+        right:
+            20px;
+
+    }
+
+}
+
+
+@media (max-width:450px) {
+
+    .pied-page::before {
+
+        width:
+            70%;
+
+    }
+
+
+    .ornement-bas-gauche {
+
+        left:
+            15px;
+
+    }
+
+
+    .ornement-bas-droit {
+
+        right:
+            15px;
+
+    }
+
+}
+
+
+@media (max-width:360px) {
+
+    .pied-page::before {
+
+        width:
+            65%;
+
+    }
+
+
+    .ornement-bas-gauche {
+
+        left:
+            10px;
+
+    }
+
+
+    .ornement-bas-droit {
+
+        right:
+            10px;
+
+    }
+
+}

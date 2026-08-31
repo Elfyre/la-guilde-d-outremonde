@@ -21,6 +21,7 @@
 
 }
 
+
 /* =========================================================
    TITRE + BOUTON RETOUR
    ========================================================= */
@@ -58,14 +59,14 @@
     margin:
         0 0 0 20px;
 
+    padding:
+        8px 16px;
+
     transform:
         translateY(-50%);
 
     white-space:
         nowrap;
-    
-    padding:
-    8px 16px;
 
     font-size:
         13px;
@@ -89,6 +90,7 @@
         translateY(-50%);
 
 }
+
 
 /* =========================================================
    EMBLÈME
@@ -196,9 +198,14 @@
         var(--ombre-moyenne);
 
     transition:
-        transform var(--transition-standard),
-        border-color var(--transition-standard),
-        box-shadow var(--transition-standard);
+        transform
+        var(--transition-standard),
+
+        border-color
+        var(--transition-standard),
+
+        box-shadow
+        var(--transition-standard);
 
 }
 
@@ -254,8 +261,11 @@
         );
 
     transition:
-        transform var(--transition-standard),
-        filter var(--transition-standard);
+        transform
+        var(--transition-standard),
+
+        filter
+        var(--transition-standard);
 
 }
 
@@ -385,19 +395,17 @@
 
 
 /* =========================================================
-   EXTENSIONS DE L'AVENTURE
+   BLOCS DE LA FICHE D'AVENTURE
    ========================================================= */
 
-.extensions-aventure {
-
-    width:
-        min(900px, 92%);
-
-    margin:
-        0 auto 35px;
+.info-aventure,
+.extensions-aventure,
+.histoire-aventure,
+.objectifs-aventure,
+.souvenirs-aventure {
 
     padding:
-        20px 25px;
+        30px;
 
     text-align:
         center;
@@ -407,6 +415,7 @@
         var(--parchemin-sombre);
 
     background:
+
         linear-gradient(
             145deg,
 
@@ -416,55 +425,103 @@
         );
 
     box-shadow:
-        0 5px 18px
+        0 8px 25px
         var(--ombre-moyenne);
 
 }
 
 
 /* =========================================================
-   TITRE
+   EXTENSIONS DE L'AVENTURE
+   ========================================================= */
+
+.extensions-aventure {
+
+    min-width:
+        0;
+
+}
+
+
+/* =========================================================
+   TITRE DES EXTENSIONS
    ========================================================= */
 
 .extensions-aventure h2 {
 
-    margin:
-        0 0 12px;
+    margin-bottom:
+        18px;
 
     color:
         var(--parchemin-clair);
 
-    font-size:
-        20px;
-
 }
 
 
 /* =========================================================
-   DESCRIPTION
+   DESCRIPTION DES EXTENSIONS
    ========================================================= */
 
 .extensions-aventure p {
 
+    max-width:
+        750px;
+
     margin:
-        0;
+        0 auto 15px;
 
     color:
-        var(--parchemin);
+        var(--texte-secondaire);
 
     line-height:
-        1.6;
+        1.8;
 
 }
 
 
 /* =========================================================
-   NOM DES DLC
+   LISTE DES DLC
+   ========================================================= */
+
+.extensions-aventure ul {
+
+    max-width:
+        700px;
+
+    margin:
+        0 auto;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+
+}
+
+
+/* =========================================================
+   DLC
+   ========================================================= */
+
+.extensions-aventure li {
+
+    padding:
+        10px 0;
+
+    color:
+        var(--texte-secondaire);
+
+}
+
+
+/* =========================================================
+   NOM DU DLC
    ========================================================= */
 
 .extensions-aventure strong {
 
     color:
-        var(--accent-clair);
+        var(--parchemin);
 
 }
