@@ -23,6 +23,8 @@
 
 .entete-aventurier .embleme {
 
+    margin-top: 20px;
+
     margin-bottom:
         20px;
 }
@@ -1575,342 +1577,111 @@
         none;
 }
 
-
 /* =========================================================
-   RESPONSIVE — PROFIL AVEC LIVRE
+   PAGE MK — CADRE MESSAGE
    ========================================================= */
 
-@media (max-width: 850px) {
+.page-message-attente .fiche-aventurier {
+    width: 100%;
 
-    .alias-livre-aventurier {
+    min-height: 50vh;
 
-        width:
-            min(680px, 94%);
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    margin: 0;
+    padding: 30px;
 
-    .livre-profil-aventurier .livre-aventurier {
-
-        width:
-            96%;
-
-        gap:
-            10px;
-    }
-
-
-    /*
-       Même hauteur pour toutes les pages
-       à cette résolution.
-    */
-
-    .livre-profil-aventurier .livre {
-
-        height:
-            720px;
-    }
-
-
-    .livre-profil-aventurier .page-livre {
-
-        padding:
-            26px 30px 60px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu p {
-
-        width:
-            min(580px, 100%);
-
-        font-size:
-            14px;
-
-        line-height:
-            1.6;
-    }
-
-
-    .livre-profil-aventurier .livre-navigation {
-
-        width:
-            36px;
-
-        height:
-            60px;
-
-        flex-basis:
-            36px;
-
-        font-size:
-            30px;
-    }
+    box-sizing: border-box;
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* =========================
+   CADRE
+   ========================= */
 
-@media (max-width: 600px) {
+.page-message-attente .apropos-aventurier {
+    position: relative;
 
-    .alias-livre-aventurier {
+    width: min(650px, 90%);
 
-        width:
-            96%;
+    margin: 0 auto;
+    padding: 50px 60px;
 
-        margin-bottom:
-            10px;
-    }
+    box-sizing: border-box;
 
+    text-align: center;
 
-    .alias-livre-aventurier .alias-livre-liste {
+    border: 1px solid rgba(255, 255, 255, 0.25);
 
-        gap:
-            16px;
-    }
+    background: rgba(0, 0, 0, 0.18);
 
-
-    .alias-livre-aventurier .alias-livre-item img {
-
-        width:
-            30px;
-
-        height:
-            30px;
-    }
-
-
-    .alias-livre-aventurier .alias-livre-item span {
-
-        font-size:
-            12px;
-    }
-
-
-    .livre-profil-aventurier .livre-aventurier {
-
-        width:
-            96%;
-
-        gap:
-            5px;
-    }
-
-
-    /*
-       Même hauteur pour toutes les pages
-       sur mobile également.
-    */
-
-    .livre-profil-aventurier .livre {
-
-        height:
-            740px;
-    }
-
-
-    .livre-profil-aventurier .page-livre {
-
-        padding:
-            25px 20px 60px;
-    }
-
-
-    .livre-profil-aventurier .page-livre::before {
-
-        inset:
-            9px;
-    }
-
-
-    .livre-profil-aventurier .page-ornement {
-
-        margin-bottom:
-            7px;
-
-        font-size:
-            18px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu h2 {
-
-        font-size:
-            23px;
-
-        line-height:
-            1.25;
-    }
-
-
-    .livre-profil-aventurier .page-separateur {
-
-        margin:
-            10px auto 16px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu p {
-
-        width:
-            100%;
-
-        font-size:
-            14px;
-
-        line-height:
-            1.6;
-
-        margin-bottom:
-            10px;
-    }
-
-
-    .livre-profil-aventurier .tableau-caracteristiques {
-
-        width:
-            100%;
-    }
-
-
-    .livre-profil-aventurier .caracteristiques-livre {
-
-        width:
-            100%;
-
-        font-size:
-            11px;
-
-        table-layout:
-            fixed;
-    }
-
-
-    .livre-profil-aventurier .caracteristiques-livre th,
-
-    .livre-profil-aventurier .caracteristiques-livre td {
-
-        padding:
-            5px 5px;
-
-        line-height:
-            1.25;
-    }
-
-
-    .livre-profil-aventurier .caracteristiques-livre td:last-child {
-
-        white-space:
-            normal;
-    }
-
-
-    .livre-profil-aventurier .numero-page {
-
-        bottom:
-            14px;
-
-        padding:
-            4px 10px;
-
-        min-width:
-            38px;
-
-        font-size:
-            11px;
-    }
-
-
-    .livre-profil-aventurier .livre-navigation {
-
-        width:
-            30px;
-
-        height:
-            55px;
-
-        flex-basis:
-            30px;
-
-        font-size:
-            27px;
-    }
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.25),
+        inset 0 0 30px rgba(255, 255, 255, 0.03);
 }
 
 
-/* =========================================================
-   TRÈS PETITS ÉCRANS
-   ========================================================= */
+/* =========================
+   PETITS ORNEMENTS DES COINS
+   ========================= */
 
-@media (max-width: 400px) {
+.page-message-attente .apropos-aventurier::before,
+.page-message-attente .apropos-aventurier::after {
+    content: "✦";
 
-    .livre-profil-aventurier .livre {
+    position: absolute;
 
-        height:
-            760px;
-    }
+    font-size: 1rem;
 
-
-    .livre-profil-aventurier .page-livre {
-
-        padding:
-            22px 18px 58px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu h2 {
-
-        font-size:
-            21px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu p {
-
-        font-size:
-            13px;
-
-        line-height:
-            1.55;
-    }
-
-
-    .livre-profil-aventurier .livre-navigation {
-
-        width:
-            27px;
-
-        height:
-            50px;
-
-        flex-basis:
-            27px;
-
-        font-size:
-            24px;
-    }
+    opacity: 0.7;
 }
 
 
-/* =========================================================
-   RÉDUCTION DES ANIMATIONS
-   ========================================================= */
+/* Coin supérieur gauche */
 
-@media (prefers-reduced-motion: reduce) {
-
-    .livre-profil-aventurier .page-livre {
-
-        transition:
-            none;
-    }
+.page-message-attente .apropos-aventurier::before {
+    top: 15px;
+    left: 18px;
+}
 
 
-    .livre-profil-aventurier .page-livre.page-tourne-gauche,
+/* Coin inférieur droit */
 
-    .livre-profil-aventurier .page-livre.page-tourne-droite {
+.page-message-attente .apropos-aventurier::after {
+    right: 18px;
+    bottom: 15px;
+}
 
-        animation:
-            none;
-    }
+
+/* =========================
+   TITRE
+   ========================= */
+
+.page-message-attente .apropos-aventurier h2 {
+    margin: 0 0 28px;
+
+    font-size: 2rem;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   TEXTE
+   ========================= */
+
+.page-message-attente .apropos-aventurier p {
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    line-height: 1.9;
+
+    font-size: 1.5rem;
+
+    font-style: italic;
 }
