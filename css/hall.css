@@ -10,7 +10,7 @@
 .reseaux-guilde {
 
     margin:
-        20px auto 45px;
+        10px auto 15px;
 
     display:
         flex;
@@ -22,7 +22,7 @@
         center;
 
     gap:
-        18px;
+        15px;
 
 }
 
@@ -64,10 +64,10 @@
 .reseau img {
 
     width:
-        38px;
+        34px;
 
     height:
-        38px;
+        34px;
 
     object-fit:
         contain;
@@ -116,44 +116,74 @@
 
 .hall-principal {
 
-    position:
-        relative;
-
     width:
         min(1200px, 94%);
 
     margin:
-        0 auto 70px;
+        0 auto 15px;
 
     display:
-        flex;
+        grid;
+
+    grid-template-columns:
+        220px 650px 220px;
+
+    grid-template-rows:
+        auto auto;
 
     justify-content:
         center;
 
     align-items:
-        flex-start;
+        stretch;
+
+    column-gap:
+        25px;
+
+    row-gap:
+        16px;
 
 }
 
 
 /* =========================================================
-   AVENTURIERS DE LA GUILDE
+   COLONNE DES AVENTURIERS
+   ========================================================= */
+
+.aventuriers-colonne {
+
+    width:
+        220px;
+
+    grid-column:
+        3;
+
+    grid-row:
+        1 / 3;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    align-items:
+        start;
+
+    gap:
+        15px;
+
+}
+
+
+/* =========================================================
+   BLOCS DES AVENTURIERS
    ========================================================= */
 
 .aventuriers-guilde {
 
-    position:
-        absolute;
-
-    top:
-        15px;
-
-    left:
-        0;
-
     width:
-        130px;
+        100%;
 
     margin:
         0;
@@ -168,7 +198,7 @@
 .entete-aventuriers {
 
     margin-bottom:
-        22px;
+        10px;
 
     text-align:
         center;
@@ -182,10 +212,10 @@
         block;
 
     margin-bottom:
-        7px;
+        5px;
 
     font-size:
-        26px;
+        24px;
 
     filter:
         drop-shadow(
@@ -205,7 +235,7 @@
         var(--parchemin-clair);
 
     font-size:
-        18px;
+        17px;
 
 }
 
@@ -238,7 +268,52 @@
         center;
 
     gap:
-        22px;
+        12px;
+
+}
+
+
+/* =========================================================
+   LISTE DES AVENTURIERS SECONDAIRES
+   ========================================================= */
+
+.aventuriers-secondaires .liste-aventuriers {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        1fr;
+
+    justify-items:
+        center;
+
+    gap:
+        12px;
+
+}
+
+
+/* =========================================================
+   À PARTIR DE 4 AVENTURIERS
+   ========================================================= */
+
+.aventuriers-secondaires .liste-aventuriers:has(.aventurier:nth-child(4)) {
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+}
+
+
+/* =========================================================
+   À PARTIR DE 7 AVENTURIERS
+   ========================================================= */
+
+.aventuriers-secondaires .liste-aventuriers:has(.aventurier:nth-child(7)) {
+
+    grid-template-columns:
+        repeat(3, 1fr);
 
 }
 
@@ -262,7 +337,7 @@
         center;
 
     gap:
-        6px;
+        4px;
 
     text-align:
         center;
@@ -281,10 +356,10 @@
 .aventurier img {
 
     width:
-        62px;
+        56px;
 
     height:
-        62px;
+        56px;
 
     object-fit:
         cover;
@@ -338,7 +413,7 @@
         var(--parchemin);
 
     font-size:
-        15px;
+        14px;
 
     transition:
         color var(--transition-standard);
@@ -410,10 +485,16 @@
 .salles {
 
     width:
-        680px;
+        650px;
 
     margin:
         0 auto;
+
+    grid-column:
+        2;
+
+    grid-row:
+        1 / 3;
 
     display:
         grid;
@@ -422,7 +503,7 @@
         repeat(2, 1fr);
 
     gap:
-        24px;
+        16px;
 
 }
 
@@ -440,10 +521,10 @@
         100%;
 
     aspect-ratio:
-        1 / 1;
+        1.25 / 1;
 
     padding:
-        25px;
+        16px;
 
     display:
         flex;
@@ -518,10 +599,10 @@
         block;
 
     margin-bottom:
-        12px;
+        6px;
 
     font-size:
-        42px;
+        36px;
 
 }
 
@@ -533,13 +614,13 @@
 .salle h2 {
 
     margin-bottom:
-        9px;
+        6px;
 
     color:
         var(--parchemin-clair);
 
     font-size:
-        23px;
+        21px;
 
 }
 
@@ -551,15 +632,239 @@
 .salle p {
 
     max-width:
-        230px;
+        240px;
 
     color:
         var(--texte-secondaire);
 
     line-height:
-        1.6;
+        1.35;
 
     font-size:
-        14px;
+        13px;
+
+}
+
+
+/* =========================================================
+   PROCHAINES ACTIVITÉS — HALL
+   ========================================================= */
+
+.prochaines-activites {
+
+    width:
+        220px;
+
+    margin:
+        0;
+
+    grid-column:
+        1;
+
+    grid-row:
+        1 / 3;
+
+    display:
+        grid;
+
+    grid-template-rows:
+        1fr 1fr;
+
+    gap:
+        16px;
+
+    align-items:
+        stretch;
+
+}
+
+
+/* =========================================================
+   POSITIONNEMENT DES ACTIVITÉS
+   ========================================================= */
+
+#prochaine-video {
+
+    grid-row:
+        1;
+
+}
+
+
+#prochain-live {
+
+    grid-row:
+        2;
+
+}
+
+
+/* =========================================================
+   ENCADRÉ ACTIVITÉ
+   ========================================================= */
+
+.activite-guilde {
+
+    width:
+        100%;
+
+    height:
+        256px;
+
+    padding:
+        8px;
+
+    box-sizing:
+        border-box;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        8px;
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.activite-contenu {
+
+    width:
+        100%;
+
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.activite-titre {
+
+    margin-bottom:
+        5px;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        bold;
+
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.activite-image {
+
+    width:
+        100%;
+
+    max-width:
+        150px;
+
+    aspect-ratio:
+        16 / 9;
+
+    margin:
+        0 auto 5px;
+
+    border-radius:
+        5px;
+
+    overflow:
+        hidden;
+
+}
+
+
+.activite-image img {
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        contain;
+
+    display:
+        block;
+
+}
+
+
+/* =========================================================
+   NOM
+   ========================================================= */
+
+.activite-nom {
+
+    margin:
+        3px 0;
+
+    font-size:
+        0.95rem;
+
+}
+
+
+/* =========================================================
+   DATE / COMPTE À REBOURS
+   ========================================================= */
+
+.activite-date,
+.activite-compte-a-rebours {
+
+    margin:
+        2px 0;
+
+    font-size:
+        0.8rem;
+
+}
+
+
+.activite-compte-a-rebours {
+
+    font-weight:
+        bold;
+
+}
+
+
+/* =========================================================
+   BOUTON TWITCH
+   ========================================================= */
+
+.bouton-twitch {
+
+    margin-top:
+        4px;
 
 }

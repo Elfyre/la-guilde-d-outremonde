@@ -4,13 +4,22 @@
 <head>
 
     <!-- =========================================================
-     EASTER EGG — LICORNE
-     ========================================================= -->
+         EASTER EGG — LICORNE
+         ========================================================= -->
 
-<script
-    src="../js/licorne.js"
-    defer
-></script>
+    <script
+        src="../js/licorne.js"
+        defer
+    ></script>
+
+    <!-- =========================================================
+         INFORMATIONS DU HALL
+         ========================================================= -->
+
+    <script
+        src="../js/hall-planning.js"
+        defer
+    ></script>
 
     <!-- =====================
          INFORMATIONS DE LA PAGE
@@ -55,6 +64,7 @@
     <div class="ornement ornement-haut-gauche"></div>
 
     <div class="ornement ornement-haut-droit"></div>
+
 
     <!-- =====================
          ENTÊTE DU HALL
@@ -140,19 +150,25 @@
 
     </section>
 
+<!-- =====================
+     CONTENU PRINCIPAL DU HALL
+========================= -->
+
+<main class="hall-principal">
+
 
     <!-- =====================
-         CONTENU PRINCIPAL DU HALL
+         COLONNE DES AVENTURIERS
     ===================== -->
 
-    <main class="hall-principal">
+    <aside class="aventuriers-colonne">
 
 
         <!-- =====================
-             AVENTURIERS DE LA GUILDE
+             AVENTURIERS PRINCIPAUX
         ===================== -->
 
-        <aside class="aventuriers-guilde">
+        <section class="aventuriers-guilde aventuriers-principaux">
 
 
             <!-- =====================
@@ -166,7 +182,7 @@
                 </div>
 
                 <h2>
-                    Aventuriers
+                    Principaux
                 </h2>
 
             </header>
@@ -241,6 +257,44 @@
 
                 </a>
 
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================
+             AVENTURIERS OCCASIONNELS
+        ===================== -->
+
+        <section class="aventuriers-guilde aventuriers-secondaires">
+
+
+            <!-- =====================
+                 TITRE
+            ===================== -->
+
+            <header class="entete-aventuriers">
+
+                <div class="embleme">
+                    🏕️
+                </div>
+
+                <h2>
+                    Occasionnels
+                </h2>
+
+            </header>
+
+
+            <!-- =====================
+                 LISTE DES AVENTURIERS
+            ===================== -->
+
+            <div class="liste-aventuriers">
+
+
                 <!-- =====================
                      JEJE
                 ===================== -->
@@ -252,20 +306,46 @@
 
                     <img
                         src="../images/jeje.png"
-                        alt=""
+                        alt="Jeje"
                     >
 
                     <span>
-                        
+                        Jeje
                     </span>
 
                 </a>
 
+
+                <!-- =====================
+                     FUTURS AVENTURIERS
+                ===================== -->
+
+                <!--
+                <a
+                    href="aventuriers/nom.html"
+                    class="aventurier transition-douce"
+                >
+
+                    <img
+                        src="../images/nom.png"
+                        alt="Nom"
+                    >
+
+                    <span>
+                        Nom
+                    </span>
+
+                </a>
+                -->
+
+
             </div>
 
 
-        </aside>
+        </section>
 
+
+    </aside>
 
         <!-- =====================
              PORTES DU HALL
@@ -376,22 +456,99 @@
 
         </section>
 
+    <!-- =====================
+         PROCHAINES ACTIVITÉS
+    ===================== -->
 
-    </main>
-    
+    <section class="prochaines-activites">
+
+
+        <!-- =====================
+             YOUTUBE
+        ===================== -->
+
+        <article
+            id="prochaine-video"
+            class="activite-guilde"
+        >
+
+            <div class="activite-contenu">
+
+                <div class="activite-titre">
+                    📺 PROCHAINE VIDÉO
+                </div>
+
+                <div class="activite-image"></div>
+
+                <h2 class="activite-nom">
+                    Chargement...
+                </h2>
+
+                <p class="activite-date"></p>
+
+                <p class="activite-compte-a-rebours"></p>
+
+            </div>
+
+        </article>
+
+
+        <!-- =====================
+             TWITCH
+        ===================== -->
+
+        <article
+            id="prochain-live"
+            class="activite-guilde"
+        >
+
+            <div class="activite-contenu">
+
+                <div class="activite-titre">
+                    🔮 PROCHAIN LIVE
+                </div>
+
+                <div class="activite-image"></div>
+
+                <p class="activite-date"></p>
+
+                <p class="activite-compte-a-rebours"></p>
+
+                <a
+                    href="https://www.twitch.tv/mk666xxx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bouton bouton-twitch"
+                >
+                    Rejoindre le live
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+</main>
+
+
     <!-- =========================================================
          PIED DE PAGE
          ========================================================= -->
 
     <footer class="pied-page">
 
+
         <!-- =========================
              DÉCORATIONS
         ========================= -->
-        
+
         <div class="ornement ornement-bas-gauche"></div>
 
         <div class="ornement ornement-bas-droit"></div>
+
 
         <p>
 
@@ -405,7 +562,9 @@
 
         </p>
 
+
     </footer>
+
 
 </body>
 

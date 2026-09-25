@@ -14,40 +14,23 @@
         min(1100px, 92%);
 
     margin:
-        0 auto 60px;
+        55px auto 0;
 
     display:
         grid;
-
-    /*
-       2 colonnes pour les archives classiques
-
-       Exemple :
-       ┌──────────────┬──────────────┐
-       │      1       │      2       │
-       ├──────────────┼──────────────┤
-       │      3       │      4       │
-       └──────────────┴──────────────┘
-    */
 
     grid-template-columns:
         repeat(2, 1fr);
 
     gap:
-        30px;
+        15px;
 
 }
+
 
 /* =========================================================
    GRILLE DES ARCHIVES — VERSION X3
    ========================================================= */
-
-/*
-   Même mise en page que les archives classiques,
-   mais avec 3 colonnes au lieu de 2.
-
-   La classe .archives reste en X2.
-*/
 
 .archives-x3 {
 
@@ -55,7 +38,7 @@
         min(1100px, 92%);
 
     margin:
-        0 auto 60px;
+        25px auto 0;
 
     display:
         grid;
@@ -64,9 +47,10 @@
         repeat(3, 1fr);
 
     gap:
-        30px;
+        15px;
 
 }
+
 
 /* =========================================================
    CARTE D'ARCHIVE
@@ -78,7 +62,7 @@
         0;
 
     padding:
-        30px;
+        18px;
 
     text-align:
         center;
@@ -106,6 +90,10 @@
 
 }
 
+
+/* =========================================================
+   SURVOL
+   ========================================================= */
 
 .archive:hover {
 
@@ -139,10 +127,10 @@
         100%;
 
     height:
-        180px;
+        150px;
 
     margin:
-        0 auto 20px;
+        0 auto 12px;
 
     object-fit:
         contain;
@@ -160,10 +148,10 @@
         block;
 
     margin-bottom:
-        20px;
+        10px;
 
     font-size:
-        55px;
+        48px;
 
 }
 
@@ -175,7 +163,7 @@
 .archive h2 {
 
     margin-bottom:
-        15px;
+        8px;
 
     color:
         var(--parchemin-clair);
@@ -190,16 +178,16 @@
 .archive p {
 
     margin-bottom:
-        10px;
+        8px;
 
     color:
         var(--texte-secondaire);
-    
+
     font-size:
-        0.75rem;    
+        0.75rem;
 
     line-height:
-        1.7;
+        1.4;
 
 }
 
@@ -214,7 +202,7 @@
         min(600px, 85%);
 
     margin:
-        0 auto 20px;
+        0 auto 15px;
 
     padding:
         15px 25px;
@@ -279,7 +267,7 @@
 .archive-principale h2 {
 
     margin-bottom:
-        10px;
+        8px;
 
     color:
         var(--parchemin-clair);
@@ -315,10 +303,10 @@
         inline-block;
 
     margin:
-        8px 0;
+        5px 0;
 
     padding:
-        6px 12px;
+        5px 10px;
 
     border:
         1px solid
@@ -378,16 +366,7 @@
 
 /* =========================================================
    LMC
-   PLAYLISTS SECONDAIRES
    ========================================================= */
-
-/*
-   IMPORTANT :
-
-   Les archives classiques utilisent 2 colonnes.
-
-   Le LMC utilise volontairement 3 colonnes.
-*/
 
 .archives-lmc {
 
@@ -395,7 +374,7 @@
         min(1000px, 92%);
 
     margin:
-        0 auto 40px;
+        0 auto 20px;
 
     display:
         grid;
@@ -422,7 +401,7 @@
 
 
 /* =========================================================
-   IMAGES DES PLAYLISTS LMC
+   IMAGES LMC
    ========================================================= */
 
 .archives-lmc .archive img {
@@ -440,7 +419,7 @@
 
 
 /* =========================================================
-   TITRES DES PLAYLISTS LMC
+   TITRES LMC
    ========================================================= */
 
 .archives-lmc .archive h2 {
@@ -455,7 +434,7 @@
 
 
 /* =========================================================
-   STATUTS DES PLAYLISTS LMC
+   STATUTS LMC
    ========================================================= */
 
 .archives-lmc .statut-playlist {
@@ -473,7 +452,7 @@
 
 
 /* =========================================================
-   BOUTONS DES PLAYLISTS LMC
+   BOUTONS LMC
    ========================================================= */
 
 .archives-lmc .archive .bouton {
@@ -500,7 +479,7 @@
         100%;
 
     margin:
-        40px auto 35px;
+        20px auto 15px;
 
     text-align:
         center;

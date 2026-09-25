@@ -66,7 +66,9 @@
          CONTENU PRINCIPAL
          ========================================================= -->
 
-    <main class="page-legale">
+    <main>
+
+        <div class="page-legale">
 
 
         <!-- =====================================================
@@ -76,6 +78,7 @@
         <div class="ornement ornement-haut-gauche"></div>
 
         <div class="ornement ornement-haut-droit"></div>
+
 
         <!-- =====================================================
              EN-TÊTE
@@ -312,6 +315,47 @@
             </p>
 
 
+            <!-- =========================
+                 CLOUDFLARE WORKERS
+            ========================= -->
+
+            <p>
+
+                Le fonctionnement de certaines fonctionnalités
+                techniques du site utilise également
+                <strong>
+                    Cloudflare Workers
+                </strong>,
+                notamment pour assurer l'intermédiaire sécurisé entre
+                le site et l'API Twitch.
+
+            </p>
+
+
+            <p>
+
+                Les requêtes adressées au service intermédiaire peuvent
+                être traitées par Cloudflare dans le cadre de la fourniture,
+                de la sécurisation et du fonctionnement du service.
+
+            </p>
+
+
+            <p>
+
+                Pour plus d'informations sur les traitements effectués
+                par Cloudflare, les visiteurs peuvent consulter sa
+                <a
+                    href="https://www.cloudflare.com/privacypolicy/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    politique de confidentialité
+                </a>.
+
+            </p>
+
+
         </section>
 
 
@@ -429,8 +473,8 @@
                 La Guilde d'Outremonde ne contrôle pas les services
                 externes accessibles au moyen de ces liens et ne
                 peut être tenue responsable de leur contenu, de leur
-                fonctionnement ou de leurs pratiques en matière de
-                protection des données personnelles.
+                fonctionnement ou de leurs pratiques en matière
+                de protection des données personnelles.
 
             </p>
 
@@ -471,13 +515,18 @@
 
             <p>
 
-                Toutefois, certaines fonctionnalités du site,
-                notamment le système de vote, utilisent le service
-                Supabase afin d'assurer le fonctionnement des
-                sessions anonymes et l'enregistrement des votes.
+                Certaines fonctionnalités techniques du site font
+                toutefois intervenir des prestataires externes
+                nécessaires à leur fonctionnement, notamment GitHub,
+                Supabase et Cloudflare, ainsi que l'API Twitch pour
+                l'affichage du statut public de la chaîne Twitch.
 
             </p>
 
+
+            <!-- =========================
+                 RESPONSABLE DU TRAITEMENT
+            ========================= -->
 
             <h3>
                 Responsable du traitement
@@ -496,6 +545,10 @@
 
             </p>
 
+
+            <!-- =========================
+                 SYSTÈME DE VOTE
+            ========================= -->
 
             <h3>
                 Fonctionnement du système de vote
@@ -649,6 +702,10 @@
             </p>
 
 
+            <!-- =========================
+                 SERVICE SUPABASE
+            ========================= -->
+
             <h3>
                 Service utilisé
             </h3>
@@ -690,6 +747,88 @@
             </p>
 
 
+            <!-- =========================
+                 TWITCH
+            ========================= -->
+
+            <h3>
+                Vérification du statut Twitch
+            </h3>
+
+
+            <p>
+
+                Le site utilise l'API Twitch afin de vérifier
+                automatiquement si la chaîne Twitch associée à
+                La Guilde d'Outremonde est actuellement en direct.
+
+            </p>
+
+
+            <p>
+
+                Cette fonctionnalité permet notamment d'afficher
+                sur le Hall du site le statut du live, son titre
+                et, lorsqu'elle est disponible, sa miniature.
+
+            </p>
+
+
+            <p>
+
+                La vérification porte uniquement sur les informations
+                publiques nécessaires à l'affichage du statut de la
+                chaîne. Le site ne demande pas aux visiteurs de se
+                connecter à Twitch et ne transmet pas leurs
+                identifiants Twitch dans le cadre de cette
+                fonctionnalité.
+
+            </p>
+
+
+            <p>
+
+                La requête vers l'API Twitch est effectuée par un
+                service intermédiaire hébergé avec
+                <strong>
+                    Cloudflare Workers
+                </strong>.
+                Le secret nécessaire à l'authentification de
+                l'application Twitch est conservé côté serveur
+                et n'est pas exposé dans le code public du site.
+
+            </p>
+
+
+            <p>
+
+                Les informations récupérées depuis Twitch sont
+                utilisées uniquement pour permettre le fonctionnement
+                de l'affichage du prochain live et du statut de
+                diffusion en direct.
+
+            </p>
+
+
+            <p>
+
+                Pour plus d'informations sur l'utilisation de l'API
+                Twitch, les visiteurs peuvent consulter la
+                <a
+                    href="https://dev.twitch.tv/docs/api/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    documentation officielle de Twitch
+                </a>.
+
+            </p>
+
+
+            <!-- =========================
+                 DESTINATAIRES
+            ========================= -->
+
             <h3>
                 Destinataires des données
             </h3>
@@ -705,6 +844,30 @@
                 en qualité de prestataire technique pour
                 l'authentification anonyme et le stockage des données
                 liées aux votes.
+
+            </p>
+
+
+            <p>
+
+                Les requêtes techniques nécessaires à la vérification
+                du statut public de la chaîne Twitch peuvent également
+                transiter par
+                <strong>
+                    Cloudflare
+                </strong>,
+                qui fournit le service intermédiaire utilisé par
+                le site.
+
+            </p>
+
+
+            <p>
+
+                Les informations publiques récupérées auprès de
+                l'API Twitch sont utilisées uniquement pour
+                l'affichage des informations relatives au live
+                sur le site.
 
             </p>
 
@@ -729,6 +892,10 @@
 
             </p>
 
+
+            <!-- =========================
+                 DURÉE DE CONSERVATION
+            ========================= -->
 
             <h3>
                 Durée de conservation
@@ -756,6 +923,20 @@
             </p>
 
 
+            <p>
+
+                Les informations publiques récupérées auprès de
+                Twitch pour l'affichage du statut du live ne sont
+                pas conservées par La Guilde d'Outremonde dans une
+                base de données destinée à suivre les visiteurs.
+
+            </p>
+
+
+            <!-- =========================
+                 TRANSFERTS
+            ========================= -->
+
             <h3>
                 Transferts de données hors de l'Union européenne
             </h3>
@@ -764,10 +945,10 @@
             <p>
 
                 Certains prestataires techniques utilisés par le site,
-                notamment GitHub, Supabase et leurs éventuels
-                sous-traitants, peuvent traiter certaines données
-                en dehors de l'Union européenne ou de l'Espace
-                économique européen.
+                notamment GitHub, Supabase, Cloudflare et leurs
+                éventuels sous-traitants, peuvent traiter certaines
+                données en dehors de l'Union européenne ou de
+                l'Espace économique européen.
 
             </p>
 
@@ -801,6 +982,10 @@
 
             </p>
 
+
+            <!-- =========================
+                 DROITS
+            ========================= -->
 
             <h3>
                 Droits des personnes concernées
@@ -872,6 +1057,10 @@
 
             </p>
 
+
+            <!-- =========================
+                 EXERCICE DES DROITS
+            ========================= -->
 
             <h3>
                 Exercice des droits et contact
@@ -1044,7 +1233,7 @@
                     Dernière mise à jour :
                 </strong>
 
-                24 août 2026
+                25 septembre 2026
 
             </p>
 
@@ -1052,22 +1241,29 @@
         </section>
 
 
+        </div>
+
     </main>
+
+
     <!-- =========================================================
          PIED DE PAGE
          ========================================================= -->
 
     <footer class="pied-page">
 
+
         <!-- =========================
              DÉCORATIONS
         ========================= -->
-        
+
         <div class="ornement ornement-bas-gauche"></div>
 
         <div class="ornement ornement-bas-droit"></div>
 
+
     </footer>
+
 
 </body>
 

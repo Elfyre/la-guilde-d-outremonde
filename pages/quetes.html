@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="fr">
 
+<html lang="fr">
 
 <!-- =====================
      EN-TÊTE DE LA PAGE
@@ -8,41 +8,39 @@
 
 <head>
 
-    <!-- =========================================================
-     EASTER EGG — LICORNE
-     ========================================================= -->
+<!-- =========================================================
+ EASTER EGG — LICORNE
+ ========================================================= -->
 
 <script
     src="../js/licorne.js"
     defer
 ></script>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
-    <link
-        rel="icon"
-        href="../favicon.png?v=2"
-    >
+<link
+    rel="icon"
+    href="../favicon.png?v=2"
+>
 
-    <title>
-        Salle des Quêtes - La Guilde d'Outremonde
-    </title>
+<title>
+    Salle des Quêtes - La Guilde d'Outremonde
+</title>
 
-    <link
-        rel="stylesheet"
-        href="../css/main.css"
-    >
+<link
+    rel="stylesheet"
+    href="../css/main.css"
+>
 
 </head>
 
-
 <body>
-
 
 <!-- =====================
      SALLE DES QUÊTES
@@ -50,67 +48,73 @@
 
 <main>
 
+<!-- =========================
+     DÉCORATIONS
+========================= -->
 
-    <!-- =========================
-         DÉCORATIONS
-    ========================= -->
+<div class="ornement ornement-haut-gauche"></div>
 
-    <div class="ornement ornement-haut-gauche"></div>
+<div class="ornement ornement-haut-droit"></div>
 
-    <div class="ornement ornement-haut-droit"></div>
+<!-- =====================
+     EN-TÊTE DE LA SALLE
+===================== -->
+
+<header class="entete-salle">
+
+
+    <!-- Emblème -->
+
+    <div class="embleme">
+
+        🗳️
+
+    </div>
+    
+    <div class="titre-conteneur">
+
+        <h1>
+            Salle des Quêtes
+        </h1>
+
+        <!-- =========================
+        RETOUR AU HALL
+        ========================= -->
+            
+        <a
+            href="hall.html"
+            class="bouton bouton-retour transition-douce"
+        >
+            Retour au Hall
+        </a>
+
+    </div>
+
+    <!-- Description -->
+
+    <p>
+
+        Les aventuriers peuvent proposer les prochaines expéditions.
+
+    </p>
+
+
+</header>
+
+
+
+<!-- =====================
+     QUÊTES
+===================== -->
+
+<section class="quetes">
+
 
     <!-- =====================
-         EN-TÊTE DE LA SALLE
+         LIGNE — PROPOSITION
     ===================== -->
 
-    <header class="entete-salle">
-
-
-        <!-- Emblème -->
-
-        <div class="embleme">
-
-            🗳️
-
-        </div>
-        
-        <div class="titre-conteneur">
-
-            <h1>
-                Salle des Quêtes
-            </h1>
-
-            <!-- =========================
-            RETOUR AU HALL
-            ========================= -->
-                
-            <a
-                href="hall.html"
-                class="bouton bouton-retour transition-douce"
-            >
-                Retour au Hall
-            </a>
-
-        </div>
-
-        <!-- Description -->
-
-        <p>
-
-            Les aventuriers peuvent proposer les prochaines expéditions.
-
-        </p>
-
-
-    </header>
-
-
-
-    <!-- =====================
-         QUÊTES
-    ===================== -->
-
-    <section class="quetes">
+    <div class="ligne-proposition">
 
 
         <!-- =====================
@@ -153,6 +157,16 @@
 
         </div>
 
+
+    </div>
+
+
+
+    <!-- =====================
+         LIGNE — JEUX
+    ===================== -->
+
+    <div class="lignes-jeux">
 
 
         <!-- =====================
@@ -215,7 +229,7 @@
 
             <h2>
 
-                🚫 Jeux proposés mais non retenus
+                🚫 Jeux déjà proposés
 
             </h2>
 
@@ -240,11 +254,12 @@
         </div>
 
 
-    </section>
+    </div>
+
+
+</section>
 
 </main>
-
-
 
 <!-- =====================
      SCRIPTS
@@ -253,7 +268,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="../js/supabase.js"></script>
-
 
 <script>
 
@@ -882,33 +896,33 @@
 
 </script>
 
-    <!-- =========================================================
-         PIED DE PAGE
-         ========================================================= -->
+<!-- =========================================================
+     PIED DE PAGE
+     ========================================================= -->
 
-    <footer class="pied-page">
+<footer class="pied-page">
 
-        <!-- =========================
-             DÉCORATIONS
-        ========================= -->
-        
-        <div class="ornement ornement-bas-gauche"></div>
+    <!-- =========================
+         DÉCORATIONS
+    ========================= -->
+    
+    <div class="ornement ornement-bas-gauche"></div>
 
-        <div class="ornement ornement-bas-droit"></div>
+    <div class="ornement ornement-bas-droit"></div>
 
-        <p>
+    <p>
 
-            © 2026 La Guilde d'Outremonde
+        © 2026 La Guilde d'Outremonde
 
-            ·
+        ·
 
-            <a href="https://elfyre.github.io/la-guilde-d-outremonde/mentions-legales.html">
-                Mentions légales
-            </a>
+        <a href="https://elfyre.github.io/la-guilde-d-outremonde/mentions-legales.html">
+            Mentions légales
+        </a>
 
-        </p>
+    </p>
 
-    </footer>
+</footer>
 
 </body>
 
