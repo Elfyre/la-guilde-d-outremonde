@@ -45,7 +45,7 @@ async function chargerPlanning() {
     try {
 
         const reponse =
-            await fetch("planning.html");
+            await fetch("../pages/planning.html");
 
 
         if (!reponse.ok) {
