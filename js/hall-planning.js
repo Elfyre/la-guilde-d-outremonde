@@ -1065,7 +1065,7 @@ function afficherLiveEnDirect(
     if (date) {
 
         date.textContent =
-            "🔴 En direct maintenant";
+            "";
 
     }
 
