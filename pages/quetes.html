@@ -236,7 +236,7 @@
 
             <!-- Description -->
 
-            <p>
+            <p class="description-jeux-refuses">
 
                 Ces jeux ont été proposés à la Guilde
                 mais n'ont pas été retenus par l'équipe.
@@ -861,7 +861,8 @@
 
 
                         <p>
-                            🚫 Non retenu
+                            📜 <strong>Raison du refus :</strong>
+                            ${jeu.raison_refus || 'Aucune raison indiquée.'}
                         </p>
 
                     `;
