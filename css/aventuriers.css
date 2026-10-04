@@ -3,7 +3,6 @@
    FICHES DES MEMBRES DE LA GUILDE
    ========================================================= */
 
-
 /* =========================================================
    ENTÊTE DE L'AVENTURIER
    ========================================================= */
@@ -14,24 +13,37 @@
         min(1000px, 92%);
 
     margin:
-        0 auto 50px;
+        14px auto 14px;
 
     text-align:
         center;
 }
 
-
 .entete-aventurier .embleme {
 
-    margin-bottom:
-        20px;
-}
+    margin-top:
+        0;
 
+    margin-bottom:
+        8px;
+
+    font-size:
+        48px;
+}
 
 .entete-aventurier h1 {
 
     margin-bottom:
-        15px;
+        10px;
+}
+
+.entete-aventurier > p {
+
+    margin:
+        8px auto 0;
+
+    line-height:
+        1.4;
 }
 
 
@@ -48,13 +60,11 @@
         inline-block;
 }
 
-
 .entete-aventurier .titre-conteneur h1 {
 
     margin:
         0;
 }
-
 
 .entete-aventurier .titre-conteneur .bouton-retour {
 
@@ -83,7 +93,6 @@
         nowrap;
 }
 
-
 .entete-aventurier .titre-conteneur .bouton-retour:hover {
 
     transform:
@@ -91,7 +100,6 @@
             calc(-50% - 2px)
         );
 }
-
 
 .entete-aventurier .titre-conteneur .bouton-retour:active {
 
@@ -136,6 +144,7 @@
 
     border:
         1px solid
+
         var(--parchemin-sombre);
 
     background:
@@ -147,6 +156,7 @@
 
     box-shadow:
         0 8px 25px
+
         var(--ombre-moyenne);
 }
 
@@ -212,7 +222,6 @@
         none;
 }
 
-
 .expeditions-aventurier li {
 
     padding:
@@ -223,9 +232,9 @@
 
     border-bottom:
         1px solid
+
         rgba(var(--parchemin-rgb), 0.18);
 }
-
 
 .expeditions-aventurier li:last-child {
 
@@ -252,163 +261,96 @@
 
 
 /* =========================================================
-   PROFIL KITANA — MISE EN PAGE ARTEFACT
+   KITANA — ARTEFACT INTERACTIF
    ========================================================= */
-
-
-/* =========================================================
-   PROFIL
-   ========================================================= */
-
-.profil-artefact {
-
-    width:
-        100%;
-}
 
 
 /* =========================================================
    INTRODUCTION
    ========================================================= */
 
-.artefact-introduction {
+.profil-kitana .kitana-introduction {
+    width: min(900px, 92%);
+    margin: 0 auto 38px;
+    padding: 28px 40px;
+    box-sizing: border-box;
 
-    width:
-        100%;
+    text-align: center;
 
-    max-width:
-        1100px;
+    border: 1px solid rgba(var(--parchemin-rgb), 0.28);
 
-    margin:
-        0 auto 25px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--accent-rgb), 0.08),
+            rgba(0, 0, 0, 0.18)
+        );
 
-    line-height:
-        1.7;
+    box-shadow:
+        0 10px 30px var(--ombre-moyenne),
+        inset 0 0 25px rgba(0, 0, 0, 0.12);
+
+    position: relative;
 }
 
 
-.artefact-introduction p {
+/* Petits ornements */
 
-    margin-bottom:
-        15px;
+.profil-kitana .kitana-introduction::before,
+.profil-kitana .kitana-introduction::after {
+    content: "✦";
+    position: absolute;
+
+    color: var(--accent-clair);
+    font-size: 13px;
+    opacity: 0.65;
+}
+
+.profil-kitana .kitana-introduction::before {
+    top: 12px;
+    left: 16px;
+}
+
+.profil-kitana .kitana-introduction::after {
+    right: 16px;
+    bottom: 12px;
 }
 
 
-.artefact-introduction p:last-child {
+.profil-kitana .kitana-introduction h2 {
+    margin: 0 0 20px;
 
-    margin-bottom:
-        0;
+    color: var(--parchemin-clair);
+
+    font-size: 1.25rem;
+    font-weight: normal;
+    letter-spacing: 0.08em;
 }
 
 
-/* =========================================================
-   GRILLE PRINCIPALE
-   ========================================================= */
+.profil-kitana .kitana-introduction p {
+    max-width: 760px;
 
-.grille-artefact {
+    margin: 0 auto 13px;
 
-    display:
-        grid;
-
-    grid-template-columns:
-        minmax(280px, 1fr)
-        minmax(380px, 1.25fr)
-        minmax(280px, 1fr);
-
-    grid-template-areas:
-        "entite centre eventails"
-        "multivers centre conclusion";
-
-    gap:
-        22px;
-
-    align-items:
-        start;
+    line-height: 1.7;
 }
 
 
-/* =========================================================
-   POSITION DES BLOCS
-   ========================================================= */
-
-.entite-divine {
-
-    grid-area:
-        entite;
-}
-
-
-.eventails-code {
-
-    grid-area:
-        eventails;
-}
-
-
-.multivers-serveurs {
-
-    grid-area:
-        multivers;
-}
-
-
-.conclusion-lore {
-
-    grid-area:
-        conclusion;
+.profil-kitana .kitana-introduction p:last-child {
+    margin-bottom: 0;
 }
 
 
 /* =========================================================
-   CENTRE
+   INSPECTEUR
    ========================================================= */
 
-.centre-artefact {
+.kitana-inspecteur {
+    width: min(1050px, 94%);
+    margin: 0 auto 42px;
 
-    grid-area:
-        centre;
-
-    position:
-        sticky;
-
-    top:
-        25px;
-
-    align-self:
-        start;
-
-    text-align:
-        center;
-}
-
-
-/* =========================================================
-   IMAGE
-   ========================================================= */
-
-.image-artefact {
-
-    width:
-        100%;
-}
-
-
-.image-artefact img {
-
-    display:
-        block;
-
-    width:
-        100%;
-
-    height:
-        auto;
-
-    margin:
-        0 auto;
-
-    border-radius:
-        inherit;
+    text-align: center;
 }
 
 
@@ -416,131 +358,728 @@
    TITRE DE L'ARTEFACT
    ========================================================= */
 
-.titre-artefact {
-
-    margin-top:
-        15px;
+.kitana-inspecteur-entete {
+    margin: 0 auto 22px;
+    text-align: center;
 }
 
 
-.titre-artefact span {
+.kitana-inspecteur-entete > span {
+    display: block;
 
-    display:
-        block;
+    margin-bottom: 8px;
 
-    margin-bottom:
-        7px;
+    color: var(--accent-clair);
 
-    font-size:
-        0.82rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
 
-    letter-spacing:
-        0.16em;
+    opacity: 0.85;
 }
 
 
-.titre-artefact h2 {
+.kitana-inspecteur-entete h2 {
+    max-width: 750px;
 
+    margin: 0 auto 10px;
+
+    color: var(--parchemin-clair);
+
+    font-size: clamp(1.35rem, 2vw, 1.7rem);
+    font-weight: normal;
+
+    line-height: 1.35;
+}
+
+
+.kitana-inspecteur-entete p {
+    margin: 0;
+
+    color: var(--texte-secondaire);
+
+    font-size: 0.85rem;
+    font-style: italic;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+.kitana-image {
+    position: relative;
+
+    width: min(1000px, 100%);
+    margin: 0 auto;
+
+    overflow: visible;
+    isolation: isolate;
+
+    border: 1px solid var(--parchemin-sombre);
+
+    background: var(--surface-noire);
+
+    box-shadow:
+        0 18px 45px var(--ombre-forte),
+        0 0 35px rgba(var(--accent-rgb), 0.08);
+
+    transition:
+        box-shadow var(--transition-standard),
+        transform 0.4s ease;
+}
+
+
+.kitana-image::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    z-index: 2;
+
+    border: 1px solid rgba(var(--parchemin-rgb), 0.16);
+
+    pointer-events: none;
+}
+
+
+.kitana-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.03),
+            transparent 25%,
+            transparent 75%,
+            rgba(0, 0, 0, 0.12)
+        );
+
+    pointer-events: none;
+}
+
+
+.kitana-image img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+
+    transition: transform 0.5s ease;
+}
+
+
+.kitana-image:hover {
+    box-shadow:
+        0 22px 55px var(--ombre-forte),
+        0 0 40px rgba(var(--accent-rgb), 0.12);
+}
+
+
+/* =========================================================
+   MARQUEURS
+   ========================================================= */
+
+.kitana-point {
+    position: absolute;
+
+    z-index: 10;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--parchemin);
+    border-radius: 50%;
+
+    background:
+        rgba(var(--accent-rgb), 0.75);
+
+    color: var(--parchemin-clair);
+
+    font-size: 17px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow:
+        0 0 0 4px rgba(var(--accent-rgb), 0.12),
+        0 0 20px var(--lueur-accent-legere);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* Anneau lumineux */
+
+.kitana-point::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border: 1px solid var(--accent-clair);
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    animation:
+        kitana-loupe-pulse
+        2.4s
+        ease-out
+        infinite;
+}
+
+
+@keyframes kitana-loupe-pulse {
+
+    0% {
+        transform: scale(0.75);
+        opacity: 0.65;
+    }
+
+    70% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+}
+
+
+/* Survol */
+
+.kitana-point:hover {
+    transform:
+        translate(-50%, -50%)
+        scale(1.15);
+
+    background:
+        rgba(var(--accent-rgb), 1);
+
+    box-shadow:
+        0 0 0 6px rgba(var(--accent-rgb), 0.18),
+        0 0 30px var(--lueur-accent-legere);
+}
+
+
+.kitana-point:focus-visible {
+    outline: 2px solid var(--parchemin-clair);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   POSITION DES 11 LOUPES
+   ========================================================= */
+
+
+/* Visage / Entité */
+
+.point-entite {
+    left: 42%;
+    top: 20%;
+}
+
+
+/* Armure / tenue */
+
+.point-armure {
+    left: 41%;
+    top: 65%;
+}
+
+
+/* Éventail supérieur gauche */
+
+.point-plan {
+    left: 26%;
+    top: 25%;
+}
+
+
+/* Éventail inférieur gauche / flore */
+
+.point-flore {
+    left: 30%;
+    top: 58%;
+}
+
+
+/* Éventail inférieur droit / faune */
+
+.point-faune {
+    left: 55%;
+    top: 55%;
+}
+
+
+/* Flammes */
+
+.point-flammes {
+    left: 64%;
+    top: 63%;
+}
+
+
+/* Torii */
+
+.point-torii {
+    left: 94%;
+    top: 31%;
+}
+
+
+/* Miroir de feu / cœur du serveur */
+
+.point-miroir {
+    left: 55%;
+    top: 34%;
+}
+
+
+/* Arrière-plan / multivers */
+
+.point-multivers {
+    left: 90%;
+    top: 10%;
+}
+
+
+/* Grand soleil rouge */
+
+.point-soleil {
+    left: 14%;
+    top: 18%;
+}
+
+
+/* Nuages de code / terrain invisible */
+
+.point-nuages {
+    left: 64%;
+    top: 88%;
+}
+
+
+/* =========================================================
+   ADAPTATION MOBILE DES LOUPES
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .kitana-point {
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .kitana-point::before {
+        inset: -5px;
+    }
+}
+
+
+/* =========================================================
+   LÉGENDE
+   ========================================================= */
+
+.kitana-legende {
+    margin: 13px auto 0;
+
+    color: var(--texte-secondaire);
+
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   CONCLUSION
+   ========================================================= */
+
+.profil-kitana .kitana-conclusion {
+    position: relative;
+
+    width: min(900px, 92%);
+
+    margin: 0 auto 50px;
+
+    padding: 32px 40px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    border: 1px solid rgba(var(--parchemin-rgb), 0.28);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(var(--accent-rgb), 0.08),
+            rgba(0, 0, 0, 0.2)
+        );
+
+    box-shadow:
+        0 10px 30px var(--ombre-moyenne),
+        inset 0 0 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Ornements */
+
+.profil-kitana .kitana-conclusion::before,
+.profil-kitana .kitana-conclusion::after {
+    content: "✦";
+
+    position: absolute;
+
+    color: var(--accent-clair);
+
+    font-size: 13px;
+
+    opacity: 0.65;
+}
+
+
+.profil-kitana .kitana-conclusion::before {
+    top: 14px;
+    left: 18px;
+}
+
+
+.profil-kitana .kitana-conclusion::after {
+    right: 18px;
+    bottom: 14px;
+}
+
+
+.profil-kitana .kitana-conclusion h2 {
+    margin: 0 0 22px;
+
+    color: var(--parchemin-clair);
+
+    font-size: 1.3rem;
+    font-weight: normal;
+
+    letter-spacing: 0.08em;
+}
+
+
+.profil-kitana .kitana-conclusion p {
+    max-width: 720px;
+
+    margin: 0 auto 14px;
+
+    line-height: 1.7;
+}
+
+
+.profil-kitana .kitana-conclusion .prochains-defis {
+    margin-top: 25px;
+    padding-top: 18px;
+
+    border-top:
+        1px solid
+        rgba(var(--parchemin-rgb), 0.18);
+
+    color: var(--parchemin-clair);
+}
+
+
+.profil-kitana .kitana-conclusion .separateur-defis {
+    margin: 0 14px;
+
+    color: var(--accent-clair);
+}
+
+
+/* =========================================================
+   MODALE
+   ========================================================= */
+
+.kitana-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.25s ease;
+}
+
+
+.kitana-modal:not([hidden]) {
+    display: flex;
+}
+
+
+.kitana-modal.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   FOND
+   ========================================================= */
+
+.kitana-modal-fond {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(7, 5, 10, 0.78);
+
+    backdrop-filter: blur(7px);
+}
+
+
+/* =========================================================
+   FENÊTRE
+   ========================================================= */
+
+.kitana-fenetre-lore {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(850px, 94vw);
+
+    padding: 34px 42px;
+
+    box-sizing: border-box;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(65, 48, 72, 0.98),
+            rgba(25, 19, 30, 0.99)
+        );
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.65),
+        0 0 40px rgba(var(--accent-rgb), 0.1);
+
+    transform:
+        translateY(18px)
+        scale(0.97);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* Animation d'ouverture */
+
+.kitana-modal.is-open .kitana-fenetre-lore {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* Bordure intérieure */
+
+.kitana-fenetre-lore::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 10px;
+
+    border:
+        1px solid
+        rgba(var(--parchemin-rgb), 0.14);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BOUTON FERMER
+   ========================================================= */
+
+.kitana-modal-fermer {
+    position: absolute;
+
+    top: 11px;
+    right: 13px;
+
+    z-index: 5;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        rgba(var(--accent-rgb), 0.08);
+
+    color: var(--parchemin-clair);
+
+    font-size: 23px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.kitana-modal-fermer:hover {
+    background:
+        rgba(var(--accent-rgb), 0.22);
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   CONTENU
+   ========================================================= */
+
+.kitana-modal-contenu {
+    position: relative;
+
+    z-index: 1;
+
+    text-align: center;
+
+    color: var(--texte);
+}
+
+
+/* Titres */
+
+.kitana-modal-contenu h3 {
     margin:
-        0;
+        0 0 15px;
+
+    color:
+        var(--parchemin-clair);
 
     font-size:
         1.3rem;
 
+    font-weight:
+        normal;
+
     line-height:
-        1.4;
+        1.35;
 }
 
 
-/* =========================================================
-   LISIBILITÉ DES CADRES
-   ========================================================= */
+/* Sous-titres */
 
-.bloc-artefact {
-
-    line-height:
-        1.7;
+.kitana-modal-contenu h3:not(:first-child) {
+    margin-top: 20px;
 }
 
 
-.bloc-artefact h2 {
+/* Paragraphes */
 
-    line-height:
-        1.4;
+.kitana-modal-contenu p {
+    max-width: 680px;
 
-    margin-bottom:
-        20px;
-}
+    margin:
+        0 auto 11px;
 
-
-/* =========================================================
-   SOUS-TITRES DU LORE
-   ========================================================= */
-
-.bloc-artefact h3 {
-
-    margin-top:
-        24px;
-
-    margin-bottom:
-        9px;
-
-    line-height:
-        1.4;
+    color:
+        var(--texte);
 
     font-size:
-        1rem;
+        0.9rem;
+
+    line-height:
+        1.55;
 }
 
 
-.bloc-artefact h3:first-of-type {
-
-    margin-top:
-        0;
+.kitana-modal-contenu p:last-child {
+    margin-bottom: 0;
 }
 
 
-/* =========================================================
-   PARAGRAPHES
-   ========================================================= */
-
-.bloc-artefact p {
-
-    margin-top:
-        0;
-
-    margin-bottom:
-        17px;
+.kitana-modal-contenu strong {
+    color:
+        var(--parchemin-clair);
 }
 
 
-.bloc-artefact p:last-child {
+/* Jeux liés */
 
-    margin-bottom:
-        0;
-}
+.kitana-modal-contenu .jeux-lies {
+    margin-top: -3px;
 
-
-/* =========================================================
-   JEUX LIÉS
-   ========================================================= */
-
-.jeux-lies {
-
-    margin-top:
-        -8px !important;
-
-    margin-bottom:
-        22px !important;
+    color:
+        var(--accent-clair);
 
     font-size:
-        0.88rem;
+        0.78rem;
 
     font-style:
         italic;
 
     letter-spacing:
-        0.03em;
+        0.04em;
 
     opacity:
         0.8;
@@ -548,26 +1087,49 @@
 
 
 /* =========================================================
-   PROCHAINS DÉFIS
+   LORE
+   UNE SEULE COLONNE
    ========================================================= */
 
-.prochains-defis {
+.kitana-modal.lore-long .kitana-modal-contenu {
+    column-count: 1;
+    column-gap: 0;
+    text-align: center;
+}
 
-    margin-top:
-        25px !important;
+.kitana-modal.lore-long .kitana-modal-contenu h3,
+.kitana-modal.lore-long .kitana-modal-contenu p {
+    break-inside: avoid;
+}
 
-    text-align:
-        center;
+.kitana-modal.lore-long .kitana-modal-contenu h3 {
+    text-align: center;
 }
 
 
-.separateur-defis {
+/* =========================================================
+   ORNEMENT
+   ========================================================= */
 
-    display:
-        inline-block;
+.kitana-modal-ornement {
+    position: relative;
+
+    z-index: 1;
 
     margin:
-        0 12px;
+        0 0 12px;
+
+    color:
+        var(--accent-clair);
+
+    font-size:
+        18px;
+
+    text-align:
+        center;
+
+    opacity:
+        0.75;
 }
 
 
@@ -635,9 +1197,8 @@
         8px;
 
     margin:
-        0 0 8px;
+        0 0 7px;
 }
-
 
 .alias-livre-aventurier .alias-livre-embleme {
 
@@ -645,9 +1206,8 @@
         0;
 
     font-size:
-        18px;
+        16px;
 }
-
 
 .alias-livre-aventurier .alias-livre-entete h2 {
 
@@ -658,7 +1218,7 @@
         var(--parchemin-clair);
 
     font-size:
-        15px;
+        14px;
 
     font-weight:
         normal;
@@ -715,10 +1275,10 @@
 .alias-livre-aventurier .alias-livre-item img {
 
     width:
-        34px;
+        30px;
 
     height:
-        34px;
+        30px;
 
     object-fit:
         cover;
@@ -728,10 +1288,12 @@
 
     border:
         1px solid
+
         var(--parchemin-sombre);
 
     box-shadow:
         0 0 8px
+
         var(--ombre-moyenne);
 }
 
@@ -746,7 +1308,7 @@
         var(--parchemin-clair);
 
     font-size:
-        13px;
+        12px;
 }
 
 
@@ -760,7 +1322,7 @@
         min(980px, 96%);
 
     margin:
-        0 auto 60px;
+        0 auto 8px;
 
     display:
         flex;
@@ -772,7 +1334,7 @@
         center;
 
     gap:
-        18px;
+        12px;
 }
 
 
@@ -790,7 +1352,7 @@
         min(800px, 100%);
 
     height:
-        700px;
+        600px;
 
     perspective:
         1800px;
@@ -820,6 +1382,7 @@
 
     border:
         1px solid
+
         var(--parchemin-sombre);
 
     background:
@@ -831,6 +1394,7 @@
 
     box-shadow:
         0 15px 35px
+
         var(--ombre-forte);
 }
 
@@ -864,6 +1428,7 @@
 
     border-right:
         1px solid
+
         var(--parchemin-sombre);
 
     background:
@@ -899,7 +1464,7 @@
         100%;
 
     padding:
-        24px 16px 58px;
+        18px 16px 48px;
 
     overflow:
         hidden;
@@ -909,6 +1474,7 @@
 
     border:
         1px solid
+
         var(--parchemin-sombre);
 
     background:
@@ -923,15 +1489,19 @@
 
     box-shadow:
         0 10px 28px
+
         var(--ombre-moyenne),
 
         inset 0 0 35px
+
         rgba(0, 0, 0, 0.22),
 
         inset 8px 0 20px
+
         rgba(0, 0, 0, 0.12),
 
         inset -8px 0 20px
+
         rgba(0, 0, 0, 0.12);
 
     transform-origin:
@@ -968,6 +1538,7 @@
 
     border:
         1px solid
+
         rgba(var(--parchemin-rgb), 0.18);
 
     pointer-events:
@@ -1030,13 +1601,15 @@
     z-index:
         5;
 
+    pointer-events:
+        none;
+
     animation:
         profil-tourner-page-gauche
         0.7s
         cubic-bezier(0.45, 0, 0.2, 1)
         forwards;
 }
-
 
 @keyframes profil-tourner-page-gauche {
 
@@ -1069,13 +1642,15 @@
     z-index:
         5;
 
+    pointer-events:
+        none;
+
     animation:
         profil-tourner-page-droite
         0.7s
         cubic-bezier(0.45, 0, 0.2, 1)
         forwards;
 }
-
 
 @keyframes profil-tourner-page-droite {
 
@@ -1101,18 +1676,18 @@
 
 /* =========================================================
    CONTENU DES PAGES
-   CENTRAGE VERTICAL INTELLIGENT
+   CENTRAGE VERTICAL
    ========================================================= */
 
 .livre-profil-aventurier .page-contenu {
 
     position:
-        static;
+        relative;
 
     width:
         100%;
 
-    height:
+    min-height:
         100%;
 
     display:
@@ -1121,13 +1696,8 @@
     flex-direction:
         column;
 
-    /*
-       Centre les pages courtes verticalement.
-       "safe" évite que les pages trop longues
-       soient coupées en haut ou en bas.
-    */
     justify-content:
-        safe center;
+        center;
 
     align-items:
         center;
@@ -1137,9 +1707,6 @@
 
     box-sizing:
         border-box;
-
-    overflow:
-        hidden;
 }
 
 
@@ -1150,13 +1717,13 @@
 .livre-profil-aventurier .page-ornement {
 
     margin-bottom:
-        7px;
+        4px;
 
     color:
         var(--accent-clair);
 
     font-size:
-        20px;
+        18px;
 
     opacity:
         0.75;
@@ -1179,7 +1746,7 @@
         var(--parchemin-clair);
 
     font-size:
-        clamp(24px, 3vw, 32px);
+        28px;
 
     font-weight:
         normal;
@@ -1188,7 +1755,7 @@
         1px;
 
     line-height:
-        1.25;
+        1.2;
 
     flex-shrink:
         0;
@@ -1208,7 +1775,7 @@
         1px;
 
     margin:
-        10px auto 16px;
+        7px auto 10px;
 
     background:
         linear-gradient(
@@ -1233,7 +1800,7 @@
         min(580px, 100%);
 
     margin:
-        0 0 10px;
+        0 0 6px;
 
     color:
         var(--texte);
@@ -1247,7 +1814,6 @@
     flex-shrink:
         0;
 }
-
 
 .livre-profil-aventurier .page-contenu p:last-of-type {
 
@@ -1269,7 +1835,6 @@
         600;
 }
 
-
 .livre-profil-aventurier .page-contenu em {
 
     color:
@@ -1288,7 +1853,7 @@
         absolute;
 
     bottom:
-        16px;
+        -15px;
 
     left:
         50%;
@@ -1315,7 +1880,7 @@
         var(--texte-secondaire);
 
     font-size:
-        12px;
+        11px;
 
     letter-spacing:
         2px;
@@ -1334,10 +1899,12 @@
 
     border:
         1px solid
+
         rgba(var(--parchemin-rgb), 0.18);
 
     box-shadow:
         0 3px 10px
+
         rgba(0, 0, 0, 0.15);
 
     opacity:
@@ -1398,7 +1965,7 @@
 .livre-profil-aventurier .caracteristiques-livre th {
 
     padding:
-        7px 12px;
+        5px 8px;
 
     color:
         var(--accent-clair);
@@ -1411,6 +1978,7 @@
 
     border-bottom:
         1px solid
+
         rgba(var(--parchemin-rgb), 0.25);
 
     line-height:
@@ -1431,13 +1999,14 @@
 .livre-profil-aventurier .caracteristiques-livre td {
 
     padding:
-        5px 12px;
+        3px 8px;
 
     color:
         var(--texte-secondaire);
 
     border-bottom:
         1px solid
+
         rgba(var(--parchemin-rgb), 0.12);
 
     line-height:
@@ -1453,13 +2022,11 @@
         normal;
 }
 
-
 .livre-profil-aventurier .caracteristiques-livre tr:last-child td {
 
     border-bottom:
         none;
 }
-
 
 .livre-profil-aventurier .caracteristiques-livre td:last-child {
 
@@ -1500,6 +2067,7 @@
 
     border:
         1px solid
+
         var(--parchemin-sombre);
 
     background:
@@ -1522,6 +2090,7 @@
 
     box-shadow:
         0 4px 15px
+
         var(--ombre-moyenne);
 
     transition:
@@ -1530,7 +2099,6 @@
         box-shadow var(--transition-standard),
         transform var(--transition-standard);
 }
-
 
 .livre-profil-aventurier .livre-navigation:hover {
 
@@ -1542,9 +2110,9 @@
 
     box-shadow:
         0 0 18px
+
         var(--lueur-accent-legere);
 }
-
 
 .livre-profil-aventurier .livre-precedent:hover {
 
@@ -1552,13 +2120,11 @@
         translateX(-3px);
 }
 
-
 .livre-profil-aventurier .livre-suivant:hover {
 
     transform:
         translateX(3px);
 }
-
 
 .livre-profil-aventurier .livre-navigation:disabled {
 
@@ -1577,340 +2143,167 @@
 
 
 /* =========================================================
-   RESPONSIVE — PROFIL AVEC LIVRE
+   PAGE MK — CADRE MESSAGE
    ========================================================= */
 
-@media (max-width: 850px) {
+.page-message-attente .fiche-aventurier {
 
-    .alias-livre-aventurier {
+    width:
+        100%;
 
-        width:
-            min(680px, 94%);
-    }
+    min-height:
+        50vh;
 
+    display:
+        flex;
 
-    .livre-profil-aventurier .livre-aventurier {
+    align-items:
+        center;
 
-        width:
-            96%;
+    justify-content:
+        center;
 
-        gap:
-            10px;
-    }
+    margin:
+        0;
 
+    padding:
+        30px;
 
-    /*
-       Même hauteur pour toutes les pages
-       à cette résolution.
-    */
-
-    .livre-profil-aventurier .livre {
-
-        height:
-            720px;
-    }
-
-
-    .livre-profil-aventurier .page-livre {
-
-        padding:
-            26px 30px 60px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu p {
-
-        width:
-            min(580px, 100%);
-
-        font-size:
-            14px;
-
-        line-height:
-            1.6;
-    }
-
-
-    .livre-profil-aventurier .livre-navigation {
-
-        width:
-            36px;
-
-        height:
-            60px;
-
-        flex-basis:
-            36px;
-
-        font-size:
-            30px;
-    }
+    box-sizing:
+        border-box;
 }
 
 
 /* =========================================================
-   MOBILE
+   CADRE
    ========================================================= */
 
-@media (max-width: 600px) {
+.page-message-attente .apropos-aventurier {
 
-    .alias-livre-aventurier {
+    position:
+        relative;
 
-        width:
-            96%;
+    width:
+        min(650px, 90%);
 
-        margin-bottom:
-            10px;
-    }
+    margin:
+        0 auto;
 
+    padding:
+        50px 60px;
 
-    .alias-livre-aventurier .alias-livre-liste {
+    box-sizing:
+        border-box;
 
-        gap:
-            16px;
-    }
+    text-align:
+        center;
 
+    border:
+        1px solid
 
-    .alias-livre-aventurier .alias-livre-item img {
+        rgba(255, 255, 255, 0.25);
 
-        width:
-            30px;
+    background:
+        rgba(0, 0, 0, 0.18);
 
-        height:
-            30px;
-    }
+    box-shadow:
+        0 10px 30px
 
+        rgba(0, 0, 0, 0.25),
 
-    .alias-livre-aventurier .alias-livre-item span {
+        inset 0 0 30px
 
-        font-size:
-            12px;
-    }
-
-
-    .livre-profil-aventurier .livre-aventurier {
-
-        width:
-            96%;
-
-        gap:
-            5px;
-    }
-
-
-    /*
-       Même hauteur pour toutes les pages
-       sur mobile également.
-    */
-
-    .livre-profil-aventurier .livre {
-
-        height:
-            740px;
-    }
-
-
-    .livre-profil-aventurier .page-livre {
-
-        padding:
-            25px 20px 60px;
-    }
-
-
-    .livre-profil-aventurier .page-livre::before {
-
-        inset:
-            9px;
-    }
-
-
-    .livre-profil-aventurier .page-ornement {
-
-        margin-bottom:
-            7px;
-
-        font-size:
-            18px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu h2 {
-
-        font-size:
-            23px;
-
-        line-height:
-            1.25;
-    }
-
-
-    .livre-profil-aventurier .page-separateur {
-
-        margin:
-            10px auto 16px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu p {
-
-        width:
-            100%;
-
-        font-size:
-            14px;
-
-        line-height:
-            1.6;
-
-        margin-bottom:
-            10px;
-    }
-
-
-    .livre-profil-aventurier .tableau-caracteristiques {
-
-        width:
-            100%;
-    }
-
-
-    .livre-profil-aventurier .caracteristiques-livre {
-
-        width:
-            100%;
-
-        font-size:
-            11px;
-
-        table-layout:
-            fixed;
-    }
-
-
-    .livre-profil-aventurier .caracteristiques-livre th,
-
-    .livre-profil-aventurier .caracteristiques-livre td {
-
-        padding:
-            5px 5px;
-
-        line-height:
-            1.25;
-    }
-
-
-    .livre-profil-aventurier .caracteristiques-livre td:last-child {
-
-        white-space:
-            normal;
-    }
-
-
-    .livre-profil-aventurier .numero-page {
-
-        bottom:
-            14px;
-
-        padding:
-            4px 10px;
-
-        min-width:
-            38px;
-
-        font-size:
-            11px;
-    }
-
-
-    .livre-profil-aventurier .livre-navigation {
-
-        width:
-            30px;
-
-        height:
-            55px;
-
-        flex-basis:
-            30px;
-
-        font-size:
-            27px;
-    }
+        rgba(255, 255, 255, 0.03);
 }
 
 
 /* =========================================================
-   TRÈS PETITS ÉCRANS
+   PETITS ORNEMENTS DES COINS
    ========================================================= */
 
-@media (max-width: 400px) {
+.page-message-attente .apropos-aventurier::before,
+.page-message-attente .apropos-aventurier::after {
 
-    .livre-profil-aventurier .livre {
+    content:
+        "✦";
 
-        height:
-            760px;
-    }
+    position:
+        absolute;
 
+    font-size:
+        1rem;
 
-    .livre-profil-aventurier .page-livre {
-
-        padding:
-            22px 18px 58px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu h2 {
-
-        font-size:
-            21px;
-    }
-
-
-    .livre-profil-aventurier .page-contenu p {
-
-        font-size:
-            13px;
-
-        line-height:
-            1.55;
-    }
-
-
-    .livre-profil-aventurier .livre-navigation {
-
-        width:
-            27px;
-
-        height:
-            50px;
-
-        flex-basis:
-            27px;
-
-        font-size:
-            24px;
-    }
+    opacity:
+        0.7;
 }
 
 
 /* =========================================================
-   RÉDUCTION DES ANIMATIONS
+   COIN SUPÉRIEUR GAUCHE
    ========================================================= */
 
-@media (prefers-reduced-motion: reduce) {
+.page-message-attente .apropos-aventurier::before {
 
-    .livre-profil-aventurier .page-livre {
+    top:
+        15px;
 
-        transition:
-            none;
-    }
+    left:
+        18px;
+}
 
 
-    .livre-profil-aventurier .page-livre.page-tourne-gauche,
+/* =========================================================
+   COIN INFÉRIEUR DROIT
+   ========================================================= */
 
-    .livre-profil-aventurier .page-livre.page-tourne-droite {
+.page-message-attente .apropos-aventurier::after {
 
-        animation:
-            none;
-    }
+    right:
+        18px;
+
+    bottom:
+        15px;
+}
+
+
+/* =========================================================
+   TITRE
+   ========================================================= */
+
+.page-message-attente .apropos-aventurier h2 {
+
+    margin:
+        0 0 28px;
+
+    font-size:
+        2rem;
+
+    letter-spacing:
+        0.12em;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   TEXTE
+   ========================================================= */
+
+.page-message-attente .apropos-aventurier p {
+
+    max-width:
+        500px;
+
+    margin:
+        0 auto;
+
+    line-height:
+        1.9;
+
+    font-size:
+        1.5rem;
+
+    font-style:
+        italic;
 }

@@ -11,10 +11,10 @@
 .aventures {
 
     width:
-        min(1000px, 92%);
+        min(1200px, 92%);
 
     margin:
-        0 auto 50px;
+        120px auto 50px;
 
     display:
         grid;
@@ -38,7 +38,7 @@
         0;
 
     padding:
-        30px 25px;
+        60px 25px;
 
     display:
         flex;

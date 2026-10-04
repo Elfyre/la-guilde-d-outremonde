@@ -23,7 +23,6 @@
 
 }
 
-
 /* =========================================================
    CONTENEUR DU PORTAIL
    ========================================================= */
@@ -45,6 +44,19 @@
     padding: 60px 40px;
 
     z-index: 1;
+
+    /*
+       Agrandissement global du portail.
+       Tout reste parfaitement proportionnel :
+       halo, anneaux, fumée, cristaux, étincelles,
+       éclairs, emblème, texte et bouton.
+    */
+
+    transform:
+        scale(1.18);
+
+    transform-origin:
+        center center;
 
 }
 

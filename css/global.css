@@ -295,19 +295,29 @@ body {
     background:
 
         radial-gradient(
-            circle at top,
+            circle at 50% 0%,
             rgba(
                 var(--violet-rgb),
-                0.18
-            ),
-            transparent 45%
+                0.25
+            ) 0%,
+            transparent 700px
         ),
 
         radial-gradient(
-            circle at center,
+            circle at 50% 50%,
             var(--fond-violet) 0%,
-            var(--fond-principal) 70%
-        );
+            transparent 60%
+        ),
+
+        var(--fond-principal);
+
+    background-repeat:
+        no-repeat;
+
+    background-size:
+        100% 900px,
+        100% auto,
+        100% 100%;
 
     color:
         var(--texte);

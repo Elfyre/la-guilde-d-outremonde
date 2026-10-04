@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "livre-aventurier"
         );
 
+
     const pages =
         livre
             ? Array.from(
@@ -24,10 +25,12 @@ document.addEventListener("DOMContentLoaded", () => {
             )
             : [];
 
+
     const boutonPrecedent =
         document.getElementById(
             "livre-precedent"
         );
+
 
     const boutonSuivant =
         document.getElementById(
@@ -75,9 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
         boutonPrecedent.disabled =
             pageActuelle === 0;
 
+
         boutonSuivant.disabled =
-            pageActuelle ===
-            pages.length - 1;
+            pageActuelle === pages.length - 1;
+
     }
 
 
@@ -90,11 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
         direction
     ) {
 
+        /* -------------------------------------------------
+           EMPÊCHE UN SECOND CLIC PENDANT L'ANIMATION
+           ------------------------------------------------- */
+
         if (animationEnCours) {
 
             return;
         }
 
+
+        /* -------------------------------------------------
+           VÉRIFICATION DE LA PAGE DEMANDÉE
+           ------------------------------------------------- */
 
         if (
             nouvellePage < 0 ||
@@ -106,8 +118,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        /* -------------------------------------------------
+           RÉCUPÉRATION DES PAGES
+           ------------------------------------------------- */
+
         const anciennePage =
             pages[pageActuelle];
+
 
         const nouvellePageElement =
             pages[nouvellePage];
@@ -122,28 +139,39 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
 
+        /* -------------------------------------------------
+           VERROUILLAGE
+           ------------------------------------------------- */
+
         animationEnCours = true;
 
 
-        /* =================================================
-           PRÉPARATION DE LA NOUVELLE PAGE
-           ================================================= */
+        /* -------------------------------------------------
+           NETTOYAGE DE LA NOUVELLE PAGE
+           ------------------------------------------------- */
 
         nouvellePageElement.classList.remove(
             "page-tourne-gauche",
             "page-tourne-droite"
         );
 
+
+        /* -------------------------------------------------
+           LA NOUVELLE PAGE EST PRÉPARÉE DERRIÈRE
+           ------------------------------------------------- */
+
         nouvellePageElement.classList.add(
             "page-active"
         );
 
 
-        /* =================================================
+        /* -------------------------------------------------
            ANIMATION DE L'ANCIENNE PAGE
-           ================================================= */
+           ------------------------------------------------- */
 
-        if (direction === "suivant") {
+        if (
+            direction === "suivant"
+        ) {
 
             anciennePage.classList.add(
                 "page-tourne-gauche"
@@ -154,12 +182,13 @@ document.addEventListener("DOMContentLoaded", () => {
             anciennePage.classList.add(
                 "page-tourne-droite"
             );
+
         }
 
 
-        /* =================================================
-           NOUVELLE PAGE ACTIVE
-           ================================================= */
+        /* -------------------------------------------------
+           MISE À JOUR DE LA PAGE COURANTE
+           ------------------------------------------------- */
 
         pageActuelle =
             nouvellePage;
@@ -174,6 +203,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         setTimeout(() => {
 
+
+            /* ---------------------------------------------
+               RETIRE COMPLÈTEMENT L'ANCIENNE PAGE
+               --------------------------------------------- */
+
             anciennePage.classList.remove(
                 "page-active",
                 "page-tourne-gauche",
@@ -181,20 +215,34 @@ document.addEventListener("DOMContentLoaded", () => {
             );
 
 
+            /* ---------------------------------------------
+               NETTOIE LA NOUVELLE PAGE
+               --------------------------------------------- */
+
             nouvellePageElement.classList.remove(
                 "page-tourne-gauche",
                 "page-tourne-droite"
             );
 
 
+            /* ---------------------------------------------
+               GARDE LA NOUVELLE PAGE ACTIVE
+               --------------------------------------------- */
+
             nouvellePageElement.classList.add(
                 "page-active"
             );
 
 
+            /* ---------------------------------------------
+               DÉVERROUILLAGE
+               --------------------------------------------- */
+
             animationEnCours = false;
 
+
         }, dureeAnimation);
+
     }
 
 
@@ -213,7 +261,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 pageActuelle + 1,
                 "suivant"
             );
+
         }
+
     }
 
 
@@ -231,7 +281,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 pageActuelle - 1,
                 "precedent"
             );
+
         }
+
     }
 
 
@@ -270,7 +322,9 @@ document.addEventListener("DOMContentLoaded", () => {
             ) {
 
                 pagePrecedente();
+
             }
+
         }
     );
 
@@ -281,20 +335,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     pages.forEach((page, index) => {
 
+        page.classList.remove(
+            "page-active",
+            "page-tourne-gauche",
+            "page-tourne-droite"
+        );
+
+
         if (index === 0) {
 
             page.classList.add(
                 "page-active"
             );
 
-        } else {
-
-            page.classList.remove(
-                "page-active"
-            );
         }
+
     });
 
+
+    /* =====================================================
+       BOUTONS INITIAUX
+       ===================================================== */
 
     mettreAJourBoutons();
 

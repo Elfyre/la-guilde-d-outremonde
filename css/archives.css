@@ -14,40 +14,23 @@
         min(1100px, 92%);
 
     margin:
-        0 auto 60px;
+        40px auto 30px;
 
     display:
         grid;
-
-    /*
-       2 colonnes pour les archives classiques
-
-       Exemple :
-       ┌──────────────┬──────────────┐
-       │      1       │      2       │
-       ├──────────────┼──────────────┤
-       │      3       │      4       │
-       └──────────────┴──────────────┘
-    */
 
     grid-template-columns:
         repeat(2, 1fr);
 
     gap:
-        30px;
+        15px;
 
 }
+
 
 /* =========================================================
    GRILLE DES ARCHIVES — VERSION X3
    ========================================================= */
-
-/*
-   Même mise en page que les archives classiques,
-   mais avec 3 colonnes au lieu de 2.
-
-   La classe .archives reste en X2.
-*/
 
 .archives-x3 {
 
@@ -55,7 +38,7 @@
         min(1100px, 92%);
 
     margin:
-        0 auto 60px;
+        25px auto 50px;
 
     display:
         grid;
@@ -64,9 +47,10 @@
         repeat(3, 1fr);
 
     gap:
-        30px;
+        15px;
 
 }
+
 
 /* =========================================================
    CARTE D'ARCHIVE
@@ -78,7 +62,13 @@
         0;
 
     padding:
-        30px;
+        12px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
 
     text-align:
         center;
@@ -106,6 +96,10 @@
 
 }
 
+
+/* =========================================================
+   SURVOL
+   ========================================================= */
 
 .archive:hover {
 
@@ -139,10 +133,10 @@
         100%;
 
     height:
-        180px;
+        150px;
 
     margin:
-        0 auto 20px;
+        0 auto 12px;
 
     object-fit:
         contain;
@@ -160,10 +154,10 @@
         block;
 
     margin-bottom:
-        20px;
+        10px;
 
     font-size:
-        55px;
+        40px;
 
 }
 
@@ -175,7 +169,7 @@
 .archive h2 {
 
     margin-bottom:
-        15px;
+        8px;
 
     color:
         var(--parchemin-clair);
@@ -189,17 +183,59 @@
 
 .archive p {
 
-    margin-bottom:
-        10px;
+    margin:
+        0 auto 8px;
 
     color:
         var(--texte-secondaire);
-    
+
     font-size:
-        0.75rem;    
+        0.9rem;
 
     line-height:
-        1.7;
+        1.4;
+
+    flex:
+        1;
+
+}
+
+
+/* =========================================================
+   BOUTONS DES ARCHIVES
+   ========================================================= */
+
+.archive .boutons-archive {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    margin-top:
+        12px;
+
+}
+
+
+/* =========================================================
+   BOUTONS DES ARCHIVES
+   ========================================================= */
+
+.archive .boutons-archive .bouton {
+
+    margin-top:
+        0;
 
 }
 
@@ -214,7 +250,7 @@
         min(600px, 85%);
 
     margin:
-        0 auto 20px;
+        0 auto 15px;
 
     padding:
         15px 25px;
@@ -279,7 +315,7 @@
 .archive-principale h2 {
 
     margin-bottom:
-        10px;
+        8px;
 
     color:
         var(--parchemin-clair);
@@ -314,11 +350,14 @@
     display:
         inline-block;
 
+    width:
+        fit-content;
+
     margin:
-        8px 0;
+        5px auto;
 
     padding:
-        6px 12px;
+        5px 10px;
 
     border:
         1px solid
@@ -378,16 +417,7 @@
 
 /* =========================================================
    LMC
-   PLAYLISTS SECONDAIRES
    ========================================================= */
-
-/*
-   IMPORTANT :
-
-   Les archives classiques utilisent 2 colonnes.
-
-   Le LMC utilise volontairement 3 colonnes.
-*/
 
 .archives-lmc {
 
@@ -395,7 +425,7 @@
         min(1000px, 92%);
 
     margin:
-        0 auto 40px;
+        0 auto 20px;
 
     display:
         grid;
@@ -422,7 +452,7 @@
 
 
 /* =========================================================
-   IMAGES DES PLAYLISTS LMC
+   IMAGES LMC
    ========================================================= */
 
 .archives-lmc .archive img {
@@ -440,7 +470,7 @@
 
 
 /* =========================================================
-   TITRES DES PLAYLISTS LMC
+   TITRES LMC
    ========================================================= */
 
 .archives-lmc .archive h2 {
@@ -455,13 +485,13 @@
 
 
 /* =========================================================
-   STATUTS DES PLAYLISTS LMC
+   STATUTS LMC
    ========================================================= */
 
 .archives-lmc .statut-playlist {
 
     margin:
-        6px 0;
+        6px auto;
 
     padding:
         4px 8px;
@@ -472,14 +502,26 @@
 }
 
 
+
 /* =========================================================
-   BOUTONS DES PLAYLISTS LMC
+   BOUTONS LMC
    ========================================================= */
+
+.archives-lmc .archive .boutons-archive {
+
+    margin-top:
+        10px;
+
+    gap:
+        6px;
+
+}
+
 
 .archives-lmc .archive .bouton {
 
     margin-top:
-        5px;
+        0;
 
     padding:
         9px 14px;
@@ -500,9 +542,497 @@
         100%;
 
     margin:
-        40px auto 35px;
+        20px auto 15px;
 
     text-align:
         center;
+
+}
+
+
+/* =========================================================
+   PAGE SHORTS
+   CENTRAGE VERTICAL DE L'ENCADRÉ
+   ========================================================= */
+
+.page-shorts-main {
+
+    min-height:
+        calc(100vh - 180px);
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+}
+
+
+/* =========================================================
+   ZONE SHORTS
+   ========================================================= */
+
+.zone-short {
+
+    flex:
+        1;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    width:
+        100%;
+
+}
+
+
+/* =========================================================
+   PAGE SHORTS
+   AGRANDISSEMENT DE L'ENCADRÉ
+   ========================================================= */
+
+.page-shorts .archive-principale {
+
+    width:
+        min(750px, 90%);
+
+    padding:
+        30px 40px;
+
+}
+
+
+/* =========================================================
+   IMAGE DES SHORTS
+   ========================================================= */
+
+.page-shorts .archive-principale img {
+
+    max-width:
+        550px;
+
+    height:
+        160px;
+
+    margin:
+        0 auto 18px;
+
+}
+
+
+/* =========================================================
+   TITRE DES SHORTS
+   ========================================================= */
+
+.page-shorts .archive-principale h2 {
+
+    margin-bottom:
+        12px;
+
+    font-size:
+        28px;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION DES SHORTS
+   ========================================================= */
+
+.page-shorts .archive-principale p {
+
+    margin-bottom:
+        15px;
+
+    line-height:
+        1.6;
+
+    font-size:
+        1rem;
+
+}
+
+
+/* =========================================================
+   RECHERCHE DES ARCHIVES
+   ========================================================= */
+
+.recherche-archives {
+
+    width:
+        min(900px, 92%);
+
+    margin:
+        15px auto 0;
+
+}
+
+
+/* =========================================================
+   CHAMP DE RECHERCHE
+   ========================================================= */
+
+#rechercheArchives {
+
+    width:
+        100%;
+
+    box-sizing:
+        border-box;
+
+    padding:
+        14px 18px;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    border-radius:
+        4px;
+
+    background:
+        rgba(0, 0, 0, 0.45);
+
+    color:
+        var(--parchemin-clair);
+
+    font-family:
+        inherit;
+
+    font-size:
+        16px;
+
+    outline:
+        none;
+
+    transition:
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard);
+
+}
+
+
+#rechercheArchives::placeholder {
+
+    color:
+        var(--texte-secondaire);
+
+}
+
+
+#rechercheArchives:focus {
+
+    border-color:
+        var(--parchemin);
+
+    box-shadow:
+        0 0 15px
+        var(--lueur-accent-legere);
+
+}
+
+
+/* =========================================================
+   RÉSULTATS DE RECHERCHE
+   ========================================================= */
+
+.resultats-archives {
+
+    width:
+        min(1100px, 92%);
+
+    margin:
+        25px auto 50px;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        15px;
+
+}
+
+
+.resultats-archives:empty {
+
+    display:
+        none;
+
+}
+
+
+/* =========================================================
+   CARTE DE RÉSULTAT
+   ========================================================= */
+
+.resultat-archive {
+
+    min-width:
+        0;
+
+    padding:
+        18px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    text-align:
+        center;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            var(--surface-violette-legere),
+            var(--surface-noire)
+        );
+
+    box-shadow:
+        0 8px 25px
+        var(--ombre-moyenne);
+
+    transition:
+        transform var(--transition-standard),
+        border-color var(--transition-standard),
+        box-shadow var(--transition-standard);
+
+}
+
+
+/* =========================================================
+   SURVOL DES RÉSULTATS
+   ========================================================= */
+
+.resultat-archive:hover {
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        var(--parchemin);
+
+    box-shadow:
+
+        0 12px 30px
+        var(--ombre-forte),
+
+        0 0 20px
+        var(--lueur-accent-legere);
+
+}
+
+
+/* =========================================================
+   IMAGE DU RÉSULTAT
+   ========================================================= */
+
+.resultat-archive img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        150px;
+
+    margin:
+        0 auto 12px;
+
+    object-fit:
+        contain;
+
+}
+
+
+/* =========================================================
+   CATÉGORIE DU RÉSULTAT
+   ========================================================= */
+
+.resultat-categorie {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--parchemin);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        0.5px;
+
+}
+
+
+/* =========================================================
+   TITRE DU RÉSULTAT
+   ========================================================= */
+
+.resultat-archive h3 {
+
+    margin-bottom:
+        8px;
+
+    color:
+        var(--parchemin-clair);
+
+}
+
+
+/* =========================================================
+   DESCRIPTION DU RÉSULTAT
+   ========================================================= */
+
+.resultat-archive p {
+
+    margin:
+        0 auto 8px;
+
+    color:
+        var(--texte-secondaire);
+
+    font-size:
+        0.75rem;
+
+    line-height:
+        1.4;
+
+    flex:
+        1;
+
+}
+
+
+/* =========================================================
+   STATUT DU RÉSULTAT
+   ========================================================= */
+
+.resultat-archive .statut-playlist {
+
+    display:
+        inline-block;
+
+    width:
+        fit-content;
+
+    margin:
+        5px auto;
+
+    padding:
+        5px 10px;
+
+    border:
+        1px solid
+        var(--accent-sombre);
+
+    background:
+        rgba(var(--accent-rgb), 0.08);
+
+    color:
+        var(--parchemin);
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        0.5px;
+
+}
+
+
+/* =========================================================
+   BOUTON DU RÉSULTAT
+   ========================================================= */
+
+.resultat-archive .bouton {
+
+    margin-top:
+        8px;
+
+}
+
+
+/* =========================================================
+   BOUTONS DES RÉSULTATS
+   ========================================================= */
+
+.resultat-archive .boutons-archive {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        8px;
+
+    margin-top:
+        12px;
+
+}
+
+
+.resultat-archive .boutons-archive .bouton {
+
+    margin-top:
+        0;
+
+}
+
+
+/* =========================================================
+   AUCUN RÉSULTAT
+   ========================================================= */
+
+.aucun-resultat {
+
+    grid-column:
+        1 / -1;
+
+    padding:
+        30px;
+
+    text-align:
+        center;
+
+    border:
+        1px solid
+        var(--parchemin-sombre);
+
+    background:
+        rgba(0, 0, 0, 0.35);
+
+    color:
+        var(--texte-secondaire);
 
 }

@@ -2,15 +2,16 @@
 <html lang="fr">
 
 <head>
-    
+
     <!-- =========================================================
      EASTER EGG — LICORNE
      ========================================================= -->
 
-<script
-    src="../js/licorne.js"
-    defer
-></script>
+    <script
+        src="../js/licorne.js"
+        defer
+    ></script>
+
 
     <!-- =========================
          INFORMATIONS DE LA PAGE
@@ -68,16 +69,18 @@
                 📜
             </div>
 
+
             <div class="titre-conteneur">
 
                 <h1>
                     Salle des Missions
                 </h1>
 
+
                 <!-- =========================
-                RETOUR AU HALL
+                     RETOUR AU HALL
                 ========================= -->
-                
+
                 <a
                     href="hall.html"
                     class="bouton bouton-retour transition-douce"
@@ -87,20 +90,23 @@
 
             </div>
 
+
             <p class="planning-introduction">
                 Les prochaines aventures prévues par la Guilde.
             </p>
 
-            <p class="planning-semaine">
-                Semaine du 17 au 23 Août
+
+            <p class="planning-semaine"
+                data-date-debut="2026-09-28">
+                Semaine du 28 Septembre au 4 Octobre
             </p>
+
 
             <p class="planning-stream">
                 🧙 Le Maître de Guilde peut invoquer un stream à tout moment… méfiez-vous !
             </p>
-            
-        </header>
 
+        </header>
 
 
         <!-- =========================
@@ -121,17 +127,20 @@
                 </h2>
 
 
-                <!-- CRÉNEAU 1 -->
+                <!-- CRÉNEAU 08H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-8"
+                    data-type="youtube"
+                    data-heure="08:00">
 
                     <p>
-                        8H <br>
-                        Ouf, l'ogre s'en est sorti ! 😮‍💨
+                        8H<br>
+                        Un nain qui déchire 💪
                     </p>
 
+
                     <a
-                        href="https://youtu.be/73npYyUsO3Q"
+                        href="https://youtu.be/OnLhOE5U48E"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -147,17 +156,20 @@
                 </div>
 
 
-                <!-- CRÉNEAU 2 -->
+                <!-- CRÉNEAU 18H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-18"
+                    data-type="youtube"
+                    data-heure="18:00">
 
                     <p>
-                        18H <br>
-                        Les silos 🏗️
+                        18H<br>
+                        Les silos parce qu’il le faut 🌾
                     </p>
 
+
                     <a
-                        href="https://youtu.be/9aWInJsBpKc"
+                        href="https://youtu.be/u5v5rVCWlfo"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -187,17 +199,20 @@
                 </h2>
 
 
-                <!-- CRÉNEAU 1 -->
+                <!-- CRÉNEAU 08H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-8"
+                    data-type="youtube"
+                    data-heure="08:00">
 
                     <p>
                         8H<br>
-                        L'armée des morts 💀 c'est fort 💪
+                        Ouiiiii, une quête qui s’est bien passée ! 🎉
                     </p>
 
+
                     <a
-                        href="https://youtu.be/-J6oE1qp4F8"
+                        href="https://youtu.be/pU9Nll2XkqM"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -227,17 +242,20 @@
                 </h2>
 
 
-                <!-- LE MERCREDI CHAOS -->
+                <!-- LE MERCREDI CHAOS — 08H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-8"
+                    data-type="youtube"
+                    data-heure="08:00">
 
                     <p>
                         8H<br>
-                        Eikthyr contre Kirito ⚡
+                        Le renouveau 🌱
                     </p>
 
+
                     <a
-                        href="https://youtu.be/45cQZ6_P_bs"
+                        href="https://youtu.be/f7DDsrbR4-M"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -253,16 +271,20 @@
                 </div>
 
 
-                <!-- SHORTS -->
+                <!-- SHORTS — 12H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-12"
+                    data-type="youtube"
+                    data-heure="12:00">
 
                     <p>
-                        12H
+                        12H<br>
+                        Petit tour du propriétaire ! 🏡
                     </p>
 
+
                     <a
-                        href="https://youtube.com/shorts/UWbZzhRjZZQ?feature=share"
+                        href="https://youtube.com/shorts/vozgYVHSv5k?feature=share"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -271,6 +293,36 @@
                         <img
                             src="../images/shorts.png"
                             alt="Shorts"
+                        >
+
+                    </a>
+
+                </div>
+
+
+                <!-- LIVE — 21H -->
+
+                <div class="creneau creneau-21"
+                    data-type="twitch"
+                    data-heure="21:00"
+                    data-image="../images/aventures/dune.png">
+
+                    <p>
+                        21H-00H<br>
+                        Dune : Awakening
+                    </p>
+
+
+                    <a
+                        href="https://www.twitch.tv/mk666xxx"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="image-planning"
+                    >
+
+                        <img
+                            src="../images/twitch.png"
+                            alt="Twitch"
                         >
 
                     </a>
@@ -292,17 +344,20 @@
                 </h2>
 
 
-                <!-- CRÉNEAU 1 -->
+                <!-- CRÉNEAU 08H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-8"
+                    data-type="youtube"
+                    data-heure="08:00">
 
                     <p>
                         8H<br>
-                        La rage de l'ogre 😡
+                        Les œufs 🥚
                     </p>
 
+
                     <a
-                        href="https://youtu.be/OAtkibdZAhQ"
+                        href="https://youtu.be/NVzMTaOSHpY"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -332,17 +387,20 @@
                 </h2>
 
 
-                <!-- CRÉNEAU 1 -->
+                <!-- CRÉNEAU 08H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-8"
+                    data-type="youtube"
+                    data-heure="08:00">
 
                     <p>
                         8H<br>
-                        Mission Accomplie 🎉
+                        Des rois et encore des rois 👑
                     </p>
 
+
                     <a
-                        href="https://youtu.be/4QI3q4yPu-k"
+                        href="https://youtu.be/lCE1BS_Awds"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -358,17 +416,20 @@
                 </div>
 
 
-                <!-- CRÉNEAU 2 -->
+                <!-- CRÉNEAU 18H -->
 
-                <div class="creneau">
+                <div class="creneau creneau-18"
+                    data-type="youtube"
+                    data-heure="18:00">
 
                     <p>
                         18H<br>
-                        H37 nous attend… 🤖
+                        Blackfell 🏙️
                     </p>
 
+
                     <a
-                        href="https://youtu.be/FwczprjDswg"
+                        href="https://youtu.be/YoghcJWhLr0"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -397,15 +458,22 @@
                     ⚰️ Samedi
                 </h2>
 
-                <p>
-                    Repos des braves 💤 <br>
-                    <br>
-                </p>
-                
-                <img
-                    src="../images/repos-des-braves.jpg"
-                    alt="Repos des braves"
-                >
+
+                <!-- REPOS DES BRAVES -->
+
+                <div class="creneau creneau-repos">
+
+                    <p>
+                        Repos des braves 💤
+                    </p>
+
+
+                    <img
+                        src="../images/repos-des-braves.jpg"
+                        alt="Repos des braves"
+                    >
+
+                </div>
 
             </div>
 
@@ -421,16 +489,20 @@
                     🦴 Dimanche
                 </h2>
 
+
                 <!-- CRÉNEAU 1 -->
 
-                <div class="creneau">
+                <div class="creneau creneau-8"
+                    data-type="youtube"
+                    data-heure="08:00"
+                    data-image="../images/aventures/dune.png">
                     <p>
-                        18H<br>
-                        📽️ Replay Live
+                        8H<br>
+                        📽️ Replay Live <em>Dimanche 27/09</em>
                     </p>
 
                     <a
-                        href=""
+                        href="https://www.youtube.com/playlist?list=PLMMGpitPmXpA"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="image-planning"
@@ -444,14 +516,45 @@
                     </a>
 
                 </div>
-
+                
                 <!-- CRÉNEAU 2 -->
 
-                <div class="creneau">
+                <div class="creneau creneau-18"
+                    data-type="youtube"
+                    data-heure="18:00"
+                    data-image="../images/aventures/dune.png">
+
+                    <p>
+                        18H<br>
+                        📽️ Replay Live <em>Mercredi 30/09</em>
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/playlist?list=PLMMGpitPmXpA"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="image-planning"
+                    >
+
+                        <img
+                            src="../images/rediff.png"
+                            alt="Rediff"
+                        >
+
+                    </a>
+
+                </div>
+                
+                <!-- CRÉNEAU 3 -->
+
+                <div class="creneau creneau-21"
+                    data-type="twitch"
+                    data-heure="21:00"
+                    data-image="../images/aventures/dune.png">
 
                     <p>
                         21h-00h<br>
-                        Les dimanches ensembles
+                        Dune : Awakening
                     </p>
 
                     <a
@@ -463,7 +566,7 @@
 
                         <img
                             src="../images/twitch.png"
-                            alt="Naheulbeuk"
+                            alt="Twitch"
                         >
 
                     </a>
@@ -472,10 +575,33 @@
 
             </div>
 
+            <!-- =========================================================
+                DONNÉES POUR LE JAVASCRIPT UNIQUEMENT
+            ========================================================= -->
+
+            <script type="application/json" id="planning-js">
+                {
+                    "prochaineVideo": {
+                        "date": "2026-10-05",
+                        "heure": "08:00",
+                        "titre": "",
+                        "image": "../images/aventures/naheulbeuk.png"
+                    },
+
+                    "prochainLive": {
+                        "date": "2026-10-07",
+                        "heure": "21:00",
+                        "titre": "Dune : Awakening",
+                        "image": "../images/aventures/dune.png"
+                    }
+                }
+            </script>
 
         </section>
 
+
     </main>
+
 
     <!-- =========================================================
          PIED DE PAGE
@@ -491,21 +617,21 @@
 
         <div class="ornement ornement-bas-droit"></div>
 
-
         <p>
 
-            © 2026 La Guilde d'Outremonde
+            © 2026 La Guilde d'Outremonde ·
 
-            ·
-
-            <a href="https://elfyre.github.io/la-guilde-d-outremonde/mentions-legales.html">
+            <a
+                href="https://elfyre.github.io/la-guilde-d-outremonde/mentions-legales.html"
+            >
                 Mentions légales
             </a>
 
         </p>
 
     </footer>
-    
+
+
 </body>
 
 </html>
