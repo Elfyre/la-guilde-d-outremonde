@@ -8,10 +8,10 @@
      EASTER EGG — LICORNE
      ========================================================= -->
 
-<script
-    src="../js/licorne.js"
-    defer
-></script>
+    <script
+        src="../js/licorne.js"
+        defer
+    ></script>
 
     <!-- =====================
          INFORMATIONS DE LA PAGE
@@ -55,12 +55,13 @@
     <main>
    
         <!-- =========================
-         DÉCORATIONS
-    ========================= -->
+             DÉCORATIONS
+        ========================= -->
 
-    <div class="ornement ornement-haut-gauche"></div>
+        <div class="ornement ornement-haut-gauche"></div>
 
-    <div class="ornement ornement-haut-droit"></div>
+        <div class="ornement ornement-haut-droit"></div>
+
 
         <!-- =====================
              ENTÊTE DES ARCHIVES
@@ -80,7 +81,7 @@
                 </h1>
 
                 <!-- =========================
-                RETOUR AU HALL
+                     RETOUR AU HALL
                 ========================= -->
                 
                 <a
@@ -100,6 +101,31 @@
 
         </header>
 
+
+        <!-- =====================
+             RECHERCHE DES ARCHIVES
+        ===================== -->
+
+        <section class="recherche-archives">
+
+            <div class="recherche-conteneur">
+
+                <input
+                    type="search"
+                    id="rechercheArchives"
+                    placeholder="🔎 Rechercher un jeu dans les archives "
+                    autocomplete="off"
+                >
+
+            </div>
+
+            <div
+                id="resultatsArchives"
+                class="resultats-archives"
+                aria-live="polite"
+            ></div>
+
+        </section>
 
 
         <!-- =====================
@@ -249,6 +275,7 @@
 
     </main>
 
+
     <!-- =========================================================
          PIED DE PAGE
          ========================================================= -->
@@ -276,6 +303,16 @@
         </p>
 
     </footer>
+
+
+    <!-- =========================================================
+         MOTEUR DE RECHERCHE DES ARCHIVES
+         ========================================================= -->
+
+    <script
+        src="../js/archives.js"
+        defer
+    ></script>
 
 </body>
 

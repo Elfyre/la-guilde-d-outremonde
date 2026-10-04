@@ -167,8 +167,6 @@
     padding:
         30px;
 
-    justify-content: center;
-
     display:
         flex;
 
@@ -296,20 +294,23 @@
 
 .titre-aventure {
 
+    min-height:
+        70px;
+
     display:
         flex;
 
+    flex-direction:
+        column;
+
     justify-content:
-        center;
+        flex-start;
 
     align-items:
         center;
 
-    flex-wrap:
-        wrap;
-
     gap:
-        10px;
+        8px;
 
     margin-bottom:
         15px;
@@ -373,7 +374,7 @@
 .carte-aventure .bouton {
 
     margin-top:
-        10px;
+        auto;
 
 }
 
