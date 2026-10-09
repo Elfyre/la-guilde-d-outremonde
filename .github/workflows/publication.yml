@@ -1,3 +1,4 @@
+
 name: Publication du site
 
 on:
@@ -48,6 +49,19 @@ jobs:
         with:
           ref: main
           fetch-depth: 1
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+
+      - name: Installer Playwright
+        run: |
+          npm install --no-save --no-package-lock playwright
+          npx playwright install --with-deps chromium
+
+      - name: Générer l'image du planning
+        run: node scripts/capture-planning.mjs
 
       - name: Configurer GitHub Pages
         uses: actions/configure-pages@v5
