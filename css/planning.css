@@ -65,31 +65,37 @@
 }
 
 
+
 /* =========================================================
    MESSAGE DU MAÎTRE DE GUILDE
    ========================================================= */
 
 .planning-stream {
 
-    margin:
-        0;
+    display: block;
 
-    padding:
-        0;
+    width: 100%;
+    max-width: none !important;
 
-    color:
-        var(--texte-secondaire);
+    margin: 0;
+    padding: 0;
 
-    font-size:
-        14px;
+    color: var(--texte-secondaire);
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.1;
 
-    font-style:
-        italic;
+    white-space: nowrap;
+    text-align: center;
 
-    line-height:
-        1.1;
+    position: static;
+    left: auto;
+    transform: none;
+
+    box-sizing: border-box;
 
 }
+
 
 
 /* =========================================================
