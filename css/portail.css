@@ -2547,39 +2547,3 @@
     }
 
 }
-
-
-/* =========================================================
-   ACCESSIBILITÉ
-   ========================================================= */
-
-@media (
-    prefers-reduced-motion: reduce
-) {
-
-    .energie-portail,
-    .energie-portail::before,
-    .energie-portail::after,
-    .portail::before,
-    .portail::after,
-    .aura-embleme,
-    .fumee-nuage,
-    .cristal,
-    .etincelle,
-    .eclair,
-    .accueil .embleme,
-    .transition-portail,
-    .transition-portail::before,
-    .transition-portail::after,
-    .transition-portail .transition-halo,
-    .transition-portail .portail-fumee,
-    .transition-portail .portail-cristaux,
-    .transition-portail .portail-etincelles,
-    .transition-portail .portail-eclairs {
-
-        animation-duration: 0.01ms;
-        animation-iteration-count: 1;
-
-    }
-
-}
