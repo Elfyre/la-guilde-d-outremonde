@@ -516,13 +516,13 @@
     justify-content: center;
     gap: 8px;
 
-    flex: 0 1 220px;
-    min-width: 170px;
-    min-height: 82px;
-    padding: 16px 22px;
+    flex: 0 1 170px;
+    min-width: 140px;
+    min-height: 60px;
+    padding: 2px 2px;
 
     font-family: var(--police-principale);
-    font-size: 14px;
+    font-size: 10px;
     font-weight: 600;
     line-height: 1.4;
     letter-spacing: 0.4px;
