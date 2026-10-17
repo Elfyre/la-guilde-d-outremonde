@@ -3,6 +3,15 @@
 
 <head>
 
+    <!-- =========================================================
+         EASTER EGG — LICORNE
+    ========================================================= -->
+
+    <script
+        src="../../js/licorne.js"
+        defer
+    ></script>
+
     <!-- =========================
          INFORMATIONS DE LA PAGE
     ========================= -->
@@ -20,13 +29,20 @@
     >
 
     <title>
-        Aventure - La Guilde d'Outremonde
+        Once Human
     </title>
 
     <link
         rel="stylesheet"
         href="../../css/main.css"
     >
+
+    <!-- Gestion des onglets -->
+
+    <script
+        src="../../js/onglets-aventures.js"
+        defer
+    ></script>
 
 </head>
 
@@ -41,9 +57,6 @@
 
     <div class="ornement ornement-haut-droit"></div>
 
-    <div class="ornement ornement-bas-gauche"></div>
-
-    <div class="ornement ornement-bas-droit"></div>
 
     <!-- =========================
          FICHE DE L'AVENTURE
@@ -51,13 +64,11 @@
 
     <main>
 
-
         <!-- =========================
              EN-TÊTE DE L'AVENTURE
         ========================= -->
 
         <header class="entete-aventure">
-
 
             <!-- Image de l'aventure -->
 
@@ -67,242 +78,421 @@
                 alt="Once Human"
             >
 
+            <div class="titre-conteneur">
 
-            <!-- Titre -->
+                <h1>
+                    Once Human
+                </h1>
 
-            <h1>
-                Once Human
-            </h1>
+                <!-- =========================
+                     RETOUR AU HALL
+                ========================= -->
 
+                <a
+                    href="../expeditions/terminees.html"
+                    class="bouton bouton-retour transition-douce"
+                >
+                    Retour aux Aventures terminées
+                </a>
+
+            </div>
 
             <!-- Description -->
 
             <p>
-                La Guilde part explorer les terres altérées
-                d’un monde post‑apocalyptique.
+                <br>La Guilde explore les terres altérées d'un monde post-apocalyptique, où la survie dépend autant de
+                    nos refuges que de notre capacité à affronter les créatures nées de la Stardust.
+                    Chaque scénario apporte son lot de découvertes, de dangers et de nouvelles aventures.
             </p>
-
 
         </header>
 
 
-
         <!-- =========================
-             INFORMATIONS DE L'AVENTURE
+             SCÉNARIOS ET ONGLETS
         ========================= -->
 
-        <div class="fiche-aventure">
+        <section
+            class="aventure-onglets"
+            aria-label="Scénarios de l'aventure"
+        >
+
+            <!-- =========================
+                 BOUTONS DES ONGLETS
+            ========================= -->
+
+            <div
+                class="onglets-scenarios"
+                data-tabs
+                role="tablist"
+                aria-label="Choisir un scénario"
+            >
+
+                <button
+                    type="button"
+                    class="onglet-scenario"
+                    id="onglet-scenario-1"
+                    role="tab"
+                    aria-controls="scenario-1"
+                    aria-selected="true"
+                    tabindex="0"
+                >
+                    <span>Manibus</span>
+                    <span class="statut-onglet">
+                        Accomplie 🏆
+                    </span>
+                </button>
+
+                <button
+                    type="button"
+                    class="onglet-scenario"
+                    id="onglet-scenario-2"
+                    role="tab"
+                    aria-controls="scenario-2"
+                    aria-selected="false"
+                    tabindex="-1"
+                >
+                    <span>Isles of Abyss</span>
+                    <span class="statut-onglet">
+                        Cartographiée 🗺️
+                    </span>
+                </button>
+
+            </div>
+
+
+            <!-- =====================================================
+                 SCÉNARIO 1
+            ====================================================== -->
+
+            <div
+                class="contenu-scenario"
+                id="scenario-1"
+                role="tabpanel"
+                aria-labelledby="onglet-scenario-1"
+                tabindex="0"
+            >
+
+                <div class="fiche-aventure">
+
+
+                    <!-- =====================
+                         INFORMATIONS
+                    ===================== -->
+
+                    <section class="info-aventure">
+
+                        <h2>
+                            📜 Informations de l'expédition
+                        </h2>
+
+                        <!-- Origine -->
 
+                        <p>
+                            <strong>Origine :</strong>
+                            <br>
+                            Aventure principale 🏆
+                        </p>
 
-            <!-- =====================
-                 INFORMATIONS
-            ===================== -->
+                        <!-- Statut -->
 
-            <section class="info-aventure">
+                        <p>
+                            <strong>Statut :</strong>
+                            <br>
+                            Accomplie 🏆
+                        </p>
+
+                        <!-- Date de début -->
 
+                        <p>
+                            <strong>📅 Début :</strong>
+                            <br>
+                            Juillet 2026
+                        </p>
 
-                <h2>
-                    📜 Informations de l'expédition
-                </h2>
+                        <!-- Type de jeu -->
 
+                        <p>
+                            <strong>🎮 Type :</strong>
+                            <br>
+                            Survie / Exploration / Construction
+                        </p>
 
-                <!-- Origine -->
+                        <!-- Participants -->
 
-                <p>
+                        <p>
+                            <strong>👥 Participants :</strong>
+                            <br>
+                            Sakura-Natas, Elfyre, Tibalte
+                        </p>
 
-                    <strong>
-                        Origine :
-                    </strong>
+                    </section>
 
-                    <br>
 
-                    Aventure principale 🏆
+                    <!-- =====================
+                         HISTOIRE DE L'AVENTURE
+                    ===================== -->
 
-                </p>
+                    <section class="histoire-aventure">
 
+                        <h2>
+                            📖 Histoire de l'aventure
+                        </h2>
 
-                <!-- Statut -->
+                        <p>
+                            Après la Chute des Étoiles, le monde a été transformé par une mystérieuse substance appelée Stardust.
+                            <br><br> Les survivants doivent désormais composer avec un environnement hostile, des créatures altérées et les vestiges d'une civilisation en ruines.
+                            <br><br> La Guilde a exploré ces terres dévastées, construit ses refuges et affronté les menaces de Manibus.
+                        </p>
 
-                <p>
+                    </section>
 
-                    <strong>
-                        Statut :
-                    </strong>
 
-                    <br>
+                    <!-- =====================
+                         OBJECTIFS DE L'EXPÉDITION
+                    ===================== -->
 
-                    En expédition ⚔️
+                    <section class="objectifs-aventure">
 
-                </p>
+                        <h2>
+                            🎯 Objectifs de l'expédition
+                        </h2>
 
+                        <ul>
+                            <li>
+                                🌍 Explorer un monde brisé
+                            </li>
 
-                <!-- Date de début -->
+                            <li>
+                                🏠 Construire nos refuges
+                            </li>
 
-                <p>
+                            <li>
+                                ⚔️ Affronter les menaces et dévoiler la vérité
+                            </li>
 
-                    <strong>
-                        📅 Début :
-                    </strong>
+                        </ul>
 
-                    Juillet 2026
+                    </section>
 
-                </p>
 
+                    <!-- =====================
+                         SOUVENIRS DE L'EXPÉDITION
+                    ===================== -->
 
-                <!-- Type de jeu -->
+                    <section class="souvenirs-aventure">
 
-                <p>
+                        <h2>
+                            🎬 Souvenirs de l'expédition
+                        </h2>
 
-                    <strong>
-                        🎮 Type :
-                    </strong>
+                        <p>
+                            Retrouvez les chroniques de cette aventure.
+                        </p>
 
-                    Survie / Exploration / Construction
+                        <div class="liens-souvenirs">
 
-                </p>
+                            <!-- Playlist principale -->
 
+                            <a
+                                href="https://youtube.com/playlist?list=PLfoEVdDBOB_0&si=cGkuplSe2cd10z-m"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                🧬 Playlist Manibus
 
-                <!-- Participants -->
+                            </a>
 
-                <p>
-
-                    <strong>
-                        👥 Participants :
-                    </strong>
-
-                    Elfyre, 
-
-                </p>
-
-
-            </section>
-
-
-
-            <!-- =====================
-                 HISTOIRE DE L'AVENTURE
-            ===================== -->
-
-            <section class="histoire-aventure">
-
-
-                <h2>
-                    📖 Histoire de l'aventure
-                </h2>
-
-
-                <p>
-                    Entre exploration de terres ravagées,
-                    construction de refuges pour repousser la corruption,
-                    et affrontements contre des créatures nées de la Stardust,
-                    chaque expédition dévoile un nouveau morceau
-                    du mystère laissé par la Chute des Étoiles.
-                </p>
-
-
-            </section>
-
-
-
-            <!-- =====================
-                 OBJECTIFS DE L'EXPÉDITION
-            ===================== -->
-
-            <section class="objectifs-aventure">
-
-
-                <h2>
-                    🎯 Objectifs de l'expédition
-                </h2>
-
-
-                <ul>
-
-                    <li>
-                        Explorer un monde brisé
-                    </li>
-
-                    <li>
-                        Construire nos refuge
-                    </li>
-
-                    <li>
-                        Affronter les menaces et dévoiler la vérité
-                    </li>
-
-                </ul>
-
-
-            </section>
-
-
-
-            <!-- =====================
-                 SOUVENIRS DE L'EXPÉDITION
-            ===================== -->
-
-            <section class="souvenirs-aventure">
-
-
-                <h2>
-                    🎬 Souvenirs de l'expédition
-                </h2>
-
-
-                <p>
-                    Retrouvez les chroniques de cette aventure.
-                </p>
-
-
-                <div class="liens-souvenirs">
-
-
-                    <!-- Playlist principale -->
-
-                    <a
-                        href="https://youtube.com/playlist?list=PLfoEVdDBOB_0&si=cGkuplSe2cd10z-m"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="bouton"
-                    >
-
-                        ⚔️ Playlist principale
-
-                    </a>
+                    </section>
 
 
                 </div>
 
-
-            </section>
-
-
-        </div>
+            </div>
 
 
+            <!-- =====================================================
+                 SCÉNARIO 2
+            ====================================================== -->
 
-        <!-- =========================
-             RETOUR AUX AVENTURES
-        ========================= -->
-
-        <footer class="retour-aventure">
-
-
-            <a
-                href="../expeditions/en-cours.html"
-                class="bouton"
+            <div
+                class="contenu-scenario"
+                id="scenario-2"
+                role="tabpanel"
+                aria-labelledby="onglet-scenario-2"
+                tabindex="0"
+                hidden
             >
 
-                Retour aux aventures
-
-            </a>
+                <div class="fiche-aventure">
 
 
-        </footer>
+                    <!-- =====================
+                         INFORMATIONS
+                    ===================== -->
 
+                    <section class="info-aventure">
+
+                        <h2>
+                            📜 Informations de l'expédition
+                        </h2>
+
+                        <!-- Origine -->
+
+                        <p>
+                            <strong>Origine :</strong>
+                            <br>
+                            Aventure principale 🏆
+                        </p>
+
+                        <!-- Statut -->
+
+                        <p>
+                            <strong>Statut :</strong>
+                            <br>
+                            Cartographiée 🗺️
+                        </p>
+
+                        <!-- Date de début -->
+
+                        <p>
+                            <strong>📅 Début :</strong>
+                            <br>
+                            Octobre 2026
+                        </p>
+
+                        <!-- Type de jeu -->
+
+                        <p>
+                            <strong>🎮 Type :</strong>
+                            <br>
+                            Survie / Exploration / Construction / Action
+                        </p>
+
+                        <!-- Participants -->
+
+                        <p>
+                            <strong>👥 Participants :</strong>
+                            <br>
+                            Mk, Elfyre
+                        </p>
+
+                    </section>
+
+
+                    <!-- =====================
+                         HISTOIRE DE L'AVENTURE
+                    ===================== -->
+
+                    <section class="histoire-aventure">
+
+                        <h2>
+                            📖 Histoire de l'aventure
+                        </h2>
+
+                        <p>
+                            La contamination par la Stardust s'étend désormais au-delà des terres connues, plongeant la Guilde dans un vaste monde océanique rempli de mystères. 
+                            <br><br>Entre archipels isolés, profondeurs sous-marines et épaves abandonnées, il faudra explorer des territoires inconnus tout en affrontant les dangers d'un environnement imprévisible.
+                            <br><br>Pour survivre, la Guilde devra développer ses équipements, construire sa propre forteresse flottante et braver les eaux hostiles. 
+                            <br><br>Mais au cœur de cet océan se cachent des menaces toujours plus redoutables, jusqu'à l'affrontement avec le mystérieux Seigneur englouti.
+                        </p>
+
+                    </section>
+
+
+                    <!-- =====================
+                         OBJECTIFS DE L'EXPÉDITION
+                    ===================== -->
+
+                    <section class="objectifs-aventure">
+
+                        <h2>
+                            🎯 Objectifs de l'expédition
+                        </h2>
+
+                        <ul>
+                            <li>
+                                🌊 Explorer les îles et les profondeurs de l'océan
+                            </li>
+
+                            <li>
+                                🚢 Construire et améliorer notre forteresse flottante
+                            </li>
+
+                            <li>
+                                🐙 Affronter les menaces abyssales et défier le Seigneur englouti
+                            </li>
+                        </ul>
+
+                    </section>
+
+
+                    <!-- =====================
+                         SOUVENIRS DE L'EXPÉDITION
+                    ===================== -->
+
+                    <section class="souvenirs-aventure">
+
+                        <h2>
+                            🎬 Souvenirs de l'expédition
+                        </h2>
+
+                        <p>
+                            Retrouvez les chroniques de cette aventure.
+                        </p>
+
+                        <div class="liens-souvenirs">
+
+                            <!-- Playlist principale -->
+
+                            <a
+                                href="https://www.youtube.com/playlist?list=PLElAGHPVKlEY"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                🌊 Playlist Isles of Abyss
+                            </a>
+
+                    </section>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
 
     </main>
 
+
+    <!-- =========================================================
+         PIED DE PAGE
+    ========================================================= -->
+
+    <footer class="pied-page">
+
+        <!-- =========================
+             DÉCORATIONS
+        ========================= -->
+
+        <div class="ornement ornement-bas-gauche"></div>
+
+        <div class="ornement ornement-bas-droit"></div>
+
+        <p>
+            © 2026 La Guilde d'Outremonde
+
+            ·
+
+            <a href="https://elfyre.github.io/la-guilde-d-outremonde/mentions-legales.html">
+                Mentions légales
+            </a>
+        </p>
+
+    </footer>
 
 </body>
 
