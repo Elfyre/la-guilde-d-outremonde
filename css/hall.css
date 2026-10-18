@@ -8,9 +8,10 @@
    ========================================================= */
 
 .reseaux-guilde {
-
+    margin-top: -30px;
+    
     margin:
-        10px auto 15px;
+        0 auto 8px;
 
     display:
         flex;

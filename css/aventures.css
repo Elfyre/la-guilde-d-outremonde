@@ -474,3 +474,167 @@
         center;
 
 }
+
+
+
+
+
+
+/* =========================================================
+   MODÈLE AVENTURE — ONGLETS RÉUTILISABLES
+   ========================================================= */
+
+/* Conteneur général */
+
+.aventure-onglets {
+    width: 100%;
+    margin: 45px auto 0;
+}
+
+/* Barre des onglets */
+
+.onglets-scenarios {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 14px;
+
+    width: 100%;
+    margin: 0 auto 10px;
+    padding: 0 0 18px;
+}
+
+/* Boutons des scénarios */
+
+.onglet-scenario {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    flex: 0 1 170px;
+    min-width: 140px;
+    min-height: 60px;
+    padding: 2px 2px;
+
+    font-family: var(--police-principale);
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.4px;
+    color: var(--parchemin-clair);
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        rgba(var(--accent-rgb), 0.16),
+        rgba(77, 58, 85, 0.14)
+    );
+
+    border: 1px solid var(--parchemin-sombre);
+    border-radius: 10px;
+
+    box-shadow: 0 4px 15px var(--ombre-moyenne);
+
+    cursor: pointer;
+
+    transition:
+        background var(--transition-standard),
+        border-color var(--transition-standard),
+        color var(--transition-standard),
+        box-shadow var(--transition-standard),
+        transform var(--transition-standard);
+}
+
+/* Survol */
+
+.onglet-scenario:hover {
+    border-color: var(--parchemin);
+
+    background: linear-gradient(
+        135deg,
+        rgba(184, 154, 196, 0.24),
+        rgba(var(--accent-rgb), 0.20)
+    );
+
+    color: var(--parchemin-clair);
+
+    box-shadow:
+        0 0 18px var(--lueur-accent-legere);
+
+    transform: translateY(-2px);
+}
+
+/* Onglet actif */
+
+.onglet-scenario[aria-selected="true"] {
+    border-color: var(--accent-clair);
+
+    background: linear-gradient(
+        135deg,
+        rgba(var(--accent-rgb), 0.30),
+        rgba(77, 58, 85, 0.28)
+    );
+
+    color: var(--parchemin-clair);
+
+    box-shadow:
+        0 0 16px var(--lueur-accent-legere),
+        inset 0 -2px 0 var(--accent);
+}
+
+/* Nom du scénario */
+
+.onglet-scenario span:first-child {
+    font-size: 1.05rem;
+    color: inherit;
+}
+
+/* Statut du scénario */
+
+.statut-onglet {
+    font-size: 0.8rem;
+    font-weight: normal;
+    letter-spacing: 0;
+    color: var(--texte-secondaire);
+}
+
+/* Statut de l'onglet actif */
+
+.onglet-scenario[aria-selected="true"] .statut-onglet {
+    color: var(--parchemin);
+}
+
+/* Contenu des scénarios */
+
+.contenu-scenario[hidden] {
+    display: none !important;
+}
+
+.contenu-scenario:not([hidden]) {
+    animation: apparition-scenario 0.3s ease;
+}
+
+@keyframes apparition-scenario {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Accessibilité clavier */
+
+.onglet-scenario:focus-visible,
+.contenu-scenario:focus-visible {
+    outline: 1px solid var(--parchemin);
+    outline-offset: 4px;
+}

@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <!-- =========================================================
+         EASTER EGG — LICORNE
+    ========================================================= -->
+
+    <script
+        src="../../js/licorne.js"
+        defer
+    ></script>
+
+    <!-- =========================
+         INFORMATIONS DE LA PAGE
+    ========================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <link
+        rel="icon"
+        href="../../favicon.png?v=2"
+    >
+
+    <title>
+        Nom du jeu - La Guilde d'Outremonde
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="../../css/main.css"
+    >
+
+    <!-- Gestion des onglets -->
+
+    <script
+        src="../../js/onglets-aventures.js"
+        defer
+    ></script>
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         DÉCORATIONS
+    ========================= -->
+
+    <div class="ornement ornement-haut-gauche"></div>
+
+    <div class="ornement ornement-haut-droit"></div>
+
+
+    <!-- =========================
+         FICHE DE L'AVENTURE
+    ========================= -->
+
+    <main>
+
+        <!-- =========================
+             EN-TÊTE DE L'AVENTURE
+        ========================= -->
+
+        <header class="entete-aventure">
+
+            <!-- Image de l'aventure -->
+
+            <img
+                src="../../images/aventures/"
+                class="image-aventure"
+                alt=""
+            >
+
+            <div class="titre-conteneur">
+
+                <h1>
+                    Nom du jeu
+                </h1>
+
+                <!-- =========================
+                     RETOUR AU HALL
+                ========================= -->
+
+                <a
+                    href="../expeditions/"
+                    class="bouton bouton-retour transition-douce"
+                >
+                    Retour aux Aventures en cours, programmées, terminées
+                </a>
+
+            </div>
+
+            <!-- Description -->
+
+            <p>
+                Découvrez les différentes aventures de la Guilde
+                à travers les scénarios de ce jeu.
+            </p>
+
+        </header>
+
+
+        <!-- =========================
+             SCÉNARIOS ET ONGLETS
+        ========================= -->
+
+        <section
+            class="aventure-onglets"
+            aria-label="Scénarios de l'aventure"
+        >
+
+            <!-- =========================
+                 BOUTONS DES ONGLETS
+            ========================= -->
+
+            <div
+                class="onglets-scenarios"
+                data-tabs
+                role="tablist"
+                aria-label="Choisir un scénario"
+            >
+
+                <button
+                    type="button"
+                    class="onglet-scenario"
+                    id="onglet-scenario-1"
+                    role="tab"
+                    aria-controls="scenario-1"
+                    aria-selected="true"
+                    tabindex="0"
+                >
+                    <span>Scénario 1</span>
+                    <span class="statut-onglet">
+                        🏆 Accomplie
+                    </span>
+                </button>
+
+                <button
+                    type="button"
+                    class="onglet-scenario"
+                    id="onglet-scenario-2"
+                    role="tab"
+                    aria-controls="scenario-2"
+                    aria-selected="false"
+                    tabindex="-1"
+                >
+                    <span>Scénario 2</span>
+                    <span class="statut-onglet">
+                        ⚔️ En expédition
+                    </span>
+                </button>
+
+            </div>
+
+
+            <!-- =====================================================
+                 SCÉNARIO 1
+            ====================================================== -->
+
+            <div
+                class="contenu-scenario"
+                id="scenario-1"
+                role="tabpanel"
+                aria-labelledby="onglet-scenario-1"
+                tabindex="0"
+            >
+
+                <div class="fiche-aventure">
+
+
+                    <!-- =====================
+                         INFORMATIONS
+                    ===================== -->
+
+                    <section class="info-aventure">
+
+                        <h2>
+                            📜 Informations de l'expédition
+                        </h2>
+
+                        <!-- Origine -->
+
+                        <p>
+                            <strong>Origine :</strong>
+                            <br>
+                            Aventure principale 🏆
+                        </p>
+
+                        <!-- Statut -->
+
+                        <p>
+                            <strong>Statut :</strong>
+                            <br>
+                            Accomplie 🏆
+                        </p>
+
+                        <!-- Date de début -->
+
+                        <p>
+                            <strong>📅 Début :</strong>
+                            <br>
+                            Mois et année
+                        </p>
+
+                        <!-- Type de jeu -->
+
+                        <p>
+                            <strong>🎮 Type :</strong>
+                            <br>
+                            Survie / Exploration
+                        </p>
+
+                        <!-- Participants -->
+
+                        <p>
+                            <strong>👥 Participants :</strong>
+                            <br>
+                            Membres de la Guilde
+                        </p>
+
+                    </section>
+
+
+                    <!-- =====================
+                         EXTENSIONS
+                    ===================== -->
+
+                    <section class="extensions-aventure">
+
+                        <h2>
+                            🧩 Extensions
+                        </h2>
+
+                        <p>
+                            Cette aventure comprend également :
+                        </p>
+
+                        <ul>
+                            <li>
+                                <strong>DLC 1 :</strong>
+                                Nom du DLC
+                            </li>
+                        </ul>
+
+                    </section>
+
+
+                    <!-- =====================
+                         HISTOIRE DE L'AVENTURE
+                    ===================== -->
+
+                    <section class="histoire-aventure">
+
+                        <h2>
+                            📖 Histoire de l'aventure
+                        </h2>
+
+                        <p>
+                            Résumé du monde découvert et des aventures
+                            vécues par la Guilde.
+                        </p>
+
+                    </section>
+
+
+                    <!-- =====================
+                         OBJECTIFS DE L'EXPÉDITION
+                    ===================== -->
+
+                    <section class="objectifs-aventure">
+
+                        <h2>
+                            🎯 Objectifs de l'expédition
+                        </h2>
+
+                        <ul>
+                            <li>
+                                🌍 Explorer le monde
+                            </li>
+
+                            <li>
+                                🕵️ Découvrir ses secrets
+                            </li>
+
+                            <li>
+                                🎯 Relever les défis
+                            </li>
+                        </ul>
+
+                    </section>
+
+
+                    <!-- =====================
+                         SOUVENIRS DE L'EXPÉDITION
+                    ===================== -->
+
+                    <section class="souvenirs-aventure">
+
+                        <h2>
+                            🎬 Souvenirs de l'expédition
+                        </h2>
+
+                        <p>
+                            Retrouvez les chroniques de cette aventure.
+                        </p>
+
+                        <div class="liens-souvenirs">
+
+                            <!-- Playlist principale -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                ⚔️ Playlist principale
+                            </a>
+
+                            <!-- Playlist Le Mercredi Chaos -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                🎲 Playlist Le Mercredi Chaos
+                            </a>
+
+                            <!-- Playlist Live -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                🔴 Playlist Live
+                            </a>
+
+                        </div>
+
+                    </section>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================================
+                 SCÉNARIO 2
+            ====================================================== -->
+
+            <div
+                class="contenu-scenario"
+                id="scenario-2"
+                role="tabpanel"
+                aria-labelledby="onglet-scenario-2"
+                tabindex="0"
+                hidden
+            >
+
+                <div class="fiche-aventure">
+
+
+                    <!-- =====================
+                         INFORMATIONS
+                    ===================== -->
+
+                    <section class="info-aventure">
+
+                        <h2>
+                            📜 Informations de l'expédition
+                        </h2>
+
+                        <!-- Origine -->
+
+                        <p>
+                            <strong>Origine :</strong>
+                            <br>
+                            Aventure principale 🏆
+                        </p>
+
+                        <!-- Statut -->
+
+                        <p>
+                            <strong>Statut :</strong>
+                            <br>
+                            En expédition ⚔️
+                        </p>
+
+                        <!-- Date de début -->
+
+                        <p>
+                            <strong>📅 Début :</strong>
+                            <br>
+                            Mois et année
+                        </p>
+
+                        <!-- Type de jeu -->
+
+                        <p>
+                            <strong>🎮 Type :</strong>
+                            <br>
+                            Survie / Exploration
+                        </p>
+
+                        <!-- Participants -->
+
+                        <p>
+                            <strong>👥 Participants :</strong>
+                            <br>
+                            Membres de la Guilde
+                        </p>
+
+                    </section>
+
+
+                    <!-- =====================
+                         EXTENSIONS
+                    ===================== -->
+
+                    <section class="extensions-aventure">
+
+                        <h2>
+                            🧩 Extensions
+                        </h2>
+
+                        <p>
+                            Cette aventure comprend également :
+                        </p>
+
+                        <ul>
+                            <li>
+                                <strong>DLC 1 :</strong>
+                                Nom du DLC
+                            </li>
+                        </ul>
+
+                    </section>
+
+
+                    <!-- =====================
+                         HISTOIRE DE L'AVENTURE
+                    ===================== -->
+
+                    <section class="histoire-aventure">
+
+                        <h2>
+                            📖 Histoire de l'aventure
+                        </h2>
+
+                        <p>
+                            Résumé du monde découvert et des aventures
+                            vécues par la Guilde.
+                        </p>
+
+                    </section>
+
+
+                    <!-- =====================
+                         OBJECTIFS DE L'EXPÉDITION
+                    ===================== -->
+
+                    <section class="objectifs-aventure">
+
+                        <h2>
+                            🎯 Objectifs de l'expédition
+                        </h2>
+
+                        <ul>
+                            <li>
+                                🌍 Explorer le monde
+                            </li>
+
+                            <li>
+                                🕵️ Découvrir ses secrets
+                            </li>
+
+                            <li>
+                                🎯 Relever les défis
+                            </li>
+
+                        </ul>
+
+                    </section>
+
+
+                    <!-- =====================
+                         SOUVENIRS DE L'EXPÉDITION
+                    ===================== -->
+
+                    <section class="souvenirs-aventure">
+
+                        <h2>
+                            🎬 Souvenirs de l'expédition
+                        </h2>
+
+                        <p>
+                            Retrouvez les chroniques de cette aventure.
+                        </p>
+
+                        <div class="liens-souvenirs">
+
+                            <!-- Playlist principale -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                ⚔️ Playlist principale
+                            </a>
+
+                            <!-- Playlist Le Mercredi Chaos -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                🎲 Playlist Le Mercredi Chaos
+                            </a>
+
+                            <!-- Playlist Live -->
+
+                            <a
+                                href="#"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bouton transition-douce"
+                            >
+                                🔴 Playlist Live
+                            </a>
+
+                        </div>
+
+                    </section>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         PIED DE PAGE
+    ========================================================= -->
+
+    <footer class="pied-page">
+
+        <!-- =========================
+             DÉCORATIONS
+        ========================= -->
+
+        <div class="ornement ornement-bas-gauche"></div>
+
+        <div class="ornement ornement-bas-droit"></div>
+
+        <p>
+            © 2026 La Guilde d'Outremonde
+
+            ·
+
+            <a href="https://elfyre.github.io/la-guilde-d-outremonde/mentions-legales.html">
+                Mentions légales
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
