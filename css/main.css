@@ -26,8 +26,18 @@
 
 @import url("aventures.css");
 
-@import url("responsives.css");
-
 @import url("licorne.css");
 
 @import url("mentions-legales.css");
+
+@import url("responsives-hall-portail.css");
+
+@import url("responsives-system.css");
+
+@import url("responsives-quete-planning.css");
+
+@import url("responsives-legale-licorne.css");
+
+@import url("responsives-aventures-expeditions.css");
+
+@import url("responsives-archive-aventuriers.css");

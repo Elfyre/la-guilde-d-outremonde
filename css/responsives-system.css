@@ -1,0 +1,859 @@
+
+/* =========================================================
+   LA GUILDE D'OUTREMONDE
+   RESPONSIVE GLOBAL
+   Largeurs, hauteurs, composants et animations
+   ========================================================= */
+
+
+/* =========================================================
+   1. BASE RESPONSIVE
+   ========================================================= */
+
+:root {
+    --largeur-contenu: 1100px;
+    --largeur-contenu-large: 1200px;
+    --largeur-contenu-etroit: 900px;
+
+    --marge-page: clamp(16px, 3vw, 48px);
+
+    --espace-petit: clamp(8px, 0.7vw, 10px);
+    --espace-moyen: clamp(14px, 1.4vw, 20px);
+    --espace-grand: clamp(24px, 2.8vw, 40px);
+    --espace-tres-grand: clamp(36px, 4.2vw, 60px);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+main {
+    min-width: 0;
+}
+
+img,
+video,
+iframe,
+svg {
+    max-width: 100%;
+}
+
+img,
+video {
+    height: auto;
+}
+
+p,
+td,
+th,
+a {
+    overflow-wrap: anywhere;
+}
+
+button,
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   2. GRAND ORDINATEUR — 1440 PX ET PLUS
+   ========================================================= */
+
+@media (min-width: 1440px) {
+    :root {
+        --largeur-contenu: 1100px;
+        --largeur-contenu-large: 1200px;
+        --largeur-contenu-etroit: 900px;
+        --marge-page: clamp(40px, 3vw, 64px);
+    }
+
+    .ornement {
+        width: 110px;
+        height: 110px;
+    }
+
+    .pied-page {
+        padding: 25px 3% 35px;
+    }
+}
+
+
+/* =========================================================
+   3. ORDINATEUR PORTABLE — 1200 À 1439 PX
+   ========================================================= */
+
+@media (min-width: 1200px) and (max-width: 1439px) {
+    :root {
+        --largeur-contenu: 1000px;
+        --largeur-contenu-large: 1100px;
+        --largeur-contenu-etroit: 850px;
+        --marge-page: clamp(24px, 3vw, 40px);
+    }
+
+    .ornement {
+        width: 90px;
+        height: 90px;
+    }
+
+    .ornement-haut-gauche,
+    .ornement-haut-droit {
+        top: 25px;
+    }
+
+    .ornement-haut-gauche {
+        left: 25px;
+    }
+
+    .ornement-haut-droit {
+        right: 25px;
+    }
+
+    .pied-page {
+        padding: 22px 3% 28px;
+    }
+
+    .pied-page .ornement-bas-gauche {
+        bottom: 25px;
+        left: 25px;
+    }
+
+    .pied-page .ornement-bas-droit {
+        bottom: 25px;
+        right: 25px;
+    }
+}
+
+
+/* =========================================================
+   4. CAS PARTICULIER — 1024 À 1199 PX
+   Salles sur toute la largeur disponible
+   ========================================================= */
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    :root {
+        --largeur-contenu: 100%;
+        --largeur-contenu-large: 100%;
+        --largeur-contenu-etroit: 100%;
+        --marge-page: 24px;
+
+        --espace-petit: 8px;
+        --espace-moyen: 12px;
+        --espace-grand: 22px;
+        --espace-tres-grand: 32px;
+    }
+
+    main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .entete-salle {
+        width: calc(100% - 48px);
+        max-width: none;
+        margin: 24px auto 14px;
+    }
+
+    .entete-salle h1 {
+        font-size: clamp(28px, 3vw, 38px);
+    }
+
+    .entete-salle p {
+        max-width: 760px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    /*
+       Remplacer .conteneur-salles par le sélecteur réel
+       du conteneur des salles dans le HTML du site.
+    */
+
+    .salles {
+        width: 100%;
+        max-width: none;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .ornement {
+        width: 72px;
+        height: 72px;
+        opacity: 0.18;
+    }
+
+    .pied-page {
+        width: 100%;
+        padding: 20px 24px 26px;
+    }
+}
+
+
+/* =========================================================
+   5. TABLETTE — 768 À 1023 PX
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root {
+        --largeur-contenu: 100%;
+        --largeur-contenu-large: 100%;
+        --largeur-contenu-etroit: 100%;
+        --marge-page: 24px;
+
+        --espace-petit: 8px;
+        --espace-moyen: 14px;
+        --espace-grand: 28px;
+        --espace-tres-grand: 40px;
+    }
+
+    .entete-salle {
+        width: 92%;
+        margin: 28px auto 14px;
+    }
+
+    .entete-salle h1 {
+        font-size: clamp(28px, 4vw, 40px);
+        letter-spacing: 1.5px;
+    }
+
+    .entete-salle p {
+        max-width: 600px;
+        margin-top: 14px;
+        font-size: 15px;
+        line-height: 1.65;
+    }
+
+    .embleme {
+        font-size: 56px;
+        margin-bottom: 12px;
+    }
+
+    .bouton {
+        margin: 20px auto 28px;
+        padding: 10px 20px;
+    }
+
+    .ornement {
+        width: 65px;
+        height: 65px;
+        opacity: 0.20;
+    }
+
+    .ornement-haut-gauche,
+    .ornement-haut-droit {
+        top: 18px;
+    }
+
+    .ornement-haut-gauche {
+        left: 18px;
+    }
+
+    .ornement-haut-droit {
+        right: 18px;
+    }
+
+    .pied-page {
+        padding: 20px 24px 25px;
+        background-size: 100% 1px;
+    }
+
+    .pied-page .ornement-bas-gauche {
+        bottom: 18px;
+        left: 18px;
+    }
+
+    .pied-page .ornement-bas-droit {
+        bottom: 18px;
+        right: 18px;
+    }
+
+    th,
+    td {
+        padding: 8px 6px;
+    }
+}
+
+
+/* =========================================================
+   6. MOBILE — 375 À 767 PX
+   ========================================================= */
+
+@media (min-width: 375px) and (max-width: 767px) {
+    :root {
+        --largeur-contenu: 100%;
+        --largeur-contenu-large: 100%;
+        --largeur-contenu-etroit: 100%;
+        --marge-page: 18px;
+
+        --espace-petit: 8px;
+        --espace-moyen: 12px;
+        --espace-grand: 22px;
+        --espace-tres-grand: 32px;
+    }
+
+    body {
+        background-size:
+            100% 650px,
+            100% auto,
+            100% 100%;
+    }
+
+    main {
+        min-width: 0;
+    }
+
+    h1 {
+        font-size: clamp(1.7rem, 6vw, 2.3rem);
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: clamp(1.35rem, 4.8vw, 1.8rem);
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+        line-height: 1.35;
+    }
+
+    p {
+        line-height: 1.6;
+    }
+
+    .entete-salle {
+        width: 92%;
+        margin: 22px auto 12px;
+    }
+
+    .entete-salle h1 {
+        font-size: clamp(25px, 6vw, 34px);
+        line-height: 1.2;
+        letter-spacing: 1px;
+        overflow-wrap: anywhere;
+    }
+
+    .entete-salle p {
+        max-width: 100%;
+        margin-top: 12px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .titre-conteneur {
+        display: block;
+        max-width: 100%;
+    }
+
+    .titre-conteneur .bouton-retour {
+        position: static;
+        display: block;
+        width: fit-content;
+        max-width: 100%;
+        margin: 14px auto 0;
+        white-space: normal;
+        transform: none;
+    }
+
+    .titre-conteneur .bouton-retour:hover {
+        transform: translateY(-2px);
+    }
+
+    .titre-conteneur .bouton-retour:active {
+        transform: none;
+    }
+
+    .embleme {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    .bouton {
+        max-width: 100%;
+        margin: 18px auto 24px;
+        padding: 10px 18px;
+        font-size: 14px;
+        overflow-wrap: anywhere;
+    }
+
+    input,
+    textarea,
+    select {
+        box-sizing: border-box;
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+
+    .ornement {
+        width: 42px;
+        height: 42px;
+        opacity: 0.16;
+    }
+
+    .ornement-haut-gauche,
+    .ornement-haut-droit {
+        top: 12px;
+    }
+
+    .ornement-haut-gauche {
+        left: 10px;
+    }
+
+    .ornement-haut-droit {
+        right: 10px;
+    }
+
+    .pied-page {
+        width: 92%;
+        padding: 20px 0 24px;
+
+        background-image: linear-gradient(
+            to right,
+            transparent,
+            var(--parchemin-sombre),
+            transparent
+        );
+
+        background-position: top center;
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+    }
+
+    .pied-page p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .pied-page .ornement-bas-gauche {
+        bottom: 12px;
+        left: 10px;
+    }
+
+    .pied-page .ornement-bas-droit {
+        bottom: 12px;
+        right: 10px;
+    }
+
+    table {
+        table-layout: fixed;
+    }
+
+    th,
+    td {
+        padding: 7px 5px;
+        font-size: 0.9rem;
+        overflow-wrap: anywhere;
+    }
+
+    th {
+        padding-bottom: 9px;
+    }
+
+    td {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+}
+
+
+/* =========================================================
+   7. TRÈS PETIT MOBILE — MOINS DE 375 PX
+   Vérification ciblée : 320 PX ET 360 PX
+   ========================================================= */
+
+@media (max-width: 374px) {
+    :root {
+        --largeur-contenu: 100%;
+        --largeur-contenu-large: 100%;
+        --largeur-contenu-etroit: 100%;
+        --marge-page: 12px;
+
+        --espace-petit: 6px;
+        --espace-moyen: 10px;
+        --espace-grand: 18px;
+        --espace-tres-grand: 26px;
+    }
+
+    body {
+        background-size:
+            100% 500px,
+            100% auto,
+            100% 100%;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        line-height: 1.3;
+    }
+
+    h3 {
+        font-size: 1.05rem;
+        line-height: 1.35;
+    }
+
+    p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .entete-salle {
+        width: 94%;
+        margin: 18px auto 10px;
+    }
+
+    .entete-salle h1 {
+        font-size: 25px;
+        letter-spacing: 0.5px;
+    }
+
+    .entete-salle p {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .embleme {
+        font-size: 42px;
+        margin-bottom: 8px;
+    }
+
+    .bouton {
+        padding: 10px 14px;
+        font-size: 13px;
+        letter-spacing: 0.4px;
+    }
+
+    .titre-conteneur .bouton-retour {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    .ornement {
+        width: 30px;
+        height: 30px;
+        opacity: 0.12;
+    }
+
+    .ornement-haut-gauche,
+    .ornement-haut-droit {
+        top: 8px;
+    }
+
+    .ornement-haut-gauche {
+        left: 6px;
+    }
+
+    .ornement-haut-droit {
+        right: 6px;
+    }
+
+    .pied-page {
+        width: 94%;
+        padding: 18px 0 22px;
+
+        background-image: linear-gradient(
+            to right,
+            transparent,
+            var(--parchemin-sombre),
+            transparent
+        );
+
+        background-position: top center;
+        background-size: 100% 1px;
+        background-repeat: no-repeat;
+    }
+
+    .pied-page p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .pied-page .ornement-bas-gauche {
+        bottom: 8px;
+        left: 6px;
+    }
+
+    .pied-page .ornement-bas-droit {
+        bottom: 8px;
+        right: 6px;
+    }
+
+    th,
+    td {
+        padding: 6px 3px;
+        font-size: 0.8rem;
+        overflow-wrap: anywhere;
+    }
+}
+
+
+/* =========================================================
+   8. HAUTEUR DISPONIBLE — 900 PX ET PLUS
+   Affichage complet si le contenu le permet
+   ========================================================= */
+
+@media (min-height: 900px) {
+    body {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    main {
+        min-width: 0;
+    }
+
+    .pied-page {
+        flex-shrink: 0;
+    }
+}
+
+
+/* =========================================================
+   9. HAUTEUR DISPONIBLE — 700 À 899 PX
+   Réduction modérée des espacements verticaux
+   ========================================================= */
+
+@media (min-height: 700px) and (max-height: 899px) {
+    :root {
+        --espace-grand: clamp(20px, 3vh, 30px);
+        --espace-tres-grand: clamp(28px, 4vh, 42px);
+    }
+
+    .entete-salle {
+        margin-top: 22px;
+        margin-bottom: 12px;
+    }
+
+    .embleme {
+        margin-bottom: 10px;
+    }
+
+    .bouton {
+        margin-top: 18px;
+        margin-bottom: 24px;
+    }
+
+    .pied-page {
+        padding-top: 16px;
+        padding-bottom: 20px;
+    }
+
+    .ornement-haut-gauche,
+    .ornement-haut-droit {
+        top: 16px;
+    }
+}
+
+
+/* =========================================================
+   10. HAUTEUR DISPONIBLE — MOINS DE 700 PX
+   Priorité au contenu et au défilement naturel
+   ========================================================= */
+
+@media (max-height: 699px) {
+    body {
+        min-height: 100vh;
+        min-height: 100dvh;
+    }
+
+    main {
+        min-width: 0;
+        flex-shrink: 0;
+    }
+
+    .entete-salle {
+        margin-top: 16px;
+        margin-bottom: 10px;
+    }
+
+    .entete-salle p {
+        margin-top: 10px;
+    }
+
+    .embleme {
+        margin-bottom: 8px;
+    }
+
+    .bouton {
+        margin-top: 14px;
+        margin-bottom: 18px;
+    }
+
+    .pied-page {
+        padding-top: 14px;
+        padding-bottom: 18px;
+    }
+
+    .ornement {
+        opacity: 0.12;
+    }
+}
+
+
+/* =========================================================
+   11. PETITE LARGEUR + FAIBLE HAUTEUR
+   Téléphones en paysage et fenêtres compactes
+   ========================================================= */
+
+@media (max-width: 767px) and (max-height: 500px) {
+    .ornement {
+        display: none;
+    }
+
+    .pied-page {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+
+/* =========================================================
+   12. RESPONSIVE — ANIMATIONS
+   Adaptation des durées et dimensions
+   Les animations restent actives
+   ========================================================= */
+
+
+/* TABLETTE — 768 À 1023 PX */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .entete-salle,
+    .entete-aventure,
+    .entete-aventurier,
+    .entete-expeditions,
+    .entete-section {
+        animation-duration: 0.6s;
+    }
+
+    .portail .bouton,
+    .quetes .bouton-vote {
+        animation-duration: 3.2s;
+    }
+
+    .transition-portail::before {
+        width: 160px;
+        height: 160px;
+    }
+
+    .transition-portail::after {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+
+/* MOBILE — 375 À 767 PX */
+
+@media (min-width: 375px) and (max-width: 767px) {
+    .entete-salle,
+    .entete-aventure,
+    .entete-aventurier,
+    .entete-expeditions,
+    .entete-section {
+        animation-duration: 0.5s;
+    }
+
+    .ornement {
+        animation-duration: 3.5s;
+    }
+
+    .portail .bouton,
+    .quetes .bouton-vote {
+        animation-duration: 3.5s;
+    }
+
+    .transition-portail::before {
+        width: 130px;
+        height: 130px;
+    }
+
+    .transition-portail::after {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+/* TRÈS PETIT MOBILE — MOINS DE 375 PX */
+
+@media (max-width: 374px) {
+    .entete-salle,
+    .entete-aventure,
+    .entete-aventurier,
+    .entete-expeditions,
+    .entete-section {
+        animation-duration: 0.45s;
+    }
+
+    .ornement {
+        animation-duration: 4s;
+    }
+
+    .portail .bouton,
+    .quetes .bouton-vote {
+        animation-duration: 4s;
+    }
+
+    .transition-portail::before {
+        width: 110px;
+        height: 110px;
+    }
+
+    .transition-portail::after {
+        width: 155px;
+        height: 155px;
+    }
+}
+
+
+/* ADAPTATION DES TRANSITIONS SELON LA HAUTEUR */
+
+@media (min-height: 700px) and (max-height: 899px) {
+    .transition-portail.sortie::before,
+    .transition-portail.sortie::after {
+        animation-duration: 2.1s;
+    }
+}
+
+@media (max-height: 699px) {
+    .transition-portail.sortie::before,
+    .transition-portail.sortie::after {
+        animation-duration: 1.8s;
+    }
+}
+
+
+/* =========================================================
+   13. ACCESSIBILITÉ — MOUVEMENT RÉDUIT
+   Respect des préférences du navigateur
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
